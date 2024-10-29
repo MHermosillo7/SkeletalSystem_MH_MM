@@ -6,6 +6,7 @@ namespace BodySystem
     {
         Camera cam;
         CameraScript camScript;
+        UI ui;
         public GameObject selectedItem;
 
         // Start is called before the first frame update
@@ -13,6 +14,7 @@ namespace BodySystem
         {
             cam = FindObjectOfType<Camera>();
             camScript = FindObjectOfType<CameraScript>();
+            ui = FindObjectOfType<UI>();
             selectedItem = GameObject.FindGameObjectWithTag("Player");
         }
 
@@ -22,6 +24,10 @@ namespace BodySystem
             if (Input.GetMouseButtonDown(0))
             {
                 Select();
+            }
+            if(Input.GetMouseButtonDown(1))
+            {
+                DeSelect();
             }
         }
 
@@ -39,12 +45,21 @@ namespace BodySystem
                 camScript.prevVector = vectorHit.gameObject;
                 selectedItem = objectHit.transform.gameObject;
 
-                camScript.ResetCamera
-                    (Quaternion.LookRotation(cam.transform.position - vectorHit.position));
-                //cam.transform.LookAt(vectorHit.position);
+                //camScript.ResetCamera
+                    //(Quaternion.LookRotation(cam.transform.position - vectorHit.position));
+                cam.transform.LookAt(vectorHit.position);
+
+                ui.ShowUI();
 
                 camScript.ResetPrevVector();
             }
+        }
+        void DeSelect()
+        {
+            
+            selectedItem = null;
+
+            ui.HideUI();
         }
     }
 }

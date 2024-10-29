@@ -1,24 +1,50 @@
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace BodySystem
 {
     public class UI : MonoBehaviour
     {
-        [SerializeField] Text text;
+        public TMP_Text header;
+        [SerializeField] TMP_Text body;
+        [SerializeField] GameObject panel;
         User userScript;
 
-        void GetFunctionInfo()
+        private void Start()
         {
-            text.text = GetComponent().function;
+            userScript = FindObjectOfType<User>();
+            HideUI();
+
+            //MODIFY THIS LATER, KEPT FOR TEST
+            body.text = "";
         }
-        void GetStructureInfo()
+        public void GetFunctionInfo()
         {
-            text.text = GetComponent().structure;
+            body.text = GetComponent().function;
         }
-        void GetComponentsInfo()
+        public void GetStructureInfo()
         {
-            text.text = GetComponent().components;
+            body.text = GetComponent().structure;
+        }
+        public void GetComponentsInfo()
+        {
+            body.text = GetComponent().components;
+        }
+        public void GetName()
+        {
+            header.text = GetComponent().partName;
+        }
+        public void HideUI()
+        {
+            body.text = "";
+            panel.SetActive(false);
+        }
+        public void ShowUI()
+        {
+            GetName();
+            panel.SetActive(true);
         }
 
         Component GetComponent()
