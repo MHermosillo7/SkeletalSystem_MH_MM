@@ -1,0 +1,31 @@
+// Camera:
+
+/*  GameObject target;
+    Vector3 mousePos;
+    Vector3 allOne = new Vector3(1, 1, 1);*/
+
+/*void MoveCamera()
+{
+    Vector3 mouseDir = mousePos - Input.mousePosition;
+
+    float angle = Vector3.Angle(mouseDir, mousePos) * rotateSpeed;
+
+    transform.RotateAround(target.transform.position,
+        allOne, angle);
+}
+
+void MoveCamera()
+{
+    transform.RotateAround
+        (target.transform.position, Vector3.up, horizontalInput);
+    transform.RotateAround
+        (target.transform.position, Vector3.right, verticalInput);
+}*/
+
+/*void MoveCamera()
+{
+    transform.RotateAround(parentTrans.position, transform.right,
+        -verticalInput);
+    transform.RotateAround(parentTrans.position, transform.up,
+        horizontalInput);
+}*/
