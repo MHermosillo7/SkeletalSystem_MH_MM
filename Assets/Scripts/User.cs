@@ -38,20 +38,37 @@ namespace BodySystem
 
             if (Physics.Raycast(ray, out objectHit))
             {
-                Transform vectorHit = objectHit.transform.GetChild(0);
 
-                camScript.vectorTrans = vectorHit;
-                cam.transform.parent = vectorHit;
-                camScript.prevVector = vectorHit.gameObject;
-                selectedItem = objectHit.transform.gameObject;
 
-                //camScript.ResetCamera
+                if (selectedItem == objectHit.transform.gameObject)
+                {
+
+                    ui.ShowUI();
+                }
+
+                //Else object hit is another object
+                else
+                {
+                    //Reset vector rotation
+                    camScript.ResetVector();
+
+                    //Get child (vector) inside object hit
+                    Transform vectorHit = objectHit.transform.GetChild(0);
+
+                    //Store vectorHit's transform as camera script's vector transform
+                    camScript.vectorTrans = vectorHit;
+
+                    //Make new vector the camera's parent
+                    cam.transform.parent = vectorHit;
+
+                    selectedItem = objectHit.transform.gameObject;
+
+                    //camScript.ResetCamera
                     //(Quaternion.LookRotation(cam.transform.position - vectorHit.position));
-                cam.transform.LookAt(vectorHit.position);
+/*
+                    vectorHit.rotation = LookAway(vectorHit, cam.gameObject);*/
+                }
 
-                ui.ShowUI();
-
-                camScript.ResetPrevVector();
             }
         }
         void DeSelect()
@@ -60,6 +77,13 @@ namespace BodySystem
             selectedItem = null;
 
             ui.HideUI();
+        }
+
+        Quaternion LookAway(Transform obj, GameObject target)
+        {
+            Transform transform = obj;
+            transform.LookAt(target.transform.position);
+            return Quaternion.Inverse(transform.rotation);
         }
     }
 }

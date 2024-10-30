@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 namespace BodySystem
 {
@@ -11,13 +12,12 @@ namespace BodySystem
         int zoomSpeed = 600;
         int slideSpeed = 200;
 
-        float rotateProgress = 0;
-        float rotateTime = 1;
+        float progress = 0;
+        float endTime = 1;
         float rotatePerc;
 
         GameObject vector;
         public Transform vectorTrans;
-        public GameObject prevVector;
 
         Quaternion startQuaternion;
 
@@ -26,7 +26,6 @@ namespace BodySystem
         {
             vector = GameObject.FindWithTag("MainPivot");
             vectorTrans = vector.transform;
-            prevVector = vector;
             startQuaternion = transform.rotation;
         }
 
@@ -50,6 +49,7 @@ namespace BodySystem
             }
         }
 
+
         void MoveCamera()
         {
             vectorTrans.Rotate
@@ -58,13 +58,14 @@ namespace BodySystem
                 (Vector3.up, horizontalInput, Space.World);
         }
 
+        
+
 
         void Zoom()
         {
             transform.Translate(Vector3.forward * GetInput("Scroll Wheel", zoomSpeed));
         }
 
-        //WORK IN PROGRESS
         void Slide()
         {
             transform.Translate(Vector3.up * -GetInput("Mouse Y", slideSpeed));
@@ -78,22 +79,35 @@ namespace BodySystem
             return input;
         }
 
-        public void ResetCamera(Quaternion targetQuaternion)
+        //WORK IN PROGRESS
+        public IEnumerator CenterCameraPos(Quaternion targetQuaternion)
         {
-            while(rotateProgress > rotateTime)
+            while (progress < endTime)
             {
-                rotatePerc = rotateProgress / rotateTime;
+                transform.position =
+                    Vector3.Slerp(transform.position, 
+                        new Vector3(vectorTrans.position.x, vectorTrans.position.y, transform.position.z),
+                        endTime);
+                progress += Time.deltaTime;
 
-                transform.rotation =
-                    Quaternion.Slerp(transform.rotation, targetQuaternion, rotatePerc * Time.deltaTime);
-                rotateProgress += Time.deltaTime;
+                yield return null;
             }
-            rotateProgress = 0;
+            progress = 0;
         }
 
-        public void ResetPrevVector()
+        public void ResetVector()
         {
-            prevVector.transform.rotation = new Quaternion(0, 0, 0, 0);
+            vectorTrans.rotation = new Quaternion(0, 0, 0, 0);
         }
+
+        public void SLerpRotation(GameObject obj, Quaternion start, Quaternion end)
+        {
+            
+        }
+        public void SLerpRotation(Transform trans)
+        {
+            
+        }
+
     }
 }
