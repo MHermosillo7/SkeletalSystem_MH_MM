@@ -1,7 +1,5 @@
-using UnityEngine.UI;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using TMPro;
 
 namespace BodySystem
 {
@@ -9,7 +7,7 @@ namespace BodySystem
     {
         public TMP_Text header;
         [SerializeField] TMP_Text body;
-        [SerializeField] GameObject panel;
+        public GameObject panel;
         User userScript;
 
         private void Start()
@@ -44,6 +42,7 @@ namespace BodySystem
         public void ShowUI()
         {
             GetName();
+            panel.transform.position = Input.mousePosition;
             panel.SetActive(true);
         }
 

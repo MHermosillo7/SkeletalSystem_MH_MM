@@ -1,18 +1,21 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Component : MonoBehaviour
+namespace BodySystem
 {
-    public string partName;
-    public string function;
-    public string structure;
-    public string components;
-
-    private void Start()
+    public class Component : MonoBehaviour
     {
-        if(partName == "")
+        public string partName;
+        public string function;
+        public string structure;
+        public string components;
+
+        private void Start()
         {
-            partName = this.name;
+            if (partName == "")
+            {
+                partName = this.name;
+            }
         }
     }
 }

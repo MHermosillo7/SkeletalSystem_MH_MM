@@ -1,4 +1,5 @@
 using UnityEngine;
+using Unity.UI;
 
 namespace BodySystem
 {
@@ -7,7 +8,10 @@ namespace BodySystem
         Camera cam;
         CameraScript camScript;
         UI ui;
+
         public GameObject selectedItem;
+
+        [SerializeField] LayerMask ignoreLayer;
 
         // Start is called before the first frame update
         void Start()
@@ -15,7 +19,6 @@ namespace BodySystem
             cam = FindObjectOfType<Camera>();
             camScript = FindObjectOfType<CameraScript>();
             ui = FindObjectOfType<UI>();
-            selectedItem = GameObject.FindGameObjectWithTag("Player");
         }
 
         // Update is called once per frame
@@ -38,11 +41,8 @@ namespace BodySystem
 
             if (Physics.Raycast(ray, out objectHit))
             {
-
-
                 if (selectedItem == objectHit.transform.gameObject)
                 {
-
                     ui.ShowUI();
                 }
 
@@ -50,7 +50,6 @@ namespace BodySystem
                 else
                 {
                     //Reset vector rotation
-                    camScript.ResetVector();
 
                     //Get child (vector) inside object hit
                     Transform vectorHit = objectHit.transform.GetChild(0);
@@ -61,21 +60,23 @@ namespace BodySystem
                     //Make new vector the camera's parent
                     cam.transform.parent = vectorHit;
 
+                    camScript.ResetPrevVector();
                     selectedItem = objectHit.transform.gameObject;
 
-                    //camScript.ResetCamera
-                    //(Quaternion.LookRotation(cam.transform.position - vectorHit.position));
-/*
-                    vectorHit.rotation = LookAway(vectorHit, cam.gameObject);*/
+                    camScript.cameraCanMove = false;
+                    StartCoroutine(camScript.CenterCameraRot());
+                    StartCoroutine(camScript.CenterCameraPos());
                 }
-
             }
+            //Work in Progress
+            else if (objectHit.transform.gameObject.layer != ignoreLayer)
+            {
+                DeSelect();
+            }
+
         }
         void DeSelect()
         {
-            
-            selectedItem = null;
-
             ui.HideUI();
         }
 
@@ -84,6 +85,10 @@ namespace BodySystem
             Transform transform = obj;
             transform.LookAt(target.transform.position);
             return Quaternion.Inverse(transform.rotation);
+        }
+        void MovePanel()
+        {
+            
         }
     }
 }

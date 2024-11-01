@@ -1,5 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using System.Threading;
+using System;
+using UnityEditor;
 
 namespace BodySystem
 {
@@ -9,61 +12,99 @@ namespace BodySystem
         float verticalInput;
 
         int rotateSpeed = 750;
-        int zoomSpeed = 600;
-        int slideSpeed = 200;
+        int slideSpeed = 100;
+        float zoomSpeed = 1.5f;
 
-        float progress = 0;
+        float rotProgress = 0;
+        float posProgress = 0;
         float endTime = 1;
-        float rotatePerc;
 
         GameObject vector;
         public Transform vectorTrans;
+        Transform prevVectorTrans;
 
-        Quaternion startQuaternion;
+        public bool cameraCanMove = true;
 
         // Start is called before the first frame update
         void Start()
         {
             vector = GameObject.FindWithTag("MainPivot");
             vectorTrans = vector.transform;
-            startQuaternion = transform.rotation;
+            prevVectorTrans = vectorTrans;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetMouseButton(2))
+            if (cameraCanMove)
             {
-                horizontalInput = GetInput("Mouse X", rotateSpeed);
-                verticalInput = GetInput("Mouse Y", rotateSpeed);
+                if (Input.GetMouseButton(2))
+                {
+                    horizontalInput = GetInput("Mouse X", rotateSpeed);
+                    verticalInput = GetInput("Mouse Y", rotateSpeed);
 
-                MoveCamera();
+                    MoveCamera();
+                }
+
+                ZoomA();
+
+                //It is using Left Control and Right Mouse Click (NOT LEFT)
+                if (Input.GetMouseButton(1) && Input.GetKey(KeyCode.LeftControl))
+                {
+                    Slide();
+                }
             }
 
-            Zoom();
-
-            //It is using Left Control and Right Mouse Click (NOT LEFT)
-            if (Input.GetMouseButton(1) && Input.GetKey(KeyCode.LeftControl))
+            else
             {
-                Slide();
+                if(rotProgress == 0 && posProgress == 0)
+                {
+                    cameraCanMove = true;
+                }
+                else
+                {
+                    Console.WriteLine("Wait! Modifying camera position...");
+                }
             }
         }
 
-
+        //Rotate camera around object in all axis (almost)
         void MoveCamera()
         {
-            vectorTrans.Rotate
-                (Vector3.right, verticalInput * -1);
-            vectorTrans.Rotate
-                (Vector3.up, horizontalInput, Space.World);
+            //Rotate vertically
+            vectorTrans.Rotate(Vector3.right, verticalInput * -1);
+
+            //Rotate horizontally
+            vectorTrans.Rotate(Vector3.up, horizontalInput, Space.World);
         }
-
-        
-
-
-        void Zoom()
+/*
+        //Zoom in constant amounts (supposedly)
+        void ZoomC()
         {
-            transform.Translate(Vector3.forward * GetInput("Scroll Wheel", zoomSpeed));
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+
+            if (Input.GetAxis("Scroll Wheel") > 0)
+            {
+                transform.Translate(ray.direction + Vector3.forward * zoomSpeed);
+            }
+
+            else if (Input.GetAxis("Scroll Wheel") < 0)
+            {
+                transform.Translate(ray.direction* -1 + Vector3.forward * -zoomSpeed);
+            }
+        }*/
+        void ZoomA()
+        {
+            if (Input.GetAxis("Scroll Wheel") > 0)
+            {
+                transform.Translate(Vector3.forward * zoomSpeed);
+            }
+
+            else if (Input.GetAxis("Scroll Wheel") < 0)
+            {
+                transform.Translate(Vector3.forward * -zoomSpeed);
+            }
         }
 
         void Slide()
@@ -72,42 +113,46 @@ namespace BodySystem
             transform.Translate(Vector3.right * -GetInput("Mouse X", slideSpeed));
         }
 
-
         float GetInput(string axis, int speed)
         {
             float input = Input.GetAxis(axis) * speed * Time.deltaTime;
             return input;
         }
 
-        //WORK IN PROGRESS
-        public IEnumerator CenterCameraPos(Quaternion targetQuaternion)
+        public IEnumerator CenterCameraPos()
         {
-            while (progress < endTime)
+            while (posProgress < endTime)
             {
                 transform.position =
                     Vector3.Slerp(transform.position, 
-                        new Vector3(vectorTrans.position.x, vectorTrans.position.y, transform.position.z),
-                        endTime);
-                progress += Time.deltaTime;
+                        new Vector3(vectorTrans.position.x, vectorTrans.position.y, -8f),
+                        posProgress);
+                posProgress += Time.deltaTime;
 
                 yield return null;
             }
-            progress = 0;
+            transform.position = new Vector3(vectorTrans.position.x, vectorTrans.position.y, -8f);
+
+            posProgress = 0;
         }
 
-        public void ResetVector()
+        public IEnumerator CenterCameraRot()
         {
-            vectorTrans.rotation = new Quaternion(0, 0, 0, 0);
-        }
+            while (rotProgress < endTime)
+            {
+                float t = rotProgress / endTime;
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, rotProgress);
+                rotProgress += Time.deltaTime;
 
-        public void SLerpRotation(GameObject obj, Quaternion start, Quaternion end)
-        {
-            
+                yield return null;
+            }
+            rotProgress = 0;
         }
-        public void SLerpRotation(Transform trans)
+        public void ResetPrevVector()
         {
-            
-        }
+            prevVectorTrans.rotation = Quaternion.identity;
 
+            prevVectorTrans = vectorTrans;
+        }
     }
 }
