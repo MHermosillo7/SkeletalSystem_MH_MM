@@ -1,5 +1,7 @@
 using UnityEngine;
 using Unity.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace BodySystem
 {
@@ -24,6 +26,10 @@ namespace BodySystem
         // Update is called once per frame
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                Test();
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 Select();
@@ -39,7 +45,7 @@ namespace BodySystem
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit objectHit;
 
-            if (Physics.Raycast(ray, out objectHit))
+            if (Physics.Raycast(ray, out objectHit, ignoreLayer))
             {
                 if (selectedItem == objectHit.transform.gameObject)
                 {
@@ -49,8 +55,7 @@ namespace BodySystem
                 //Else object hit is another object
                 else
                 {
-                    //Reset vector rotation
-
+                    ui.HideUI();
                     //Get child (vector) inside object hit
                     Transform vectorHit = objectHit.transform.GetChild(0);
 
@@ -69,7 +74,7 @@ namespace BodySystem
                 }
             }
             //Work in Progress
-            else if (objectHit.transform.gameObject.layer != ignoreLayer)
+            else if(!EventSystem.current.IsPointerOverGameObject())
             {
                 DeSelect();
             }
@@ -79,16 +84,9 @@ namespace BodySystem
         {
             ui.HideUI();
         }
+        void Test()
+        {
 
-        Quaternion LookAway(Transform obj, GameObject target)
-        {
-            Transform transform = obj;
-            transform.LookAt(target.transform.position);
-            return Quaternion.Inverse(transform.rotation);
-        }
-        void MovePanel()
-        {
-            
         }
     }
 }

@@ -29,3 +29,12 @@ void MoveCamera()
     transform.RotateAround(parentTrans.position, transform.up,
         horizontalInput);
 }*/
+
+/*using UnityEngine;
+
+Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+RaycastHit hit;
+if (Physics.Raycast(ray, out hit))
+{
+    print(hit.transform.gameObject.name);
+}*/
