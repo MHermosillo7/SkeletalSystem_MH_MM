@@ -6,7 +6,7 @@ using UnityEditor;
 
 namespace BodySystem
 {
-    public class CameraScript : MonoBehaviour
+    public class CameraMovement : MonoBehaviour
     {
         float horizontalInput;
         float verticalInput;
@@ -18,12 +18,13 @@ namespace BodySystem
         float rotProgress = 0;
         float posProgress = 0;
         float endTime = 1;
+        [Range(0, 1)] [SerializeField] float rate = .5f;
 
         GameObject vector;
         public Transform vectorTrans;
         Transform prevVectorTrans;
 
-        public bool cameraCanMove = true;
+        CameraStatus camStatus;
 
         // Start is called before the first frame update
         void Start()
@@ -31,12 +32,14 @@ namespace BodySystem
             vector = GameObject.FindWithTag("MainPivot");
             vectorTrans = vector.transform;
             prevVectorTrans = vectorTrans;
+
+            camStatus = FindObjectOfType<CameraStatus>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (cameraCanMove)
+            if (camStatus.cameraCanMove)
             {
                 if (Input.GetMouseButton(2))
                 {
@@ -59,11 +62,7 @@ namespace BodySystem
             {
                 if(rotProgress == 0 && posProgress == 0)
                 {
-                    cameraCanMove = true;
-                }
-                else
-                {
-                    Console.WriteLine("Wait! Modifying camera position...");
+                    camStatus.UpdateCamStatus(true);
                 }
             }
         }
@@ -77,23 +76,7 @@ namespace BodySystem
             //Rotate horizontally
             vectorTrans.Rotate(Vector3.up, horizontalInput, Space.World);
         }
-/*
-        //Zoom in constant amounts (supposedly)
-        void ZoomC()
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-
-            if (Input.GetAxis("Scroll Wheel") > 0)
-            {
-                transform.Translate(ray.direction + Vector3.forward * zoomSpeed);
-            }
-
-            else if (Input.GetAxis("Scroll Wheel") < 0)
-            {
-                transform.Translate(ray.direction* -1 + Vector3.forward * -zoomSpeed);
-            }
-        }*/
         void ZoomA()
         {
             if (Input.GetAxis("Scroll Wheel") > 0)
@@ -127,7 +110,7 @@ namespace BodySystem
                     Vector3.Slerp(transform.position, 
                         new Vector3(vectorTrans.position.x, vectorTrans.position.y, -8f),
                         posProgress);
-                posProgress += Time.deltaTime;
+                posProgress += Time.deltaTime * rate;
 
                 yield return null;
             }
@@ -141,8 +124,10 @@ namespace BodySystem
             while (rotProgress < endTime)
             {
                 float t = rotProgress / endTime;
-                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.identity, rotProgress);
-                rotProgress += Time.deltaTime;
+                transform.rotation = 
+                    Quaternion.Slerp(transform.rotation, Quaternion.identity, rotProgress);
+
+                rotProgress += Time.deltaTime * rate;
 
                 yield return null;
             }

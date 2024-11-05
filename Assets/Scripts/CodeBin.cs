@@ -38,3 +38,21 @@ if (Physics.Raycast(ray, out hit))
 {
     print(hit.transform.gameObject.name);
 }*/
+
+/*
+//Zoom in constant amounts (supposedly)
+void ZoomC()
+{
+    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+
+    if (Input.GetAxis("Scroll Wheel") > 0)
+    {
+        transform.Translate(ray.direction + Vector3.forward * zoomSpeed);
+    }
+
+    else if (Input.GetAxis("Scroll Wheel") < 0)
+    {
+        transform.Translate(ray.direction * -1 + Vector3.forward * -zoomSpeed);
+    }
+}*/

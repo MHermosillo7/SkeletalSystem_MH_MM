@@ -1,17 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
-using UnityEngine.UIElements;
 
 namespace BodySystem
 {
     public class UI : MonoBehaviour
     {
-        public GameObject uiPivot;
-        public Text header;
+        [SerializeField] GameObject uiPivot;
+        [SerializeField] Button nameButton;
+        [SerializeField] Text nameText;
         [SerializeField] GameObject buttons;
-        [SerializeField] GameObject panel;
-        bool panelEnabled;
+        [SerializeField] Image image;
         [SerializeField] Text body;
 
         User userScript;
@@ -19,44 +18,42 @@ namespace BodySystem
         private void Start()
         {
             userScript = FindObjectOfType<User>();
-            HideUI();
-            panelEnabled = false;
 
-            //MODIFY THIS LATER, KEPT FOR TEST
-            body.text = "";
+            HideUI();
         }
         public void GetFunctionInfo()
         {
-            UpdatePanel();
+            EnablePanel();
             body.text = GetComponent().function;
         }
         public void GetStructureInfo()
         {
-            UpdatePanel();
+            EnablePanel();
             body.text = GetComponent().structure;
         }
         public void GetComponentsInfo()
         {
-            UpdatePanel();
+            EnablePanel();
             body.text = GetComponent().components;
         }
         public void GetName()
         {
-            header.text = GetComponent().partName;
+            nameText.text = GetComponent().partName;
         }
         public void HideUI()
         {
             body.text = "";
-            UpdatePanel();
-            buttons.SetActive(true);
-;           uiPivot.SetActive(false);
+            buttons.SetActive(false);
+            image.gameObject.SetActive(false);
+            nameButton.gameObject.SetActive(false);
 
         }
         public void ShowUI()
         {
             GetName();
             uiPivot.transform.position = Input.mousePosition;
-            uiPivot.SetActive(true);
+            nameButton.gameObject.SetActive(true);
+            print("hello");
         }
 
         Component GetComponent()
@@ -68,17 +65,11 @@ namespace BodySystem
         {
             buttons.SetActive(true);
         }
-        void UpdatePanel()
+        void EnablePanel()
         {
-            if (!panelEnabled)
+            if (image.IsActive() == false)
             {
-                panel.SetActive(true);
-                panelEnabled = true;
-            }
-            else
-            {
-                panel.SetActive(false);
-                panelEnabled = false;
+                image.gameObject.SetActive(true);
             }
         }
     }

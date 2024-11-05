@@ -8,7 +8,8 @@ namespace BodySystem
     public class User : MonoBehaviour
     {
         Camera cam;
-        CameraScript camScript;
+        CameraMovement camMov;
+        CameraStatus camStatus;
         UI ui;
 
         public GameObject selectedItem;
@@ -19,7 +20,8 @@ namespace BodySystem
         void Start()
         {
             cam = FindObjectOfType<Camera>();
-            camScript = FindObjectOfType<CameraScript>();
+            camMov = FindObjectOfType<CameraMovement>();
+            camStatus = FindObjectOfType<CameraStatus>();
             ui = FindObjectOfType<UI>();
         }
 
@@ -42,6 +44,15 @@ namespace BodySystem
 
         void Select()
         {
+            /*  Do not continue method if cursor is over a UI element
+                Or if previous camera mov hasn't finished
+                (If coroutines are called again before previous processes are
+                finished, the two clash and result in unexpected camera transformations) */
+            if (EventSystem.current.IsPointerOverGameObject() || !camStatus.cameraCanMove)
+            {
+                return;
+            }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit objectHit;
 
@@ -56,25 +67,25 @@ namespace BodySystem
                 else
                 {
                     ui.HideUI();
+
                     //Get child (vector) inside object hit
                     Transform vectorHit = objectHit.transform.GetChild(0);
 
                     //Store vectorHit's transform as camera script's vector transform
-                    camScript.vectorTrans = vectorHit;
+                    camMov.vectorTrans = vectorHit;
 
                     //Make new vector the camera's parent
                     cam.transform.parent = vectorHit;
 
-                    camScript.ResetPrevVector();
+                    camMov.ResetPrevVector();
                     selectedItem = objectHit.transform.gameObject;
 
-                    camScript.cameraCanMove = false;
-                    StartCoroutine(camScript.CenterCameraRot());
-                    StartCoroutine(camScript.CenterCameraPos());
+                    camStatus.UpdateCamStatus(false);
+                    StartCoroutine(camMov.CenterCameraRot());
+                    StartCoroutine(camMov.CenterCameraPos());
                 }
             }
-            //Work in Progress
-            else if(!EventSystem.current.IsPointerOverGameObject())
+            else
             {
                 DeSelect();
             }
@@ -84,6 +95,7 @@ namespace BodySystem
         {
             ui.HideUI();
         }
+
         void Test()
         {
 
