@@ -46,7 +46,7 @@ namespace BodySystem
                     horizontalInput = GetInput("Mouse X", rotateSpeed);
                     verticalInput = GetInput("Mouse Y", rotateSpeed);
 
-                    MoveCamera();
+                    Rotate();
                 }
 
                 ZoomA();
@@ -68,7 +68,7 @@ namespace BodySystem
         }
 
         //Rotate camera around object in all axis (almost)
-        void MoveCamera()
+        void Rotate()
         {
             //Rotate vertically
             vectorTrans.Rotate(Vector3.right, verticalInput * -1);
@@ -102,7 +102,27 @@ namespace BodySystem
             return input;
         }
 
-        public IEnumerator CenterCameraPos()
+        public void CenterCamera(Transform newVector)
+        {
+            if (camStatus.cameraCanMove)
+            {
+                //Locks user driven camera movement
+                camStatus.UpdateCamStatus(false);
+
+                //Store vectorHit's transform as camera script's vector transform
+                vectorTrans = newVector;
+
+                //Make new vector the camera's parent
+                transform.parent = newVector;
+
+                ResetPrevVector();
+
+                StartCoroutine(CenterCameraPos());
+                StartCoroutine(CenterCameraRot());
+            }
+        }
+
+        IEnumerator CenterCameraPos()
         {
             while (posProgress < endTime)
             {
@@ -110,6 +130,7 @@ namespace BodySystem
                     Vector3.Slerp(transform.position, 
                         new Vector3(vectorTrans.position.x, vectorTrans.position.y, -8f),
                         posProgress);
+
                 posProgress += Time.deltaTime * rate;
 
                 yield return null;
@@ -119,11 +140,10 @@ namespace BodySystem
             posProgress = 0;
         }
 
-        public IEnumerator CenterCameraRot()
+        IEnumerator CenterCameraRot()
         {
             while (rotProgress < endTime)
             {
-                float t = rotProgress / endTime;
                 transform.rotation = 
                     Quaternion.Slerp(transform.rotation, Quaternion.identity, rotProgress);
 

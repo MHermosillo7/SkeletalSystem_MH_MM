@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pivot
   - MainPivot
+  - Bone
   layers:
   - Default
   - TransparentFX

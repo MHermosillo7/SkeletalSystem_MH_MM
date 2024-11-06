@@ -71,18 +71,10 @@ namespace BodySystem
                     //Get child (vector) inside object hit
                     Transform vectorHit = objectHit.transform.GetChild(0);
 
-                    //Store vectorHit's transform as camera script's vector transform
-                    camMov.vectorTrans = vectorHit;
-
-                    //Make new vector the camera's parent
-                    cam.transform.parent = vectorHit;
-
-                    camMov.ResetPrevVector();
                     selectedItem = objectHit.transform.gameObject;
 
-                    camStatus.UpdateCamStatus(false);
-                    StartCoroutine(camMov.CenterCameraRot());
-                    StartCoroutine(camMov.CenterCameraPos());
+                    camMov.CenterCamera(vectorHit);
+
                 }
             }
             else
