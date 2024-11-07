@@ -28,19 +28,19 @@ namespace BodySystem
 
         void FilterByType(string type, bool activate)
         {
-            var filteredBones = boneComponents.Where(b => b.boneType.ToString().ToLower() != type);
-
-            foreach (var bone in filteredBones)
-            {
-                bone.gameObject.SetActive(activate);
-            }
-
             //Center camera around main scene pivot 
             //Or could probably implement so that it center first object in list of non-filtered bones
 
             //Error: Unity cannot find inactive game objects.
             //(Modify hierarchy to have an independent main pivot)
-            camMov.CenterCamera(GameObject.FindGameObjectWithTag("MainPivot").transform);
+            camMov.CenterCamera(GameObject.FindGameObjectWithTag("Origin").transform);
+
+            var filteredBones = boneComponents.Where(b => b.boneType.ToString().ToLower() == type);
+
+            foreach (var bone in filteredBones)
+            {
+                bone.gameObject.SetActive(activate);
+            }
         }
         public void FilterLong()
         {

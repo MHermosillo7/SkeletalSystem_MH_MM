@@ -10,7 +10,7 @@ namespace BodySystem
         Camera cam;
         CameraMovement camMov;
         CameraStatus camStatus;
-        UI ui;
+        InfoPopUI infoUI;
 
         public GameObject selectedItem;
 
@@ -22,7 +22,7 @@ namespace BodySystem
             cam = FindObjectOfType<Camera>();
             camMov = FindObjectOfType<CameraMovement>();
             camStatus = FindObjectOfType<CameraStatus>();
-            ui = FindObjectOfType<UI>();
+            infoUI = FindObjectOfType<InfoPopUI>();
         }
 
         // Update is called once per frame
@@ -46,7 +46,7 @@ namespace BodySystem
         {
             /*  Do not continue method if cursor is over a UI element
                 Or if previous camera mov hasn't finished
-                (If coroutines are called again before previous processes are
+                (If Center Camera is called again before previous processes are
                 finished, the two clash and result in unexpected camera transformations) */
             if (EventSystem.current.IsPointerOverGameObject() || !camStatus.cameraCanMove)
             {
@@ -60,13 +60,13 @@ namespace BodySystem
             {
                 if (selectedItem == objectHit.transform.gameObject)
                 {
-                    ui.ShowUI();
+                    infoUI.ShowUI();
                 }
 
                 //Else object hit is another object
                 else
                 {
-                    ui.HideUI();
+                    infoUI.HideUI();
 
                     //Get child (vector) inside object hit
                     Transform vectorHit = objectHit.transform.GetChild(0);
@@ -85,7 +85,7 @@ namespace BodySystem
         }
         void DeSelect()
         {
-            ui.HideUI();
+            infoUI.HideUI();
         }
 
         void Test()

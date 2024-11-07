@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BodySystem
 {
-    public class UI : MonoBehaviour
+    public class InfoPopUI : MonoBehaviour
     {
         [SerializeField] GameObject uiPivot;
         [SerializeField] Button nameButton;

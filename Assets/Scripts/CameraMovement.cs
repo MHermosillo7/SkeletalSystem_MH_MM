@@ -29,7 +29,7 @@ namespace BodySystem
         // Start is called before the first frame update
         void Start()
         {
-            vector = GameObject.FindWithTag("MainPivot");
+            vector = GameObject.FindWithTag("Origin");
             vectorTrans = vector.transform;
             prevVectorTrans = vectorTrans;
 
@@ -121,7 +121,8 @@ namespace BodySystem
                 StartCoroutine(CenterCameraRot());
             }
         }
-
+        /* Note to self: Consider using Lerp or SmoothDamp 
+           because movement becomes too harsh even when at low movement rate*/
         IEnumerator CenterCameraPos()
         {
             while (posProgress < endTime)
