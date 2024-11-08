@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+using BodySystem;
+using System;
 using UnityEngine;
 
 public class FilterUI : MonoBehaviour
 {
+    [SerializeField] GameObject panel;
+
+    InfoUI infoUI;
     // Start is called before the first frame update
     void Start()
     {
-        
+        infoUI = FindObjectOfType<InfoUI>();
+        if (panel)
+        {
+            HideUI();
+        }
+        else Console.Error.WriteLine("Panel has not been selected");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void HideUI()
     {
-        
+        panel.SetActive(false);
+    }
+    public void ShowUI()
+    {
+        infoUI.HideUI();
+        panel.SetActive(true);
     }
 }

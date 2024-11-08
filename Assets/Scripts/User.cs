@@ -1,7 +1,5 @@
 using UnityEngine;
-using Unity.UI;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace BodySystem
 {
@@ -10,19 +8,26 @@ namespace BodySystem
         Camera cam;
         CameraMovement camMov;
         CameraStatus camStatus;
-        InfoPopUI infoUI;
+
+        InfoUI infoUI;
+        FilterUI filterUI;
 
         public GameObject selectedItem;
+        [SerializeField] GameObject zoomedBone;
+        Component selectedItemComp;
 
         [SerializeField] LayerMask ignoreLayer;
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
             cam = FindObjectOfType<Camera>();
+
             camMov = FindObjectOfType<CameraMovement>();
             camStatus = FindObjectOfType<CameraStatus>();
-            infoUI = FindObjectOfType<InfoPopUI>();
+
+            infoUI = FindObjectOfType<InfoUI>();
+            filterUI = FindObjectOfType<FilterUI>();
         }
 
         // Update is called once per frame
@@ -61,19 +66,23 @@ namespace BodySystem
                 if (selectedItem == objectHit.transform.gameObject)
                 {
                     infoUI.ShowUI();
+                    filterUI.HideUI(); 
                 }
 
                 //Else object hit is another object
                 else
                 {
-                    infoUI.HideUI();
+                    DeSelect();
+
+                    selectedItemComp = objectHit.transform.GetComponent<Component>();
 
                     //Get child (vector) inside object hit
-                    Transform vectorHit = objectHit.transform.GetChild(0);
+                    Transform vectorHit = selectedItemComp.vector;
 
                     selectedItem = objectHit.transform.gameObject;
 
                     camMov.CenterCamera(vectorHit);
+                    
 
                 }
             }
@@ -86,11 +95,16 @@ namespace BodySystem
         void DeSelect()
         {
             infoUI.HideUI();
+            filterUI.HideUI();
+        }
+        void HideParent()
+        {
+            
         }
 
         void Test()
         {
-
+            selectedItem.GetComponent<Component>().ZoomIn();
         }
     }
 }

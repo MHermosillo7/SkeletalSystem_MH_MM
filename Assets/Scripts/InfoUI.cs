@@ -1,10 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 namespace BodySystem
 {
-    public class InfoPopUI : MonoBehaviour
+    public class InfoUI : MonoBehaviour
     {
         [SerializeField] GameObject uiPivot;
         [SerializeField] Button nameButton;
