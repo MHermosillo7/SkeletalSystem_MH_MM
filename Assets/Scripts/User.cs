@@ -11,10 +11,13 @@ namespace BodySystem
 
         InfoUI infoUI;
         FilterUI filterUI;
+        ZoomUI zoomUI;
 
         public GameObject selectedItem;
         [SerializeField] GameObject zoomedBone;
         Component selectedItemComp;
+
+        Zoom selectedItemZoom;
 
         [SerializeField] LayerMask ignoreLayer;
 
@@ -33,10 +36,6 @@ namespace BodySystem
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                Test();
-            }
             if (Input.GetMouseButtonDown(0))
             {
                 Select();
@@ -74,16 +73,25 @@ namespace BodySystem
                 {
                     DeSelect();
 
+                    selectedItem = objectHit.transform.gameObject;
                     selectedItemComp = objectHit.transform.GetComponent<Component>();
 
-                    //Get child (vector) inside object hit
-                    Transform vectorHit = selectedItemComp.vector;
+                    if (IsDerivedBone())
+                    {
+                        camMov.CenterVector();
 
-                    selectedItem = objectHit.transform.gameObject;
+                        zoomUI.EnableButton(true);
+                    }
 
-                    camMov.CenterCamera(vectorHit);
-                    
+                    else
+                    {
+                        selectedItemZoom = objectHit.transform.GetComponent<Zoom>();
 
+                        //Get child (vector) inside object hit
+                        Transform vectorHit = selectedItem.transform.GetChild(0);
+
+                        camMov.CenterCamera(vectorHit);
+                    }
                 }
             }
             else
@@ -97,14 +105,18 @@ namespace BodySystem
             infoUI.HideUI();
             filterUI.HideUI();
         }
-        void HideParent()
+        bool IsDerivedBone()
         {
-            
+            return selectedItem.CompareTag("DerivedBone");
         }
 
-        void Test()
+        public void ZoomIn()
         {
-            selectedItem.GetComponent<Component>().ZoomIn();
+            selectedItemZoom.ZoomIn();
+        }
+        public void ZoomOut()
+        {
+            selectedItemZoom.ZoomOut();
         }
     }
 }

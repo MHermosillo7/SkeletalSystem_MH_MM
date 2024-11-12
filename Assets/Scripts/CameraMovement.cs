@@ -1,8 +1,6 @@
-using UnityEngine;
-using System.Collections;
-using System.Threading;
 using System;
-using UnityEditor;
+using System.Collections;
+using UnityEngine;
 
 namespace BodySystem
 {
@@ -118,9 +116,18 @@ namespace BodySystem
                 ResetPrevVector();
 
                 StartCoroutine(CenterCameraPos());
-                StartCoroutine(CenterCameraRot());
+                StartCoroutine(CenterRot(this.transform));
             }
         }
+
+        public void CenterVector()
+        {
+            //Locks user driven camera movement
+            camStatus.UpdateCamStatus(false);
+
+            CenterRot(vectorTrans);
+        }
+
         /* Note to self: Consider using Lerp or SmoothDamp 
            because movement becomes too harsh even when at low movement rate*/
         IEnumerator CenterCameraPos()
@@ -141,11 +148,11 @@ namespace BodySystem
             posProgress = 0;
         }
 
-        IEnumerator CenterCameraRot()
+        IEnumerator CenterRot(Transform trans)
         {
             while (rotProgress < endTime)
             {
-                transform.rotation = 
+                trans.rotation = 
                     Quaternion.Slerp(transform.rotation, Quaternion.identity, rotProgress);
 
                 rotProgress += Time.deltaTime * rate;

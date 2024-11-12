@@ -1,0 +1,88 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+namespace BodySystem
+{
+    public class Zoom : MonoBehaviour
+    {
+        Collider col;
+        Renderer rend;
+        Component comp;
+
+        List<GameObject> derivedBones = new List<GameObject>();
+        List<Renderer> derivedRends = new List<Renderer>();
+        List<Collider> derivedCols = new List<Collider>();
+        List<Component> derivedComps = new List<Component>();
+
+        // Start is called before the first frame update
+        void Awake()
+        {
+            col = this.GetComponent<Collider>();
+            rend = GetComponent<Renderer>();
+            comp = GetComponent<Component>();
+
+            foreach (Transform child in transform)
+            {
+                if (child.CompareTag("DerivedBone"))
+                {
+                    derivedBones.Add(child.gameObject);
+                    print("Hello");
+                }
+            }
+
+            derivedRends = derivedBones.Select(b => b.GetComponent<Renderer>()).ToList();
+            derivedCols = derivedBones.Select(b => b.GetComponent<Collider>()).ToList();
+            derivedComps = derivedBones.Select(b => b.GetComponent<Component>()).ToList();
+
+        }
+        private void Start()
+        {
+            EnableChildren(false);
+        }
+        //Zoom In/Out Functions
+        public void ZoomIn()
+        {
+            comp.ResetColor();
+
+            EnableParent(false);
+
+            EnableChildren(true);
+        }
+
+        public void ZoomOut()
+        {
+            EnableChildren(false);
+
+            EnableParent(true);
+        }
+
+        void EnableParent(bool enable)
+        {
+            col.enabled = enable;
+            rend.enabled = enable;
+        }
+
+        void EnableChildren(bool enable)
+        {
+            foreach(Component c in derivedComps)
+            {
+                if (!c.IsStartingColor())
+                {
+                    c.ResetColor();
+                }
+            }
+
+            foreach(Collider c in derivedCols)
+            {
+                c.enabled = enable;
+            }
+
+            foreach(Renderer r in derivedRends)
+            {
+                r.enabled = enable;
+            }
+        }
+    }
+}
