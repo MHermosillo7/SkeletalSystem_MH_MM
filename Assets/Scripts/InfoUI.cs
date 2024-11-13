@@ -45,21 +45,17 @@ namespace BodySystem
             buttons.SetActive(false);
             image.gameObject.SetActive(false);
             nameButton.gameObject.SetActive(false);
-
         }
         public void ShowUI()
         {
             GetName();
             uiPivot.transform.position = Input.mousePosition;
             nameButton.gameObject.SetActive(true);
-            print("hello");
         }
-
         Component GetComponent()
         {
             return userScript.selectedItem.GetComponent<Component>();
         }
-
         public void EnableButtons()
         {
             buttons.SetActive(true);

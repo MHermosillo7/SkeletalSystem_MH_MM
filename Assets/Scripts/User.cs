@@ -31,6 +31,12 @@ namespace BodySystem
 
             infoUI = FindObjectOfType<InfoUI>();
             filterUI = FindObjectOfType<FilterUI>();
+            zoomUI = FindObjectOfType<ZoomUI>();
+
+            if (!selectedItem)
+            {
+                zoomUI.HideUI();
+            }
         }
 
         // Update is called once per frame
@@ -52,7 +58,7 @@ namespace BodySystem
                 Or if previous camera mov hasn't finished
                 (If Center Camera is called again before previous processes are
                 finished, the two clash and result in unexpected camera transformations) */
-            if (EventSystem.current.IsPointerOverGameObject() || !camStatus.cameraCanMove)
+            if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;
             }
@@ -69,7 +75,7 @@ namespace BodySystem
                 }
 
                 //Else object hit is another object
-                else
+                else if (camStatus.cameraCanMove)
                 {
                     DeSelect();
 
@@ -78,19 +84,25 @@ namespace BodySystem
 
                     if (IsDerivedBone())
                     {
-                        camMov.CenterVector();
-
-                        zoomUI.EnableButton(true);
+                        infoUI.ShowUI();
+                        filterUI.HideUI();
                     }
 
                     else
                     {
+                        if (selectedItemZoom)
+                        {
+                            selectedItemZoom.ZoomOut();
+                        }
+
                         selectedItemZoom = objectHit.transform.GetComponent<Zoom>();
 
                         //Get child (vector) inside object hit
                         Transform vectorHit = selectedItem.transform.GetChild(0);
 
                         camMov.CenterCamera(vectorHit);
+
+                        zoomUI.ShowUI();
                     }
                 }
             }
@@ -113,10 +125,18 @@ namespace BodySystem
         public void ZoomIn()
         {
             selectedItemZoom.ZoomIn();
+
+            camMov.CenterVector();
+
+            infoUI.HideUI();
         }
         public void ZoomOut()
         {
             selectedItemZoom.ZoomOut();
+
+            camMov.CenterVector();
+
+            infoUI.HideUI();
         }
     }
 }

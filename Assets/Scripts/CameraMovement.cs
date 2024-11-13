@@ -9,9 +9,9 @@ namespace BodySystem
         float horizontalInput;
         float verticalInput;
 
-        int rotateSpeed = 750;
-        int slideSpeed = 100;
-        float zoomSpeed = 1.5f;
+        [SerializeField] int rotateSpeed = 750;
+        [SerializeField] int slideSpeed = 100;
+        [SerializeField] float zoomSpeed = 1.5f;
 
         float rotProgress = 0;
         float posProgress = 0;
@@ -19,10 +19,11 @@ namespace BodySystem
         [Range(0, 1)] [SerializeField] float rate = .5f;
 
         GameObject vector;
-        public Transform vectorTrans;
+        [SerializeField] Transform vectorTrans;
         Transform prevVectorTrans;
 
         CameraStatus camStatus;
+        [SerializeField] LayerMask ignoreLayer;
 
         // Start is called before the first frame update
         void Start()
@@ -79,7 +80,17 @@ namespace BodySystem
         {
             if (Input.GetAxis("Scroll Wheel") > 0)
             {
-                transform.Translate(Vector3.forward * zoomSpeed);
+                Ray ray = new Ray(transform.position, transform.forward);
+
+                if (Physics.Raycast(ray, 2f))
+                {
+                    return;
+                }
+
+                else
+                {
+                    transform.Translate(Vector3.forward * zoomSpeed);
+                }
             }
 
             else if (Input.GetAxis("Scroll Wheel") < 0)
@@ -125,7 +136,7 @@ namespace BodySystem
             //Locks user driven camera movement
             camStatus.UpdateCamStatus(false);
 
-            CenterRot(vectorTrans);
+            StartCoroutine(CenterRot(vectorTrans));
         }
 
         /* Note to self: Consider using Lerp or SmoothDamp 

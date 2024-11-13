@@ -28,7 +28,6 @@ namespace BodySystem
                 if (child.CompareTag("DerivedBone"))
                 {
                     derivedBones.Add(child.gameObject);
-                    print("Hello");
                 }
             }
 
@@ -44,7 +43,10 @@ namespace BodySystem
         //Zoom In/Out Functions
         public void ZoomIn()
         {
-            comp.ResetColor();
+            if (!comp.IsStartingColor())
+            {
+                comp.ResetColor();
+            }
 
             EnableParent(false);
 
