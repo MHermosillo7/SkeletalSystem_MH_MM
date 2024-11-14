@@ -65,6 +65,8 @@ namespace BodySystem
 
         public void ResetZoom()
         {
+            plusIsActive = false;
+
             if (!plusIsActive)
             {
                 ToggleIcon();
