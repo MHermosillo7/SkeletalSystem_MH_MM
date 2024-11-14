@@ -16,9 +16,9 @@ namespace BodySystem
 
         void Start()
         {
-            //EnableButton(false);
-
             user = FindObjectOfType<User>();
+
+            button.SetActive(false);
         }
         void ToggleIcon()
         {
@@ -38,14 +38,14 @@ namespace BodySystem
 
         public void ShowUI()
         {
-            button.SetActive(true);
+            if (!button.activeSelf)
+            {
+                button.SetActive(true);
+            }
 
             plusIsActive = false;
             ToggleIcon();
-        }
-        public void HideUI()
-        {
-            button.SetActive(false);
+            isZoomed = false;
         }
 
         public void Zoom()
@@ -63,17 +63,9 @@ namespace BodySystem
             ToggleIcon();
         }
 
-        public void ResetZoom()
+        public bool IsUIActive()
         {
-            plusIsActive = false;
-
-            if (!plusIsActive)
-            {
-                ToggleIcon();
-            }
-
-            button.SetActive(false);
-            isZoomed = false;
+            return button.activeSelf;
         }
     }
 }

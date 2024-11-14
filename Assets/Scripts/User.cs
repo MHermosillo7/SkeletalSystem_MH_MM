@@ -12,6 +12,7 @@ namespace BodySystem
         InfoUI infoUI;
         FilterUI filterUI;
         ZoomUI zoomUI;
+        HelpUI helpUI;
 
         public GameObject selectedItem;
         [SerializeField] GameObject zoomedBone;
@@ -32,11 +33,7 @@ namespace BodySystem
             infoUI = FindObjectOfType<InfoUI>();
             filterUI = FindObjectOfType<FilterUI>();
             zoomUI = FindObjectOfType<ZoomUI>();
-
-            if (!selectedItem)
-            {
-                zoomUI.HideUI();
-            }
+            helpUI = FindObjectOfType<HelpUI>();
         }
 
         // Update is called once per frame
@@ -70,8 +67,9 @@ namespace BodySystem
             {
                 if (selectedItem == objectHit.transform.gameObject)
                 {
+                    DeSelect();
+
                     infoUI.ShowUI();
-                    filterUI.HideUI(); 
                 }
 
                 //Else object hit is another object
@@ -85,16 +83,10 @@ namespace BodySystem
                     if (IsDerivedBone())
                     {
                         infoUI.ShowUI();
-                        filterUI.HideUI();
                     }
 
                     else
                     {
-                        if (selectedItemZoom)
-                        {
-                            selectedItemZoom.ZoomOut();
-                        }
-
                         selectedItemZoom = objectHit.transform.GetComponent<Zoom>();
 
                         //Get child (vector) inside object hit
@@ -116,6 +108,7 @@ namespace BodySystem
         {
             infoUI.HideUI();
             filterUI.HideUI();
+            helpUI.HideUI();
         }
         bool IsDerivedBone()
         {
@@ -132,11 +125,12 @@ namespace BodySystem
         }
         public void ZoomOut()
         {
-            selectedItemZoom.ZoomOut();
+            if (selectedItemZoom)
+            {
+                selectedItemZoom.ZoomOut();
 
-            camMov.CenterVector();
-
-            infoUI.HideUI();
+                camMov.CenterVector();
+            }
         }
     }
 }

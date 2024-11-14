@@ -8,6 +8,10 @@ TagManager:
   - Bone
   - Origin
   - DerivedBone
+  - ToggleLong
+  - ToggleShort
+  - ToggleFlat
+  - ToggleIrregular
   layers:
   - Default
   - TransparentFX

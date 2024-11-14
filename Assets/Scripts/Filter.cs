@@ -100,5 +100,27 @@ namespace BodySystem
             activateIrr = !activateIrr;
             FilterByType(irrBones, activateIrr);
         }
+        public int CheckListCount(string type)
+        {
+            type = type.ToLower();
+            switch (type)
+            {
+                case "long":
+                    return longBones.Count;
+
+                case "short":
+                    return shortBones.Count;
+
+                case "flat":
+                    return flatBones.Count;
+
+                case "irregular":
+                    return irrBones.Count;
+
+                default:
+                    print("Type not found");
+                    return -1;
+            }
+        }
     }
 }
