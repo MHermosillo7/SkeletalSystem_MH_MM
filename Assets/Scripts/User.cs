@@ -43,10 +43,6 @@ namespace BodySystem
             {
                 Select();
             }
-            if(Input.GetMouseButtonDown(1))
-            {
-                DeSelect();
-            }
         }
 
         void Select()
@@ -87,6 +83,11 @@ namespace BodySystem
 
                     else
                     {
+                        if (selectedItemZoom)
+                        {
+                            selectedItemZoom.ZoomOut();
+                        }
+
                         selectedItemZoom = objectHit.transform.GetComponent<Zoom>();
 
                         //Get child (vector) inside object hit
@@ -132,5 +133,6 @@ namespace BodySystem
                 camMov.CenterVector();
             }
         }
+        
     }
 }

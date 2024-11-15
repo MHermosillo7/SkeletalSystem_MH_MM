@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace BodySystem
@@ -8,6 +9,7 @@ namespace BodySystem
     {
         float horizontalInput;
         float verticalInput;
+        Vector3 pos;
 
         [SerializeField] int rotateSpeed = 750;
         [SerializeField] int slideSpeed = 100;
@@ -50,8 +52,8 @@ namespace BodySystem
 
                 ZoomA();
 
-                //It is using Left Control and Right Mouse Click (NOT LEFT)
-                if (Input.GetMouseButton(1) && Input.GetKey(KeyCode.LeftControl))
+                //Id holding right click
+                if (Input.GetMouseButton(1))
                 {
                     Slide();
                 }
