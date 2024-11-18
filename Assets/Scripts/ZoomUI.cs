@@ -5,7 +5,7 @@ namespace BodySystem
 {
     public class ZoomUI : MonoBehaviour
     {
-        [SerializeField] GameObject button;
+        [SerializeField] Button button;
         [SerializeField] Image plus;
         [SerializeField] Image minus;
 
@@ -18,7 +18,8 @@ namespace BodySystem
         {
             user = FindObjectOfType<User>();
 
-            button.SetActive(false);
+            minus.enabled = false;
+            button.interactable = false;
         }
         void ToggleIcon()
         {
@@ -38,9 +39,9 @@ namespace BodySystem
 
         public void ShowUI()
         {
-            if (!button.activeSelf)
+            if (!button.IsInteractable())
             {
-                button.SetActive(true);
+                button.interactable = (true);
             }
 
             plusIsActive = false;
@@ -65,7 +66,7 @@ namespace BodySystem
 
         public bool IsUIActive()
         {
-            return button.activeSelf;
+            return button.IsInteractable();
         }
     }
 }
