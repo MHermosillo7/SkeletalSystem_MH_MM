@@ -1,9 +1,9 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace BodySystem
 {
-    [RequireComponent(typeof(Collider2D))]
-    public class ButtonUI : MonoBehaviour
+    public class ButtonUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] GameObject textPanel;
         
@@ -11,11 +11,19 @@ namespace BodySystem
         {
             textPanel.SetActive(false);
         }
-        private void OnMouseEnter()
+
+
+        /* Uses On Pointer Data in order to detect the mouse because 
+         * this is designed to be used on UI elements only without requiring colliders*/
+
+        //Activate the text panel when mouse is over object
+        public void OnPointerEnter(PointerEventData pointerData)
         {
             textPanel.SetActive(true);
         }
-        private void OnMouseExit()
+
+        //Deactivate text panel when mouse no longer over object
+        public void OnPointerExit(PointerEventData pointerData)
         {
             textPanel.SetActive(false);
         }
