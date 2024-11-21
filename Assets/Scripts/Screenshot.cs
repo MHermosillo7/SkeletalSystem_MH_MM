@@ -73,7 +73,7 @@ public class Screenshot : MonoBehaviour
 
     void CleanDirectory()
     {
-        Directory.Delete(completePath);
+        Directory.Delete(completePath, true);
     }
     void CheckForScreenShot()
     {
