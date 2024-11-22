@@ -25,7 +25,7 @@ public class Screenshot : MonoBehaviour
 
     [SerializeField] int index = 0; //Number of pictures taken
 
-    // Unused as of now
+    // Irrelevant as of now
     // (planned to prompt user whether to
     // delete previous screenshots or not)
     bool cleanDirectory = true;

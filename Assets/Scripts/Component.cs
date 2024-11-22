@@ -7,16 +7,7 @@ namespace BodySystem
     public class Component : MonoBehaviour
     {
         //Component Information
-        public enum Type
-        {
-            Long,
-            Short,
-            Flat,
-            Irregular
-        }
-
         public string partName;
-        public Type boneType;
         public string function;
         public string structure;
         public string components;

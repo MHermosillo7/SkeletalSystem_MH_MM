@@ -103,7 +103,6 @@ namespace BodySystem
             {
                 DeSelect();
             }
-
         }
         void DeSelect()
         {
@@ -131,6 +130,8 @@ namespace BodySystem
                 selectedItemZoom.ZoomOut();
 
                 camMov.CenterVector();
+
+                zoomUI.ShowUI();
             }
         }
         

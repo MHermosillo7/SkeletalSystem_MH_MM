@@ -7,9 +7,7 @@ namespace BodySystem
 {
     public class Filter : MonoBehaviour
     {
-        [SerializeField] List<GameObject> bones = new List<GameObject>();
-
-        List<Component> boneComponents = new List<Component>();
+        List<Category> boneComponents = new List<Category>();
 
         CameraMovement camMov;
         User user;
@@ -26,11 +24,7 @@ namespace BodySystem
         // Awake is called when loading scene
         void Awake()
         {
-            bones.AddRange(GameObject.FindGameObjectsWithTag("Bone"));
-            bones.AddRange(GameObject.FindGameObjectsWithTag("DerivedBone"));
-
-            boneComponents = (from b in bones 
-                              select b.GetComponent<Component>()).ToList();
+            boneComponents.AddRange(FindObjectsOfType<Category>());
 
             camMov = FindObjectOfType<CameraMovement>();
             user = FindObjectOfType<User>();
