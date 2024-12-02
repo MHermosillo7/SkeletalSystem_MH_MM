@@ -50,7 +50,7 @@ namespace BodySystem
                     Rotate();
                 }
 
-                ZoomA();
+                Zoom();
 
                 //Id holding right click
                 if (Input.GetMouseButton(1))
@@ -78,7 +78,7 @@ namespace BodySystem
             vectorTrans.Rotate(Vector3.up, horizontalInput, Space.World);
         }
 
-        void ZoomA()
+        void Zoom()
         {
             if (Input.GetAxis("Scroll Wheel") > 0)
             {

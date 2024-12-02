@@ -53,10 +53,7 @@ namespace BodySystem
         void FilterByType(List<GameObject> boneType, bool activate)
         {
             // Center camera around main scene pivot 
-            // Or could probably implement so that it center first object in list of non-filtered bones
-
-            // Error: Unity cannot find inactive game objects.
-            // (Modify hierarchy to have an independent main pivot)
+            // [Note] could probably implement so that it center first object in list of non-filtered bones
             camMov.CenterCamera(GameObject.FindGameObjectWithTag("Origin").transform);
 
             user.ZoomOut();
