@@ -14,7 +14,7 @@ namespace BodySystem
         List<GameObject> derivedBones = new List<GameObject>();
         List<Renderer> derivedRends = new List<Renderer>();
         List<Collider> derivedCols = new List<Collider>();
-        List<Component> derivedComps = new List<Component>();
+        List<Component> derivedComp = new List<Component>();
 
         // Start is called before the first frame update
         void Awake()
@@ -33,7 +33,7 @@ namespace BodySystem
 
             derivedRends = derivedBones.Select(b => b.GetComponent<Renderer>()).ToList();
             derivedCols = derivedBones.Select(b => b.GetComponent<Collider>()).ToList();
-            derivedComps = derivedBones.Select(b => b.GetComponent<Component>()).ToList();
+            derivedComp = derivedBones.Select(b => b.GetComponent<Component>()).ToList();
 
         }
         private void Start()
@@ -68,7 +68,7 @@ namespace BodySystem
 
         void EnableChildren(bool enable)
         {
-            foreach(Component c in derivedComps)
+            foreach(Component c in derivedComp)
             {
                 if (!c.IsStartingColor())
                 {
