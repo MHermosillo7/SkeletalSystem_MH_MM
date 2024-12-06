@@ -11,13 +11,12 @@ GameObject:
   - component: {fileID: 5686743360792918555}
   - component: {fileID: 6840877173811524690}
   - component: {fileID: 2131829330171226480}
-  - component: {fileID: 4160512820164825244}
+  - component: {fileID: 1461290844081364565}
   - component: {fileID: 7674057712364718082}
   - component: {fileID: 5356522408053915622}
-  - component: {fileID: 1461290844081364565}
   m_Layer: 0
   m_Name: C4
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34,7 +33,8 @@ Transform:
   m_LocalPosition: {x: 0.002307027, y: 23.622505, z: -1.5878873}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 603648098140348556}
   m_Father: {fileID: 7858875834214336011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6840877173811524690
@@ -87,7 +87,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4160512820164825244
+--- !u!114 &1461290844081364565
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -96,9 +96,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 37245757586947875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: C4
+  function: 'Works C3 and C5 to allow smooth articulation of spine & Connection of
+    spine to muscles and ligaments '
+  structure: 'Standard vertebral shape, Small compared other vertebrae, More flexible
+    than other true or movable vertebrae,  and a Large vertebral foramen for passage
+    of nerves '
+  components: 'Body of Vertebra, Uncal Process, Transverse Process, Spinous Process,
+    Inferior Articular Process, Superior Articular Process, Anterior Tubercle, Posterior
+    Tubercle, Vertebral Arch, Lamina of Vertebral Arch, & Vertebral Foramen '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &7674057712364718082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,29 +144,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1911783, y: 1.2544422, z: 2.1756628}
   m_Center: {x: -0.002624154, y: -0.080246925, z: 0.32195818}
---- !u!114 &1461290844081364565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37245757586947875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: C4
-  function: 'Works C3 and C5 to allow smooth articulation of spine & Connection of
-    spine to muscles and ligaments '
-  structure: 'Standard vertebral shape, Small compared other vertebrae, More flexible
-    than other true or movable vertebrae,  and a Large vertebral foramen for passage
-    of nerves '
-  components: 'Body of Vertebra, Uncal Process, Transverse Process, Spinous Process,
-    Inferior Articular Process, Superior Articular Process, Anterior Tubercle, Posterior
-    Tubercle, Vertebral Arch, Lamina of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &42835147761122823
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,13 +155,12 @@ GameObject:
   - component: {fileID: 2139799030377446916}
   - component: {fileID: 5292877241044049697}
   - component: {fileID: 6750359117324545333}
-  - component: {fileID: 5148002872784763278}
+  - component: {fileID: 8975491732875932653}
   - component: {fileID: 5348977232580261188}
   - component: {fileID: 4588747667231118594}
-  - component: {fileID: 8975491732875932653}
   m_Layer: 0
   m_Name: T1
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +177,8 @@ Transform:
   m_LocalPosition: {x: -0.00038851734, y: 20.351036, z: -0.39241531}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5569258967343165321}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5292877241044049697
@@ -243,7 +231,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5148002872784763278
+--- !u!114 &8975491732875932653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,9 +240,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 42835147761122823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T1
+  function: 'Supports and articulates head of the 1st rib and the head of 2nd rib
+    & Protects spinal cord '
+  structure: "Complete costal facet, High vertebral body, standard spinous process\u2019s
+    shape, Atypical thoracic vertebra, Central and largest section of spinal column,
+    Connected to pair of ribs on either side of rib cage, & Heart shaped "
+  components: 'Body of Vertebra, Complete Costal Facet (superior and inferior), Transverse
+    Process, Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral
+    Arch, Pedicle of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &5348977232580261188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,29 +288,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.8944373, y: 1.3957729, z: 2.9274673}
   m_Center: {x: 0.000071167946, y: -0.10792637, z: 0.35219067}
---- !u!114 &8975491732875932653
-MonoBehaviour:
+--- !u!1 &57202006536500166
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42835147761122823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T1
-  function: 'Supports and articulates head of the 1st rib and the head of 2nd rib
-    & Protects spinal cord '
-  structure: "Complete costal facet, High vertebral body, standard spinous process\u2019s
-    shape, Atypical thoracic vertebra, Central and largest section of spinal column,
-    Connected to pair of ribs on either side of rib cage, & Heart shaped "
-  components: 'Body of Vertebra, Complete Costal Facet (superior and inferior), Transverse
-    Process, Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral
-    Arch, Pedicle of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4892610551976953368}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4892610551976953368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57202006536500166}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3037811686340613903}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &402572642145229996
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,8 +329,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1217547181867130544}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
+  m_Name: Pivot
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -354,13 +361,12 @@ GameObject:
   - component: {fileID: 1687908568100506323}
   - component: {fileID: 4894122834077027915}
   - component: {fileID: 7416259478746818607}
-  - component: {fileID: 7527320230147267277}
+  - component: {fileID: 3153898758053918631}
   - component: {fileID: 1485186975628620163}
   - component: {fileID: 2306651873360409879}
-  - component: {fileID: 3153898758053918631}
   m_Layer: 0
   m_Name: T9
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -377,7 +383,8 @@ Transform:
   m_LocalPosition: {x: 0.0033803266, y: 12.979484, z: 1.445765}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7630603592782156823}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4894122834077027915
@@ -430,7 +437,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7527320230147267277
+--- !u!114 &3153898758053918631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -439,9 +446,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 874583064647381733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T9
+  function: 'Cushions joints, Provides support to spine, Provides articular spaces
+    for connecting ribs, & Protects spinal cord '
+  structure: 'Creates joint with T8 and T10, Large laminae overlap with T10, Connected
+    to pair of ribs on either side of rib cage, & Heart shaped '
+  components: 'Body of Vertebra, Demi - Costal Facet (only superior), Transverse
+    Process, Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral
+    Arch, Pedicle of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &1485186975628620163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,28 +493,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.604413, y: 1.8696737, z: 3.2382865}
   m_Center: {x: -0.011699617, y: -0.22079709, z: -0.061233163}
---- !u!114 &3153898758053918631
-MonoBehaviour:
+--- !u!1 &918680711579311842
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874583064647381733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T9
-  function: 'Cushions joints, Provides support to spine, Provides articular spaces
-    for connecting ribs, & Protects spinal cord '
-  structure: 'Creates joint with T8 and T10, Large laminae overlap with T10, Connected
-    to pair of ribs on either side of rib cage, & Heart shaped '
-  components: 'Body of Vertebra, Demi - Costal Facet (only superior), Transverse
-    Process, Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral
-    Arch, Pedicle of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1196607675503915376}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1196607675503915376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918680711579311842}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9172157282587940810}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003978965828359094
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,13 +535,12 @@ GameObject:
   - component: {fileID: 5940710994679283092}
   - component: {fileID: 6684523009311174159}
   - component: {fileID: 1868267325121533071}
-  - component: {fileID: 3350109148035867603}
+  - component: {fileID: 3011481232330000660}
   - component: {fileID: 5562195909194146928}
   - component: {fileID: 7731988363463197874}
-  - component: {fileID: 3011481232330000660}
   m_Layer: 0
   m_Name: T2
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -532,7 +557,8 @@ Transform:
   m_LocalPosition: {x: 0.0019275995, y: 19.493984, z: -0.1022933}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8740685426646402578}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6684523009311174159
@@ -585,7 +611,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3350109148035867603
+--- !u!114 &3011481232330000660
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -594,9 +620,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1003978965828359094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T2
+  function: 'Work T1 and T3 to articulate across intervertebral discs that cushion
+    and support spinal column & Protects spinal cord '
+  structure: 'Joint with T1 and T3, Costal demi facets provide additional space articulation
+    with ribs, Connected to pair of ribs on either side of rib cage, & Heart shaped '
+  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
+    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
+    of Vertebral Arch,  Vertebral Foramen, & Vertebral Canal '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &5562195909194146928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -631,28 +667,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.8914495, y: 1.3254128, z: 2.9470348}
   m_Center: {x: -0.002247095, y: -0.08538437, z: 0.34921664}
---- !u!114 &3011481232330000660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003978965828359094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T2
-  function: 'Work T1 and T3 to articulate across intervertebral discs that cushion
-    and support spinal column & Protects spinal cord '
-  structure: 'Joint with T1 and T3, Costal demi facets provide additional space articulation
-    with ribs, Connected to pair of ribs on either side of rib cage, & Heart shaped '
-  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
-    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
-    of Vertebral Arch,  Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &1136188239724890550
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,13 +678,12 @@ GameObject:
   - component: {fileID: 3855737123411755663}
   - component: {fileID: 2249790810782612602}
   - component: {fileID: 2892498737883442487}
-  - component: {fileID: 3551478289943124367}
+  - component: {fileID: 3540752276909298785}
   - component: {fileID: 2485339054422705310}
   - component: {fileID: 5180245014420429366}
-  - component: {fileID: 3540752276909298785}
   m_Layer: 0
   m_Name: L5
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -741,7 +754,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3551478289943124367
+--- !u!114 &3540752276909298785
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -750,9 +763,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1136188239724890550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: L5
+  function: 'Supports entire weight of upper body tissues, Support vertical compression
+    in spine, Anchors muscles that stabilize spine and flex thigh at hip, Anchors
+    muscles that stabilize, laterally flex, rotate, and extend trunk, Stabilizes
+    spinal column, & Protects spinal cord '
+  structure: 'Planar joint between neighboring vertebrae, Bears most weight than
+    any 23 vertebrae atop, Most susceptible to stress-related injuries, Largest,
+    strongest lumbar vertebra, Large, roughly cylindrical region of bone known as
+    the body, Body much wider than deep, Smaller vertebral arch but thicker and stronger
+    than other types, Slightly different from other true vertebrae, Body lacks external
+    articular facets, & Lacks transverse foramina '
+  components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
+    Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
+    Pedicle of Vertebral Arch, & Vertebral Foramen '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &2485339054422705310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,34 +816,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.487481, y: 2.2540078, z: 3.49055}
   m_Center: {x: 0.0008841753, y: -0.24116892, z: 0.041999817}
---- !u!114 &3540752276909298785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136188239724890550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: L5
-  function: 'Supports entire weight of upper body tissues, Support vertical compression
-    in spine, Anchors muscles that stabilize spine and flex thigh at hip, Anchors
-    muscles that stabilize, laterally flex, rotate, and extend trunk, Stabilizes
-    spinal column, & Protects spinal cord '
-  structure: 'Planar joint between neighboring vertebrae, Bears most weight than
-    any 23 vertebrae atop, Most susceptible to stress-related injuries, Largest,
-    strongest lumbar vertebra, Large, roughly cylindrical region of bone known as
-    the body, Body much wider than deep, Smaller vertebral arch but thicker and stronger
-    than other types, Slightly different from other true vertebrae, Body lacks external
-    articular facets, & Lacks transverse foramina '
-  components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
-    Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
-    Pedicle of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &1241566541884376547
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,13 +827,12 @@ GameObject:
   - component: {fileID: 3727831173934384647}
   - component: {fileID: 7958351264167085631}
   - component: {fileID: 3384264562511914455}
-  - component: {fileID: 78650336318785075}
+  - component: {fileID: 4161291160155414713}
   - component: {fileID: 8739723148989784197}
   - component: {fileID: 1767380419069471901}
-  - component: {fileID: 4161291160155414713}
   m_Layer: 0
   m_Name: T7
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -849,7 +849,8 @@ Transform:
   m_LocalPosition: {x: 0.0066716764, y: 15.080572, z: 1.4501686}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5615417554547706128}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7958351264167085631
@@ -902,7 +903,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &78650336318785075
+--- !u!114 &4161291160155414713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -911,9 +912,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1241566541884376547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T7
+  function: 'Allows ribs to glide slightly relative to column position, Help lock
+    thoracic vertebra in stiff, solid column, Limits column rotation or lateral movement,
+    Attach many muscles, especially multifidus and rotatores, Flex and extend torso
+    in anterior-posterior direction, & Protects spinal cord '
+  structure: 'Planar joint with T8, Vertebrocostal joint with T6 and seventh rib,
+    Vertebrocostal joint with T8 and eight rib, Vertebrocostal joints formed are
+    planar synovial, Convex, oval inferior articular process, Downward spinous process
+    overlaps the one of vertebra below , & Heart shaped '
+  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
+    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
+    of Vertebral Arch, Vertebral Foramen, & Vertebral Cana '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &8739723148989784197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,32 +963,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3561513, y: 1.9151325, z: 3.26078}
   m_Center: {x: -0.0038639307, y: -0.2503376, z: -0.024610996}
---- !u!114 &4161291160155414713
-MonoBehaviour:
+--- !u!1 &1331664383539086344
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241566541884376547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T7
-  function: 'Allows ribs to glide slightly relative to column position, Help lock
-    thoracic vertebra in stiff, solid column, Limits column rotation or lateral movement,
-    Attach many muscles, especially multifidus and rotatores, Flex and extend torso
-    in anterior-posterior direction, & Protects spinal cord '
-  structure: 'Planar joint with T8, Vertebrocostal joint with T6 and seventh rib,
-    Vertebrocostal joint with T8 and eight rib, Vertebrocostal joints formed are
-    planar synovial, Convex, oval inferior articular process, Downward spinous process
-    overlaps the one of vertebra below , & Heart shaped '
-  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
-    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
-    of Vertebral Arch, Vertebral Foramen, & Vertebral Cana '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7190707835396596645}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7190707835396596645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331664383539086344}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1076210622296274815}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1544058266401649919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7630603592782156823}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7630603592782156823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544058266401649919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1687908568100506323}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2165467738919643363
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,13 +1036,12 @@ GameObject:
   - component: {fileID: 4318067465473769293}
   - component: {fileID: 2850288614332264134}
   - component: {fileID: 8176090706486710297}
-  - component: {fileID: 1606579382978547774}
+  - component: {fileID: 7673393342412863175}
   - component: {fileID: 1883106114748857293}
   - component: {fileID: 631519977665207252}
-  - component: {fileID: 7673393342412863175}
   m_Layer: 0
   m_Name: T4
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1008,7 +1058,8 @@ Transform:
   m_LocalPosition: {x: -0.0018145799, y: 17.921043, z: 0.57203776}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5973112392045938023}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2850288614332264134
@@ -1061,7 +1112,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1606579382978547774
+--- !u!114 &7673393342412863175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1070,9 +1121,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 2165467738919643363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T4
+  function: 'Provides support and cushioning to articulating joints of spinal column,
+    Adds strength and support to spine, & Protects spinal cord '
+  structure: 'HelloBody larger than T3, Increasingly large pedicles, Smaller and
+    circular vertebral foramen in center vertebral arch, Long spinous process points
+    down significantly, Connected to pair of ribs on either side of rib cage, & Heart
+    shaped '
+  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
+    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
+    of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &1883106114748857293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,30 +1170,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.815053, y: 1.5626698, z: 3.0195284}
   m_Center: {x: 0.0014970303, y: -0.07626629, z: 0.20724326}
---- !u!114 &7673393342412863175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2165467738919643363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T4
-  function: 'Provides support and cushioning to articulating joints of spinal column,
-    Adds strength and support to spine, & Protects spinal cord '
-  structure: 'HelloBody larger than T3, Increasingly large pedicles, Smaller and
-    circular vertebral foramen in center vertebral arch, Long spinous process points
-    down significantly, Connected to pair of ribs on either side of rib cage, & Heart
-    shaped '
-  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
-    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
-    of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &2387681123530152268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1146,12 +1185,9 @@ GameObject:
   - component: {fileID: 5649742763531312031}
   - component: {fileID: 4869371021728382016}
   - component: {fileID: 6664568653160380178}
-  - component: {fileID: 7548570082040268890}
-  - component: {fileID: 7494698115745092943}
-  - component: {fileID: 2315703230995070871}
   m_Layer: 0
   m_Name: C1
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1168,7 +1204,8 @@ Transform:
   m_LocalPosition: {x: -0.00027818177, y: 25.773546, z: -1.4497555}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4280977373560596235}
   m_Father: {fileID: 7858875834214336011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1532011152050689563
@@ -1288,52 +1325,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.076301426, y: 0.0147423735, z: 0.04059323}
   m_Center: {x: 0, y: 0.00027060506, z: -0.0023374257}
---- !u!114 &7548570082040268890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2387681123530152268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7494698115745092943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2387681123530152268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &2315703230995070871
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2387681123530152268}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.2896218, y: 0.6355953, z: 1.7501166}
-  m_Center: {x: -0.000038802624, y: 0.020936012, z: 0.088195115}
 --- !u!1 &2605027563861029156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1428,13 +1419,12 @@ GameObject:
   - component: {fileID: 7322024354283200720}
   - component: {fileID: 8298894451972649745}
   - component: {fileID: 6028087161953804880}
-  - component: {fileID: 4907032896805808450}
+  - component: {fileID: 7633696443427833717}
   - component: {fileID: 6410218513547266410}
   - component: {fileID: 8523708816706921904}
-  - component: {fileID: 7633696443427833717}
   m_Layer: 0
   m_Name: T11
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1451,7 +1441,8 @@ Transform:
   m_LocalPosition: {x: 0.0026511617, y: 10.773065, z: 1.1616007}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4396531549898507608}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8298894451972649745
@@ -1504,7 +1495,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4907032896805808450
+--- !u!114 &7633696443427833717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1513,9 +1504,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2639917003191931141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T11
+  function: 'Makes up central portion of spine & Protects spinal cord '
+  structure: 'Increasingly larger central body, Shorter transverse process, Rib connected
+    on pedicle instead of body center, No costal facet of transverse process (to
+    connect ribs), Connected to pair of ribs on either side of rib cage, Increasingly
+    horizontal spinous process, & Shape resembles lumbar vertebra '
+  components: 'Body of Vertebra, Complete Costal Facet (superior and inferior), Transverse
+    Process, Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral
+    Arch, Pedicle of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &6410218513547266410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,29 +1552,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3845892, y: 1.7066422, z: 3.188508}
   m_Center: {x: -0.009808719, y: -0.15405655, z: -0.06714451}
---- !u!114 &7633696443427833717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2639917003191931141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T11
-  function: 'Makes up central portion of spine & Protects spinal cord '
-  structure: 'Increasingly larger central body, Shorter transverse process, Rib connected
-    on pedicle instead of body center, No costal facet of transverse process (to
-    connect ribs), Connected to pair of ribs on either side of rib cage, Increasingly
-    horizontal spinous process, & Shape resembles lumbar vertebra '
-  components: 'Body of Vertebra, Complete Costal Facet (superior and inferior), Transverse
-    Process, Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral
-    Arch, Pedicle of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &2678546081171934526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,13 +1606,12 @@ GameObject:
   - component: {fileID: 5212125129956635870}
   - component: {fileID: 6011217021522240000}
   - component: {fileID: 2461233635079953196}
-  - component: {fileID: 4783116665565277293}
+  - component: {fileID: 5108952749160820436}
   - component: {fileID: 610581074170848280}
   - component: {fileID: 5401676704967829231}
-  - component: {fileID: 5108952749160820436}
   m_Layer: 0
   m_Name: L3
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1704,7 +1682,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4783116665565277293
+--- !u!114 &5108952749160820436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1713,9 +1691,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2983261627551308750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: L3
+  function: 'Strong attachment point for lower back muscles, Support body weight
+    and vertical compression in spine, & Protects spinal cord '
+  structure: 'Articular joint with L2 and L4, No articulating facets, Among largest
+    bones in spine, Large, roughly cylindrical region of bone known as the body,
+    Body much wider than deep, Smaller vertebral arch but thicker and stronger than
+    other types, Rectangular, horizontal spinous process, Slightly different from
+    other true vertebrae, Body lacks external articular facets, & Lacks transverse
+    foramina '
+  components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
+    Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
+    Pedicle of Vertebral Arch, & Vertebral Foramen '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &610581074170848280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1750,32 +1742,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.4279487, y: 1.8656801, z: 3.7882476}
   m_Center: {x: 0.0012636185, y: -0.037379503, z: -0.09941894}
---- !u!114 &5108952749160820436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2983261627551308750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: L3
-  function: 'Strong attachment point for lower back muscles, Support body weight
-    and vertical compression in spine, & Protects spinal cord '
-  structure: 'Articular joint with L2 and L4, No articulating facets, Among largest
-    bones in spine, Large, roughly cylindrical region of bone known as the body,
-    Body much wider than deep, Smaller vertebral arch but thicker and stronger than
-    other types, Rectangular, horizontal spinous process, Slightly different from
-    other true vertebrae, Body lacks external articular facets, & Lacks transverse
-    foramina '
-  components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
-    Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
-    Pedicle of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &3121013148184185120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,13 +1753,12 @@ GameObject:
   - component: {fileID: 6490268317045437274}
   - component: {fileID: 1516449772289758720}
   - component: {fileID: 5138651414078828143}
-  - component: {fileID: 711839993688808473}
+  - component: {fileID: 5323399624149453568}
   - component: {fileID: 3344794613481439758}
   - component: {fileID: 3560287051301187605}
-  - component: {fileID: 5323399624149453568}
   m_Layer: 0
   m_Name: T3
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1810,7 +1775,8 @@ Transform:
   m_LocalPosition: {x: -0.00024886883, y: 18.735548, z: 0.30547157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6185145182833430968}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1516449772289758720
@@ -1863,7 +1829,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &711839993688808473
+--- !u!114 &5323399624149453568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1872,9 +1838,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3121013148184185120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T3
+  function: 'Provides support and cushioning to articulating joints of spinal column
+    & Protects spinal cord '
+  structure: 'Vertebral arch encloses circular vertebral foramen for passage spinal
+    cord, Connected to pair of ribs on either side of rib cage, & Heart shaped '
+  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
+    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
+    of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &3344794613481439758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,28 +1885,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.6981778, y: 1.4111156, z: 3.1651921}
   m_Center: {x: -0.00006622076, y: -0.11311817, z: 0.29378563}
---- !u!114 &5323399624149453568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3121013148184185120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T3
-  function: 'Provides support and cushioning to articulating joints of spinal column
-    & Protects spinal cord '
-  structure: 'Vertebral arch encloses circular vertebral foramen for passage spinal
-    cord, Connected to pair of ribs on either side of rib cage, & Heart shaped '
-  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
-    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
-    of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &3157286431105731166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +1917,68 @@ Transform:
   - {fileID: 4782200810564179665}
   m_Father: {fileID: 3505130880314354802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3331337441851354893
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6691098680661704539}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6691098680661704539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3331337441851354893}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5938812590985820216}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3440552692010502211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4396531549898507608}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4396531549898507608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440552692010502211}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7322024354283200720}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3507151570194626617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,13 +1990,12 @@ GameObject:
   - component: {fileID: 5938812590985820216}
   - component: {fileID: 8514584066791467348}
   - component: {fileID: 3644950855242980207}
-  - component: {fileID: 1088619345025384952}
+  - component: {fileID: 1147604580003749452}
   - component: {fileID: 5939378615587068064}
   - component: {fileID: 3114957708525034902}
-  - component: {fileID: 1147604580003749452}
   m_Layer: 0
   m_Name: C5
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1997,7 +2012,8 @@ Transform:
   m_LocalPosition: {x: -0.0011801185, y: 22.953543, z: -1.4165341}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6691098680661704539}
   m_Father: {fileID: 7858875834214336011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8514584066791467348
@@ -2050,7 +2066,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1088619345025384952
+--- !u!114 &1147604580003749452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2059,9 +2075,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3507151570194626617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: C5
+  function: 'Works C4 and C6 to allow movement of neck, Enables smooth movement of
+    backbone, & Protects and supports spinal column '
+  structure: 'Standard vertebral shape, Small compared other vertebrae, More flexible
+    than other true or movable vertebrae, & Large vertebral foramen for passage of
+    nerves '
+  components: 'Body of Vertebra, Uncal Process, Transverse Process, Spinous Process,
+    Inferior Articular Process, Superior Articular Process, Anterior Tubercle, Posterior
+    Tubercle, Vertebral Arch, Lamina of Vertebral Arch, & Vertebral Foramen '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &5939378615587068064
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,29 +2123,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.2150846, y: 1.3743458, z: 2.3770108}
   m_Center: {x: 0.000402987, y: -0.06841946, z: 0.30528164}
---- !u!114 &1147604580003749452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3507151570194626617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: C5
-  function: 'Works C4 and C6 to allow movement of neck, Enables smooth movement of
-    backbone, & Protects and supports spinal column '
-  structure: 'Standard vertebral shape, Small compared other vertebrae, More flexible
-    than other true or movable vertebrae, & Large vertebral foramen for passage of
-    nerves '
-  components: 'Body of Vertebra, Uncal Process, Transverse Process, Spinous Process,
-    Inferior Articular Process, Superior Articular Process, Anterior Tubercle, Posterior
-    Tubercle, Vertebral Arch, Lamina of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &3778539793872295616
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,7 +2140,7 @@ GameObject:
   - component: {fileID: 7185936138751752016}
   m_Layer: 0
   m_Name: C2
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2153,7 +2157,8 @@ Transform:
   m_LocalPosition: {x: 0.0012814336, y: 25.051828, z: -1.4355454}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1196607675503915376}
   m_Father: {fileID: 7858875834214336011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8710243988659191944
@@ -2273,6 +2278,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.3370652, y: 1.6193123, z: 2.0909922}
   m_Center: {x: -0.0015982985, y: 0.11559868, z: 0.13433781}
+--- !u!1 &3975599568017912056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4280977373560596235}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4280977373560596235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3975599568017912056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4268032674027675496}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4313983724748933056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1227997344188328820}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1227997344188328820
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4313983724748933056}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3404232999208823648}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4330427991338205251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,13 +2351,12 @@ GameObject:
   - component: {fileID: 4108224583536448432}
   - component: {fileID: 8502766699749949159}
   - component: {fileID: 3026075225959136254}
-  - component: {fileID: 1168754596453400186}
+  - component: {fileID: 6101086977355294791}
   - component: {fileID: 2895728976896328793}
   - component: {fileID: 6619321491873873596}
-  - component: {fileID: 6101086977355294791}
   m_Layer: 0
   m_Name: L4
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2361,7 +2427,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1168754596453400186
+--- !u!114 &6101086977355294791
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2370,9 +2436,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 4330427991338205251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: L4
+  function: 'Counteracts force of strong muscles in lower back that attach to it,
+    Support body weight and vertical compression in spine, & Protects spinal cord '
+  structure: 'Articular joint with L3 and L5, One of last true / movable vertebrae,
+    Among largest bones in spine, Large, roughly cylindrical region of bone known
+    as the body, Body much wider than deep, Smaller vertebral arch but thicker and
+    stronger than other types, Rectangular, horizontal spinous process, Slightly
+    different from other true vertebrae, Body lacks external articular facets, &
+    Lacks transverse foramina '
+  components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
+    Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
+    Pedicle of Vertebral Arch, & Vertebral Foramen '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &2895728976896328793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2407,32 +2487,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.4954467, y: 2.1880417, z: 3.7116904}
   m_Center: {x: -0.0022295117, y: -0.082552195, z: -0.054048}
---- !u!114 &6101086977355294791
-MonoBehaviour:
+--- !u!1 &4911772895755523118
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4330427991338205251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: L4
-  function: 'Counteracts force of strong muscles in lower back that attach to it,
-    Support body weight and vertical compression in spine, & Protects spinal cord '
-  structure: 'Articular joint with L3 and L5, One of last true / movable vertebrae,
-    Among largest bones in spine, Large, roughly cylindrical region of bone known
-    as the body, Body much wider than deep, Smaller vertebral arch but thicker and
-    stronger than other types, Rectangular, horizontal spinous process, Slightly
-    different from other true vertebrae, Body lacks external articular facets, &
-    Lacks transverse foramina '
-  components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
-    Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
-    Pedicle of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 603648098140348556}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &603648098140348556
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4911772895755523118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5686743360792918555}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4982033552214311919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,13 +2529,12 @@ GameObject:
   - component: {fileID: 4748768012041904766}
   - component: {fileID: 1616086254173623419}
   - component: {fileID: 4282134539347249836}
-  - component: {fileID: 9207228341240114219}
+  - component: {fileID: 2477247904357897633}
   - component: {fileID: 2822649124368171535}
   - component: {fileID: 2679403321248723045}
-  - component: {fileID: 2477247904357897633}
   m_Layer: 0
   m_Name: T12
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2467,7 +2551,8 @@ Transform:
   m_LocalPosition: {x: -0.005940334, y: 9.455542, z: 1.0530813}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5152990492571533664}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1616086254173623419
@@ -2520,7 +2605,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9207228341240114219
+--- !u!114 &2477247904357897633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2529,9 +2614,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4982033552214311919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T12
+  function: 'Connected to many muscles that control flexion / extension of back and
+    flexion of thighs at hip, Has shock absorber to prevent collisions between vertebra,
+    Muscle attachment point for muscles that stabilize, flex, extend, and rotate
+    spine, & Protects spinal cord '
+  structure: 'Joint with 12th pair of ribs, Gliding planar joint between T11 and
+    T12 (more mobility / less stability), Reinforced planar joint between T12 and
+    L1 (less mobility / more stability), Thicker and stronger than other thoracic
+    vertebra, Central body is flat above and below, No costal facet of transverse
+    process (to connect ribs), Connected to pair of ribs on either side of rib cage,
+    Short spinous process, Short transverse process, & Hybrid vertebra '
+  components: 'Body of Vertebra, Complete Costal Facet, Transverse Process, Spinous
+    Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle of
+    Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &2822649124368171535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2566,34 +2667,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.2590106, y: 1.8690729, z: 3.4582715}
   m_Center: {x: 0.017265677, y: -0.039900303, z: -0.15118593}
---- !u!114 &2477247904357897633
-MonoBehaviour:
+--- !u!1 &5093285129369576995
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982033552214311919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T12
-  function: 'Connected to many muscles that control flexion / extension of back and
-    flexion of thighs at hip, Has shock absorber to prevent collisions between vertebra,
-    Muscle attachment point for muscles that stabilize, flex, extend, and rotate
-    spine, & Protects spinal cord '
-  structure: 'Joint with 12th pair of ribs, Gliding planar joint between T11 and
-    T12 (more mobility / less stability), Reinforced planar joint between T12 and
-    L1 (less mobility / more stability), Thicker and stronger than other thoracic
-    vertebra, Central body is flat above and below, No costal facet of transverse
-    process (to connect ribs), Connected to pair of ribs on either side of rib cage,
-    Short spinous process, Short transverse process, & Hybrid vertebra '
-  components: 'Body of Vertebra, Complete Costal Facet, Transverse Process, Spinous
-    Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle of
-    Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8740685426646402578}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8740685426646402578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5093285129369576995}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5940710994679283092}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5139882178833694333
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,13 +2709,12 @@ GameObject:
   - component: {fileID: 3404232999208823648}
   - component: {fileID: 4146178959231857489}
   - component: {fileID: 1534259576705329942}
-  - component: {fileID: 3341583455754269395}
+  - component: {fileID: 3173516720826381065}
   - component: {fileID: 1171020835272806331}
   - component: {fileID: 2056924611499592673}
-  - component: {fileID: 3173516720826381065}
   m_Layer: 0
   m_Name: C3
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2628,7 +2731,8 @@ Transform:
   m_LocalPosition: {x: 0.00043420462, y: 24.28932, z: -1.5965364}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1227997344188328820}
   m_Father: {fileID: 7858875834214336011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4146178959231857489
@@ -2681,7 +2785,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3341583455754269395
+--- !u!114 &3173516720826381065
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2690,9 +2794,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5139882178833694333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: C3
+  function: 'Supports soft tissues of neck and weight of head, Protects spinal cord,
+    nerves, vertebral arteries, and vertebral veins,  and Serves as origin to many
+    muscles '
+  structure: 'Standard vertebral shape, Large column of bone on anterior end (vertebral
+    body), Vertebral body is wider than deep, slightly concave on superior and inferior
+    surfaces, Bilateral opening in transverse process, Split tip of spinous process,
+    Raised edge of vertebral body,  Thin and flat vertebral arch '
+  components: 'Body of Vertebra, Uncal Process, Transverse Process, Spinous Process,
+    Inferior Articular Process, Superior Articular Process, Anterior Tubercle (of
+    Transverse Process), Posterior Tubercle (of Transverse Process), Lamina of Vertebral
+    Arch, Spinal Nerve Groove,  and Vertebral Foramen '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &1171020835272806331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2727,32 +2845,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1028895, y: 1.1860561, z: 2.1122308}
   m_Center: {x: -0.00075113773, y: -0.07602978, z: 0.27689794}
---- !u!114 &3173516720826381065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5139882178833694333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: C3
-  function: 'Supports soft tissues of neck and weight of head, Protects spinal cord,
-    nerves, vertebral arteries, and vertebral veins,  and Serves as origin to many
-    muscles '
-  structure: 'Standard vertebral shape, Large column of bone on anterior end (vertebral
-    body), Vertebral body is wider than deep, slightly concave on superior and inferior
-    surfaces, Bilateral opening in transverse process, Split tip of spinous process,
-    Raised edge of vertebral body,  Thin and flat vertebral arch '
-  components: 'Body of Vertebra, Uncal Process, Transverse Process, Spinous Process,
-    Inferior Articular Process, Superior Articular Process, Anterior Tubercle (of
-    Transverse Process), Posterior Tubercle (of Transverse Process), Lamina of Vertebral
-    Arch, Spinal Nerve Groove,  and Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &5140551208973008333
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,13 +2856,12 @@ GameObject:
   - component: {fileID: 626141736186225948}
   - component: {fileID: 291438613366051974}
   - component: {fileID: 7150737479679875431}
-  - component: {fileID: 2386554762350931560}
+  - component: {fileID: 5621318692344247990}
   - component: {fileID: 7630500894711578456}
   - component: {fileID: 7145091328589235798}
-  - component: {fileID: 5621318692344247990}
   m_Layer: 0
   m_Name: L2
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2841,7 +2932,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2386554762350931560
+--- !u!114 &5621318692344247990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2850,9 +2941,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 5140551208973008333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: L2
+  function: 'Support stabilizing muscles that create balance, flexion, and extension
+    of lower back, Support body weight and vertical compression in spine, Rectangular,
+    horizontal spinous process, & Protects spinal cord '
+  structure: 'Articular joint with L1 and L3, Among largest bones in spine, Large,
+    roughly cylindrical region of bone known as the body, Body much wider than deep,
+    Smaller vertebral arch but thicker and stronger than other types, Rectangular,
+    horizontal spinous process, Wide, strong laminae, Transverse processes lack foramina,
+    Slightly different from other true vertebrae, Body lacks external articular facets,
+    & Lacks transverse foramina '
+  components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
+    Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
+    Pedicle of Vertebral Arch, & Vertebral Foramen '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &7630500894711578456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2887,33 +2993,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.3058589, y: 1.9910693, z: 3.843716}
   m_Center: {x: 0.0037665367, y: -0.08334136, z: -0.1397053}
---- !u!114 &5621318692344247990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5140551208973008333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: L2
-  function: 'Support stabilizing muscles that create balance, flexion, and extension
-    of lower back, Support body weight and vertical compression in spine, Rectangular,
-    horizontal spinous process, & Protects spinal cord '
-  structure: 'Articular joint with L1 and L3, Among largest bones in spine, Large,
-    roughly cylindrical region of bone known as the body, Body much wider than deep,
-    Smaller vertebral arch but thicker and stronger than other types, Rectangular,
-    horizontal spinous process, Wide, strong laminae, Transverse processes lack foramina,
-    Slightly different from other true vertebrae, Body lacks external articular facets,
-    & Lacks transverse foramina '
-  components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
-    Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
-    Pedicle of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &5559653071007365364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2925,13 +3004,12 @@ GameObject:
   - component: {fileID: 1076210622296274815}
   - component: {fileID: 1618084263122470706}
   - component: {fileID: 951515456481000402}
-  - component: {fileID: 2281395846580537535}
+  - component: {fileID: 7041540900860399333}
   - component: {fileID: 5572312570260336593}
   - component: {fileID: 692282319500845926}
-  - component: {fileID: 7041540900860399333}
   m_Layer: 0
   m_Name: T6
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2948,7 +3026,8 @@ Transform:
   m_LocalPosition: {x: 0.0078051696, y: 16.153212, z: 1.2338521}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7190707835396596645}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1618084263122470706
@@ -3001,7 +3080,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2281395846580537535
+--- !u!114 &7041540900860399333
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3010,9 +3089,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 5559653071007365364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T6
+  function: 'Aid articulation of ribs, Supports rib cage, Protects torso, & Protects
+    spinal cord '
+  structure: 'Smaller than caudal thoracic vertebra but larger than those above it,
+    Downward spinous process overlaps the one of vertebra below , Vertebral foramen
+    is smaller and circular, Connects with tubercles on each rib, Connected to pair
+    of ribs on either side of rib cage, & Heart shaped '
+  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
+    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch,  Pedicle
+    of Vertebral Arch, Vertebral Foramen, & Vertebral Canal  '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &5572312570260336593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3047,30 +3138,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.318424, y: 1.7643957, z: 3.054295}
   m_Center: {x: -0.0014458895, y: -0.15800428, z: 0.022848547}
---- !u!114 &7041540900860399333
-MonoBehaviour:
+--- !u!1 &5689891869942630863
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5559653071007365364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T6
-  function: 'Aid articulation of ribs, Supports rib cage, Protects torso, & Protects
-    spinal cord '
-  structure: 'Smaller than caudal thoracic vertebra but larger than those above it,
-    Downward spinous process overlaps the one of vertebra below , Vertebral foramen
-    is smaller and circular, Connects with tubercles on each rib, Connected to pair
-    of ribs on either side of rib cage, & Heart shaped '
-  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
-    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch,  Pedicle
-    of Vertebral Arch, Vertebral Foramen, & Vertebral Canal  '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5152990492571533664}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5152990492571533664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5689891869942630863}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4748768012041904766}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5702064155355094369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 463085076070175291}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &463085076070175291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5702064155355094369}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8786763010931339280}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5794682536253256485
 GameObject:
   m_ObjectHideFlags: 0
@@ -3082,13 +3211,12 @@ GameObject:
   - component: {fileID: 3157778475170165928}
   - component: {fileID: 7332022498247661019}
   - component: {fileID: 3684822218793184688}
-  - component: {fileID: 1341883722564066343}
+  - component: {fileID: 676844601634973127}
   - component: {fileID: 9130425474749232147}
   - component: {fileID: 8560372739482667324}
-  - component: {fileID: 676844601634973127}
   m_Layer: 0
   m_Name: L1
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3159,7 +3287,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1341883722564066343
+--- !u!114 &676844601634973127
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3168,9 +3296,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 5794682536253256485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: L1
+  function: 'Supports entire weight of upper body tissues, Acts as transition between
+    thoracic and lumbar vertebrae, Support muscles of lower back and hips, Stabilize
+    spine and provide small range of flexibility, & Protects spinal cord '
+  structure: 'Rounded planar joint with neighboring articular process, Smallest and
+    most superior lumbar vertebrae, Among largest bones in spine, Large, roughly
+    cylindrical region of bone known as the body, Body much wider than deep, Smaller
+    vertebral arch but thicker and stronger than other types, Short, narrow transverse
+    process, Transverse process has no facets to attach ribs on L1, Spinous process
+    points more inferiorly than other lumbar vertebrae, Slightly different from other
+    true vertebrae, Body lacks external articular facets, & Lacks transverse foramina '
+  components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
+    Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
+    Pedicle of Vertebral Arch, & Vertebral Foramen '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &9130425474749232147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3205,34 +3349,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.167039, y: 2.0318308, z: 3.7999108}
   m_Center: {x: -0.0010662675, y: -0.01812318, z: -0.23968899}
---- !u!114 &676844601634973127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5794682536253256485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: L1
-  function: 'Supports entire weight of upper body tissues, Acts as transition between
-    thoracic and lumbar vertebrae, Support muscles of lower back and hips, Stabilize
-    spine and provide small range of flexibility, & Protects spinal cord '
-  structure: 'Rounded planar joint with neighboring articular process, Smallest and
-    most superior lumbar vertebrae, Among largest bones in spine, Large, roughly
-    cylindrical region of bone known as the body, Body much wider than deep, Smaller
-    vertebral arch but thicker and stronger than other types, Short, narrow transverse
-    process, Transverse process has no facets to attach ribs on L1, Spinous process
-    points more inferiorly than other lumbar vertebrae, Slightly different from other
-    true vertebrae, Body lacks external articular facets, & Lacks transverse foramina '
-  components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
-    Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
-    Pedicle of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &5919121681113404959
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,8 +3359,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5606903108673852680}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
+  m_Name: Pivot
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3274,8 +3390,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6757724152256269758}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
+  m_Name: Pivot
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3331,6 +3447,37 @@ Transform:
   - {fileID: 3855737123411755663}
   m_Father: {fileID: 3505130880314354802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6445305580292881984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3677424465216259001}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3677424465216259001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6445305580292881984}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3371859354773028585}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6688885452529278642
 GameObject:
   m_ObjectHideFlags: 0
@@ -3369,6 +3516,99 @@ Transform:
   - {fileID: 3371859354773028585}
   m_Father: {fileID: 3505130880314354802}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6959638510108851324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5569258967343165321}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5569258967343165321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6959638510108851324}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2139799030377446916}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7034839031504703397
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1652768675147303966}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1652768675147303966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7034839031504703397}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5456493676328837488}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7308728597476696072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2628755971368485459}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2628755971368485459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308728597476696072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6461179761933779909}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7894824421747185171
 GameObject:
   m_ObjectHideFlags: 0
@@ -3380,13 +3620,12 @@ GameObject:
   - component: {fileID: 3037811686340613903}
   - component: {fileID: 6288981641416103630}
   - component: {fileID: 1586346741114543252}
-  - component: {fileID: 3028375615078857019}
+  - component: {fileID: 449534569575687420}
   - component: {fileID: 2854777890398257798}
   - component: {fileID: 2942017981672059588}
-  - component: {fileID: 449534569575687420}
   m_Layer: 0
   m_Name: T10
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3403,7 +3642,8 @@ Transform:
   m_LocalPosition: {x: -0.00487114, y: 11.925993, z: 1.2725804}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4892610551976953368}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6288981641416103630
@@ -3456,7 +3696,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3028375615078857019
+--- !u!114 &449534569575687420
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3465,9 +3705,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7894824421747185171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T10
+  function: 'Provides support and cushion to joints and whole spine, Makes up central
+    portion of spine, & Protects spinal cord '
+  structure: 'Makes joint with T9 and T11, Increasingly larger central body, Smaller
+    and circular vertebral foramen, Central body is flat above and below, Connected
+    to pair of ribs on either side of rib cage, Increasingly horizontal spinous process,
+    & Shape resembles lumbar vertebra '
+  components: 'Body of Vertebra, Complete Costal Facet, Transverse Process, Spinous
+    Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle of
+    Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &2854777890398257798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3502,30 +3754,99 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.4187312, y: 1.6843166, z: 3.175209}
   m_Center: {x: 0.017999172, y: -0.18417072, z: -0.03416902}
---- !u!114 &449534569575687420
-MonoBehaviour:
+--- !u!1 &7903605617966794782
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7894824421747185171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T10
-  function: 'Provides support and cushion to joints and whole spine, Makes up central
-    portion of spine, & Protects spinal cord '
-  structure: 'Makes joint with T9 and T11, Increasingly larger central body, Smaller
-    and circular vertebral foramen, Central body is flat above and below, Connected
-    to pair of ribs on either side of rib cage, Increasingly horizontal spinous process,
-    & Shape resembles lumbar vertebra '
-  components: 'Body of Vertebra, Complete Costal Facet, Transverse Process, Spinous
-    Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle of
-    Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5973112392045938023}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5973112392045938023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7903605617966794782}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4318067465473769293}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7921944005413433082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6185145182833430968}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6185145182833430968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7921944005413433082}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6490268317045437274}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7958559858778039940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5615417554547706128}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5615417554547706128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7958559858778039940}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3727831173934384647}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8023699740447348757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3537,13 +3858,12 @@ GameObject:
   - component: {fileID: 5456493676328837488}
   - component: {fileID: 6918711898093096309}
   - component: {fileID: 8954061147531766965}
-  - component: {fileID: 728119340352379069}
+  - component: {fileID: 5679288263492532786}
   - component: {fileID: 5644172240040024452}
   - component: {fileID: 6203439933704536015}
-  - component: {fileID: 5679288263492532786}
   m_Layer: 0
   m_Name: T8
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3560,7 +3880,8 @@ Transform:
   m_LocalPosition: {x: -0.0021944682, y: 14.030923, z: 1.482845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1652768675147303966}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6918711898093096309
@@ -3613,7 +3934,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &728119340352379069
+--- !u!114 &5679288263492532786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3622,9 +3943,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8023699740447348757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T8
+  function: Protects spinla cord
+  structure: 'Larger center body, Increasingly large pedicles and vertebral arch,
+    Downward spinous process overlaps the one of vertebra below , Connected to pair
+    of ribs on either side of rib cage, & Heart shaped '
+  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
+    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
+    of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &5644172240040024452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3659,28 +3990,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5752523, y: 1.8693445, z: 3.0889907}
   m_Center: {x: -0.00034594536, y: -0.27932927, z: -0.09109467}
---- !u!114 &5679288263492532786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8023699740447348757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T8
-  function: Protects spinla cord
-  structure: 'Larger center body, Increasingly large pedicles and vertebral arch,
-    Downward spinous process overlaps the one of vertebra below , Connected to pair
-    of ribs on either side of rib cage, & Heart shaped '
-  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
-    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
-    of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &8122282490249708920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,13 +4001,12 @@ GameObject:
   - component: {fileID: 3371859354773028585}
   - component: {fileID: 5799643681580038145}
   - component: {fileID: 3230349508768896774}
-  - component: {fileID: 7566408582420651797}
+  - component: {fileID: 8626979806744746443}
   - component: {fileID: 7850918585590945124}
   - component: {fileID: 7894574154358693134}
-  - component: {fileID: 8626979806744746443}
   m_Layer: 0
   m_Name: C7
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3715,7 +4023,8 @@ Transform:
   m_LocalPosition: {x: -0.00034640403, y: 21.19378, z: -0.76059026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3677424465216259001}
   m_Father: {fileID: 7858875834214336011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5799643681580038145
@@ -3768,7 +4077,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7566408582420651797
+--- !u!114 &8626979806744746443
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3777,9 +4086,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 8122282490249708920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: C7
+  function: 'Supports and protects structures of head and neck, Prominent landmark
+    of skeleton (easy to see and feel at base of neck), Supports collective weight
+    of head and neck, Provides stability and flexibility to neck, & Important muscle
+    attachment site for neck muscles '
+  structure: 'Standard vertebral shape, Small compared other vertebrae, Large vertebral
+    foramen for passage of nerves, Long spinous process with no split tip, & Most
+    inferior and largest cervical vertebra '
+  components: 'Body of Vertebra, Uncal Process, Transverse Process, Spinous Process,
+    Inferior Articular Process, Superior Articular Process, Anterior Tubercle, Posterior
+    Tubercle, Carotid Tubercle, Vertebral Arch, Lamina of Vertebral Arch, Vertebral
+    Foramen, & Accessory Foramen Transversarium '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &7850918585590945124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3814,32 +4137,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5409985, y: 1.565321, z: 2.9068449}
   m_Center: {x: 0.000029325485, y: -0.04486561, z: 0.3898579}
---- !u!114 &8626979806744746443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8122282490249708920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: C7
-  function: 'Supports and protects structures of head and neck, Prominent landmark
-    of skeleton (easy to see and feel at base of neck), Supports collective weight
-    of head and neck, Provides stability and flexibility to neck, & Important muscle
-    attachment site for neck muscles '
-  structure: 'Standard vertebral shape, Small compared other vertebrae, Large vertebral
-    foramen for passage of nerves, Long spinous process with no split tip, & Most
-    inferior and largest cervical vertebra '
-  components: 'Body of Vertebra, Uncal Process, Transverse Process, Spinous Process,
-    Inferior Articular Process, Superior Articular Process, Anterior Tubercle, Posterior
-    Tubercle, Carotid Tubercle, Vertebral Arch, Lamina of Vertebral Arch, Vertebral
-    Foramen, & Accessory Foramen Transversarium '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &8236098091019643962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3850,8 +4147,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7158650292174060760}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
+  m_Name: Pivot
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3917,13 +4214,12 @@ GameObject:
   - component: {fileID: 8786763010931339280}
   - component: {fileID: 6124582499103417288}
   - component: {fileID: 2269513329104476054}
-  - component: {fileID: 1265228651834843995}
+  - component: {fileID: 6893410924398550468}
   - component: {fileID: 587443964822034009}
   - component: {fileID: 1636098021539460621}
-  - component: {fileID: 6893410924398550468}
   m_Layer: 0
   m_Name: T5
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3940,7 +4236,8 @@ Transform:
   m_LocalPosition: {x: 0.0018566347, y: 17.054169, z: 0.84233457}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 463085076070175291}
   m_Father: {fileID: 2071914573621500481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6124582499103417288
@@ -3993,7 +4290,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1265228651834843995
+--- !u!114 &6893410924398550468
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4002,9 +4299,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8676893121842885168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: T5
+  function: 'Supports spine as a whole & Protects spinal cord '
+  structure: 'Larger than thoracic vertebra above as a whole, Increasingly large
+    pedicles, Central body is flat above and below, Downward spinous process overlaps
+    the one of vertebra below , Connected to pair of ribs on either side of rib cage,
+    & Heart shaped '
+  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
+    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
+    of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &587443964822034009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4039,29 +4347,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.7048984, y: 1.7455845, z: 3.074997}
   m_Center: {x: -0.0021742582, y: -0.17057896, z: 0.1671958}
---- !u!114 &6893410924398550468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8676893121842885168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: T5
-  function: 'Supports spine as a whole & Protects spinal cord '
-  structure: 'Larger than thoracic vertebra above as a whole, Increasingly large
-    pedicles, Central body is flat above and below, Downward spinous process overlaps
-    the one of vertebra below , Connected to pair of ribs on either side of rib cage,
-    & Heart shaped '
-  components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
-    Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
-    of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &8797084499281372167
 GameObject:
   m_ObjectHideFlags: 0
@@ -4073,13 +4358,12 @@ GameObject:
   - component: {fileID: 6461179761933779909}
   - component: {fileID: 7669587897626196504}
   - component: {fileID: 5747760833781009296}
-  - component: {fileID: 7736214777378954515}
+  - component: {fileID: 8421684488680848746}
   - component: {fileID: 7049891513425337947}
   - component: {fileID: 5612459335833489133}
-  - component: {fileID: 8421684488680848746}
   m_Layer: 0
   m_Name: C6
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4096,7 +4380,8 @@ Transform:
   m_LocalPosition: {x: 0.0029141076, y: 22.147326, z: -1.0705216}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2628755971368485459}
   m_Father: {fileID: 7858875834214336011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7669587897626196504
@@ -4149,7 +4434,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7736214777378954515
+--- !u!114 &8421684488680848746
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4158,9 +4443,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8797084499281372167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: C6
+  function: "Supports and protects structures of head and neck, Helps maintain body\u2019s
+    posture, &  Anchors muscles that move "
+  structure: 'Standard vertebral shape, Small compared other vertebrae, Large vertebral
+    foramen for passage of nerves, Distinguished by carotid tubercle that projects
+    behind carotid artery, & Second most inferior and second largest cervical vertebra '
+  components: 'Body of Vertebra, Uncal Process, Transverse Process, Spinous Process,
+    Inferior Articular Process, Superior Articular Process, Anterior Tubercle, Posterior
+    Tubercle, Vertebral Arch, Lamina of Vertebral Arch, & Vertebral Foramen '
+  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  rate: 1
 --- !u!114 &7049891513425337947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4195,29 +4491,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.4149837, y: 1.5034828, z: 2.444508}
   m_Center: {x: -0.0032311082, y: -0.14043427, z: 0.23160791}
---- !u!114 &8421684488680848746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8797084499281372167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  partName: C6
-  function: "Supports and protects structures of head and neck, Helps maintain body\u2019s
-    posture, &  Anchors muscles that move "
-  structure: 'Standard vertebral shape, Small compared other vertebrae, Large vertebral
-    foramen for passage of nerves, Distinguished by carotid tubercle that projects
-    behind carotid artery, & Second most inferior and second largest cervical vertebra '
-  components: 'Body of Vertebra, Uncal Process, Transverse Process, Spinous Process,
-    Inferior Articular Process, Superior Articular Process, Anterior Tubercle, Posterior
-    Tubercle, Vertebral Arch, Lamina of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
 --- !u!1 &9080880905367201230
 GameObject:
   m_ObjectHideFlags: 0
@@ -4228,8 +4501,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1096914714543648005}
   m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
+  m_Name: Pivot
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
