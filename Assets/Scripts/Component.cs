@@ -26,11 +26,11 @@ namespace BodySystem
 
         private void Awake()
         {
-            if (partName == "")
+            if (partName == null)
             {
                 partName = this.name;
             }
-            if (function == null || structure == null)
+            if (function == null || structure == null || components == null)
             {
                 Console.Error.WriteLine($"Field on {this.name} was left blank");
             }
