@@ -10549,6 +10549,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2535728126214791734, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: function
+      value: 'Creates contact points for ribs and muscles to attach to '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535728126214791734, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: partName
+      value: ThoracicSpine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535728126214791734, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure
+      value: Composed of heart shaped vertebrae
+      objectReference: {fileID: 0}
+    - target: {fileID: 2535728126214791734, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components
+      value: 'T1 - T12 '
+      objectReference: {fileID: 0}
     - target: {fileID: 3505130880314354802, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -10588,6 +10604,42 @@ PrefabInstance:
     - target: {fileID: 3505130880314354802, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122339124136878449, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: function
+      value: "Holds the head\u2019s weight"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122339124136878449, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: partName
+      value: CervicalSpine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122339124136878449, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure
+      value: ' Composed of ring-like vertebrae '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4122339124136878449, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components
+      value: 'C1 - C7 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597311590871853601, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: function
+      value: "Supports whole upper body\u2019s weight "
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597311590871853601, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: partName
+      value: Lumbar Spine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597311590871853601, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure
+      value: 'Among largest bones in spine '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5597311590871853601, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components
+      value: L1 - L5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6025425545157739925, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: m_Name
+      value: LumbarSpineParts
       objectReference: {fileID: 0}
     - target: {fileID: 8675323801589764331, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
       propertyPath: m_Name
