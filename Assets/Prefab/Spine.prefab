@@ -4973,7 +4973,7 @@ MonoBehaviour:
   function: 
   structure: 
   components: 
-  changedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  changedColor: {r: 0.67058825, g: 0.41176474, b: 0.003921569, a: 1}
   rate: 1
 --- !u!1001 &2332017575796272435
 PrefabInstance:
@@ -5214,7 +5214,7 @@ MonoBehaviour:
   function: 
   structure: 
   components: 
-  changedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  changedColor: {r: 0.011764707, g: 0.15294118, b: 1, a: 1}
   rate: 1
 --- !u!4 &4515356267744064888 stripped
 Transform:

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,10 @@ namespace BodySystem
             foreach (Transform child in transform)
             {
                 if (child.CompareTag("DerivedBone"))
+                {
+                    derivedBones.Add(child.gameObject);
+                }
+                if (child.CompareTag("Bone"))
                 {
                     derivedBones.Add(child.gameObject);
                 }

@@ -149,14 +149,14 @@ namespace BodySystem
             {
                 transform.position =
                     Vector3.Slerp(transform.position, 
-                        new Vector3(vectorTrans.position.x, vectorTrans.position.y, -8f),
+                        new Vector3(vectorTrans.position.x, vectorTrans.position.y, -30f),
                         posProgress);
 
                 posProgress += Time.deltaTime * rate;
 
                 yield return null;
             }
-            transform.position = new Vector3(vectorTrans.position.x, vectorTrans.position.y, -8f);
+            transform.position = new Vector3(vectorTrans.position.x, vectorTrans.position.y, -30f);
 
             posProgress = 0;
         }

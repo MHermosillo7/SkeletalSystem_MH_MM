@@ -95,7 +95,10 @@ namespace BodySystem
 
                         camMov.CenterCamera(vectorHit);
 
-                        zoomUI.ShowUI();
+                        if (!zoomUI.IsUIActive()) 
+                        {
+                            zoomUI.ShowUI();
+                        }
                     }
                 }
             }
@@ -131,7 +134,7 @@ namespace BodySystem
 
                 camMov.CenterVector();
 
-                zoomUI.ShowUI();
+
             }
         }
         

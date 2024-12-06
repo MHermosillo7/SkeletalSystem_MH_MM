@@ -17,7 +17,7 @@ public class Screenshot : MonoBehaviour
     }
     string completePath;
     [SerializeField] string startPath = "C:/Users";
-    [SerializeField] string userName = Environment.UserName;
+    [HideInInspector] string userName = Environment.UserName;
     [SerializeField] Folder folder = Folder.Downloads;
     [SerializeField] string projectFolder = "Skeletal System";
     [SerializeField] string imageName = "BoneImage";

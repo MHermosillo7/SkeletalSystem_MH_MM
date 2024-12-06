@@ -21,20 +21,18 @@ namespace BodySystem
             minus.enabled = false;
             button.interactable = false;
         }
+        private void Update()
+        {
+            if(Input.GetKeyUp(KeyCode.Escape))
+            {
+                ToggleIcon();
+                print("Hello");
+            }
+        }
         void ToggleIcon()
         {
-            if (plusIsActive)
-            {
-                plus.enabled = false;
-                minus.enabled = true;
-            }
-            else
-            {
-                plus.enabled = true;
-                minus.enabled = false;
-            }
-
-            plusIsActive = !plusIsActive;
+            plus.enabled = !plus.isActiveAndEnabled;
+            minus.enabled = !minus.isActiveAndEnabled;
         }
 
         public void ShowUI()
@@ -44,8 +42,12 @@ namespace BodySystem
                 button.interactable = (true);
             }
 
+            if (!plus.isActiveAndEnabled)
+            {
+                minus.enabled = false;
+                plus.enabled = true;
+            }
             plusIsActive = false;
-            ToggleIcon();
             isZoomed = false;
         }
 
@@ -58,15 +60,18 @@ namespace BodySystem
             else
             {
                 user.ZoomOut();
+                
             }
             isZoomed = !isZoomed;
 
-            ToggleIcon();
+            plus.enabled = !plus.isActiveAndEnabled;
+            minus.enabled = !minus.isActiveAndEnabled;
+            
         }
-
         public bool IsUIActive()
         {
             return button.IsInteractable();
         }
+
     }
 }
