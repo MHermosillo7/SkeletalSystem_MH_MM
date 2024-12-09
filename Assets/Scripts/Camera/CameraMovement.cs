@@ -15,8 +15,14 @@ namespace BodySystem
         [SerializeField] int slideSpeed = 100;
         [SerializeField] float zoomSpeed = 1.5f;
 
-        float rotProgress = 0;
+        Coroutine vecRotationCoroutine;
+        Coroutine camRotationCoroutine;
+        Coroutine positionCoroutine;
+
+        float vecRotProgress = 0;
+        float camRotProgress = 0;
         float posProgress = 0;
+
         float endTime = 1;
         [Range(0, 1)] [SerializeField] float rate = .5f;
 
@@ -42,6 +48,8 @@ namespace BodySystem
         {
             if (camStatus.cameraCanMove)
             {
+                StopAllCoroutines();
+
                 if (Input.GetMouseButton(2))
                 {
                     horizontalInput = GetInput("Mouse X", rotateSpeed);
@@ -52,19 +60,15 @@ namespace BodySystem
 
                 Zoom();
 
-                //Id holding right click
+                //If holding right click
                 if (Input.GetMouseButton(1))
                 {
                     Slide();
                 }
             }
-
-            else
+            else if(camRotProgress == 0 && posProgress == 0 && vecRotProgress == 0)
             {
-                if(rotProgress == 0 && posProgress == 0)
-                {
-                    camStatus.UpdateCamStatus(true);
-                }
+                camStatus.UpdateCamStatus(true);
             }
         }
 
@@ -115,10 +119,10 @@ namespace BodySystem
 
         public void CenterCamera(Transform newVector)
         {
-            if (camStatus.cameraCanMove)
+            if (/*camStatus.cameraCanMove*/1 == 1)
             {
                 //Locks user driven camera movement
-                camStatus.UpdateCamStatus(false);
+                //camStatus.UpdateCamStatus(false);
 
                 //Store vectorHit's transform as camera script's vector transform
                 vectorTrans = newVector;
@@ -128,17 +132,20 @@ namespace BodySystem
 
                 ResetPrevVector();
 
-                StartCoroutine(CenterCameraPos());
-                StartCoroutine(CenterRot(this.transform));
+                CheckCoroutine(positionCoroutine, CenterCameraPos());
+                CheckCoroutine(camRotationCoroutine, CenterCameraRot());
+
             }
         }
 
+        //Used when zooming out, since camera is reset and
+        //centers object but vector remains the same
         public void CenterVector()
         {
             //Locks user driven camera movement
-            camStatus.UpdateCamStatus(false);
+            //camStatus.UpdateCamStatus(false);
 
-            StartCoroutine(CenterRot(vectorTrans));
+            CheckCoroutine(vecRotationCoroutine, CenterVectorRot());
         }
 
         /* Note to self: Consider using Lerp or SmoothDamp 
@@ -161,24 +168,54 @@ namespace BodySystem
             posProgress = 0;
         }
 
-        IEnumerator CenterRot(Transform trans)
+        IEnumerator CenterCameraRot()
         {
-            while (rotProgress < endTime)
+            while (camRotProgress < endTime)
             {
-                trans.rotation = 
-                    Quaternion.Slerp(transform.rotation, Quaternion.identity, rotProgress);
+                transform.rotation = 
+                    Quaternion.Slerp(transform.rotation, Quaternion.identity, camRotProgress);
 
-                rotProgress += Time.deltaTime * rate;
+                camRotProgress += Time.deltaTime * rate;
 
                 yield return null;
             }
-            rotProgress = 0;
+            camRotProgress = 0;
+        }
+
+        IEnumerator CenterVectorRot()
+        {
+            while (vecRotProgress < endTime)
+            {
+                vectorTrans.rotation =
+                    Quaternion.Slerp(vectorTrans.rotation, Quaternion.identity, vecRotProgress);
+
+                vecRotProgress += Time.deltaTime * rate;
+
+                yield return null;
+            }
+            vecRotProgress = 0;
         }
         public void ResetPrevVector()
         {
             prevVectorTrans.rotation = Quaternion.identity;
 
             prevVectorTrans = vectorTrans;
+        }
+
+        void CheckCoroutine(Coroutine cor, IEnumerator ie)
+        {
+            switch (cor)
+            {
+                case null:
+                    cor = StartCoroutine(ie);
+                    break;
+
+                default:
+                    StopCoroutine(cor);
+
+                    cor = StartCoroutine(ie);
+                    break;
+            }
         }
     }
 }

@@ -69,7 +69,7 @@ namespace BodySystem
                 }
 
                 //Else object hit is another object
-                else if (camStatus.cameraCanMove)
+                else if (/*camStatus.cameraCanMove*/ 1 == 1)
                 {
                     DeSelect();
 
@@ -122,7 +122,7 @@ namespace BodySystem
         {
             selectedItemZoom.ZoomIn();
 
-            camMov.CenterVector();
+            //camMov.CenterVector();
 
             infoUI.HideUI();
         }
@@ -132,7 +132,7 @@ namespace BodySystem
             {
                 selectedItemZoom.ZoomOut();
 
-                camMov.CenterVector();
+                //camMov.CenterVector();
 
 
             }

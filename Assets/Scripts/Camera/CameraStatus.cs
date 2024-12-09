@@ -4,7 +4,12 @@ namespace BodySystem
 {
     public class CameraStatus : MonoBehaviour
     {
-        public bool cameraCanMove = true;
+        public bool cameraCanMove
+        {
+            get { return this; }
+            private set { cameraCanMove = value; }
+        }
+
         [SerializeField] Animator anim;
 
         // Start is called before the first frame update
