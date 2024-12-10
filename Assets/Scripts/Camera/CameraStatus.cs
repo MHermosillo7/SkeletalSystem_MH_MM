@@ -4,10 +4,11 @@ namespace BodySystem
 {
     public class CameraStatus : MonoBehaviour
     {
+        private bool canMove;
         public bool cameraCanMove
         {
-            get { return this; }
-            private set { cameraCanMove = value; }
+            get { return canMove; }
+            private set { canMove = value; }
         }
 
         [SerializeField] Animator anim;
@@ -21,6 +22,7 @@ namespace BodySystem
 
         public void UpdateCamStatus(bool status)
         {
+            
             cameraCanMove = status;
             anim.SetBool("CameraCanMove", cameraCanMove);
         }

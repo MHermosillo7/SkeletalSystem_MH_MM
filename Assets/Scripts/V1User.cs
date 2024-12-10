@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+ /*
 namespace BodySystem
 {
     public class User : MonoBehaviour
@@ -50,7 +50,7 @@ namespace BodySystem
             /*  Do not continue method if cursor is over a UI element
                 Or if previous camera mov hasn't finished
                 (If Center Camera is called again before previous processes are
-                finished, the two clash and result in unexpected camera transformations) */
+                finished, the two clash and result in unexpected camera transformations) 
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;
@@ -69,7 +69,7 @@ namespace BodySystem
                 }
 
                 //Else object hit is another object
-                else
+                else if (camStatus.cameraCanMove)
                 {
                     DeSelect();
 
@@ -95,7 +95,7 @@ namespace BodySystem
 
                         camMov.CenterCamera(vectorHit);
 
-                        if (!zoomUI.IsUIActive()) 
+                        if (!zoomUI.IsUIActive())
                         {
                             zoomUI.ShowUI();
                         }
@@ -122,7 +122,7 @@ namespace BodySystem
         {
             selectedItemZoom.ZoomIn();
 
-            //camMov.CenterVector();
+            camMov.CenterVector();
 
             infoUI.HideUI();
         }
@@ -132,11 +132,11 @@ namespace BodySystem
             {
                 selectedItemZoom.ZoomOut();
 
-                //camMov.CenterVector();
+                camMov.CenterVector();
 
 
             }
         }
-        
+
     }
-}
+} */

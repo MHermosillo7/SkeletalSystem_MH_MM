@@ -15,6 +15,12 @@ namespace BodySystem
         [SerializeField] int slideSpeed = 100;
         [SerializeField] float zoomSpeed = 1.5f;
 
+        //Rotation Control
+        Vector3 eulerAngles;
+        int clampAngle = 50;
+        bool canRotateDown = true;
+        bool canRotateUp = true;
+
         Coroutine vecRotationCoroutine;
         Coroutine camRotationCoroutine;
         Coroutine positionCoroutine;
@@ -48,14 +54,12 @@ namespace BodySystem
         {
             if (camStatus.cameraCanMove)
             {
-                StopAllCoroutines();
-
                 if (Input.GetMouseButton(2))
                 {
                     horizontalInput = GetInput("Mouse X", rotateSpeed);
                     verticalInput = GetInput("Mouse Y", rotateSpeed);
 
-                    Rotate();
+                    RotateA();
                 }
 
                 Zoom();
@@ -63,7 +67,7 @@ namespace BodySystem
                 //If holding right click
                 if (Input.GetMouseButton(1))
                 {
-                    Slide();
+                    SlideA();
                 }
             }
             else if(camRotProgress == 0 && posProgress == 0 && vecRotProgress == 0)
@@ -72,16 +76,70 @@ namespace BodySystem
             }
         }
 
-        //Rotate camera around object in all axis (almost)
-        void Rotate()
+        //Rotate camera around object horizontally
+        void RotateA()
         {
-            //Rotate vertically
-            vectorTrans.Rotate(Vector3.right, verticalInput * -1);
+            //Rotate horizontally by using vertical and horizontal mouse input
+            vectorTrans.Rotate(Vector3.up, horizontalInput + verticalInput, Space.World);
+        }
+
+        //Cannot Have RotationB paired with SlideA
+        //because the camera stops rotating around object
+        //Modified camera position interferes with rotation
+        //SlideA only with RotationA
+        void RotateB()
+        {
+            CheckRotation();
+
+            //Checks if can rotate vertically and applies force
+            RotateVertically();
 
             //Rotate horizontally
             vectorTrans.Rotate(Vector3.up, horizontalInput, Space.World);
         }
+        void CheckRotation()
+        {
+            if (vectorTrans.rotation.eulerAngles.x > clampAngle 
+                && vectorTrans.rotation.eulerAngles.x !< 180)
+            {
+                print(vectorTrans.rotation.eulerAngles);
+                Clamp(clampAngle);
 
+                
+                canRotateUp = false;
+            }
+            else if (vectorTrans.rotation.eulerAngles.x < 310 
+                && vectorTrans.rotation.eulerAngles.x !> 180)
+            {
+                print(vectorTrans.rotation.eulerAngles);
+                Clamp(-clampAngle);
+
+                print("to clamp or not to clamp");
+                canRotateDown = false;
+            }
+        }
+        void RotateVertically()
+        {
+            if (verticalInput < 0 && canRotateUp)
+            {
+                vectorTrans.Rotate(Vector3.right, verticalInput * -1);
+                canRotateDown = true;
+            }
+            else if (verticalInput > 0 && canRotateDown)
+            {
+                vectorTrans.Rotate(Vector3.right, verticalInput * -1);
+                canRotateUp = true;
+            }
+        }
+        void Clamp(int xAngle)
+        {
+            eulerAngles = vectorTrans.rotation.eulerAngles;
+
+            Quaternion q = new Quaternion();
+            q.eulerAngles = new Vector3(xAngle, eulerAngles.y, eulerAngles.z);
+
+            vectorTrans.rotation = q;
+        }
         void Zoom()
         {
             if (Input.GetAxis("Scroll Wheel") > 0)
@@ -104,8 +162,15 @@ namespace BodySystem
                 transform.Translate(Vector3.forward * -zoomSpeed);
             }
         }
+        // Move camera vertically only
+        void SlideA()
+        {
+            transform.Translate
+                (Vector3.up * (-GetInput("Mouse Y", slideSpeed) - GetInput("Mouse X", slideSpeed)));
+        }
 
-        void Slide()
+        // Move Camera horizontally & vertically
+        void SlideB()
         {
             transform.Translate(Vector3.up * -GetInput("Mouse Y", slideSpeed));
             transform.Translate(Vector3.right * -GetInput("Mouse X", slideSpeed));
@@ -119,23 +184,19 @@ namespace BodySystem
 
         public void CenterCamera(Transform newVector)
         {
-            if (/*camStatus.cameraCanMove*/1 == 1)
-            {
-                //Locks user driven camera movement
-                //camStatus.UpdateCamStatus(false);
+            //Locks user driven camera movement
+            camStatus.UpdateCamStatus(false);
 
-                //Store vectorHit's transform as camera script's vector transform
-                vectorTrans = newVector;
+            //Store vectorHit's transform as camera script's vector transform
+            vectorTrans = newVector;
 
-                //Make new vector the camera's parent
-                transform.parent = newVector;
+            //Make new vector the camera's parent
+            transform.parent = newVector;
 
-                ResetPrevVector();
+            ResetPrevVector();
 
-                CheckCoroutine(positionCoroutine, CenterCameraPos());
-                CheckCoroutine(camRotationCoroutine, CenterCameraRot());
-
-            }
+            CheckCoroutine(positionCoroutine, CenterCameraPos());
+            CheckCoroutine(camRotationCoroutine, CenterCameraRot());
         }
 
         //Used when zooming out, since camera is reset and
@@ -143,7 +204,7 @@ namespace BodySystem
         public void CenterVector()
         {
             //Locks user driven camera movement
-            //camStatus.UpdateCamStatus(false);
+            camStatus.UpdateCamStatus(false);
 
             CheckCoroutine(vecRotationCoroutine, CenterVectorRot());
         }
@@ -202,6 +263,10 @@ namespace BodySystem
             prevVectorTrans = vectorTrans;
         }
 
+        // Checks coroutine reference, and
+        // if it has been started before, stops it.
+        // Always starts the Enumerator passed and
+        // stores reference to coroutine
         void CheckCoroutine(Coroutine cor, IEnumerator ie)
         {
             switch (cor)
