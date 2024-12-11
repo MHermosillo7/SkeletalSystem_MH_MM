@@ -10,6 +10,19 @@ public class Information : MonoBehaviour
     public List<string> structure = new List<string>();
     public List<string> components = new List<string>();
 
+    public enum ZoomLevel
+    {
+        Zero,
+        One,
+        Two,
+        Three,
+    }
+    public ZoomLevel zoomLevel;
+
+    public Transform pivot;
+
+    public bool needsCenter = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +34,7 @@ public class Information : MonoBehaviour
         {
             Console.WriteLine("Field is empty");
         }
+        GetPivot();
     }
 
     public string GetName()
@@ -35,7 +49,7 @@ public class Information : MonoBehaviour
     {
         return NiceString(structure);
     }
-    public string GetCompononents()
+    public string GetDerived()
     {
         return NiceString(components);
     }
@@ -49,11 +63,26 @@ public class Information : MonoBehaviour
 
         foreach (string str in info)
         {
-            niceString = $"-{str} \n";
+            niceString += $"-{str} \n";
         }
 
         niceString = niceString.Substring(0, niceString.Length - 2);
 
         return niceString;
+    }
+
+    void GetPivot()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            Transform child = transform.GetChild(i);
+
+            if (child.CompareTag("Pivot"))
+            {
+                pivot = child;
+
+                return;
+            }
+        }
     }
 }

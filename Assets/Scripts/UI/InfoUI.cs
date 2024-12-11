@@ -23,21 +23,21 @@ namespace BodySystem
         public void GetFunctionInfo()
         {
             EnablePanel();
-            body.text = GetComponent().function;
+            body.text = GetComponent().GetFunction();
         }
         public void GetStructureInfo()
         {
             EnablePanel();
-            body.text = GetComponent().structure;
+            body.text = GetComponent().GetStructure();
         }
         public void GetComponentsInfo()
         {
             EnablePanel();
-            body.text = GetComponent().components;
+            body.text = GetComponent().GetDerived();
         }
         public void GetName()
         {
-            nameText.text = GetComponent().partName;
+            nameText.text = GetComponent().GetName();
         }
         public void HideUI()
         {
@@ -52,9 +52,9 @@ namespace BodySystem
             uiPivot.transform.position = Input.mousePosition;
             nameButton.gameObject.SetActive(true);
         }
-        Component GetComponent()
+        Information GetComponent()
         {
-            return userScript.selectedItem.GetComponent<Component>();
+            return userScript.selectedItem.GetComponent<Information>();
         }
         public void EnableButtons()
         {

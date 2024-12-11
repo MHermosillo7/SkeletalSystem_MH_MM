@@ -6,11 +6,8 @@ namespace BodySystem
     public class ZoomUI : MonoBehaviour
     {
         [SerializeField] Button button;
-        [SerializeField] Image plus;
-        [SerializeField] Image minus;
+        [SerializeField] GameObject panel;
 
-        bool plusIsActive = true;
-        bool isZoomed = false;
 
         User user;
 
@@ -18,60 +15,36 @@ namespace BodySystem
         {
             user = FindObjectOfType<User>();
 
-            minus.enabled = false;
-            button.interactable = false;
+            panel.SetActive(false);
         }
         private void Update()
         {
-            if(Input.GetKeyUp(KeyCode.Escape))
-            {
-                ToggleIcon();
-                print("Hello");
-            }
+
         }
-        void ToggleIcon()
+        public void EnableButton(bool enabled)
         {
-            plus.enabled = !plus.isActiveAndEnabled;
-            minus.enabled = !minus.isActiveAndEnabled;
+            button.interactable = enabled;
         }
 
-        public void ShowUI()
+        public void ZoomIn()
         {
-            if (!button.IsInteractable())
-            {
-                button.interactable = (true);
-            }
-
-            if (!plus.isActiveAndEnabled)
-            {
-                minus.enabled = false;
-                plus.enabled = true;
-            }
-            plusIsActive = false;
-            isZoomed = false;
+            user.ZoomIn();
         }
-
-        public void Zoom()
+        public void ZoomOut()
         {
-            if (!isZoomed)
-            {
-                user.ZoomIn();
-            }
-            else
-            {
-                user.ZoomOut();
-                
-            }
-            isZoomed = !isZoomed;
-
-            plus.enabled = !plus.isActiveAndEnabled;
-            minus.enabled = !minus.isActiveAndEnabled;
-            
+            user.ZoomOut();
         }
         public bool IsUIActive()
         {
             return button.IsInteractable();
         }
-
+        public void ShowUI()
+        {
+            panel.SetActive(true);
+        }
+        public void HideUI()
+        {
+            panel.SetActive(false);
+        }
     }
 }

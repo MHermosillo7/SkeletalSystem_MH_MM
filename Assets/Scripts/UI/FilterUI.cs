@@ -15,6 +15,7 @@ namespace BodySystem
 
         InfoUI infoUI;
         HelpUI helpUI;
+        ZoomUI zoomUI;
 
         Filter filter;
         // Start is called before the first frame update
@@ -22,6 +23,7 @@ namespace BodySystem
         {
             infoUI = FindObjectOfType<InfoUI>();
             helpUI = FindObjectOfType<HelpUI>();
+            zoomUI = FindObjectOfType<ZoomUI>();
             filter = FindObjectOfType<Filter>();
 
             if (panel)
@@ -44,6 +46,7 @@ namespace BodySystem
         {
             infoUI.HideUI();
             helpUI.HideUI();
+            zoomUI.HideUI();
             panel.SetActive(true);
         }
 

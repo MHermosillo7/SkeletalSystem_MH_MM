@@ -10,19 +10,19 @@ namespace BodySystem
     {
         Collider col;
         Renderer rend;
-        Component comp;
+        Highlight comp;
 
         List<GameObject> derivedBones = new List<GameObject>();
         List<Renderer> derivedRends = new List<Renderer>();
         List<Collider> derivedCols = new List<Collider>();
-        List<Component> derivedComp = new List<Component>();
+        List<Highlight> derivedComp = new List<Highlight>();
 
         // Start is called before the first frame update
         void Awake()
         {
             col = this.GetComponent<Collider>();
             rend = GetComponent<Renderer>();
-            comp = GetComponent<Component>();
+            comp = GetComponent<Highlight>();
 
             foreach (Transform child in transform)
             {
@@ -38,7 +38,7 @@ namespace BodySystem
 
             derivedRends = derivedBones.Select(b => b.GetComponent<Renderer>()).ToList();
             derivedCols = derivedBones.Select(b => b.GetComponent<Collider>()).ToList();
-            derivedComp = derivedBones.Select(b => b.GetComponent<Component>()).ToList();
+            derivedComp = derivedBones.Select(b => b.GetComponent<Highlight>()).ToList();
 
         }
         private void Start()
@@ -52,7 +52,6 @@ namespace BodySystem
             {
                 comp.ResetColor();
             }
-
             EnableParent(false);
 
             EnableChildren(true);
@@ -73,7 +72,7 @@ namespace BodySystem
 
         void EnableChildren(bool enable)
         {
-            foreach(Component c in derivedComp)
+            foreach(Highlight c in derivedComp)
             {
                 if (!c.IsStartingColor())
                 {

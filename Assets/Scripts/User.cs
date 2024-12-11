@@ -16,7 +16,7 @@ namespace BodySystem
 
         public GameObject selectedItem;
         [SerializeField] GameObject zoomedBone;
-        Component selectedItemComp;
+        Information selectedItemComp;
 
         Zoom selectedItemZoom;
 
@@ -34,6 +34,8 @@ namespace BodySystem
             filterUI = FindObjectOfType<FilterUI>();
             zoomUI = FindObjectOfType<ZoomUI>();
             helpUI = FindObjectOfType<HelpUI>();
+
+            zoomUI.EnableButton(false);
         }
 
         // Update is called once per frame
@@ -74,32 +76,30 @@ namespace BodySystem
                     DeSelect();
 
                     selectedItem = objectHit.transform.gameObject;
-                    selectedItemComp = objectHit.transform.GetComponent<Component>();
+                    selectedItemComp = objectHit.transform.GetComponent<Information>();
 
-                    if (IsDerivedBone())
-                    {
-                        infoUI.ShowUI();
-                    }
-
-                    else
+                    // Else it does not hit object tagged as derived bone
+                    // It resets zoom and 
+                    if(!IsDerivedBone())
                     {
                         if (selectedItemZoom)
                         {
                             selectedItemZoom.ZoomOut();
                         }
 
-                        selectedItemZoom = objectHit.transform.GetComponent<Zoom>();
-
-                        //Get child (vector) inside object hit
-                        Transform vectorHit = selectedItem.transform.GetChild(0);
-
-                        camMov.CenterCamera(vectorHit);
-
                         if (!zoomUI.IsUIActive()) 
                         {
-                            zoomUI.ShowUI();
+                            zoomUI.EnableButton(true);
                         }
                     }
+
+                    if (selectedItemComp.needsCenter || selectedItem.CompareTag("Bone"))
+                    {
+                        //Get child (vector) inside object hit
+                        camMov.CenterCamera(selectedItemComp.pivot);
+                    }
+
+                    objectHit.transform.TryGetComponent<Zoom>(out selectedItemZoom);
                 }
             }
             else
@@ -112,6 +112,7 @@ namespace BodySystem
             infoUI.HideUI();
             filterUI.HideUI();
             helpUI.HideUI();
+            zoomUI.HideUI();
         }
         bool IsDerivedBone()
         {
@@ -122,21 +123,20 @@ namespace BodySystem
         {
             selectedItemZoom.ZoomIn();
 
-            //camMov.CenterVector();
+            camMov.CenterVector();
 
             infoUI.HideUI();
         }
         public void ZoomOut()
         {
-            if (selectedItemZoom)
-            {
-                selectedItemZoom.ZoomOut();
+            selectedItemZoom.ZoomOut();
 
-                //camMov.CenterVector();
+            selectedItem = null;
 
+            camMov.CenterVector();
 
-            }
+            
         }
-        
+
     }
 }

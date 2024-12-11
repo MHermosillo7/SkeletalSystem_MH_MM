@@ -22,4 +22,9 @@ public class SourceUI : MonoBehaviour
             panel.SetActive(true);
         }
     }
+
+    public void HideUI() 
+    { 
+        panel.SetActive(false); 
+    }
 }

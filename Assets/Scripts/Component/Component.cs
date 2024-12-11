@@ -24,6 +24,17 @@ namespace BodySystem
         Coroutine onExitCoroutine;
         Renderer rend;
 
+        public enum ZoomLevel
+        {
+            Zero,
+            One,
+            Two,
+            Three,
+        }
+        public ZoomLevel zoomLevel;
+
+        public Transform pivot;
+
         private void Awake()
         {
             if (partName == null)
@@ -39,6 +50,8 @@ namespace BodySystem
             rend = GetComponent<Renderer>();
 
             startColor = rend.material.color;
+
+            GetPivot();
         }
 
         private void OnMouseEnter()
@@ -94,6 +107,20 @@ namespace BodySystem
         public bool IsStartingColor()
         {
             return rend.material.color == startColor;
+        }
+        void GetPivot()
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Transform child = transform.GetChild(i);
+
+                if (child.CompareTag("Pivot"))
+                {
+                    pivot = child;
+
+                    return;
+                }
+            }
         }
     }
 }
