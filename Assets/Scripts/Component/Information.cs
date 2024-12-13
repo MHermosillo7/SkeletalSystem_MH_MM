@@ -10,15 +10,6 @@ public class Information : MonoBehaviour
     public List<string> structure = new List<string>();
     public List<string> components = new List<string>();
 
-    public enum ZoomLevel
-    {
-        Zero,
-        One,
-        Two,
-        Three,
-    }
-    public ZoomLevel zoomLevel;
-
     public Transform pivot;
 
     public bool needsCenter = false;

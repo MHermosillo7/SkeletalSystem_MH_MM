@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class V2Zoom : MonoBehaviour
+public class LayerZoom : MonoBehaviour
 {
     int layersActive = 0;
 
@@ -43,17 +43,17 @@ public class V2Zoom : MonoBehaviour
     List<Collider> layerNineCol = new List<Collider>();
     List<Collider> layerTenCol = new List<Collider>();
 
-    List<Highlight> layerZeroHigh = new List<Highlight>();
-    List<Highlight> layerOneHigh = new List<Highlight>();
-    List<Highlight> layerTwoHigh = new List<Highlight>();
-    List<Highlight> layerThreeHigh = new List<Highlight>();
-    List<Highlight> layerFourHigh = new List<Highlight>();
-    List<Highlight> layerFiveHigh = new List<Highlight>();
-    List<Highlight> layerSixHigh = new List<Highlight>();
-    List<Highlight> layerSevenHigh = new List<Highlight>();
-    List<Highlight> layerEightHigh = new List<Highlight>();
-    List<Highlight> layerNineHigh = new List<Highlight>();
-    List<Highlight> layerTenHigh = new List<Highlight>();
+    List<Highlight> layerZeroLight = new List<Highlight>();
+    List<Highlight> layerOneLight = new List<Highlight>();
+    List<Highlight> layerTwoLight = new List<Highlight>();
+    List<Highlight> layerThreeLight = new List<Highlight>();
+    List<Highlight> layerFourLight = new List<Highlight>();
+    List<Highlight> layerFiveLight = new List<Highlight>();
+    List<Highlight> layerSixLight = new List<Highlight>();
+    List<Highlight> layerSevenLight = new List<Highlight>();
+    List<Highlight> layerEightLight = new List<Highlight>();
+    List<Highlight> layerNineLight = new List<Highlight>();
+    List<Highlight> layerTenLight = new List<Highlight>();
 
     // Start is called before the first frame update
     void Awake()
@@ -61,9 +61,6 @@ public class V2Zoom : MonoBehaviour
         ManageChildren(transform);
 
         ManageComponents();
-        /*derivedRends = derivedBones.Select(b => b.GetComponent<Renderer>()).ToList();
-        derivedCols = derivedBones.Select(b => b.GetComponent<Collider>()).ToList();
-        derivedComp = derivedBones.Select(b => b.GetComponent<Highlight>()).ToList();*/
     }
 
     // Update is called once per frame
@@ -71,7 +68,48 @@ public class V2Zoom : MonoBehaviour
     {
 
     }
-
+    public void ManageLayer(int layerIndex)
+    {
+        switch (layerIndex)
+        {
+            case 1:
+                ActivateLayer(layerZeroCol, layerZeroRend, layerOneCol, layerOneRend, layerOneLight);
+                break;
+            case 2:
+                ActivateLayer(layerOneCol, layerOneRend, layerTwoCol, layerTwoRend, layerTwoLight);
+                break;
+            case 3:
+                ActivateLayer(layerTwoCol, layerTwoRend, layerThreeCol, layerThreeRend, layerThreeLight);
+                break;
+            case 4:
+                ActivateLayer(layerThreeCol, layerThreeRend, layerFourCol, layerFourRend, layerFourLight);
+                break;
+            case 5:
+                ActivateLayer(layerFourCol, layerFourRend, layerFiveCol, layerFiveRend, layerFiveLight);
+                break;
+            case 6:
+                ActivateLayer(layerFiveCol, layerFiveRend, layerSixCol, layerSixRend, layerSixLight);
+                break;
+            case 7:
+                ActivateLayer(layerSixCol, layerSixRend, layerSevenCol, layerSevenRend, layerSevenLight);
+                break;
+            case 8:
+                ActivateLayer(layerSevenCol, layerSevenRend, layerEightCol, layerEightRend, layerEightLight);
+                break;
+            case 9:
+                ActivateLayer(layerEightCol, layerEightRend, layerNineCol, layerNineRend, layerNineLight);
+                break;
+            case 10:
+                ActivateLayer(layerNineCol, layerNineRend, layerTenCol, layerTenRend, layerTenLight);
+                break;
+        }
+    }
+    void ActivateLayer(
+        List<Collider> parentCols, List<Renderer> parentRends,
+        List<Collider> derivedCols, List<Renderer> derivedRends, List<Highlight> derivedLights)
+    {
+        ZoomManagement.ZoomOut(parentCols, parentRends, derivedCols, derivedRends, derivedLights);
+    }
 
     bool HasChildren(Transform obj)
     {
@@ -194,70 +232,71 @@ public class V2Zoom : MonoBehaviour
             case 0:
                 layerZeroRend.Add(transform.gameObject.GetComponent<Renderer>());
                 layerZeroCol.Add(transform.gameObject.GetComponent<Collider>());
-                layerZeroHigh.Add(transform.gameObject.GetComponent<Highlight>());
+                layerZeroLight.Add(transform.gameObject.GetComponent<Highlight>());
                 break;
 
             case 1:
                 layerOneRend.AddRange(layerOne.Select(b => b.gameObject.GetComponent<Renderer>()));
                 layerOneCol.AddRange(layerOne.Select(b => b.gameObject.GetComponent<Collider>()));
-                layerOneHigh.AddRange(layerOne.Select(b => b.gameObject.GetComponent<Highlight>()));
+                layerOneLight.AddRange(layerOne.Select(b => b.gameObject.GetComponent<Highlight>()));
                 break;
 
             case 2:
                 layerTwoRend.AddRange(layerTwo.Select(b => b.gameObject.GetComponent<Renderer>()));
                 layerTwoCol.AddRange(layerTwo.Select(b => b.gameObject.GetComponent<Collider>()));
-                layerTwoHigh.AddRange(layerTwo.Select(b => b.gameObject.GetComponent<Highlight>()));
+                layerTwoLight.AddRange(layerTwo.Select(b => b.gameObject.GetComponent<Highlight>()));
                 break;
 
             case 3:
                 layerThreeRend.AddRange(layerThree.Select(b => b.gameObject.GetComponent<Renderer>()));
                 layerThreeCol.AddRange(layerThree.Select(b => b.gameObject.GetComponent<Collider>()));
-                layerThreeHigh.AddRange(layerThree.Select(b => b.gameObject.GetComponent<Highlight>()));
+                layerThreeLight.AddRange(layerThree.Select(b => b.gameObject.GetComponent<Highlight>()));
                 break;
 
             case 4:
                 layerFourRend.AddRange(layerFour.Select(b => b.gameObject.GetComponent<Renderer>()));
                 layerFourCol.AddRange(layerFour.Select(b => b.gameObject.GetComponent<Collider>()));
-                layerFourHigh.AddRange(layerFour.Select(b => b.gameObject.GetComponent<Highlight>()));
+                layerFourLight.AddRange(layerFour.Select(b => b.gameObject.GetComponent<Highlight>()));
                 break;
 
             case 5:
                 layerFiveRend.AddRange(layerFive.Select(b => b.gameObject.GetComponent<Renderer>()));
                 layerFiveCol.AddRange(layerFive.Select(b => b.gameObject.GetComponent<Collider>()));
-                layerFiveHigh.AddRange(layerFive.Select(b => b.gameObject.GetComponent<Highlight>()));
+                layerFiveLight.AddRange(layerFive.Select(b => b.gameObject.GetComponent<Highlight>()));
                 break;
 
             case 6:
                 layerSixRend.AddRange(layerSix.Select(b => b.gameObject.GetComponent<Renderer>()));
                 layerSixCol.AddRange(layerSix.Select(b => b.gameObject.GetComponent<Collider>()));
-                layerSixHigh.AddRange(layerSix.Select(b => b.gameObject.GetComponent<Highlight>()));
+                layerSixLight.AddRange(layerSix.Select(b => b.gameObject.GetComponent<Highlight>()));
                 break;
 
             case 7:
                 layerSevenRend.AddRange(layerSeven.Select(b => b.gameObject.GetComponent<Renderer>()));
                 layerSevenCol.AddRange(layerSeven.Select(b => b.gameObject.GetComponent<Collider>()));
-                layerSevenHigh.AddRange(layerSeven.Select(b => b.gameObject.GetComponent<Highlight>()));
+                layerSevenLight.AddRange(layerSeven.Select(b => b.gameObject.GetComponent<Highlight>()));
                 break;
 
             case 8:
                 layerEightRend.AddRange(layerEight.Select(b => b.gameObject.GetComponent<Renderer>()));
                 layerEightCol.AddRange(layerEight.Select(b => b.gameObject.GetComponent<Collider>()));
-                layerEightHigh.AddRange(layerEight.Select(b => b.gameObject.GetComponent<Highlight>()));
+                layerEightLight.AddRange(layerEight.Select(b => b.gameObject.GetComponent<Highlight>()));
                 break;
 
             case 9:
                 layerNineRend.AddRange(layerNine.Select(b => b.gameObject.GetComponent<Renderer>()));
                 layerNineCol.AddRange(layerNine.Select(b => b.gameObject.GetComponent<Collider>()));
-                layerNineHigh.AddRange(layerNine.Select(b => b.gameObject.GetComponent<Highlight>()));
+                layerNineLight.AddRange(layerNine.Select(b => b.gameObject.GetComponent<Highlight>()));
                 break;
 
             case 10:
                 layerTenRend.AddRange(layerTen.Select(b => b.gameObject.GetComponent<Renderer>()));
                 layerTenCol.AddRange(layerTen.Select(b => b.gameObject.GetComponent<Collider>()));
-                layerTenHigh.AddRange(layerTen.Select(b => b.gameObject.GetComponent<Highlight>()));
+                layerTenLight.AddRange(layerTen.Select(b => b.gameObject.GetComponent<Highlight>()));
                 break;
         }
     }
+
     bool HasObjects(List<Transform> objs)
     {
         if(objs.Count > 0)
@@ -266,6 +305,7 @@ public class V2Zoom : MonoBehaviour
         }
         return false;
     }
+
     List<Transform> GetChildren(Transform obj)
     {
         List<Transform> children = new List<Transform>();
@@ -274,6 +314,8 @@ public class V2Zoom : MonoBehaviour
         {
             if(child.CompareTag("Bone") || child.CompareTag("Derived Bone"))
             {
+                child.GetComponent<ZoomControl>().layerIndex = layersActive;
+
                 children.Add(child);
             }
         }
@@ -281,80 +323,85 @@ public class V2Zoom : MonoBehaviour
         return children;
     }
 
-    //Cycles through all children of a game object and
-    //adds their transforms into layers depending on
-    //hierarchal depth compared to primary object passed
+    // Cycles through all children of a game object and
+    // adds their transforms into layers depending on
+    // hierarchal depth compared to primary object passed
+
+    // I add one to layersActive before getting children
+    // because when adding them to the list, I change their layer level
+    // in ZoomControl to equal the amount of layers active.
+    // It serves as an index of on what layer the object is.
     void ManageChildren(Transform obj)
     {
         layerZero.Add(obj);
 
         if (HasChildren(obj))
         {
-            layerOne.AddRange(GetChildren(obj));
             layersActive++;
+            layerOne.AddRange(GetChildren(obj));
 
             foreach (Transform child in layerOne)
             {
                 if (HasChildren(child))
                 {
-                    layerTwo.AddRange(GetChildren(child));
                     layersActive++;
+                    layerTwo.AddRange(GetChildren(child));
 
                     foreach (Transform grandchild in layerTwo)
                     {
                         if (HasChildren(grandchild))
                         {
-                            layerThree.AddRange(GetChildren(grandchild));
                             layersActive++;
+                            layerThree.AddRange(GetChildren(grandchild));
 
                             foreach (Transform greatGrandchild in layerThree)
                             {
                                 if (HasChildren(greatGrandchild))
                                 {
-                                    layerFour.AddRange(GetChildren(greatGrandchild));
                                     layersActive++;
+                                    layerFour.AddRange(GetChildren(greatGrandchild));
 
                                     foreach (Transform obj4 in layerFour)
                                     {
                                         if (HasChildren(obj4))
                                         {
-                                            layerFive.AddRange(GetChildren(obj4));
                                             layersActive++;
+                                            layerFive.AddRange(GetChildren(obj4));
 
                                             foreach (Transform obj5 in layerFive)
                                             {
                                                 if (HasChildren(obj5))
                                                 {
-                                                    layerSix.AddRange(GetChildren(obj5));
                                                     layersActive++;
+                                                    layerSix.AddRange(GetChildren(obj5));
 
                                                     foreach (Transform obj6 in layerSix)
                                                     {
                                                         if (HasChildren(obj6))
                                                         {
-                                                            layerSeven.AddRange(GetChildren(obj6));
                                                             layersActive++;
+                                                            layerSeven.AddRange(GetChildren(obj6));
 
                                                             foreach (Transform obj7 in layerSeven)
                                                             {
                                                                 if (HasChildren(obj7))
                                                                 {
-                                                                    layerEight.AddRange(GetChildren(obj7));
                                                                     layersActive++;
+                                                                    layerEight.AddRange(GetChildren(obj7));
 
                                                                     foreach (Transform obj8 in layerEight)
                                                                     {
                                                                         if (HasChildren(obj8))
                                                                         {
-                                                                            layerNine.AddRange(GetChildren(obj8));
                                                                             layersActive++;
+                                                                            layerNine.AddRange(GetChildren(obj8));
 
                                                                             foreach (Transform obj9 in layerNine)
                                                                             {
                                                                                 if (HasChildren(obj9))
                                                                                 {
-                                                                                    layerTen.AddRange(GetChildren(obj9));
                                                                                     layersActive++;
+                                                                                    layerTen.AddRange(GetChildren(obj9));
                                                                                 }
                                                                             }
                                                                         }

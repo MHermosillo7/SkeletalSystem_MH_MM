@@ -5,9 +5,23 @@ using UnityEngine;
 
 public class ZoomControl : MonoBehaviour
 {
+    LayerZoom layerZoom;
+    ZoomControl parentControl;
     List<ZoomControl> derivedControls = new List<ZoomControl>();
 
-    public ZoomControl parentControl;
+    public int layerIndex;
+
+
+    enum ControlZoomOut
+    {
+        ActiveParentLayer,
+        ActiveParentOnly
+    }
+
+    [SerializeField] ControlZoomOut controlZoomOut = ControlZoomOut.ActiveParentOnly;
+
+    public bool canZoomIn;
+    public bool canZoomOut;
 
     public Collider col;
     public Renderer rend;
@@ -21,15 +35,27 @@ public class ZoomControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        parentControl = transform.parent.gameObject.GetComponent<ZoomControl>();
+        CheckIfRoot();
 
+        layerZoom = transform.root.GetComponent<LayerZoom>();
         col = GetComponent<Collider>();
         rend = GetComponent<Renderer>();
         light = GetComponent<Highlight>();
 
         GetChildren();
+    }
 
-
+    void CheckIfRoot()
+    {
+        if(layerIndex == 0)
+        {
+            canZoomOut = false;
+        }
+        else
+        {
+            canZoomOut = true;
+            parentControl = transform.parent.gameObject.GetComponent<ZoomControl>();
+        }
     }
 
     void GetChildren()
@@ -39,6 +65,52 @@ public class ZoomControl : MonoBehaviour
             if(child.CompareTag("Bone") || child.CompareTag("Derived Bone"))
             {
                 derivedControls.Add(child.GetComponent<ZoomControl>());
+            }
+        }
+
+        if(derivedControls.Count == 0)
+        {
+            canZoomIn = false;
+        }
+    }
+
+    public void Zoom(string type)
+    {
+        type = type.ToLower();
+
+        switch (type)
+        {
+            case "in":
+                ZoomIntoChild();
+                break;
+            case "out":
+                ZoomOut();
+                break;
+        }
+    }
+
+    void ZoomIntoChild()
+    {
+        ZoomManagement.ZoomIn(col, rend, light, derivedCols, derivedRends, derivedLight);
+    }
+    void ZoomIntoThis()
+    {
+        ZoomManagement.ZoomOut(col, rend, derivedCols, derivedRends, derivedLight);
+    }
+    void ZoomOut()
+    {
+        if (canZoomOut)
+        {
+            switch (controlZoomOut)
+            {
+                case ControlZoomOut.ActiveParentOnly:
+                    parentControl.ZoomIntoThis();
+                    break;
+
+                case ControlZoomOut.ActiveParentLayer:
+
+                    layerZoom.ManageLayer(layerIndex);
+                    break;
             }
         }
     }
