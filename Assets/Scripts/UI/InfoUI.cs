@@ -54,7 +54,7 @@ namespace BodySystem
         }
         Information GetComponent()
         {
-            return userScript.selectedItem.GetComponent<Information>();
+            return userScript.selectedItemComp;
         }
         public void EnableButtons()
         {

@@ -6,7 +6,9 @@ using UnityEngine;
 public class ZoomControl : MonoBehaviour
 {
     LayerZoom layerZoom;
-    ZoomControl parentControl;
+    public ZoomControl parentControl;
+
+    ZoomControl childControl;
     List<ZoomControl> derivedControls = new List<ZoomControl>();
 
     public int layerIndex;
@@ -22,6 +24,7 @@ public class ZoomControl : MonoBehaviour
 
     public bool canZoomIn;
     public bool canZoomOut;
+    public bool zoomOutOnClick = true;
 
     public Collider col;
     public Renderer rend;
@@ -33,15 +36,16 @@ public class ZoomControl : MonoBehaviour
     List<Highlight> derivedLight = new List<Highlight>();
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        CheckIfRoot();
-
         layerZoom = transform.root.GetComponent<LayerZoom>();
         col = GetComponent<Collider>();
         rend = GetComponent<Renderer>();
         light = GetComponent<Highlight>();
-
+    }
+    private void Start()
+    {
+        CheckIfRoot();
         GetChildren();
     }
 
@@ -62,15 +66,25 @@ public class ZoomControl : MonoBehaviour
     {
         foreach(Transform child in transform)
         {
-            if(child.CompareTag("Bone") || child.CompareTag("Derived Bone"))
+            if(child.CompareTag("Bone") || child.CompareTag("DerivedBone"))
             {
-                derivedControls.Add(child.GetComponent<ZoomControl>());
+                childControl = child.GetComponent<ZoomControl>();
+
+                derivedCols.Add(childControl.col);
+                derivedRends.Add(childControl.rend);
+                derivedLight.Add(childControl.light);
             }
         }
 
-        if(derivedControls.Count == 0)
+        // Checks for null because child control keeps overwriting for every bone
+        // Thus, if there is at least one derived bone, child control will have a value
+        if(childControl == null)
         {
             canZoomIn = false;
+        }
+        else
+        {
+            canZoomIn = true;
         }
     }
 

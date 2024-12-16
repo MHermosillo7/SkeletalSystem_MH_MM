@@ -14,11 +14,14 @@ namespace BodySystem
         ZoomUI zoomUI;
         HelpUI helpUI;
 
-        public GameObject selectedItem;
+        GameObject selectedItem;
         [SerializeField] GameObject zoomedBone;
-        Information selectedItemComp;
+        public Information selectedItemComp;
 
-        Zoom selectedItemZoom;
+        ZoomControl selectedItemZoom;
+        ZoomControl previousItemZoom;
+
+        int selectedItemIndex;
 
         [SerializeField] LayerMask ignoreLayer;
 
@@ -78,13 +81,16 @@ namespace BodySystem
                     selectedItem = objectHit.transform.gameObject;
                     selectedItemComp = objectHit.transform.GetComponent<Information>();
 
+                    previousItemZoom = selectedItemZoom;
+                    selectedItemZoom = objectHit.transform.GetComponent<ZoomControl>();
+
                     // Else it does not hit object tagged as derived bone
                     // It resets zoom and 
-                    if(!IsDerivedBone())
+                    if (!IsDerivedBone() || selectedItemZoom.zoomOutOnClick == true)
                     {
-                        if (selectedItemZoom)
+                        if (previousItemZoom != null)
                         {
-                            selectedItemZoom.ZoomOut();
+                            previousItemZoom.Zoom("out");
                         }
 
                         if (!zoomUI.IsUIActive()) 
@@ -98,8 +104,6 @@ namespace BodySystem
                         //Get child (vector) inside object hit
                         camMov.CenterCamera(selectedItemComp.pivot);
                     }
-
-                    objectHit.transform.TryGetComponent<Zoom>(out selectedItemZoom);
                 }
             }
             else
@@ -121,22 +125,38 @@ namespace BodySystem
 
         public void ZoomIn()
         {
-            selectedItemZoom.ZoomIn();
+            if (selectedItemZoom.canZoomIn)
+            {
+                selectedItemZoom.Zoom("in");
 
-            camMov.CenterVector();
+                camMov.CenterVector();
 
-            infoUI.HideUI();
+                infoUI.HideUI();
+
+                //zoomUI.EnableButton(false);
+            }
         }
         public void ZoomOut()
         {
-            selectedItemZoom.ZoomOut();
+            if (selectedItemZoom.canZoomOut)
+            {
+                //Zoom out of current object
+                selectedItemZoom.Zoom("out");
 
-            selectedItem = null;
+                //Get parent's zoom controls
+                selectedItemZoom = selectedItemZoom.parentControl;
 
-            camMov.CenterVector();
+                //Override current selected item with parent,
+                //so information pop ups are displayed at first click
+                selectedItem = selectedItemZoom.parentControl.gameObject;
 
-            
+                //Override selectedItem information reference, so when info pop ups
+                //appears, information is displayed correctly
+                selectedItemComp = selectedItemZoom.GetComponent<Information>();
+
+                //Center camera around the pivot of previous object's parent
+                camMov.CenterCamera(selectedItemComp.pivot);
+            }
         }
-
     }
 }

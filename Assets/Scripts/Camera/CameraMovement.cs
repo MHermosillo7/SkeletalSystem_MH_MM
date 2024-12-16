@@ -187,6 +187,9 @@ namespace BodySystem
             //Locks user driven camera movement
             camStatus.UpdateCamStatus(false);
 
+            //Store referent of current vector to properly reset it
+            prevVectorTrans = vectorTrans;
+
             //Store vectorHit's transform as camera script's vector transform
             vectorTrans = newVector;
 

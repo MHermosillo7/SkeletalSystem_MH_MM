@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity;
 using UnityEngine;
 
 namespace BodySystem
@@ -35,7 +36,6 @@ namespace BodySystem
                     derivedBones.Add(child.gameObject);
                 }
             }
-
             derivedRends = derivedBones.Select(b => b.GetComponent<Renderer>()).ToList();
             derivedCols = derivedBones.Select(b => b.GetComponent<Collider>()).ToList();
             derivedComp = derivedBones.Select(b => b.GetComponent<Highlight>()).ToList();

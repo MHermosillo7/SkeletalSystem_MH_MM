@@ -35,13 +35,13 @@ public class ZoomManagement : MonoBehaviour
         EnableChildren(false, derivedLights, derivedCols, derivedRends);
     }
 
-    static void EnableParent(bool enable, Collider col, Renderer rend)
+    public static void EnableParent(bool enable, Collider col, Renderer rend)
     {
         col.enabled = enable;
         rend.enabled = enable;
     }
 
-    static void EnableParent(bool enable, List<Collider> parentCol, List<Renderer> parentRend)
+    public static void EnableParent(bool enable, List<Collider> parentCol, List<Renderer> parentRend)
     {
         foreach(Collider col in parentCol)
         {
@@ -53,7 +53,7 @@ public class ZoomManagement : MonoBehaviour
         }
     }
 
-    static void EnableChildren(bool enable, 
+    public static void EnableChildren(bool enable, 
         List<Highlight> derivedLight, List<Collider> derivedCols, List<Renderer> derivedRends)
     {
         foreach (Highlight c in derivedLight)

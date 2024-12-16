@@ -15,7 +15,7 @@ public class Information : MonoBehaviour
     public bool needsCenter = false;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if(partName == null)
         {
@@ -54,7 +54,7 @@ public class Information : MonoBehaviour
 
         foreach (string str in info)
         {
-            niceString += $"-{str} \n";
+            niceString += $"- {str} \n";
         }
 
         niceString = niceString.Substring(0, niceString.Length - 2);

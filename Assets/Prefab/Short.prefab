@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 3085037752783895507}
   - component: {fileID: 9079408189316120233}
   - component: {fileID: 1894702905434350423}
-  - component: {fileID: 1536819651877535973}
+  - component: {fileID: 3544889591606938908}
   m_Layer: 0
   m_Name: Short
   m_TagString: Bone
@@ -86,7 +86,7 @@ MeshRenderer:
   m_GameObject: {fileID: 6837039093259297199}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -164,9 +164,8 @@ MonoBehaviour:
   - Hello
   - Hallo
   - Holero
-  zoomLevel: 0
   pivot: {fileID: 0}
-  needsCenter: 0
+  needsCenter: 1
 --- !u!114 &1894702905434350423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changedColor: {r: 0.84905654, g: 0.1636321, b: 0.1636321, a: 1}
   rate: 1
---- !u!114 &1536819651877535973
+--- !u!114 &3544889591606938908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,6 +189,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6837039093259297199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
