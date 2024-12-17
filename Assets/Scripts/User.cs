@@ -78,11 +78,7 @@ namespace BodySystem
                 {
                     DeSelect();
 
-                    selectedItem = objectHit.transform.gameObject;
-                    selectedItemComp = objectHit.transform.GetComponent<Information>();
-
-                    previousItemZoom = selectedItemZoom;
-                    selectedItemZoom = objectHit.transform.GetComponent<ZoomControl>();
+                    ChangeSelected(objectHit.transform.gameObject);
 
                     // Else it does not hit object tagged as derived bone
                     // It resets zoom and 
@@ -133,6 +129,7 @@ namespace BodySystem
 
                 infoUI.HideUI();
 
+                ChangeSelected(null);
                 //zoomUI.EnableButton(false);
             }
         }
@@ -144,18 +141,38 @@ namespace BodySystem
                 selectedItemZoom.Zoom("out");
 
                 //Get parent's zoom controls
-                selectedItemZoom = selectedItemZoom.parentControl;
 
                 //Override current selected item with parent,
                 //so information pop ups are displayed at first click
-                selectedItem = selectedItemZoom.parentControl.gameObject;
 
                 //Override selectedItem information reference, so when info pop ups
                 //appears, information is displayed correctly
-                selectedItemComp = selectedItemZoom.GetComponent<Information>();
+
+                ChangeSelected(selectedItemZoom.parentControl.gameObject);
 
                 //Center camera around the pivot of previous object's parent
                 camMov.CenterCamera(selectedItemComp.pivot);
+
+                print(selectedItem.name);
+            }
+        }
+
+        private void ChangeSelected(GameObject newItem)
+        {
+            
+            selectedItem = newItem;
+
+            previousItemZoom = selectedItemZoom;
+
+            if(newItem != null)
+            {
+                selectedItemComp = newItem.GetComponent<Information>();
+                selectedItemZoom = newItem.GetComponent<ZoomControl>();
+            }
+            else
+            {
+                selectedItemComp = null;
+                selectedItemZoom = null;
             }
         }
     }

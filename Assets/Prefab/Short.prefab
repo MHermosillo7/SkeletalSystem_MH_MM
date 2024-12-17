@@ -192,10 +192,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentControl: {fileID: 0}
   layerIndex: 0
   controlZoomOut: 1
   canZoomIn: 0
   canZoomOut: 0
+  zoomOutOnClick: 0
   col: {fileID: 0}
   rend: {fileID: 0}
   light: {fileID: 0}

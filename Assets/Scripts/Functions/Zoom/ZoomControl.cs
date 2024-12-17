@@ -11,7 +11,7 @@ public class ZoomControl : MonoBehaviour
     ZoomControl childControl;
     List<ZoomControl> derivedControls = new List<ZoomControl>();
 
-    public int layerIndex;
+    public int layerIndex = 0;
 
 
     enum ControlZoomOut
@@ -47,6 +47,8 @@ public class ZoomControl : MonoBehaviour
     {
         CheckIfRoot();
         GetChildren();
+
+        layerZoom.AddToLayer(this, layerIndex);
     }
 
     void CheckIfRoot()
@@ -126,6 +128,16 @@ public class ZoomControl : MonoBehaviour
                     layerZoom.ManageLayer(layerIndex);
                     break;
             }
+        }
+    }
+    public void Enable(bool enable)
+    {
+        col.enabled = enable;
+        rend.enabled = enable;
+
+        if (!light.IsStartingColor())
+        {
+            light.ResetColor();
         }
     }
 }

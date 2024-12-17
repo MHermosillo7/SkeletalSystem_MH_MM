@@ -23,6 +23,19 @@ public class LayerZoom : MonoBehaviour
     List<Transform> layerNine = new List<Transform>();
     List<Transform> layerTen = new List<Transform>();
 
+    List<ZoomControl> universalControl = new List<ZoomControl>();
+    List<ZoomControl> layerZeroControl = new List<ZoomControl>();
+    List<ZoomControl> layerOneControl = new List<ZoomControl>();
+    List<ZoomControl> layerTwoControl = new List<ZoomControl>();
+    List<ZoomControl> layerThreeControl = new List<ZoomControl>();
+    List<ZoomControl> layerFourControl = new List<ZoomControl>();
+    List<ZoomControl> layerFiveControl = new List<ZoomControl>();
+    List<ZoomControl> layerSixControl = new List<ZoomControl>();
+    List<ZoomControl> layerSevenControl = new List<ZoomControl>();
+    List<ZoomControl> layerEightControl = new List<ZoomControl>();
+    List<ZoomControl> layerNineControl = new List<ZoomControl>();
+    List<ZoomControl> layerTenControl = new List<ZoomControl>();
+
     List<Renderer> layerZeroRend = new List<Renderer>();
     List<Renderer> layerOneRend = new List<Renderer>();
     List<Renderer> layerTwoRend = new List<Renderer>();
@@ -58,13 +71,10 @@ public class LayerZoom : MonoBehaviour
     List<Highlight> layerEightLight = new List<Highlight>();
     List<Highlight> layerNineLight = new List<Highlight>();
     List<Highlight> layerTenLight = new List<Highlight>();
-
     // Start is called before the first frame update
     void Awake()
     {
         ManageChildren(this.transform);
-
-        print(layerTwo.Count());
         print(layerIndex);
 
         ResetLayers();
@@ -75,89 +85,179 @@ public class LayerZoom : MonoBehaviour
     {
 
     }
+    public void AddToLayer(ZoomControl control, int layerIndex)
+    {
+        universalControl.Add(control);
+        switch (layerIndex)
+        {
+            case 0:
+                layerZeroControl.Add(control);
 
+                layerZeroRend.Add(control.rend);
+                layerZeroCol.Add(control.col);
+                layerZeroLight.Add(control.light);
+                break;
+            case 1:
+                layerOneControl.Add(control);
+
+                layerOneRend.Add(control.rend);
+                layerOneCol.Add(control.col); 
+                layerOneLight.Add(control.light);
+                break;
+            case 2:
+                layerTwoControl.Add(control);
+
+                layerTwoRend.Add(control.rend);
+                layerTwoCol.Add(control.col);
+                layerTwoLight.Add(control.light);
+                break;
+            case 3:
+                layerThreeControl.Add(control);
+
+                layerThreeRend.Add(control.rend);
+                layerThreeCol.Add(control.col);
+                layerThreeLight.Add(control.light);
+                break;
+            case 4:
+                layerFourControl.Add(control);
+
+                layerFourRend.Add(control.rend);
+                layerFourCol.Add(control.col);
+                layerFourLight.Add(control.light);
+                break;
+            case 5:
+                layerFiveControl.Add(control);
+
+                layerFiveRend.Add(control.rend);
+                layerFiveCol.Add(control.col);
+                layerFiveLight.Add(control.light);
+                break;
+            case 6:
+                layerSixControl.Add(control);
+
+                layerSixRend.Add(control.rend);
+                layerSixCol.Add(control.col);
+                layerSixLight.Add(control.light);
+                break;
+            case 7:
+                layerSevenControl.Add(control);
+                
+                layerSevenRend.Add(control.rend);
+                layerSevenCol.Add(control.col);
+                layerSevenLight.Add(control.light);
+                break;
+            case 8:
+                layerEightControl.Add(control);
+
+                layerEightRend.Add(control.rend);
+                layerEightCol.Add(control.col);
+                layerEightLight.Add(control.light);
+                break;
+            case 9:
+                layerNineControl.Add(control);
+
+                layerNineRend.Add(control.rend);
+                layerNineCol.Add(control.col);
+                layerNineLight.Add(control.light);
+                break;
+            case 10:
+                layerTenControl.Add(control);
+
+                layerTenRend.Add(control.rend);
+                layerTenCol.Add(control.col);
+                layerTenLight.Add(control.light);
+                break;
+        }
+    }
+    void EnableLayer(List<ZoomControl> controls, bool enable)
+    {
+        foreach(ZoomControl c in controls)
+        {
+            c.Enable(enable);
+        }
+    }
     void ResetLayers()
     {
-        ZoomManagement.EnableParent(true, layerZeroCol, layerZeroRend);
+        EnableLayer(layerZeroControl, true);
 
         switch (layerIndex)
         {
             case 0:
                 break;
             case 1:
-                ZoomManagement.EnableChildren(false, layerOneLight, layerOneCol, layerOneRend);
+                EnableLayer(layerOneControl, false);
                 break;
             case 2:
-                ZoomManagement.EnableChildren(false, layerOneLight, layerOneCol, layerOneRend);
-                ZoomManagement.EnableChildren(false, layerTwoLight, layerTwoCol, layerTwoRend);
+                EnableLayer(layerOneControl, false);
+                EnableLayer(layerTwoControl, false);
                 break;
             case 3:
-                ZoomManagement.EnableChildren(false, layerOneLight, layerOneCol, layerOneRend);
-                ZoomManagement.EnableChildren(false, layerTwoLight, layerTwoCol, layerTwoRend);
-                ZoomManagement.EnableChildren(false, layerThreeLight, layerThreeCol, layerThreeRend);
+                EnableLayer(layerOneControl, false);
+                EnableLayer(layerTwoControl, false);
+                EnableLayer(layerThreeControl, false);
                 break;
             case 4:
-                ZoomManagement.EnableChildren(false, layerOneLight, layerOneCol, layerOneRend);
-                ZoomManagement.EnableChildren(false, layerTwoLight, layerTwoCol, layerTwoRend);
-                ZoomManagement.EnableChildren(false, layerThreeLight, layerThreeCol, layerThreeRend);
-                ZoomManagement.EnableChildren(false, layerFourLight, layerFourCol, layerFourRend);
+                EnableLayer(layerOneControl, false);
+                EnableLayer(layerTwoControl, false);
+                EnableLayer(layerThreeControl, false);
+                EnableLayer(layerFourControl, false);
                 break;
             case 5:
-                ZoomManagement.EnableChildren(false, layerOneLight, layerOneCol, layerOneRend);
-                ZoomManagement.EnableChildren(false, layerTwoLight, layerTwoCol, layerTwoRend);
-                ZoomManagement.EnableChildren(false, layerThreeLight, layerThreeCol, layerThreeRend);
-                ZoomManagement.EnableChildren(false, layerFourLight, layerFourCol, layerFourRend);
-                ZoomManagement.EnableChildren(false, layerFiveLight, layerFiveCol, layerFiveRend);
+                EnableLayer(layerOneControl, false);
+                EnableLayer(layerTwoControl, false);
+                EnableLayer(layerThreeControl, false);
+                EnableLayer(layerFourControl, false);
+                EnableLayer(layerFiveControl, false);
                 break;
             case 6:
-                ZoomManagement.EnableChildren(false, layerOneLight, layerOneCol, layerOneRend);
-                ZoomManagement.EnableChildren(false, layerTwoLight, layerTwoCol, layerTwoRend);
-                ZoomManagement.EnableChildren(false, layerThreeLight, layerThreeCol, layerThreeRend);
-                ZoomManagement.EnableChildren(false, layerFourLight, layerFourCol, layerFourRend);
-                ZoomManagement.EnableChildren(false, layerFiveLight, layerFiveCol, layerFiveRend);
-                ZoomManagement.EnableChildren(false, layerSixLight, layerSixCol, layerSixRend);
+                EnableLayer(layerOneControl, false);
+                EnableLayer(layerTwoControl, false);
+                EnableLayer(layerThreeControl, false);
+                EnableLayer(layerFourControl, false);
+                EnableLayer(layerFiveControl, false);
+                EnableLayer(layerSixControl, false);
                 break;
             case 7:
-                ZoomManagement.EnableChildren(false, layerOneLight, layerOneCol, layerOneRend);
-                ZoomManagement.EnableChildren(false, layerTwoLight, layerTwoCol, layerTwoRend);
-                ZoomManagement.EnableChildren(false, layerThreeLight, layerThreeCol, layerThreeRend);
-                ZoomManagement.EnableChildren(false, layerFourLight, layerFourCol, layerFourRend);
-                ZoomManagement.EnableChildren(false, layerFiveLight, layerFiveCol, layerFiveRend);
-                ZoomManagement.EnableChildren(false, layerSixLight, layerSixCol, layerSixRend);
-                ZoomManagement.EnableChildren(false, layerSevenLight, layerSevenCol, layerSevenRend);
-                break;
+                EnableLayer(layerOneControl, false);
+                EnableLayer(layerTwoControl, false);
+                EnableLayer(layerThreeControl, false);
+                EnableLayer(layerFourControl, false);
+                EnableLayer(layerFiveControl, false);
+                EnableLayer(layerSixControl, false);
+                EnableLayer(layerSevenControl, false);
+                break;  
             case 8:
-                ZoomManagement.EnableChildren(false, layerOneLight, layerOneCol, layerOneRend);
-                ZoomManagement.EnableChildren(false, layerTwoLight, layerTwoCol, layerTwoRend);
-                ZoomManagement.EnableChildren(false, layerThreeLight, layerThreeCol, layerThreeRend);
-                ZoomManagement.EnableChildren(false, layerFourLight, layerFourCol, layerFourRend);
-                ZoomManagement.EnableChildren(false, layerFiveLight, layerFiveCol, layerFiveRend);
-                ZoomManagement.EnableChildren(false, layerSixLight, layerSixCol, layerSixRend);
-                ZoomManagement.EnableChildren(false, layerSevenLight, layerSevenCol, layerSevenRend);
-                ZoomManagement.EnableChildren(false, layerEightLight, layerEightCol, layerEightRend);
+                EnableLayer(layerOneControl, false);
+                EnableLayer(layerTwoControl, false);
+                EnableLayer(layerThreeControl, false);
+                EnableLayer(layerFourControl, false);
+                EnableLayer(layerFiveControl, false);
+                EnableLayer(layerSixControl, false);
+                EnableLayer(layerSevenControl, false);
+                EnableLayer(layerEightControl, false);
                 break;
             case 9:
-                ZoomManagement.EnableChildren(false, layerOneLight, layerOneCol, layerOneRend);
-                ZoomManagement.EnableChildren(false, layerTwoLight, layerTwoCol, layerTwoRend);
-                ZoomManagement.EnableChildren(false, layerThreeLight, layerThreeCol, layerThreeRend);
-                ZoomManagement.EnableChildren(false, layerFourLight, layerFourCol, layerFourRend);
-                ZoomManagement.EnableChildren(false, layerFiveLight, layerFiveCol, layerFiveRend);
-                ZoomManagement.EnableChildren(false, layerSixLight, layerSixCol, layerSixRend);
-                ZoomManagement.EnableChildren(false, layerSevenLight, layerSevenCol, layerSevenRend);
-                ZoomManagement.EnableChildren(false, layerEightLight, layerEightCol, layerEightRend);
-                ZoomManagement.EnableChildren(false, layerNineLight, layerNineCol, layerNineRend);
+                EnableLayer(layerOneControl, false);
+                EnableLayer(layerTwoControl, false);
+                EnableLayer(layerThreeControl, false);
+                EnableLayer(layerFourControl, false);
+                EnableLayer(layerFiveControl, false);
+                EnableLayer(layerSixControl, false);
+                EnableLayer(layerSevenControl, false);
+                EnableLayer(layerEightControl, false);
+                EnableLayer(layerNineControl, false);
                 break;
             case 10:
-                ZoomManagement.EnableChildren(false, layerOneLight, layerOneCol, layerOneRend);
-                ZoomManagement.EnableChildren(false, layerTwoLight, layerTwoCol, layerTwoRend);
-                ZoomManagement.EnableChildren(false, layerThreeLight, layerThreeCol, layerThreeRend);
-                ZoomManagement.EnableChildren(false, layerFourLight, layerFourCol, layerFourRend);
-                ZoomManagement.EnableChildren(false, layerFiveLight, layerFiveCol, layerFiveRend);
-                ZoomManagement.EnableChildren(false, layerSixLight, layerSixCol, layerSixRend);
-                ZoomManagement.EnableChildren(false, layerSevenLight, layerSevenCol, layerSevenRend);
-                ZoomManagement.EnableChildren(false, layerEightLight, layerEightCol, layerEightRend);
-                ZoomManagement.EnableChildren(false, layerNineLight, layerNineCol, layerNineRend);
-                ZoomManagement.EnableChildren(false, layerTenLight, layerTenCol, layerTenRend);
+                EnableLayer(layerOneControl, false);
+                EnableLayer(layerTwoControl, false);
+                EnableLayer(layerThreeControl, false);
+                EnableLayer(layerFourControl, false);
+                EnableLayer(layerFiveControl, false);
+                EnableLayer(layerSixControl, false);
+                EnableLayer(layerSevenControl, false);
+                EnableLayer(layerEightControl, false);
+                EnableLayer(layerNineControl, false);
+                EnableLayer(layerTenControl, false);
                 break;
         }
     }
@@ -204,94 +304,20 @@ public class LayerZoom : MonoBehaviour
         ZoomManagement.ZoomOut(parentCols, parentRends, derivedCols, derivedRends, derivedLights);
     }
 
-    void GetComponents(Transform obj, int target)
-    {
-        zom = obj.GetComponent<ZoomControl>();
-
-        switch (target)
-        {
-            case 0:
-                layerZeroRend.Add(zom.rend);
-                layerZeroCol.Add(zom.col);
-                layerZeroLight.Add(zom.light);
-                break;
-
-            case 1:
-                layerOneRend.Add(zom.rend);
-                layerOneCol.Add(zom.col);
-                layerOneLight.Add(zom.light);
-                break;
-
-            case 2:
-                layerTwoRend.Add(zom.rend);
-                layerTwoCol.Add(zom.col);
-                layerTwoLight.Add(zom.light);
-                break;
-
-            case 3:
-                layerThreeRend.Add(zom.rend);
-                layerThreeCol.Add(zom.col);
-                layerThreeLight.Add(zom.light);
-                break;
-
-            case 4:
-                layerFourRend.Add(zom.rend);
-                layerFourCol.Add(zom.col);
-                layerFourLight.Add(zom.light);
-                break;
-
-            case 5:
-                layerFiveRend.Add(zom.rend);
-                layerFiveCol.Add(zom.col);
-                layerFiveLight.Add(zom.light);
-                break;
-
-            case 6:
-                layerSixRend.Add(zom.rend);
-                layerSixCol.Add(zom.col);
-                layerSixLight.Add(zom.light);
-                break;
-
-            case 7:
-                
-                layerSevenRend.Add(zom.rend);
-                layerSevenCol.Add(zom.col);
-                layerSevenLight.Add(zom.light);
-                break;
-
-            case 8:
-                layerEightRend.Add(zom.rend);
-                layerEightCol.Add(zom.col);
-                layerEightLight.Add(zom.light);
-                break;
-
-            case 9:
-                layerNineRend.Add(zom.rend);
-                layerNineCol.Add(zom.col);
-                layerNineLight.Add(zom.light);
-                break;
-
-            case 10:
-                layerTenRend.Add(zom.rend);
-                layerTenCol.Add(zom.col);
-                layerTenLight.Add(zom.light);
-                break;
-        }
-    }
-
     List<Transform> TryGetChildren(Transform obj)
     {
         children.Clear();
 
-        foreach(Transform child in obj)
+        if (obj.childCount > 1)
         {
-            if(child.CompareTag("Bone") || child.CompareTag("DerivedBone"))
+            foreach (Transform child in obj)
             {
-                child.GetComponent<ZoomControl>().layerIndex = layerIndex;
+                if (!child.CompareTag("Pivot"))
+                {
+                    child.GetComponent<ZoomControl>().layerIndex = layerIndex;
 
-                GetComponents(child, layerIndex);
-
-                children.Add(child);
+                    children.Add(child);
+                }
             }
         }
         //Checks if object passed has a bone children
@@ -319,8 +345,7 @@ public class LayerZoom : MonoBehaviour
     //if the object with the most children is not at the bottom, it crashes
     void ManageChildren(Transform obj)
     {
-        layerZero.Add(obj);
-        GetComponents(obj, layerIndex);
+        GetComponent<ZoomControl>().layerIndex = layerIndex;
 
             layerIndex = 1;
             layerOne.AddRange(TryGetChildren(obj));
@@ -371,23 +396,13 @@ public class LayerZoom : MonoBehaviour
                                                                                     layerTen.AddRange(TryGetChildren(obj9));
                                                                                 
                                                                             }
-                                                                        
                                                                     }
-                                                                
-                                                            
                                                             }
-                                                        
                                                     }
-                                                
                                             }
-                                        
                                     }
-                                
                             }
-                        
                     }
-                
             }
-        
     }
 }
