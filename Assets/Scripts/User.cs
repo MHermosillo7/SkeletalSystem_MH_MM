@@ -80,9 +80,10 @@ namespace BodySystem
 
                     ChangeSelected(objectHit.transform.gameObject);
 
+                    print(selectedItemZoom.layerIndex);
                     // Else it does not hit object tagged as derived bone
                     // It resets zoom and 
-                    if (!IsDerivedBone() || selectedItemZoom.zoomOutOnClick == true)
+                    if (!IsDerivedBone() || selectedItemZoom.layerIndex < previousItemZoom.layerIndex)
                     {
                         if (previousItemZoom != null)
                         {
@@ -100,6 +101,8 @@ namespace BodySystem
                         //Get child (vector) inside object hit
                         camMov.CenterCamera(selectedItemComp.pivot);
                     }
+
+
                 }
             }
             else
@@ -129,7 +132,7 @@ namespace BodySystem
 
                 infoUI.HideUI();
 
-                ChangeSelected(null);
+                ChangeSelected(selectedItemZoom.firstChildControl.gameObject);
                 //zoomUI.EnableButton(false);
             }
         }
@@ -137,6 +140,7 @@ namespace BodySystem
         {
             if (selectedItemZoom.canZoomOut)
             {
+                print("helo");
                 //Zoom out of current object
                 selectedItemZoom.Zoom("out");
 
@@ -159,7 +163,8 @@ namespace BodySystem
 
         private void ChangeSelected(GameObject newItem)
         {
-            
+            print(newItem.name);
+
             selectedItem = newItem;
 
             previousItemZoom = selectedItemZoom;
@@ -168,6 +173,8 @@ namespace BodySystem
             {
                 selectedItemComp = newItem.GetComponent<Information>();
                 selectedItemZoom = newItem.GetComponent<ZoomControl>();
+
+                zoomUI.UpdateZoom(selectedItemZoom.canZoomIn, selectedItemZoom.canZoomOut);
             }
             else
             {

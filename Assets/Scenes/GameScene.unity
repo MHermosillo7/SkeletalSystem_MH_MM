@@ -96,8 +96,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 07efcef7ff39e5142b8d5ddb0d3c57ac, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: e739bb804381e584ca405636142ec1f6, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 856f889c303820d4f866c1f1fcde4833, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -790,8 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1116485271}
-  plus: {fileID: 2015509993}
-  minus: {fileID: 1097275724}
+  panel: {fileID: 0}
 --- !u!1 &127090500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1087124978169501972, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
@@ -1009,6 +1008,8 @@ MonoBehaviour:
   components: Holero
   changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!114 &191287232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1732,6 +1733,8 @@ MonoBehaviour:
   components: Mandible, Cranium
   changedColor: {r: 0.36927217, g: 0.36927217, b: 0.36927217, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!1 &422715540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,6 +2425,8 @@ MonoBehaviour:
   components: Holero
   changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &522431656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2690,6 +2695,8 @@ MonoBehaviour:
   components: Holero
   changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &572009164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2814,6 +2821,8 @@ MonoBehaviour:
   components: Holero
   changedColor: {r: 0.4117647, g: 0.11764706, b: 0.023529412, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &585106944
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3124,6 +3133,8 @@ MonoBehaviour:
   components: Holero
   changedColor: {r: 0.73333335, g: 0.3019608, b: 0, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &638952494
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3659,6 +3670,8 @@ MonoBehaviour:
   components: Holero
   changedColor: {r: 0.7921569, g: 0.3254902, b: 0.0627451, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &744688713
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4109,6 +4122,8 @@ MonoBehaviour:
   components: Made of smaller cubes
   changedColor: {r: 0.97304577, g: 0.64157104, b: 0.36587557, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &802484872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4248,6 +4263,8 @@ MonoBehaviour:
   components: Made of smaller cubes
   changedColor: {r: 0.97304577, g: 0.64157104, b: 0.36587557, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &808527094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4894,6 +4911,8 @@ MonoBehaviour:
   components: Holero
   changedColor: {r: 0.4117647, g: 0.11764706, b: 0.023529412, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &875294559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5579,6 +5598,8 @@ MonoBehaviour:
   components: Holero
   changedColor: {r: 0.73333335, g: 0.3019608, b: 0, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &946186153
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5976,6 +5997,8 @@ MonoBehaviour:
   components: Made of smaller shapes
   changedColor: {r: 0.97304577, g: 0.64157104, b: 0.36587557, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &1026192787
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6321,6 +6344,8 @@ MonoBehaviour:
   components: The Simpsons
   changedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!114 &1062754810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7327,6 +7352,8 @@ MonoBehaviour:
   components: 
   changedColor: {r: 0.47594458, g: 0.59521383, b: 0.96226406, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &1137467222
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8063,6 +8090,8 @@ MonoBehaviour:
   components: 
   changedColor: {r: 0.9019608, g: 0.972549, b: 0.69803923, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!135 &1291354054
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8291,6 +8320,8 @@ MonoBehaviour:
   components: 
   changedColor: {r: 0.9299191, g: 0.3245943, b: 0.3245943, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &1317171247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9093,6 +9124,8 @@ MonoBehaviour:
   components: Holero
   changedColor: {r: 0.44705877, g: 0.9843137, b: 0.47640225, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &1468905701
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9592,6 +9625,8 @@ MonoBehaviour:
   components: ATOMIC
   changedColor: {r: 0.4392157, g: 0.5686275, b: 0.4627451, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!114 &1612912915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10078,6 +10113,8 @@ MonoBehaviour:
   components: Made of smaller cubes
   changedColor: {r: 0.97304577, g: 0.64157104, b: 0.36587557, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!65 &1670070072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10930,8 +10967,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 546a05cabedc5f44398539b9f57c3402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedItem: {fileID: 0}
   zoomedBone: {fileID: 0}
+  selectedItemComp: {fileID: 0}
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 32
@@ -10988,6 +11025,8 @@ MonoBehaviour:
   components: 
   changedColor: {r: 0.4745098, g: 0.45490196, b: 0.36078432, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
 --- !u!135 &1872584715
 SphereCollider:
   m_ObjectHideFlags: 0

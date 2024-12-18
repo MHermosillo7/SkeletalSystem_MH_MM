@@ -7,6 +7,7 @@ public class ZoomControl : MonoBehaviour
 {
     LayerZoom layerZoom;
     public ZoomControl parentControl;
+    public ZoomControl firstChildControl;
 
     ZoomControl childControl;
     List<ZoomControl> derivedControls = new List<ZoomControl>();
@@ -42,10 +43,12 @@ public class ZoomControl : MonoBehaviour
         col = GetComponent<Collider>();
         rend = GetComponent<Renderer>();
         light = GetComponent<Highlight>();
+
+        CheckIfRoot();
     }
     private void Start()
     {
-        CheckIfRoot();
+        
         GetChildren();
 
         layerZoom.AddToLayer(this, layerIndex);
@@ -53,7 +56,7 @@ public class ZoomControl : MonoBehaviour
 
     void CheckIfRoot()
     {
-        if(layerIndex == 0)
+        if(transform == transform.root)
         {
             canZoomOut = false;
         }
@@ -75,6 +78,8 @@ public class ZoomControl : MonoBehaviour
                 derivedCols.Add(childControl.col);
                 derivedRends.Add(childControl.rend);
                 derivedLight.Add(childControl.light);
+
+                derivedControls.Add(childControl);
             }
         }
 
@@ -87,6 +92,7 @@ public class ZoomControl : MonoBehaviour
         else
         {
             canZoomIn = true;
+            firstChildControl = derivedControls[0];
         }
     }
 

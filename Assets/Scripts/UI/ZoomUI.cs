@@ -6,6 +6,8 @@ namespace BodySystem
     public class ZoomUI : MonoBehaviour
     {
         [SerializeField] Button button;
+        [SerializeField] Button plusButton;
+        [SerializeField] Button minusButton;
         [SerializeField] GameObject panel;
 
 
@@ -16,10 +18,6 @@ namespace BodySystem
             user = FindObjectOfType<User>();
 
             panel.SetActive(false);
-        }
-        private void Update()
-        {
-
         }
         public void EnableButton(bool enabled)
         {
@@ -46,5 +44,11 @@ namespace BodySystem
         {
             panel.SetActive(false);
         }
+        public void UpdateZoom(bool canZoomIn, bool canZoomOut)
+        {
+            plusButton.interactable = canZoomIn;
+            minusButton.interactable = canZoomOut;
+        }
+
     }
 }

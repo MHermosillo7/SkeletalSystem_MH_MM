@@ -1,93 +1,115 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class LayerZoom : MonoBehaviour
 {
+    static int listSize = 20;
     int layerIndex = 0;
-    int maxLayers = 0;
 
-    List<Transform> children = new List<Transform>();
+    public List<Transform> children = new List<Transform>();
+    List<ZoomControl> controls = new List<ZoomControl>();
+    Transform child;
     ZoomControl zom;
 
-    List<Transform> layerZero = new List<Transform>();
-    List<Transform> layerOne = new List<Transform>();
-    List<Transform> layerTwo = new List<Transform>();
-    List<Transform> layerThree = new List<Transform>();
-    List<Transform> layerFour = new List<Transform>();
-    List<Transform> layerFive = new List<Transform>();
-    List<Transform> layerSix = new List<Transform>();
-    List<Transform> layerSeven = new List<Transform>();
-    List<Transform> layerEight = new List<Transform>();
-    List<Transform> layerNine = new List<Transform>();
-    List<Transform> layerTen = new List<Transform>();
+    List<Transform> layerZero = new List<Transform>(listSize);
+    List<Transform> layerOne = new List<Transform>(listSize);
+    List<Transform> layerTwo = new List<Transform>(listSize);
+    List<Transform> layerThree = new List<Transform>(listSize);
+    List<Transform> layerFour = new List<Transform>(listSize);
+    List<Transform> layerFive = new List<Transform>(listSize);
+    List<Transform> layerSix = new List<Transform>(listSize);
+    List<Transform> layerSeven = new List<Transform>(listSize);
+    List<Transform> layerEight = new List<Transform>(listSize);
+    List<Transform> layerNine = new List<Transform>(listSize);
+    List<Transform> layerTen = new List<Transform>(listSize);
 
-    List<ZoomControl> universalControl = new List<ZoomControl>();
-    List<ZoomControl> layerZeroControl = new List<ZoomControl>();
-    List<ZoomControl> layerOneControl = new List<ZoomControl>();
-    List<ZoomControl> layerTwoControl = new List<ZoomControl>();
-    List<ZoomControl> layerThreeControl = new List<ZoomControl>();
-    List<ZoomControl> layerFourControl = new List<ZoomControl>();
-    List<ZoomControl> layerFiveControl = new List<ZoomControl>();
-    List<ZoomControl> layerSixControl = new List<ZoomControl>();
-    List<ZoomControl> layerSevenControl = new List<ZoomControl>();
-    List<ZoomControl> layerEightControl = new List<ZoomControl>();
-    List<ZoomControl> layerNineControl = new List<ZoomControl>();
-    List<ZoomControl> layerTenControl = new List<ZoomControl>();
+    List<ZoomControl> universalControl = new List<ZoomControl>(listSize);
+    List<ZoomControl> layerZeroControl = new List<ZoomControl>(listSize);
+    List<ZoomControl> layerOneControl = new List<ZoomControl>(listSize);
+    List<ZoomControl> layerTwoControl = new List<ZoomControl>(listSize);
+    List<ZoomControl> layerThreeControl = new List<ZoomControl>(listSize);
+    List<ZoomControl> layerFourControl = new List<ZoomControl>(listSize);
+    List<ZoomControl> layerFiveControl = new List<ZoomControl>(listSize);
+    List<ZoomControl> layerSixControl = new List<ZoomControl>(listSize);
+    List<ZoomControl> layerSevenControl = new List<ZoomControl>(listSize);
+    List<ZoomControl> layerEightControl = new List<ZoomControl>(listSize);
+    List<ZoomControl> layerNineControl = new List<ZoomControl>(listSize);
+    List<ZoomControl> layerTenControl = new List<ZoomControl>(listSize);
 
-    List<Renderer> layerZeroRend = new List<Renderer>();
-    List<Renderer> layerOneRend = new List<Renderer>();
-    List<Renderer> layerTwoRend = new List<Renderer>();
-    List<Renderer> layerThreeRend = new List<Renderer>();
-    List<Renderer> layerFourRend = new List<Renderer>();
-    List<Renderer> layerFiveRend = new List<Renderer>();
-    List<Renderer> layerSixRend = new List<Renderer>();
-    List<Renderer> layerSevenRend = new List<Renderer>();
-    List<Renderer> layerEightRend = new List<Renderer>();
-    List<Renderer> layerNineRend = new List<Renderer>();
-    List<Renderer> layerTenRend = new List<Renderer>();
+    List<Renderer> layerZeroRend = new List<Renderer>(listSize);
+    List<Renderer> layerOneRend = new List<Renderer>(listSize);
+    List<Renderer> layerTwoRend = new List<Renderer>(listSize);
+    List<Renderer> layerThreeRend = new List<Renderer>(listSize);
+    List<Renderer> layerFourRend = new List<Renderer>(listSize);
+    List<Renderer> layerFiveRend = new List<Renderer>(listSize);
+    List<Renderer> layerSixRend = new List<Renderer>(listSize);
+    List<Renderer> layerSevenRend = new List<Renderer>(listSize);
+    List<Renderer> layerEightRend = new List<Renderer>(listSize);
+    List<Renderer> layerNineRend = new List<Renderer>(listSize);
+    List<Renderer> layerTenRend = new List<Renderer>(listSize);
 
-    List<Collider> layerZeroCol = new List<Collider>();
-    List<Collider> layerOneCol = new List<Collider>();
-    List<Collider> layerTwoCol = new List<Collider>();
-    List<Collider> layerThreeCol = new List<Collider>();
-    List<Collider> layerFourCol = new List<Collider>();
-    List<Collider> layerFiveCol = new List<Collider>();
-    List<Collider> layerSixCol = new List<Collider>();
-    List<Collider> layerSevenCol = new List<Collider>();
-    List<Collider> layerEightCol = new List<Collider>();
-    List<Collider> layerNineCol = new List<Collider>();
-    List<Collider> layerTenCol = new List<Collider>();
+    List<Collider> layerZeroCol = new List<Collider>(listSize);
+    List<Collider> layerOneCol = new List<Collider>(listSize);
+    List<Collider> layerTwoCol = new List<Collider>(listSize);
+    List<Collider> layerThreeCol = new List<Collider>(listSize);
+    List<Collider> layerFourCol = new List<Collider>(listSize);
+    List<Collider> layerFiveCol = new List<Collider>(listSize);
+    List<Collider> layerSixCol = new List<Collider>(listSize);
+    List<Collider> layerSevenCol = new List<Collider>(listSize);
+    List<Collider> layerEightCol = new List<Collider>(listSize);
+    List<Collider> layerNineCol = new List<Collider>(listSize);
+    List<Collider> layerTenCol = new List<Collider>(listSize);
 
-    List<Highlight> layerZeroLight = new List<Highlight>();
-    List<Highlight> layerOneLight = new List<Highlight>();
-    List<Highlight> layerTwoLight = new List<Highlight>();
-    List<Highlight> layerThreeLight = new List<Highlight>();
-    List<Highlight> layerFourLight = new List<Highlight>();
-    List<Highlight> layerFiveLight = new List<Highlight>();
-    List<Highlight> layerSixLight = new List<Highlight>();
-    List<Highlight> layerSevenLight = new List<Highlight>();
-    List<Highlight> layerEightLight = new List<Highlight>();
-    List<Highlight> layerNineLight = new List<Highlight>();
-    List<Highlight> layerTenLight = new List<Highlight>();
+    List<Highlight> layerZeroLight = new List<Highlight>(listSize);
+    List<Highlight> layerOneLight = new List<Highlight>(listSize);
+    List<Highlight> layerTwoLight = new List<Highlight>(listSize);
+    List<Highlight> layerThreeLight = new List<Highlight>(listSize);
+    List<Highlight> layerFourLight = new List<Highlight>(listSize);
+    List<Highlight> layerFiveLight = new List<Highlight>(listSize);
+    List<Highlight> layerSixLight = new List<Highlight>(listSize);
+    List<Highlight> layerSevenLight = new List<Highlight>(listSize);
+    List<Highlight> layerEightLight = new List<Highlight>(listSize);
+    List<Highlight> layerNineLight = new List<Highlight>(listSize);
+    List<Highlight> layerTenLight = new List<Highlight>(listSize);
     // Start is called before the first frame update
     void Awake()
     {
-        ManageChildren(this.transform);
+        //ManageChildren();
+        GetComponent<ZoomControl>().layerIndex = layerIndex;
+
+        AssignLayer(transform);
+
+        layerIndex++;
+        for (int i = 0; i < children.Count; i++)
+        {
+            AssignLayer(children[i]);
+
+
+        }
         print(layerIndex);
 
         ResetLayers();
     }
-
-    // Update is called once per frame
-    void Update()
+    void AssignLayer(Transform parent)
     {
+        for(int i = 0; i < parent.childCount; i ++)
+        {
+            child = parent.GetChild(i);
 
+            if (!child.CompareTag("Pivot"))
+            {
+                zom = child.GetComponent<ZoomControl>();
+                zom.layerIndex = zom.parentControl.layerIndex + 1;
+
+                children.Add(child);
+            }
+        }
     }
     public void AddToLayer(ZoomControl control, int layerIndex)
     {
         universalControl.Add(control);
+
         switch (layerIndex)
         {
             case 0:
@@ -308,28 +330,30 @@ public class LayerZoom : MonoBehaviour
     {
         children.Clear();
 
-        if (obj.childCount > 1)
-        {
-            foreach (Transform child in obj)
-            {
-                if (!child.CompareTag("Pivot"))
-                {
-                    child.GetComponent<ZoomControl>().layerIndex = layerIndex;
-
-                    children.Add(child);
-                }
+        
+           if (!obj.CompareTag("Pivot"))
+           {
+                    obj.GetComponent<ZoomControl>().layerIndex = layerIndex;
+/*
+                    children.Add(obj);*/
             }
-        }
+
         //Checks if object passed has a bone children
         //If not, it decreases layer index to make it correspond with layers active.
-        if(children.Count == 0)
+        /*
+        if (children.Count == 0)
         {
             layerIndex--;
         }
+        else
+        {
+            
+        }*/
 
         return children;
     }
 
+    
     // Cycles through all children of a game object and
     // adds their transforms into layers depending on
     // hierarchal depth compared to primary object passed
