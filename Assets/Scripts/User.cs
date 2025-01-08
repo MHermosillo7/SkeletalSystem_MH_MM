@@ -72,28 +72,34 @@ namespace BodySystem
 
                     infoUI.ShowUI();
                 }
-
                 //Else object hit is another object
                 else
                 {
                     DeSelect();
 
                     ChangeSelected(objectHit.transform.gameObject);
-
-                    print(selectedItemZoom.layerIndex);
                     // Else it does not hit object tagged as derived bone
                     // It resets zoom and 
                     if (!IsDerivedBone() || selectedItemZoom.layerIndex < previousItemZoom.layerIndex)
                     {
                         if (previousItemZoom != null)
                         {
-                            previousItemZoom.Zoom("out");
+                            ZoomIntoCurrentLayer();
                         }
 
                         if (!zoomUI.IsUIActive()) 
                         {
                             zoomUI.EnableButton(true);
                         }
+                    }
+
+                    //If the selected object is in the same layer as current,
+                    //then directly show the information UI to allow for
+                    //smoother user experience and skip double clicking to
+                    //access information of objects within same layer
+                    else
+                    {
+                        infoUI.ShowUI();
                     }
 
                     if (selectedItemComp.needsCenter || selectedItem.CompareTag("Bone"))
@@ -140,7 +146,6 @@ namespace BodySystem
         {
             if (selectedItemZoom.canZoomOut)
             {
-                print("helo");
                 //Zoom out of current object
                 selectedItemZoom.Zoom("out");
 
@@ -156,14 +161,30 @@ namespace BodySystem
 
                 //Center camera around the pivot of previous object's parent
                 camMov.CenterCamera(selectedItemComp.pivot);
-
-                print(selectedItem.name);
             }
         }
+        //Zooms out of previous object until the object layer shown
+        //matches the one of new selected object
+        public void ZoomIntoCurrentLayer()
+        {
+            int newIndex = selectedItemZoom.layerIndex;
+            int currentIndex = previousItemZoom.layerIndex;
 
+            while(newIndex < currentIndex)
+            {
+                previousItemZoom.Zoom("out");
+
+                previousItemZoom = previousItemZoom.parentControl;
+                currentIndex = previousItemZoom.layerIndex;
+            }
+
+            previousItemZoom = selectedItemZoom.parentControl;
+        }
+        
+        //Updates object references while keeping reference to previous item
+        //Gets Information and Zoom Control scripts if available
         private void ChangeSelected(GameObject newItem)
         {
-            print(newItem.name);
 
             selectedItem = newItem;
 

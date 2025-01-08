@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace BodySystem
 {
-    public class Component : MonoBehaviour
+    public class Camp : MonoBehaviour
     {
         //Component Information
         public string partName;

@@ -48,10 +48,7 @@ public class ZoomControl : MonoBehaviour
     }
     private void Start()
     {
-        
         GetChildren();
-
-        layerZoom.AddToLayer(this, layerIndex);
     }
 
     void CheckIfRoot()
@@ -129,10 +126,16 @@ public class ZoomControl : MonoBehaviour
                     parentControl.ZoomIntoThis();
                     break;
 
-                case ControlZoomOut.ActiveParentLayer:
+                //This is supposed to be implemented as a way to further control layers in the future
+                //For example, if I wanted to show or hide a layer of objects depending on the selected
+                //However, as of now, implementing it would serve no immediate or susbtantial use
+                //Tt would only create more work in a short deadline
+
+                /*case ControlZoomOut.ActiveParentLayer:
 
                     layerZoom.ManageLayer(layerIndex);
                     break;
+                */
             }
         }
     }

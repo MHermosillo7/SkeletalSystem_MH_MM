@@ -130,3 +130,83 @@ void Clamp(int xAngle)
 
     trans.rotation = q;
 }*/
+
+/*
+
+    
+    // Cycles through all children of a game object and
+    // adds their transforms into layers depending on
+    // hierarchal depth compared to primary object passed
+
+    // I add one to layersActive before getting children
+    // because when adding them to the list, I change their layer level
+    // in ZoomControl to equal the amount of layers active.
+    // It serves as an index of on what layer the object is.
+
+    //Currently has reached the level of a forbidden, pc chrashing, while loop
+
+    //Somewhere along the hierarchy,
+    //if the object with the most children is not at the bottom, it crashes
+    void ManageChildren(Transform obj)
+    {
+        GetComponent<ZoomControl>().layerIndex = layerIndex;
+
+            layerIndex = 1;
+            layerOne.AddRange(TryGetChildren(obj));
+
+            foreach (Transform child in layerOne)
+            {
+                    layerIndex = 2;
+                    layerTwo.AddRange(TryGetChildren(child));
+
+                    foreach (Transform grandchild in layerTwo)
+                    {
+                            layerIndex = 3;
+                            layerThree.AddRange(TryGetChildren(grandchild));
+
+                            foreach (Transform greatGrandchild in layerThree)
+                            {
+                                    layerIndex = 4;
+                                    layerFour.AddRange(TryGetChildren(greatGrandchild));
+
+                                    foreach (Transform obj4 in layerFour)
+                                    {
+                                            layerIndex = 5;
+                                            layerFive.AddRange(TryGetChildren(obj4));
+
+                                            foreach (Transform obj5 in layerFive)
+                                            {
+                                                    layerIndex = 6;
+                                                    layerSix.AddRange(TryGetChildren(obj5));
+
+                                                    foreach (Transform obj6 in layerSix)
+                                                    {
+                                                            layerIndex = 7;
+                                                            layerSeven.AddRange(TryGetChildren(obj6));
+
+                                                            foreach (Transform obj7 in layerSeven)
+                                                            {
+                                                                    layerIndex = 8;
+                                                                    layerEight.AddRange(TryGetChildren(obj7));
+
+                                                                    foreach (Transform obj8 in layerEight)
+                                                                    {
+                                                                            layerIndex = 9;
+                                                                            layerNine.AddRange(TryGetChildren(obj8));
+
+                                                                            foreach (Transform obj9 in layerNine)
+                                                                            {
+                                                                                    layerIndex = 10;
+                                                                                    layerTen.AddRange(TryGetChildren(obj9));
+                                                                                
+                                                                            }
+                                                                    }
+                                                            }
+                                                    }
+                                            }
+                                    }
+                            }
+                    }
+            }
+    }
+ */

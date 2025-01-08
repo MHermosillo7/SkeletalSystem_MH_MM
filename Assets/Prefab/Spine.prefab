@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 5686743360792918555}
   - component: {fileID: 6840877173811524690}
   - component: {fileID: 2131829330171226480}
-  - component: {fileID: 4160512820164825244}
-  - component: {fileID: 7674057712364718082}
-  - component: {fileID: 5356522408053915622}
+  - component: {fileID: 4492447687431488628}
   - component: {fileID: 1461290844081364565}
+  - component: {fileID: 4964000485946392016}
+  - component: {fileID: 6677235075646841995}
   m_Layer: 0
   m_Name: C4
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37245757586947875}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -88,7 +88,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4160512820164825244
+--- !u!114 &4492447687431488628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,43 +97,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 37245757586947875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7674057712364718082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37245757586947875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &5356522408053915622
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37245757586947875}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.1911783, y: 1.2544422, z: 2.1756628}
-  m_Center: {x: -0.002624154, y: -0.080246925, z: 0.32195818}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &1461290844081364565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +133,72 @@ MonoBehaviour:
     Tubercle, Vertebral Arch, Lamina of Vertebral Arch, & Vertebral Foramen '
   changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &4964000485946392016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37245757586947875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: C4
+  function:
+  - 'Works C3 and C5 to allow smooth articulation of spine '
+  - 'Connection of spine to muscles and ligaments '
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 'Standard vertebral shape '
+  - 'Small compared other vertebrae '
+  - 'More flexible than other true or movable vertebrae '
+  - 'Large vertebral foramen for passage of nerves '
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &6677235075646841995
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37245757586947875}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7825757583103744868, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &42835147761122823
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,13 +210,13 @@ GameObject:
   - component: {fileID: 2139799030377446916}
   - component: {fileID: 5292877241044049697}
   - component: {fileID: 6750359117324545333}
-  - component: {fileID: 5148002872784763278}
-  - component: {fileID: 5348977232580261188}
-  - component: {fileID: 4588747667231118594}
+  - component: {fileID: 3316819235129655203}
   - component: {fileID: 8975491732875932653}
+  - component: {fileID: 8194958040197709562}
+  - component: {fileID: 2833764563480001045}
   m_Layer: 0
   m_Name: T1
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +252,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42835147761122823}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -223,7 +265,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -245,7 +287,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5148002872784763278
+--- !u!114 &3316819235129655203
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,43 +296,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 42835147761122823}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5348977232580261188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42835147761122823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &4588747667231118594
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42835147761122823}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.8944373, y: 1.3957729, z: 2.9274673}
-  m_Center: {x: 0.000071167946, y: -0.10792637, z: 0.35219067}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &8975491732875932653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,8 +330,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Complete Costal Facet (superior and inferior), Transverse
     Process, Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral
     Arch, Pedicle of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &8194958040197709562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42835147761122823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &2833764563480001045
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42835147761122823}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5784849628261665817, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &192937424307106076
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +409,7 @@ GameObject:
   - component: {fileID: 8866969755171290333}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -387,7 +471,7 @@ GameObject:
   - component: {fileID: 6267413899699855066}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -407,6 +491,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7322024354283200720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &852484200548429379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4033445522830687358}
+  m_Layer: 0
+  m_Name: Pivot
+  m_TagString: Pivot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4033445522830687358
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 852484200548429379}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2870557525553482456}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &874583064647381733
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,13 +533,13 @@ GameObject:
   - component: {fileID: 1687908568100506323}
   - component: {fileID: 4894122834077027915}
   - component: {fileID: 7416259478746818607}
-  - component: {fileID: 7527320230147267277}
-  - component: {fileID: 1485186975628620163}
-  - component: {fileID: 2306651873360409879}
+  - component: {fileID: 6802426659073114858}
   - component: {fileID: 3153898758053918631}
+  - component: {fileID: 4099516259654062060}
+  - component: {fileID: 1345494239445054275}
   m_Layer: 0
   m_Name: T9
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -460,7 +575,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874583064647381733}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -473,7 +588,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -495,7 +610,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7527320230147267277
+--- !u!114 &6802426659073114858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -504,43 +619,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 874583064647381733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1485186975628620163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874583064647381733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &2306651873360409879
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874583064647381733}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.604413, y: 1.8696737, z: 3.2382865}
-  m_Center: {x: -0.011699617, y: -0.22079709, z: -0.061233163}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &3153898758053918631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,8 +652,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Demi - Costal Facet (only superior), Transverse
     Process, Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral
     Arch, Pedicle of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &4099516259654062060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874583064647381733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &1345494239445054275
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874583064647381733}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1796376691293787952, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &947592474659714903
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +731,7 @@ GameObject:
   - component: {fileID: 8462474456027032051}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -605,13 +762,13 @@ GameObject:
   - component: {fileID: 5940710994679283092}
   - component: {fileID: 6684523009311174159}
   - component: {fileID: 1868267325121533071}
-  - component: {fileID: 3350109148035867603}
-  - component: {fileID: 5562195909194146928}
-  - component: {fileID: 7731988363463197874}
+  - component: {fileID: 2786688975238455618}
   - component: {fileID: 3011481232330000660}
+  - component: {fileID: 1067727277472136666}
+  - component: {fileID: 3859846416130958454}
   m_Layer: 0
   m_Name: T2
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -647,7 +804,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003978965828359094}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -660,7 +817,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -682,7 +839,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3350109148035867603
+--- !u!114 &2786688975238455618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -691,43 +848,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1003978965828359094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5562195909194146928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003978965828359094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &7731988363463197874
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1003978965828359094}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.8914495, y: 1.3254128, z: 2.9470348}
-  m_Center: {x: -0.002247095, y: -0.08538437, z: 0.34921664}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &3011481232330000660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -748,8 +881,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
     Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
     of Vertebral Arch,  Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &1067727277472136666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003978965828359094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &3859846416130958454
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003978965828359094}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4164562309206975141, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &1047040671722691289
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +960,7 @@ GameObject:
   - component: {fileID: 383265196187871529}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -792,13 +991,13 @@ GameObject:
   - component: {fileID: 3855737123411755663}
   - component: {fileID: 2249790810782612602}
   - component: {fileID: 2892498737883442487}
-  - component: {fileID: 3551478289943124367}
-  - component: {fileID: 2485339054422705310}
-  - component: {fileID: 5180245014420429366}
+  - component: {fileID: 3882178714667747424}
   - component: {fileID: 3540752276909298785}
+  - component: {fileID: 6271365758108577250}
+  - component: {fileID: 5202582080761460211}
   m_Layer: 0
   m_Name: L5
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -834,7 +1033,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136188239724890550}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -847,7 +1046,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -869,7 +1068,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3551478289943124367
+--- !u!114 &3882178714667747424
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -878,43 +1077,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1136188239724890550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2485339054422705310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136188239724890550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &5180245014420429366
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136188239724890550}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.487481, y: 2.2540078, z: 3.49055}
-  m_Center: {x: 0.0008841753, y: -0.24116892, z: 0.041999817}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &3540752276909298785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,8 +1116,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
     Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
     Pedicle of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.011764706, g: 0.15294118, b: 1, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &6271365758108577250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136188239724890550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &5202582080761460211
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136188239724890550}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1155945346752864243, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &1241566541884376547
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,13 +1195,13 @@ GameObject:
   - component: {fileID: 3727831173934384647}
   - component: {fileID: 7958351264167085631}
   - component: {fileID: 3384264562511914455}
-  - component: {fileID: 78650336318785075}
-  - component: {fileID: 8739723148989784197}
-  - component: {fileID: 1767380419069471901}
+  - component: {fileID: 5840698046169122839}
   - component: {fileID: 4161291160155414713}
+  - component: {fileID: 6380790189073904948}
+  - component: {fileID: 8007967919391306166}
   m_Layer: 0
   m_Name: T7
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -996,7 +1237,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1241566541884376547}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1009,7 +1250,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1031,7 +1272,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &78650336318785075
+--- !u!114 &5840698046169122839
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1040,43 +1281,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1241566541884376547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8739723148989784197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241566541884376547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &1767380419069471901
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241566541884376547}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.3561513, y: 1.9151325, z: 3.26078}
-  m_Center: {x: -0.0038639307, y: -0.2503376, z: -0.024610996}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &4161291160155414713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1101,8 +1318,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
     Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
     of Vertebral Arch, Vertebral Foramen, & Vertebral Cana '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &6380790189073904948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241566541884376547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &8007967919391306166
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241566541884376547}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5201384384055554329, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &2165467738919643363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,13 +1397,13 @@ GameObject:
   - component: {fileID: 4318067465473769293}
   - component: {fileID: 2850288614332264134}
   - component: {fileID: 8176090706486710297}
-  - component: {fileID: 1606579382978547774}
-  - component: {fileID: 1883106114748857293}
-  - component: {fileID: 631519977665207252}
+  - component: {fileID: 6526443621622149124}
   - component: {fileID: 7673393342412863175}
+  - component: {fileID: 7759639229918797830}
+  - component: {fileID: 3604272019366317868}
   m_Layer: 0
   m_Name: T4
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1156,7 +1439,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2165467738919643363}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1169,7 +1452,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1191,7 +1474,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1606579382978547774
+--- !u!114 &6526443621622149124
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1200,43 +1483,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2165467738919643363}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1883106114748857293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2165467738919643363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &631519977665207252
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2165467738919643363}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.815053, y: 1.5626698, z: 3.0195284}
-  m_Center: {x: 0.0014970303, y: -0.07626629, z: 0.20724326}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &7673393342412863175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,8 +1518,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
     Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
     of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &7759639229918797830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165467738919643363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &3604272019366317868
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165467738919643363}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6844322550994406984, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &2387681123530152268
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,16 +1597,14 @@ GameObject:
   - component: {fileID: 4268032674027675496}
   - component: {fileID: 1532011152050689563}
   - component: {fileID: 9113948043454950029}
-  - component: {fileID: 3197117687050330566}
-  - component: {fileID: 5649742763531312031}
-  - component: {fileID: 4869371021728382016}
-  - component: {fileID: 6664568653160380178}
-  - component: {fileID: 7548570082040268890}
+  - component: {fileID: 5295542348298700954}
+  - component: {fileID: 8191503087274735890}
   - component: {fileID: 7494698115745092943}
   - component: {fileID: 2315703230995070871}
+  - component: {fileID: 1676157974658133009}
   m_Layer: 0
   m_Name: C1
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1317,7 +1640,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2387681123530152268}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1330,7 +1653,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1352,7 +1675,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3197117687050330566
+--- !u!114 &5295542348298700954
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1361,19 +1684,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 2387681123530152268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: C1
-  function: Joins occipital bone with the C2 Vertebral & Acts as pivot to thead movements
-  structure: 'Ring-like bone, Lacks vertebral body, spinous process, and intervertebral
-    discs, Classified as atypical vertebra, and a Synovial joint '
-  components: 'Lateral Masses, Transverse Process, Anterior Arch, Posterior Arch,
-    Anterior Tubercle, Posterior Tubercle, Inferior Articular Facet, Superior Articular
-    Facet, Dental Fovea, and a Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
---- !u!114 &5649742763531312031
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
+--- !u!114 &8191503087274735890
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1382,55 +1706,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 2387681123530152268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4869371021728382016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2387681123530152268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &6664568653160380178
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2387681123530152268}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.076301426, y: 0.0147423735, z: 0.04059323}
-  m_Center: {x: 0, y: 0.00027060506, z: -0.0023374257}
---- !u!114 &7548570082040268890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2387681123530152268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  partName: C1 (Atlas)
+  function:
+  - 'Joins occipital bone with the C2 vertebra '
+  - 'Acts as pivot to head movements '
+  structure:
+  - 'Ring-like bone '
+  - 'Lacks vertebral body, spinous process, and intervertebral discs '
+  - 'Classified as atypical vertebra '
+  - 'Synovial joint '
+  components:
+  - 'Lateral Masses '
+  - 'Transverse Process '
+  - 'Anterior Arch '
+  - 'Posterior Arch '
+  - Anterior Tubercle
+  - Posterior Tubercle
+  - Inferior Articular Facet
+  - Superior Articular Facet
+  - Dental Fovea
+  - Vertebral Foramen
+  pivot: {fileID: 0}
+  needsCenter: 0
 --- !u!114 &7494698115745092943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1465,7 +1765,29 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.2896218, y: 0.6355953, z: 1.7501166}
   m_Center: {x: -0.000038802624, y: 0.020936012, z: 0.088195115}
---- !u!1 &2605027563861029156
+--- !u!64 &1676157974658133009
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2387681123530152268}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7354426424150082006, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+--- !u!1 &2478040670898548852
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1473,81 +1795,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4782200810564179665}
-  - component: {fileID: 6710632928185155334}
-  - component: {fileID: 5953834779953689707}
+  - component: {fileID: 3645687330014691158}
   m_Layer: 0
-  m_Name: Skull
-  m_TagString: Untagged
+  m_Name: Pivot
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4782200810564179665
+--- !u!4 &3645687330014691158
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2605027563861029156}
+  m_GameObject: {fileID: 2478040670898548852}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0018056285, y: 26.63223, z: -3.8826647}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7010334573743609408}
+  m_Father: {fileID: 314670078804034478}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6710632928185155334
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2605027563861029156}
-  m_Mesh: {fileID: 5275773004055656219, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
---- !u!23 &5953834779953689707
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2605027563861029156}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &2639917003191931141
 GameObject:
   m_ObjectHideFlags: 0
@@ -1559,13 +1829,13 @@ GameObject:
   - component: {fileID: 7322024354283200720}
   - component: {fileID: 8298894451972649745}
   - component: {fileID: 6028087161953804880}
-  - component: {fileID: 4907032896805808450}
-  - component: {fileID: 6410218513547266410}
-  - component: {fileID: 8523708816706921904}
+  - component: {fileID: 3181488927532406830}
   - component: {fileID: 7633696443427833717}
+  - component: {fileID: 5713604214530116584}
+  - component: {fileID: 2555551556492801375}
   m_Layer: 0
   m_Name: T11
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1601,7 +1871,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2639917003191931141}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1614,7 +1884,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1636,7 +1906,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4907032896805808450
+--- !u!114 &3181488927532406830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1645,43 +1915,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2639917003191931141}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6410218513547266410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2639917003191931141}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &8523708816706921904
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2639917003191931141}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.3845892, y: 1.7066422, z: 3.188508}
-  m_Center: {x: -0.009808719, y: -0.15405655, z: -0.06714451}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &7633696443427833717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1703,40 +1949,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Complete Costal Facet (superior and inferior), Transverse
     Process, Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral
     Arch, Pedicle of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
---- !u!1 &2678546081171934526
-GameObject:
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &5713604214530116584
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2071914573621500481}
-  m_Layer: 0
-  m_Name: ThoracicSpineParts
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2071914573621500481
-Transform:
+  m_GameObject: {fileID: 2639917003191931141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &2555551556492801375
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2678546081171934526}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 314670078804034478}
-  m_Father: {fileID: 3505130880314354802}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 2639917003191931141}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6772843038626447993, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &2845404711823831734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +2028,7 @@ GameObject:
   - component: {fileID: 4710312965827586137}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1779,7 +2059,7 @@ GameObject:
   - component: {fileID: 6905057065664242276}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1810,13 +2090,13 @@ GameObject:
   - component: {fileID: 5212125129956635870}
   - component: {fileID: 6011217021522240000}
   - component: {fileID: 2461233635079953196}
-  - component: {fileID: 4783116665565277293}
-  - component: {fileID: 610581074170848280}
-  - component: {fileID: 5401676704967829231}
+  - component: {fileID: 5854437686120408859}
   - component: {fileID: 5108952749160820436}
+  - component: {fileID: 5160618842768106952}
+  - component: {fileID: 3417915338910849251}
   m_Layer: 0
   m_Name: L3
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1852,7 +2132,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2983261627551308750}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1865,7 +2145,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1887,7 +2167,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4783116665565277293
+--- !u!114 &5854437686120408859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1896,43 +2176,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2983261627551308750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &610581074170848280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2983261627551308750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &5401676704967829231
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2983261627551308750}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.4279487, y: 1.8656801, z: 3.7882476}
-  m_Center: {x: 0.0012636185, y: -0.037379503, z: -0.09941894}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &5108952749160820436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1957,8 +2213,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
     Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
     Pedicle of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.011764706, g: 0.15294118, b: 1, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &5160618842768106952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2983261627551308750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &3417915338910849251
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2983261627551308750}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4668215351681643544, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &3121013148184185120
 GameObject:
   m_ObjectHideFlags: 0
@@ -1970,13 +2292,13 @@ GameObject:
   - component: {fileID: 6490268317045437274}
   - component: {fileID: 1516449772289758720}
   - component: {fileID: 5138651414078828143}
-  - component: {fileID: 711839993688808473}
-  - component: {fileID: 3344794613481439758}
-  - component: {fileID: 3560287051301187605}
+  - component: {fileID: 6281905513656277609}
   - component: {fileID: 5323399624149453568}
+  - component: {fileID: 6995979630827570270}
+  - component: {fileID: 4794789721333565839}
   m_Layer: 0
   m_Name: T3
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2012,7 +2334,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3121013148184185120}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2025,7 +2347,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2047,7 +2369,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &711839993688808473
+--- !u!114 &6281905513656277609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2056,43 +2378,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3121013148184185120}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3344794613481439758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3121013148184185120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &3560287051301187605
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3121013148184185120}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.6981778, y: 1.4111156, z: 3.1651921}
-  m_Center: {x: -0.00006622076, y: -0.11311817, z: 0.29378563}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &5323399624149453568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2113,40 +2411,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
     Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
     of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
---- !u!1 &3157286431105731166
-GameObject:
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &6995979630827570270
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7010334573743609408}
-  m_Layer: 0
-  m_Name: Skull
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7010334573743609408
-Transform:
+  m_GameObject: {fileID: 3121013148184185120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &4794789721333565839
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3157286431105731166}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4782200810564179665}
-  m_Father: {fileID: 3505130880314354802}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 3121013148184185120}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2824923001928301372, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &3507151570194626617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,13 +2490,13 @@ GameObject:
   - component: {fileID: 5938812590985820216}
   - component: {fileID: 8514584066791467348}
   - component: {fileID: 3644950855242980207}
-  - component: {fileID: 1088619345025384952}
-  - component: {fileID: 5939378615587068064}
-  - component: {fileID: 3114957708525034902}
+  - component: {fileID: 3704643094074457958}
   - component: {fileID: 1147604580003749452}
+  - component: {fileID: 1609007667905715098}
+  - component: {fileID: 8647663528197257605}
   m_Layer: 0
   m_Name: C5
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2200,7 +2532,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3507151570194626617}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2213,7 +2545,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2235,7 +2567,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1088619345025384952
+--- !u!114 &3704643094074457958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2244,43 +2576,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 3507151570194626617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5939378615587068064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3507151570194626617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &3114957708525034902
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3507151570194626617}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.2150846, y: 1.3743458, z: 2.3770108}
-  m_Center: {x: 0.000402987, y: -0.06841946, z: 0.30528164}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &1147604580003749452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2304,6 +2612,72 @@ MonoBehaviour:
     Tubercle, Vertebral Arch, Lamina of Vertebral Arch, & Vertebral Foramen '
   changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &1609007667905715098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507151570194626617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &8647663528197257605
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507151570194626617}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6590863773863938432, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &3658389498782797384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,7 +2689,7 @@ GameObject:
   - component: {fileID: 2999241234562713849}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2346,13 +2720,12 @@ GameObject:
   - component: {fileID: 9172157282587940810}
   - component: {fileID: 8710243988659191944}
   - component: {fileID: 7783896979855715202}
-  - component: {fileID: 296888763349521866}
-  - component: {fileID: 2210967113525760908}
-  - component: {fileID: 5889817706211423367}
-  - component: {fileID: 7185936138751752016}
+  - component: {fileID: 2165005745109063857}
+  - component: {fileID: 8460859202853482648}
+  - component: {fileID: 6919280673854942446}
   m_Layer: 0
   m_Name: C2
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2388,7 +2761,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3778539793872295616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2401,7 +2774,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2423,7 +2796,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &296888763349521866
+--- !u!114 &2165005745109063857
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2432,19 +2805,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3778539793872295616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: C2
-  function: Joins occipital bone with the C2 vertebra & Acts as pivot to head movements
-  structure: Prominent superior projection (dens axis / odontoid process) & Classified
-    as atypical vertebra
-  components: Centrum (body), Odontoid Process (dens), Transverse Process, Spinous
-    Process, Lamina of Vertebral Arch, Anterior Articular Process, Posterior Articular
-    Process, Vertebral Arch,  and Vertebral Foramen
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
-  rate: 1
---- !u!114 &2210967113525760908
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
+--- !u!114 &8460859202853482648
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2453,24 +2827,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 3778539793872295616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5889817706211423367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3778539793872295616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &7185936138751752016
-BoxCollider:
+  partName: C2 (Axis)
+  function:
+  - 'Stability, rotation, flexion, and extension of head and neck '
+  - 'Forms pivot joint with atlas bone C1 to allow head rotation '
+  structure:
+  - 'Prominent superior projection (dens axis / odontoid process) '
+  - 'Classified as atypical vertebra '
+  components:
+  - 'Centrum (body) '
+  - 'Odontoid Process (dens) '
+  - 'Transverse Process '
+  - 'Spinous Process '
+  - 'Lamina of Vertebral Arch '
+  - 'Anterior Articular Process '
+  - 'Posterior Articular Process '
+  - 'Vertebral Arch '
+  - 'Vertebral Foramen '
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &6919280673854942446
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2486,10 +2866,11 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.3370652, y: 1.6193123, z: 2.0909922}
-  m_Center: {x: -0.0015982985, y: 0.11559868, z: 0.13433781}
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7791577066479141583, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &3876006436570255416
 GameObject:
   m_ObjectHideFlags: 0
@@ -2501,7 +2882,7 @@ GameObject:
   - component: {fileID: 3435093360622617523}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2532,7 +2913,7 @@ GameObject:
   - component: {fileID: 7342148766345126233}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2563,13 +2944,13 @@ GameObject:
   - component: {fileID: 4108224583536448432}
   - component: {fileID: 8502766699749949159}
   - component: {fileID: 3026075225959136254}
-  - component: {fileID: 1168754596453400186}
-  - component: {fileID: 2895728976896328793}
-  - component: {fileID: 6619321491873873596}
+  - component: {fileID: 4133439303836965912}
   - component: {fileID: 6101086977355294791}
+  - component: {fileID: 1059425817017943924}
+  - component: {fileID: 3643355433193387250}
   m_Layer: 0
   m_Name: L4
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2605,7 +2986,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4330427991338205251}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2618,7 +2999,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2640,7 +3021,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1168754596453400186
+--- !u!114 &4133439303836965912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2649,43 +3030,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4330427991338205251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2895728976896328793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4330427991338205251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &6619321491873873596
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4330427991338205251}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.4954467, y: 2.1880417, z: 3.7116904}
-  m_Center: {x: -0.0022295117, y: -0.082552195, z: -0.054048}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &6101086977355294791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2710,8 +3067,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
     Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
     Pedicle of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.011764706, g: 0.15294118, b: 1, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &1059425817017943924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330427991338205251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &3643355433193387250
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330427991338205251}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2707942265286441016, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &4483074298852566275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2723,7 +3146,7 @@ GameObject:
   - component: {fileID: 2850568793214887295}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2754,13 +3177,13 @@ GameObject:
   - component: {fileID: 4748768012041904766}
   - component: {fileID: 1616086254173623419}
   - component: {fileID: 4282134539347249836}
-  - component: {fileID: 9207228341240114219}
-  - component: {fileID: 2822649124368171535}
-  - component: {fileID: 2679403321248723045}
+  - component: {fileID: 1251410583536800769}
   - component: {fileID: 2477247904357897633}
+  - component: {fileID: 2131339413358936784}
+  - component: {fileID: 7426019599099307765}
   m_Layer: 0
   m_Name: T12
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2796,7 +3219,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4982033552214311919}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2809,7 +3232,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2831,7 +3254,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9207228341240114219
+--- !u!114 &1251410583536800769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2840,43 +3263,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4982033552214311919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2822649124368171535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982033552214311919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &2679403321248723045
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4982033552214311919}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.2590106, y: 1.8690729, z: 3.4582715}
-  m_Center: {x: 0.017265677, y: -0.039900303, z: -0.15118593}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &2477247904357897633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2903,8 +3302,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Complete Costal Facet, Transverse Process, Spinous
     Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle of
     Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &2131339413358936784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982033552214311919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &7426019599099307765
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982033552214311919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1308910792152573850, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &5139882178833694333
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,13 +3381,13 @@ GameObject:
   - component: {fileID: 3404232999208823648}
   - component: {fileID: 4146178959231857489}
   - component: {fileID: 1534259576705329942}
-  - component: {fileID: 3341583455754269395}
-  - component: {fileID: 1171020835272806331}
-  - component: {fileID: 2056924611499592673}
+  - component: {fileID: 27830408779067925}
   - component: {fileID: 3173516720826381065}
+  - component: {fileID: 1263058989133933694}
+  - component: {fileID: 7700590080904485775}
   m_Layer: 0
   m_Name: C3
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2958,7 +3423,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5139882178833694333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2971,7 +3436,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2993,7 +3458,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3341583455754269395
+--- !u!114 &27830408779067925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3002,43 +3467,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5139882178833694333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1171020835272806331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5139882178833694333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &2056924611499592673
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5139882178833694333}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.1028895, y: 1.1860561, z: 2.1122308}
-  m_Center: {x: -0.00075113773, y: -0.07602978, z: 0.27689794}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &3173516720826381065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3065,6 +3506,69 @@ MonoBehaviour:
     Arch, Spinal Nerve Groove,  and Vertebral Foramen '
   changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &1263058989133933694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139882178833694333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: C3
+  function:
+  - 'Supports soft tissues of neck and weight of head '
+  - 'Protects spinal cord, nerves, vertebral arteries, and vertebral veins '
+  - 'Serves as origin to many muscles '
+  structure:
+  - 'Standard vertebral shape '
+  - 'Large column of bone on anterior end (vertebral body) '
+  - 'Vertebral body is wider than deep, slightly concave on superior and inferior
+    surfaces '
+  - 'Bilateral opening in transverse process '
+  - 'Split tip of spinous process '
+  - 'Raised edge of vertebral body '
+  - 'Thin and flat vertebral arch '
+  components:
+  - 'Body of Vertebra '
+  - 'Uncal Process '
+  - 'Transverse Process '
+  - 'Spinous Process '
+  - 'Inferior Articular Process '
+  - 'Superior Articular Process '
+  - 'Anterior Tubercle (of Transverse Process) '
+  - Posterior Tubercle (of Transverse Process)
+  - 'Lamina of Vertebral Arch '
+  - 'Spinal Nerve Groove '
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &7700590080904485775
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5139882178833694333}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2104250737164029209, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &5140551208973008333
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,13 +3580,13 @@ GameObject:
   - component: {fileID: 626141736186225948}
   - component: {fileID: 291438613366051974}
   - component: {fileID: 7150737479679875431}
-  - component: {fileID: 2386554762350931560}
-  - component: {fileID: 7630500894711578456}
-  - component: {fileID: 7145091328589235798}
+  - component: {fileID: 7020298940828725599}
   - component: {fileID: 5621318692344247990}
+  - component: {fileID: 5576157602038865711}
+  - component: {fileID: 2344221195313666412}
   m_Layer: 0
   m_Name: L2
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3118,7 +3622,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5140551208973008333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3131,7 +3635,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3153,7 +3657,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2386554762350931560
+--- !u!114 &7020298940828725599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3162,43 +3666,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5140551208973008333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7630500894711578456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5140551208973008333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &7145091328589235798
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5140551208973008333}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.3058589, y: 1.9910693, z: 3.843716}
-  m_Center: {x: 0.0037665367, y: -0.08334136, z: -0.1397053}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &5621318692344247990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3224,8 +3704,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
     Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
     Pedicle of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.011764706, g: 0.15294118, b: 1, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &5576157602038865711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140551208973008333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &2344221195313666412
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140551208973008333}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5423169134400810920, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &5240351868257950266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3237,7 +3783,7 @@ GameObject:
   - component: {fileID: 8210625653055898157}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3268,7 +3814,7 @@ GameObject:
   - component: {fileID: 7393187336600586925}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3299,13 +3845,13 @@ GameObject:
   - component: {fileID: 1076210622296274815}
   - component: {fileID: 1618084263122470706}
   - component: {fileID: 951515456481000402}
-  - component: {fileID: 2281395846580537535}
-  - component: {fileID: 5572312570260336593}
-  - component: {fileID: 692282319500845926}
+  - component: {fileID: 4528625440674863575}
   - component: {fileID: 7041540900860399333}
+  - component: {fileID: 455666642290439289}
+  - component: {fileID: 8030124922971619903}
   m_Layer: 0
   m_Name: T6
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3341,7 +3887,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5559653071007365364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3354,7 +3900,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3376,7 +3922,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2281395846580537535
+--- !u!114 &4528625440674863575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3385,43 +3931,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5559653071007365364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5572312570260336593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5559653071007365364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &692282319500845926
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5559653071007365364}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.318424, y: 1.7643957, z: 3.054295}
-  m_Center: {x: -0.0014458895, y: -0.15800428, z: 0.022848547}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &7041540900860399333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3444,8 +3966,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
     Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch,  Pedicle
     of Vertebral Arch, Vertebral Foramen, & Vertebral Canal  '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &455666642290439289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559653071007365364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &8030124922971619903
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5559653071007365364}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5706410905756370526, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &5593868191547065575
 GameObject:
   m_ObjectHideFlags: 0
@@ -3457,7 +4045,7 @@ GameObject:
   - component: {fileID: 9072448908488126306}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3488,13 +4076,13 @@ GameObject:
   - component: {fileID: 3157778475170165928}
   - component: {fileID: 7332022498247661019}
   - component: {fileID: 3684822218793184688}
-  - component: {fileID: 1341883722564066343}
-  - component: {fileID: 9130425474749232147}
-  - component: {fileID: 8560372739482667324}
+  - component: {fileID: 4806271143345396328}
   - component: {fileID: 676844601634973127}
+  - component: {fileID: 8868917336260722403}
+  - component: {fileID: 2695947801345712346}
   m_Layer: 0
   m_Name: L1
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3530,7 +4118,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5794682536253256485}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3543,7 +4131,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3565,7 +4153,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1341883722564066343
+--- !u!114 &4806271143345396328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3574,43 +4162,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 5794682536253256485}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9130425474749232147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5794682536253256485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &8560372739482667324
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5794682536253256485}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.167039, y: 2.0318308, z: 3.7999108}
-  m_Center: {x: -0.0010662675, y: -0.01812318, z: -0.23968899}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &676844601634973127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3637,8 +4201,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Transverse Process, Spinous Process, Articular Process,
     Costal Process, Mamillary Process, Accessory Process, Lamina of Vertebral Arch,
     Pedicle of Vertebral Arch, & Vertebral Foramen '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.011764706, g: 0.15294118, b: 1, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &8868917336260722403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794682536253256485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &2695947801345712346
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794682536253256485}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5194093898736058809, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &5919121681113404959
 GameObject:
   m_ObjectHideFlags: 0
@@ -3701,7 +4331,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4108224583536448432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6025425545157739925
+--- !u!1 &5949675507224394352
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3709,61 +4339,28 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5938794940253858105}
+  - component: {fileID: 396237031079093336}
   m_Layer: 0
-  m_Name: LumbarSpine
-  m_TagString: Untagged
+  m_Name: Pivot
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5938794940253858105
+--- !u!4 &396237031079093336
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6025425545157739925}
+  m_GameObject: {fileID: 5949675507224394352}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4515356267744064888}
-  m_Father: {fileID: 3505130880314354802}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6688885452529278642
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7858875834214336011}
-  m_Layer: 0
-  m_Name: CervicalSpineParts
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7858875834214336011
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6688885452529278642}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2870557525553482456}
-  m_Father: {fileID: 3505130880314354802}
+  m_Children: []
+  m_Father: {fileID: 4515356267744064888}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6995241084376425565
 GameObject:
@@ -3776,7 +4373,7 @@ GameObject:
   - component: {fileID: 4047908171587185668}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3807,7 +4404,7 @@ GameObject:
   - component: {fileID: 7140135170897625819}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3838,7 +4435,7 @@ GameObject:
   - component: {fileID: 7194209510026485170}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3869,7 +4466,7 @@ GameObject:
   - component: {fileID: 1015417062084710091}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3900,13 +4497,13 @@ GameObject:
   - component: {fileID: 3037811686340613903}
   - component: {fileID: 6288981641416103630}
   - component: {fileID: 1586346741114543252}
-  - component: {fileID: 3028375615078857019}
-  - component: {fileID: 2854777890398257798}
-  - component: {fileID: 2942017981672059588}
+  - component: {fileID: 1876221406832694799}
   - component: {fileID: 449534569575687420}
+  - component: {fileID: 2579599675560005885}
+  - component: {fileID: 3242726285785928277}
   m_Layer: 0
   m_Name: T10
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3942,7 +4539,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7894824421747185171}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3955,7 +4552,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3977,7 +4574,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3028375615078857019
+--- !u!114 &1876221406832694799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3986,43 +4583,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7894824421747185171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2854777890398257798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7894824421747185171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &2942017981672059588
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7894824421747185171}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.4187312, y: 1.6843166, z: 3.175209}
-  m_Center: {x: 0.017999172, y: -0.18417072, z: -0.03416902}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &449534569575687420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4045,8 +4618,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Complete Costal Facet, Transverse Process, Spinous
     Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle of
     Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &2579599675560005885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7894824421747185171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &3242726285785928277
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7894824421747185171}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3711651024319652098, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &7999062603394100442
 GameObject:
   m_ObjectHideFlags: 0
@@ -4058,7 +4697,7 @@ GameObject:
   - component: {fileID: 5800016158741533536}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4089,13 +4728,13 @@ GameObject:
   - component: {fileID: 5456493676328837488}
   - component: {fileID: 6918711898093096309}
   - component: {fileID: 8954061147531766965}
-  - component: {fileID: 728119340352379069}
-  - component: {fileID: 5644172240040024452}
-  - component: {fileID: 6203439933704536015}
+  - component: {fileID: 242404520315172477}
   - component: {fileID: 5679288263492532786}
+  - component: {fileID: 3322901581555301476}
+  - component: {fileID: 7129282365411694354}
   m_Layer: 0
   m_Name: T8
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4131,7 +4770,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8023699740447348757}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4144,7 +4783,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4166,7 +4805,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &728119340352379069
+--- !u!114 &242404520315172477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4175,43 +4814,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8023699740447348757}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5644172240040024452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8023699740447348757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &6203439933704536015
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8023699740447348757}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.5752523, y: 1.8693445, z: 3.0889907}
-  m_Center: {x: -0.00034594536, y: -0.27932927, z: -0.09109467}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &5679288263492532786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4232,8 +4847,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
     Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
     of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &3322901581555301476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8023699740447348757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &7129282365411694354
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8023699740447348757}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6699147319352607541, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &8122282490249708920
 GameObject:
   m_ObjectHideFlags: 0
@@ -4245,13 +4926,13 @@ GameObject:
   - component: {fileID: 3371859354773028585}
   - component: {fileID: 5799643681580038145}
   - component: {fileID: 3230349508768896774}
-  - component: {fileID: 7566408582420651797}
-  - component: {fileID: 7850918585590945124}
-  - component: {fileID: 7894574154358693134}
+  - component: {fileID: 3924260443353615859}
   - component: {fileID: 8626979806744746443}
+  - component: {fileID: 4402782354534823307}
+  - component: {fileID: 7660247067783231106}
   m_Layer: 0
   m_Name: C7
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4287,7 +4968,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8122282490249708920}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4300,7 +4981,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4322,7 +5003,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7566408582420651797
+--- !u!114 &3924260443353615859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4331,43 +5012,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8122282490249708920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7850918585590945124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8122282490249708920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &7894574154358693134
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8122282490249708920}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.5409985, y: 1.565321, z: 2.9068449}
-  m_Center: {x: 0.000029325485, y: -0.04486561, z: 0.3898579}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &8626979806744746443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4394,6 +5051,72 @@ MonoBehaviour:
     Foramen, & Accessory Foramen Transversarium '
   changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &4402782354534823307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8122282490249708920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &7660247067783231106
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8122282490249708920}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8861296024009629687, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &8236098091019643962
 GameObject:
   m_ObjectHideFlags: 0
@@ -4434,6 +5157,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3505130880314354802}
+  - component: {fileID: 5591694133346780133}
   m_Layer: 0
   m_Name: Spine
   m_TagString: Untagged
@@ -4454,12 +5178,32 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7010334573743609408}
-  - {fileID: 7858875834214336011}
-  - {fileID: 2071914573621500481}
-  - {fileID: 5938794940253858105}
+  - {fileID: 2870557525553482456}
+  - {fileID: 314670078804034478}
+  - {fileID: 4515356267744064888}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5591694133346780133
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8675323801589764331}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.4491005, y: 25.007584, z: 5.486772}
+  m_Center: {x: -0.015307426, y: 13.376614, z: 0.4352839}
 --- !u!1 &8676893121842885168
 GameObject:
   m_ObjectHideFlags: 0
@@ -4471,13 +5215,13 @@ GameObject:
   - component: {fileID: 8786763010931339280}
   - component: {fileID: 6124582499103417288}
   - component: {fileID: 2269513329104476054}
-  - component: {fileID: 1265228651834843995}
-  - component: {fileID: 587443964822034009}
-  - component: {fileID: 1636098021539460621}
+  - component: {fileID: 615913909302032005}
   - component: {fileID: 6893410924398550468}
+  - component: {fileID: 4075685196259571500}
+  - component: {fileID: 4194915281135712128}
   m_Layer: 0
   m_Name: T5
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4513,7 +5257,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8676893121842885168}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4526,7 +5270,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4548,7 +5292,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1265228651834843995
+--- !u!114 &615913909302032005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4557,43 +5301,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8676893121842885168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &587443964822034009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8676893121842885168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &1636098021539460621
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8676893121842885168}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.7048984, y: 1.7455845, z: 3.074997}
-  m_Center: {x: -0.0021742582, y: -0.17057896, z: 0.1671958}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &6893410924398550468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4615,8 +5335,74 @@ MonoBehaviour:
   components: 'Body of Vertebra, Costal Facet of Transverse Process, Transverse Process,
     Spinous Process, Articular Process, Neural Arch, Lamina of Vertebral Arch, Pedicle
     of Vertebral Arch, Vertebral Foramen, & Vertebral Canal '
-  changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &4075685196259571500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676893121842885168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &4194915281135712128
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676893121842885168}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1413734210137817703, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &8797084499281372167
 GameObject:
   m_ObjectHideFlags: 0
@@ -4628,13 +5414,13 @@ GameObject:
   - component: {fileID: 6461179761933779909}
   - component: {fileID: 7669587897626196504}
   - component: {fileID: 5747760833781009296}
-  - component: {fileID: 7736214777378954515}
-  - component: {fileID: 7049891513425337947}
-  - component: {fileID: 5612459335833489133}
+  - component: {fileID: 7261702094932497884}
   - component: {fileID: 8421684488680848746}
+  - component: {fileID: 3439989244830350884}
+  - component: {fileID: 5874834309025643818}
   m_Layer: 0
   m_Name: C6
-  m_TagString: Untagged
+  m_TagString: DerivedBone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4670,7 +5456,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8797084499281372167}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -4683,7 +5469,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
+  - {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4705,7 +5491,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7736214777378954515
+--- !u!114 &7261702094932497884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4714,43 +5500,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 8797084499281372167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7049891513425337947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8797084499281372167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72ecd347943af049af919d3fc4ab15b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boneType: 3
---- !u!65 &5612459335833489133
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8797084499281372167}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.4149837, y: 1.5034828, z: 2.444508}
-  m_Center: {x: -0.0032311082, y: -0.14043427, z: 0.23160791}
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &8421684488680848746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4774,6 +5536,72 @@ MonoBehaviour:
     Tubercle, Vertebral Arch, Lamina of Vertebral Arch, & Vertebral Foramen '
   changedColor: {r: 0.56078434, g: 0.14509805, b: 0.047058824, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &3439989244830350884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797084499281372167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: 
+  function:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  structure:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  components:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &5874834309025643818
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797084499281372167}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1939154208209704197, guid: 9474cc4196cf88146991c050edcadb73, type: 3}
 --- !u!1 &9039537174545230338
 GameObject:
   m_ObjectHideFlags: 0
@@ -4785,7 +5613,7 @@ GameObject:
   - component: {fileID: 8912398043178209784}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Pivot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4842,7 +5670,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2071914573621500481}
+    m_TransformParent: {fileID: 3505130880314354802}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4862,7 +5690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
       propertyPath: m_LocalRotation.y
@@ -4884,13 +5712,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
     - target: {fileID: 919132149155446097, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
       propertyPath: m_Name
       value: ThoracicSpine
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
+      propertyPath: m_TagString
+      value: Bone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3645687330014691158}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2139799030377446916}
@@ -4930,10 +5769,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 525802167812116411}
+      addedObject: {fileID: 3845710135747579964}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2535728126214791734}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4377679028900449664}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4309342327083802429}
   m_SourcePrefab: {fileID: 100100000, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
 --- !u!4 &314670078804034478 stripped
 Transform:
@@ -4945,7 +5790,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
   m_PrefabInstance: {fileID: 276786356371481669}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &525802167812116411
+--- !u!114 &3845710135747579964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4954,9 +5799,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1087124978169501972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
 --- !u!114 &2535728126214791734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4969,19 +5824,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: 
-  function: 
-  structure: 
-  components: 
-  changedColor: {r: 0.67058825, g: 0.41176474, b: 0.003921569, a: 1}
+  partName: ThoracicSpine
+  function: 'Creates contact points for ribs and muscles to attach to '
+  structure: Composed of heart shaped vertebrae
+  components: 'T1 - T12 '
+  changedColor: {r: 0.67058825, g: 0.4117647, b: 0.003921569, a: 1}
   rate: 1
+  zoomLevel: 0
+  pivot: {fileID: 0}
+--- !u!114 &4377679028900449664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087124978169501972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partName: Thoracic Spine
+  function:
+  - Creates contact points for ribs and muscles to attach to
+  structure:
+  - Composed of heart shaped vertebrae
+  components:
+  - T1 - T12
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &4309342327083802429
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087124978169501972}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2174399173569631774, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
 --- !u!1001 &2332017575796272435
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7858875834214336011}
+    m_TransformParent: {fileID: 3505130880314354802}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5001,7 +5901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
       propertyPath: m_LocalRotation.y
@@ -5023,13 +5923,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
     - target: {fileID: 919132149155446097, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
       propertyPath: m_Name
       value: CervicalSpine
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
+      propertyPath: m_TagString
+      value: Bone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4033445522830687358}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4268032674027675496}
@@ -5054,10 +5965,13 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3846135286442321656}
+      addedObject: {fileID: 7125254072413415832}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4122339124136878449}
+      addedObject: {fileID: 4985413713111170868}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4076375717539157586}
   m_SourcePrefab: {fileID: 100100000, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
 --- !u!4 &2870557525553482456 stripped
 Transform:
@@ -5069,7 +5983,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
   m_PrefabInstance: {fileID: 2332017575796272435}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3846135286442321656
+--- !u!114 &7125254072413415832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5078,10 +5992,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3214888921179672674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4122339124136878449
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
+--- !u!114 &4985413713111170868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5090,22 +6014,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 3214888921179672674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: 
-  function: 
-  structure: 
-  components: 
-  changedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  rate: 1
+  partName: Cervical Spine
+  function:
+  - "Holds the head\u2019s weight"
+  structure:
+  - 'Composed of ring-like vertebrae '
+  components:
+  - 'C1 - C7 '
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &4076375717539157586
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3214888921179672674}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5822458783264304706, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
 --- !u!1001 &4117272916973490835
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 5938794940253858105}
+    m_TransformParent: {fileID: 3505130880314354802}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5147,6 +6096,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eceb7d5b8db308a4a8bc47093ae95c2a, type: 2}
     - target: {fileID: 919132149155446097, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
       propertyPath: m_Name
       value: LumbarSpine
@@ -5155,9 +6108,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
+      propertyPath: m_TagString
+      value: Bone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 396237031079093336}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3157778475170165928}
@@ -5176,17 +6136,20 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6804913440951544219}
+      addedObject: {fileID: 4073232446356361538}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5597311590871853601}
+      addedObject: {fileID: 7798401047133838155}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1238095088046247515}
   m_SourcePrefab: {fileID: 100100000, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
 --- !u!1 &3882688054120918978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
   m_PrefabInstance: {fileID: 4117272916973490835}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6804913440951544219
+--- !u!114 &4073232446356361538
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5195,10 +6158,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 3882688054120918978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71e105e99b6264540aebf4f5b9b31051, type: 3}
+  m_Script: {fileID: 11500000, guid: 92667705f7d47a749a1ccc490ff29149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5597311590871853601
+  parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
+  layerIndex: 0
+  controlZoomOut: 1
+  canZoomIn: 0
+  canZoomOut: 0
+  zoomOutOnClick: 1
+  col: {fileID: 0}
+  rend: {fileID: 0}
+  light: {fileID: 0}
+--- !u!114 &7798401047133838155
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5207,15 +6180,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 3882688054120918978}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4562276f20335d41852e14a3a14d2ac, type: 3}
+  m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: 
-  function: 
-  structure: 
-  components: 
-  changedColor: {r: 0.011764707, g: 0.15294118, b: 1, a: 1}
-  rate: 1
+  partName: Lumbar Spine
+  function:
+  - "Supports whole upper body\u2019s weight "
+  structure:
+  - 'Among largest bones in spine '
+  components:
+  - L1 - L5
+  pivot: {fileID: 0}
+  needsCenter: 0
+--- !u!64 &1238095088046247515
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3882688054120918978}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2273268433363177126, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
 --- !u!4 &4515356267744064888 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}

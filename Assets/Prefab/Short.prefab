@@ -165,7 +165,7 @@ MonoBehaviour:
   - Hallo
   - Holero
   pivot: {fileID: 0}
-  needsCenter: 1
+  needsCenter: 0
 --- !u!114 &1894702905434350423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentControl: {fileID: 0}
+  firstChildControl: {fileID: 0}
   layerIndex: 0
   controlZoomOut: 1
   canZoomIn: 0
