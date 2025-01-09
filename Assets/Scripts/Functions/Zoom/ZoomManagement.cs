@@ -2,76 +2,79 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ZoomManagement : MonoBehaviour
+namespace BodySystem
 {
-    //Zoom In/Out Functions
-    public static void ZoomIn(Collider col, Renderer rend, Highlight light, 
-        List<Collider> derivedCols, List<Renderer> derivedRends, List<Highlight> derivedLight)
+    public class ZoomManagement : MonoBehaviour
     {
-        if (!light.IsStartingColor())
+        //Zoom In/Out Functions
+        public static void ZoomIn(Collider col, Renderer rend, Highlight light,
+            List<Collider> derivedCols, List<Renderer> derivedRends, List<Highlight> derivedLight)
         {
-            light.ResetColor();
+            if (!light.IsStartingColor())
+            {
+                light.ResetColor();
+            }
+
+            EnableParent(false, col, rend);
+
+            EnableChildren(true, derivedLight, derivedCols, derivedRends);
         }
 
-        EnableParent(false, col, rend);
+        public static void ZoomOut(Collider col, Renderer rend,
+            List<Collider> derivedCols, List<Renderer> derivedRends, List<Highlight> derivedLight)
+        {
+            EnableParent(true, col, rend);
 
-        EnableChildren(true, derivedLight, derivedCols, derivedRends);
-    }
+            EnableChildren(false, derivedLight, derivedCols, derivedRends);
+        }
 
-    public static void ZoomOut(Collider col, Renderer rend,
-        List<Collider> derivedCols, List<Renderer> derivedRends, List<Highlight> derivedLight)
-    {
-        EnableParent(true, col, rend);
-        
-        EnableChildren(false, derivedLight, derivedCols, derivedRends);
-    }
+        public static void ZoomOut(
+            List<Collider> parentCols, List<Renderer> parentRends,
+            List<Collider> derivedCols, List<Renderer> derivedRends, List<Highlight> derivedLights)
+        {
+            EnableParent(true, parentCols, parentRends);
 
-    public static void ZoomOut(
-        List<Collider> parentCols, List<Renderer> parentRends,
-        List<Collider> derivedCols, List<Renderer> derivedRends, List<Highlight> derivedLights)
-    {
-        EnableParent(true, parentCols, parentRends);
+            EnableChildren(false, derivedLights, derivedCols, derivedRends);
+        }
 
-        EnableChildren(false, derivedLights, derivedCols, derivedRends);
-    }
-
-    public static void EnableParent(bool enable, Collider col, Renderer rend)
-    {
-        col.enabled = enable;
-        rend.enabled = enable;
-    }
-
-    public static void EnableParent(bool enable, List<Collider> parentCol, List<Renderer> parentRend)
-    {
-        foreach(Collider col in parentCol)
+        public static void EnableParent(bool enable, Collider col, Renderer rend)
         {
             col.enabled = enable;
-        }
-        foreach(Renderer rend in parentRend)
-        {
             rend.enabled = enable;
         }
-    }
 
-    public static void EnableChildren(bool enable, 
-        List<Highlight> derivedLight, List<Collider> derivedCols, List<Renderer> derivedRends)
-    {
-        foreach (Highlight c in derivedLight)
+        public static void EnableParent(bool enable, List<Collider> parentCol, List<Renderer> parentRend)
         {
-            if (!c.IsStartingColor())
+            foreach (Collider col in parentCol)
             {
-                c.ResetColor();
+                col.enabled = enable;
+            }
+            foreach (Renderer rend in parentRend)
+            {
+                rend.enabled = enable;
             }
         }
 
-        foreach (Collider c in derivedCols)
+        public static void EnableChildren(bool enable,
+            List<Highlight> derivedLight, List<Collider> derivedCols, List<Renderer> derivedRends)
         {
-            c.enabled = enable;
-        }
+            foreach (Highlight c in derivedLight)
+            {
+                if (!c.IsStartingColor())
+                {
+                    c.ResetColor();
+                }
+            }
 
-        foreach (Renderer r in derivedRends)
-        {
-            r.enabled = enable;
+            foreach (Collider c in derivedCols)
+            {
+                c.enabled = enable;
+            }
+
+            foreach (Renderer r in derivedRends)
+            {
+                r.enabled = enable;
+            }
         }
     }
 }

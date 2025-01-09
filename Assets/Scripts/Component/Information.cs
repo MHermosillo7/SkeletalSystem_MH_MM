@@ -25,49 +25,15 @@ namespace BodySystem
         // Start is called before the first frame update
         void Awake()
         {
-            if (partName == null)
-            {
                 partName = name;
-            }
+            
             if (function.Count == 0 || structure.Count == 0 || components.Count == 0)
             {
                 Console.WriteLine("Field is empty");
             }
             GetPivot();
 
-            TryGetComponent<Camp>(out comp);
-
-            CheckIfNull(function, "f");
-            CheckIfNull(structure, "s");
-            CheckIfNull(components, "c");
-        }
-        void CheckIfNull(List<string> list, string value)
-        {
-            if (list[0] == null)
-            {
-                switch (value)
-                {
-                    case "f":
-                        Trim(comp.function, function);
-                        break;
-                    case "s":
-                        Trim(comp.structure, structure);
-                        break;
-                    case "c":
-                        Trim(comp.components, components);
-                        break;
-                }
-                print("Hello");
-            }
-        }
-        void Trim(string sentence, List<string> list)
-        {
-            string[] newList = sentence.Split(charsToTrim);
-            foreach (string word in newList)
-            {
-                word.Trim(charsToTrim);
-            }
-            list.Equals(newList.ToList());
+            
         }
         public string GetName()
         {
@@ -117,6 +83,58 @@ namespace BodySystem
                 }
             }
         }
+        /*
+        private void Start()
+        {
+            TryGetComponent<Camp>(out comp);
+
+            CheckIfNull(function, "f");
+            CheckIfNull(structure, "s");
+            CheckIfNull(components, "c");
+        }
+        void CheckIfNull(List<string> list, string value)
+        {
+            list.Clear();
+            switch (value)
+            {
+                case "f":
+                    Trim(comp.function, list);
+                    break;
+                case "s":
+                    Trim(comp.structure, list);
+                    break;
+                case "c":
+                    Trim(comp.components, list);
+                    break;
+            }
+
+        }
+        void Trim(string sentence, List<string> list)
+        {
+            string[] newList = sentence.Split(charsToTrim);
+            foreach (string word in newList)
+            {
+                word.Trim(charsToTrim);
+            }
+            for (int i = 0; i < newList.Length; i++)
+            {
+                string word = newList[i];
+                if (word != "")
+                {
+                    if (word.StartsWith(" "))
+                    {
+                        word = word.TrimStart(' ');
+                        list.Add(word);
+                    }
+                    else
+                    {
+                        list.Add(word);
+                    }
+                }
+
+            }
+        }
+        */
     }
 
 }

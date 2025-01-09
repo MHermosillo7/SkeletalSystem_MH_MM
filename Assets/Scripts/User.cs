@@ -64,8 +64,9 @@ namespace BodySystem
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit objectHit;
 
-            if (Physics.Raycast(ray, out objectHit, ignoreLayer))
+            if (Physics.Raycast(ray, out objectHit))
             {
+                print("A");
                 if (selectedItem == objectHit.transform.gameObject)
                 {
                     DeSelect();
@@ -77,6 +78,7 @@ namespace BodySystem
                 {
                     DeSelect();
 
+                    print(objectHit.transform.name);
                     ChangeSelected(objectHit.transform.gameObject);
                     // Else it does not hit object tagged as derived bone
                     // It resets zoom and 
