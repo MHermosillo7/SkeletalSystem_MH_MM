@@ -23,6 +23,10 @@ namespace BodySystem
             mainControl = GetComponent<ZoomControl>();
             mainControl.layerIndex = layerIndex;
 
+            
+        }
+        private void Start()
+        {
             AssignLayer(transform);
 
             layerIndex++;
@@ -31,10 +35,6 @@ namespace BodySystem
                 AssignLayer(children[i]);
             }
 
-
-        }
-        private void Start()
-        {
             ResetLayers();
         }
         public void AssignLayer(Transform parent)
