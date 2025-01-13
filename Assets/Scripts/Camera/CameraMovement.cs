@@ -59,7 +59,7 @@ namespace BodySystem
                     horizontalInput = GetInput("Mouse X", rotateSpeed);
                     verticalInput = GetInput("Mouse Y", rotateSpeed);
 
-                    RotateA();
+                    RotateB();
                 }
 
                 Zoom();
@@ -67,7 +67,7 @@ namespace BodySystem
                 //If holding right click
                 if (Input.GetMouseButton(1))
                 {
-                    SlideA();
+                    SlideB();
                 }
             }
             else if(camRotProgress == 0 && posProgress == 0 && vecRotProgress == 0)
