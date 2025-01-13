@@ -212,6 +212,11 @@ namespace BodySystem
             CheckCoroutine(vecRotationCoroutine, CenterVectorRot());
         }
 
+        public void CenterCameraToCurrentVector()
+        {
+            CenterCamera(vectorTrans);
+        }
+
         /* Note to self: Consider using Lerp or SmoothDamp 
            because movement becomes too harsh even when at low movement rate*/
         IEnumerator CenterCameraPos()

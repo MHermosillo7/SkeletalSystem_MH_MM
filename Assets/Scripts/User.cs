@@ -38,7 +38,10 @@ namespace BodySystem
             zoomUI = FindObjectOfType<ZoomUI>();
             helpUI = FindObjectOfType<HelpUI>();
 
-            zoomUI.EnableButton(false);
+            if (zoomUI)
+            {
+                zoomUI.EnableButton(false);
+            }
         }
 
         // Update is called once per frame
@@ -80,16 +83,20 @@ namespace BodySystem
                     ChangeSelected(objectHit.transform.gameObject);
                     // Else it does not hit object tagged as derived bone
                     // It resets zoom and 
+
                     if (!IsDerivedBone() || selectedItemZoom.layerIndex < previousItemZoom.layerIndex)
                     {
-                        if (previousItemZoom != null)
+                        if (selectedItemZoom && previousItemZoom)
                         {
                             ZoomIntoCurrentLayer();
                         }
 
-                        if (!zoomUI.IsUIActive()) 
+                        if (zoomUI) 
                         {
-                            zoomUI.EnableButton(true);
+                            if (!zoomUI.IsUIActive())
+                            {
+                                zoomUI.EnableButton(true);
+                            }
                         }
                     }
 
@@ -119,9 +126,15 @@ namespace BodySystem
         void DeSelect()
         {
             infoUI.HideUI();
-            filterUI.HideUI();
             helpUI.HideUI();
-            zoomUI.HideUI();
+            if (filterUI)
+            {
+                filterUI.HideUI();
+            }
+            if (zoomUI)
+            {
+                zoomUI.HideUI();
+            }
         }
         bool IsDerivedBone()
         {
@@ -144,23 +157,28 @@ namespace BodySystem
         }
         public void ZoomOut()
         {
-            if (selectedItemZoom.canZoomOut)
+            //Added multiple checks for selected item zoom component due to addition of scene
+            //without any such scripts or UI types, thus, it would give errors without them
+            if (selectedItemZoom)
             {
-                //Zoom out of current object
-                selectedItemZoom.Zoom("out");
+                if (selectedItemZoom.canZoomOut)
+                {
+                    //Zoom out of current object
+                    selectedItemZoom.Zoom("out");
 
-                //Get parent's zoom controls
+                    //Get parent's zoom controls
 
-                //Override current selected item with parent,
-                //so information pop ups are displayed at first click
+                    //Override current selected item with parent,
+                    //so information pop ups are displayed at first click
 
-                //Override selectedItem information reference, so when info pop ups
-                //appears, information is displayed correctly
+                    //Override selectedItem information reference, so when info pop ups
+                    //appears, information is displayed correctly
 
-                ChangeSelected(selectedItemZoom.parentControl.gameObject);
+                    ChangeSelected(selectedItemZoom.parentControl.gameObject);
 
-                //Center camera around the pivot of previous object's parent
-                camMov.CenterCamera(selectedItemComp.pivot);
+                    //Center camera around the pivot of previous object's parent
+                    camMov.CenterCamera(selectedItemComp.pivot);
+                }
             }
         }
         //Zooms out of previous object until the object layer shown
@@ -179,6 +197,8 @@ namespace BodySystem
             }
 
             previousItemZoom = selectedItemZoom.parentControl;
+
+            camMov.CenterCameraToCurrentVector();
         }
         
         //Updates object references while keeping reference to previous item
@@ -193,9 +213,12 @@ namespace BodySystem
             if(newItem != null)
             {
                 selectedItemComp = newItem.GetComponent<Information>();
-                selectedItemZoom = newItem.GetComponent<ZoomControl>();
+                newItem.TryGetComponent<ZoomControl>(out selectedItemZoom);
 
-                zoomUI.UpdateZoom(selectedItemZoom.canZoomIn, selectedItemZoom.canZoomOut);
+                if (selectedItemZoom)
+                {
+                    zoomUI.UpdateZoom(selectedItemZoom.canZoomIn, selectedItemZoom.canZoomOut);
+                }
             }
             else
             {

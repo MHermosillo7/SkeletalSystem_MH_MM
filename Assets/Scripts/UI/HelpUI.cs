@@ -8,6 +8,7 @@ namespace BodySystem
 
         InfoUI infoUI;
         FilterUI filterUI;
+        ZoomUI zoomUI;
 
         // Start is called before the first frame update
         void Awake()
@@ -18,6 +19,7 @@ namespace BodySystem
 
             infoUI = FindObjectOfType<InfoUI>();
             filterUI = FindObjectOfType<FilterUI>();
+            zoomUI = FindObjectOfType<ZoomUI>();
         }
 
         public void ShowUI()
@@ -25,7 +27,14 @@ namespace BodySystem
             panel.SetActive(true);
 
             infoUI.HideUI();
-            filterUI.HideUI();
+            if (filterUI)
+            {
+                filterUI.HideUI();
+            }
+            if (zoomUI)
+            {
+                zoomUI.HideUI();
+            }
         }
         public void HideUI()
         {

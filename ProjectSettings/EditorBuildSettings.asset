@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 279221c0ee33ff04b89ceffcb4ddabaf
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/FilterScene.unity
+    guid: 7b830b3038fbe8c4e9568d7b302c81f2
+  - enabled: 1
+    path: Assets/Scenes/ZoomScene.unity
+    guid: b5dc62cf0e044bb43ba095a2b9f878d2
   - enabled: 1
     path: Assets/Scenes/Credits.unity
-    guid: 66cf6f62166c9d746a5d1d115c5021d0
+    guid: a812f35fc81aeb0488392ce1c4695a8c
   m_configObjects: {}
