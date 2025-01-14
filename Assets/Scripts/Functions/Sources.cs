@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Sources : MonoBehaviour
@@ -7,34 +5,41 @@ public class Sources : MonoBehaviour
     [SerializeField] GameObject info;
     [SerializeField] GameObject programming;
     [SerializeField] GameObject logo;
+    [SerializeField] GameObject team;
 
     Animator infoAnim;
     Animator programmingAnim;
     Animator logoAnim;
 
     GameObject activeObject;
+    Animator activeAnim;
 
     SourceUI sourceUI;
     // Start is called before the first frame update
     void Start()
     {
-        info.SetActive(true);
+        info.SetActive(false);
         programming.SetActive(false);
         logo.SetActive(false);
+        team.SetActive(true);
 
         infoAnim = info.GetComponent<Animator>();
         programmingAnim = programming.GetComponent<Animator>();
         logoAnim = logo.GetComponent<Animator>();
 
-        activeObject = info;
-        infoAnim.SetTrigger("Start");
+        activeObject = team;
 
         sourceUI = FindObjectOfType<SourceUI>();
     }
 
     public void SwitchSource(string source)
     {
-        activeObject.GetComponent<Animator>().SetTrigger("Reset");
+        TryGetComponent<Animator>(out activeAnim);
+
+        if (activeAnim)
+        {
+            activeAnim.SetTrigger("Reset");
+        }
 
         activeObject.SetActive(false);
 
@@ -63,6 +68,12 @@ public class Sources : MonoBehaviour
 
                 activeObject = logo;
                 break;
+
+            case "team":
+                team.SetActive(true);
+                activeObject = team;
+                break;
+                
         }
         sourceUI.TogglePanel();
     }

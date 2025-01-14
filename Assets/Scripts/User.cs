@@ -15,6 +15,7 @@ namespace BodySystem
         HelpUI helpUI;
 
         GameObject selectedItem;
+        GameObject previousItem;
         [SerializeField] GameObject zoomedBone;
         public Information selectedItemComp;
 
@@ -109,13 +110,22 @@ namespace BodySystem
                         infoUI.ShowUI();
                     }
 
-                    if (selectedItemComp.needsCenter || selectedItem.CompareTag("Bone"))
+                    if (selectedItemComp.needsCenter)
                     {
                         //Get child (vector) inside object hit
                         camMov.CenterCamera(selectedItemComp.pivot);
                     }
 
-
+                    if (selectedItem.CompareTag("Bone"))
+                    {
+                        if (previousItem)
+                        {
+                            if (previousItem.transform.parent != selectedItem.transform.parent)
+                            {
+                                camMov.CenterCamera(selectedItemComp.pivot);
+                            }
+                        }
+                    }
                 }
             }
             else
@@ -146,8 +156,6 @@ namespace BodySystem
             if (selectedItemZoom.canZoomIn)
             {
                 selectedItemZoom.Zoom("in");
-
-                camMov.CenterVector();
 
                 infoUI.HideUI();
 
@@ -205,9 +213,9 @@ namespace BodySystem
         //Gets Information and Zoom Control scripts if available
         private void ChangeSelected(GameObject newItem)
         {
-
+            previousItem = selectedItem;
             selectedItem = newItem;
-
+            
             previousItemZoom = selectedItemZoom;
 
             if(newItem != null)

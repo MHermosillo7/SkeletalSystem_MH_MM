@@ -235,6 +235,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1680827318}
   - {fileID: 616391056}
   - {fileID: 1506459437}
   - {fileID: 1864035845}
@@ -1398,7 +1399,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.81132066, g: 0.76867706, b: 0.76867706, a: 1}
     m_PressedColor: {r: 0.6981132, g: 0.56733453, b: 0.56733453, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.20784314, g: 0.20392157, b: 0.20392157, a: 0.5019608}
+    m_DisabledColor: {r: 0.184, g: 0, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -2757,6 +2758,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729949307}
   m_CullTransparentMesh: 1
+--- !u!1 &736849659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 736849660}
+  - component: {fileID: 736849662}
+  - component: {fileID: 736849661}
+  m_Layer: 5
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &736849660
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736849659}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1680827318}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -8, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &736849661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736849659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Reset Camera
+--- !u!222 &736849662
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736849659}
+  m_CullTransparentMesh: 1
 --- !u!1 &744981446
 GameObject:
   m_ObjectHideFlags: 0
@@ -3043,7 +3123,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1206265151}
-  - {fileID: 1307538168}
   m_Father: {fileID: 1506459437}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
@@ -3095,7 +3174,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.81132066, g: 0.76867706, b: 0.76867706, a: 1}
     m_PressedColor: {r: 0.6981132, g: 0.56733453, b: 0.56733453, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.20784314, g: 0.20392157, b: 0.20392157, a: 0.5019608}
+    m_DisabledColor: {r: 0.184, g: 0, b: 0, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -3736,7 +3815,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.678051, g: 0.7229817, b: 0.761, a: 1}
+  m_BackGroundColor: {r: 0.6784314, g: 0.71753436, b: 0.7607843, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3804,8 +3883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7acf470a454cc884984a7b3739ea8fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 400
-  slideSpeed: 30
+  rotateSpeed: 280
+  slideSpeed: 20
   zoomSpeed: 1.5
   rate: 0.9
   vectorTrans: {fileID: 0}
@@ -4123,81 +4202,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299496505}
-  m_CullTransparentMesh: 1
---- !u!1 &1307538167
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1307538168}
-  - component: {fileID: 1307538170}
-  - component: {fileID: 1307538169}
-  m_Layer: 5
-  m_Name: Circle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1307538168
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307538167}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 793187904}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.7, y: 5.8}
-  m_SizeDelta: {x: 53.6793, y: 54.3426}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1307538169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307538167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1307538170
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1307538167}
   m_CullTransparentMesh: 1
 --- !u!1 &1316659785
 GameObject:
@@ -5818,6 +5822,139 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665732879}
   m_CullTransparentMesh: 1
+--- !u!1 &1680827317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1680827318}
+  - component: {fileID: 1680827321}
+  - component: {fileID: 1680827320}
+  - component: {fileID: 1680827319}
+  m_Layer: 5
+  m_Name: ResetCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1680827318
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680827317}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.39999995, y: 0.39999995, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 736849660}
+  m_Father: {fileID: 22034321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 362.08337, y: 70}
+  m_SizeDelta: {x: 132.2684, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1680827319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680827317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 0
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 0.9372549, g: 0.9372549, b: 0.9372549, a: 1}
+    m_HighlightedColor: {r: 0.8117647, g: 0.77254903, b: 0.77254903, a: 1}
+    m_PressedColor: {r: 0.7019608, g: 0.5686275, b: 0.5686275, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.20784314, g: 0.2, b: 0.2, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1680827320}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 963194229}
+        m_TargetAssemblyTypeName: BodySystem.CameraMovement, Assembly-CSharp
+        m_MethodName: CenterCameraToCurrentVector
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1680827320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680827317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1680827321
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680827317}
+  m_CullTransparentMesh: 1
 --- !u!1 &1698785897
 GameObject:
   m_ObjectHideFlags: 0
@@ -7210,6 +7347,18 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4377679028900449664, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377679028900449664, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure.Array.data[1]
+      value: Bends out slightly to make a backward C-shape (kyphotic curve)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4377679028900449664, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components.Array.data[0]
+      value: Twelve Vertebrae (T1 - T12)
+      objectReference: {fileID: 0}
     - target: {fileID: 4515356267744064888, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.27850938
@@ -7218,9 +7367,89 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4985413713111170868, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: function.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985413713111170868, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985413713111170868, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985413713111170868, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: function.Array.data[1]
+      value: Allows turn, tilt, and nod of head
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985413713111170868, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure.Array.data[1]
+      value: Makes an inward C-shape (lordotic curve)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985413713111170868, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components.Array.data[0]
+      value: Seven Vertebrae (C1 - C7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4985413713111170868, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components.Array.data[1]
+      value: 'C1 - C7 '
+      objectReference: {fileID: 0}
     - target: {fileID: 5145537502285228795, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: partName
+      value: Spine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: function.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: function.Array.data[0]
+      value: Provides body with structure and support
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: function.Array.data[1]
+      value: Allows free movement and bend with flexibility
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: function.Array.data[2]
+      value: Protects spinal cord
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure.Array.data[0]
+      value: Long column of bones that extend from neck to lower back
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure.Array.data[1]
+      value: Three natural curves that make an S-shape
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components.Array.data[0]
+      value: 33 stacked vertebrae
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components.Array.data[1]
+      value: Cartilage between vertebrae
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components.Array.data[2]
+      value: Intervertebral disks
+      objectReference: {fileID: 0}
+    - target: {fileID: 5196703041180155618, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components.Array.data[3]
+      value: Intervertebral disks
       objectReference: {fileID: 0}
     - target: {fileID: 5414432701050932129, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
       propertyPath: m_Enabled
@@ -7238,6 +7467,22 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -479233940399864944, guid: 053ce2ac6d4409342a87c3e70ec4703f, type: 3}
+    - target: {fileID: 7798401047133838155, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798401047133838155, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure.Array.data[0]
+      value: 'Houses some of the largest bones in spine '
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798401047133838155, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: structure.Array.data[1]
+      value: Bends inward to create a C-shaped lordotic curve
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798401047133838155, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
+      propertyPath: components.Array.data[0]
+      value: Five Vertebrae (L1 - L5)
+      objectReference: {fileID: 0}
     - target: {fileID: 8087360582846466672, guid: 7ba0ca691dc8d6b48a87e4e20eeaee15, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -7279,6 +7524,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 899521847177847361, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: function.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 899521847177847361, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: function.Array.data[1]
+      value: Attachment point for facial muscles
+      objectReference: {fileID: 0}
     - target: {fileID: 1566089106933267456, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
       propertyPath: m_Name
       value: Skull
@@ -7286,6 +7539,62 @@ PrefabInstance:
     - target: {fileID: 1664812977624961055, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
       propertyPath: m_TagString
       value: DerivedBone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: partName
+      value: Mandible
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: function.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: structure.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: function.Array.data[0]
+      value: Open and close mouth for chewing and speech
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: function.Array.data[1]
+      value: Protects organs of face
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: function.Array.data[2]
+      value: Hold lower set of teeth in place
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: structure.Array.data[0]
+      value: Largest and strongest bone of face
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: structure.Array.data[1]
+      value: Symmetrical, horseshoe shape
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: structure.Array.data[2]
+      value: Not directly connected to other bones of skull
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: structure.Array.data[3]
+      value: Only moving bone of skull
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.data[0]
+      value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.data[1]
+      value: Ramus (wings / bony prominences)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735422090847582434, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.data[2]
+      value: Ramus (wings / bony prominences)
       objectReference: {fileID: 0}
     - target: {fileID: 2892587643722930509, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
       propertyPath: zoomOutOnClick
@@ -7330,6 +7639,42 @@ PrefabInstance:
     - target: {fileID: 3563448942196757152, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443877565582451315, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443877565582451315, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: function.Array.data[0]
+      value: Protect the brain
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443877565582451315, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: structure.Array.data[0]
+      value: Made up of 22 bones
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443877565582451315, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.data[0]
+      value: Frontal Bones
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443877565582451315, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.data[1]
+      value: Sphenoid Bones
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443877565582451315, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.data[2]
+      value: Ethmoid Bones
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443877565582451315, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.data[3]
+      value: Occipital Bones
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443877565582451315, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.data[4]
+      value: Parietal Bones
+      objectReference: {fileID: 0}
+    - target: {fileID: 5443877565582451315, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.data[5]
+      value: Temporal Bones
       objectReference: {fileID: 0}
     - target: {fileID: 7268445393662024455, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
       propertyPath: m_TagString

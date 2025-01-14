@@ -217,6 +217,28 @@ namespace BodySystem
             CenterCamera(vectorTrans);
         }
 
+        // Checks coroutine reference, and
+        // if it has been started before, stops it.
+        // Always starts the Enumerator of the type passed
+        // and stores reference to coroutine
+        // This avoid logic overlap when user clicks different
+        // objects too fast and camera has to reset position many consecutive times
+        // or is in the middle of resetting when function is called again
+        void CheckCoroutine(Coroutine cor, IEnumerator ie)
+        {
+            switch (cor)
+            {
+                case null:
+                    cor = StartCoroutine(ie);
+                    break;
+
+                default:
+                    StopCoroutine(cor);
+
+                    cor = StartCoroutine(ie);
+                    break;
+            }
+        }
         /* Note to self: Consider using Lerp or SmoothDamp 
            because movement becomes too harsh even when at low movement rate*/
         IEnumerator CenterCameraPos()
@@ -269,26 +291,6 @@ namespace BodySystem
             prevVectorTrans.rotation = Quaternion.identity;
 
             prevVectorTrans = vectorTrans;
-        }
-
-        // Checks coroutine reference, and
-        // if it has been started before, stops it.
-        // Always starts the Enumerator passed and
-        // stores reference to coroutine
-        void CheckCoroutine(Coroutine cor, IEnumerator ie)
-        {
-            switch (cor)
-            {
-                case null:
-                    cor = StartCoroutine(ie);
-                    break;
-
-                default:
-                    StopCoroutine(cor);
-
-                    cor = StartCoroutine(ie);
-                    break;
-            }
         }
     }
 }
