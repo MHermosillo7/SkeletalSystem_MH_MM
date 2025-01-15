@@ -28,7 +28,7 @@ public class Screenshot : MonoBehaviour
     // Irrelevant as of now
     // (planned to prompt user whether to
     // delete previous screenshots or not)
-    bool cleanDirectory = true;
+    [SerializeField] bool cleanDirectory = false;
 
     Canvas canvas;
 
@@ -51,6 +51,8 @@ public class Screenshot : MonoBehaviour
         }
         canvas = FindObjectOfType<Canvas>();
         anim = GetComponent<Animator>();
+
+        index = GameManager.GetImageIndex();
     }
 
     IEnumerator TakeScreenshot()
@@ -64,6 +66,7 @@ public class Screenshot : MonoBehaviour
             ($"{completePath}/{imageName}{index}.{type}");
 
         index++;
+        GameManager.AddImageIndex();
         canvas.enabled = true;
     }
     public void TakeScreenShot()

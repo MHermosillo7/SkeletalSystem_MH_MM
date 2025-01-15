@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    public static int imageIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +29,13 @@ public class GameManager : MonoBehaviour
     public static void Quit()
     {
         Application.Quit();
+    }
+    public static int GetImageIndex()
+    {
+        return imageIndex;
+    }
+    public static void AddImageIndex()
+    {
+        imageIndex++;
     }
 }

@@ -110,21 +110,10 @@ namespace BodySystem
                         infoUI.ShowUI();
                     }
 
-                    if (selectedItemComp.needsCenter)
+                    if (selectedItemComp.needsCenter || selectedItem.CompareTag("Bone"))
                     {
                         //Get child (vector) inside object hit
                         camMov.CenterCamera(selectedItemComp.pivot);
-                    }
-
-                    if (selectedItem.CompareTag("Bone"))
-                    {
-                        if (previousItem)
-                        {
-                            if (previousItem.transform.parent != selectedItem.transform.parent)
-                            {
-                                camMov.CenterCamera(selectedItemComp.pivot);
-                            }
-                        }
                     }
                 }
             }
