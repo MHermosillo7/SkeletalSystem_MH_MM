@@ -12,6 +12,7 @@ TagManager:
   - ToggleShort
   - ToggleFlat
   - ToggleIrregular
+  - Transition
   layers:
   - Default
   - TransparentFX

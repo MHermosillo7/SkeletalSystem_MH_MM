@@ -1,4 +1,5 @@
 using System.Data;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         if (instance)
         {
             Destroy(this);
@@ -24,7 +26,8 @@ public class GameManager : MonoBehaviour
 
     public static void LoadScene(int sceneIndex)
     {
-        SceneManager.LoadScene(sceneIndex);
+        SceneTransition.PlayOutroAnim();
+        SceneManager.LoadSceneAsync(sceneIndex);
     }
     public static void Quit()
     {
