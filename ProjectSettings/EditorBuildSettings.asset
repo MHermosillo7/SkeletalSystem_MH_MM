@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: a812f35fc81aeb0488392ce1c4695a8c
+  - enabled: 1
+    path: Assets/Scenes/MarcoBackup/TitleScene 1.unity
+    guid: e74b21c8330b8a4458d493560f252b9c
+  - enabled: 1
+    path: Assets/Scenes/MarcoBackup/FilterScene 1.unity
+    guid: 3a7f449961bb1ca4ab741403107a993b
+  - enabled: 1
+    path: Assets/Scenes/MarcoBackup/ZoomScene 1.unity
+    guid: 9e15a4e29120d144fa9e98eaa3b5ea85
+  - enabled: 1
+    path: Assets/Scenes/MarcoBackup/Credits 1.unity
+    guid: 9c500974217736348a3a4af19706ee8d
   m_configObjects: {}
