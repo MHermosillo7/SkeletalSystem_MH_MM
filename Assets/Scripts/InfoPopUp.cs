@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Linq;
+using System.Net.NetworkInformation;
 using UnityEngine;
 
 public class InfoPopUp : MonoBehaviour
@@ -14,33 +15,48 @@ public class InfoPopUp : MonoBehaviour
     float objMaxY;
     float objMinY;
 
-    float movementSpeed = 200;
+    float movementSpeed = 250;
 
-    bool moveHorizontally = false;
-    bool moveVertically = false;
+    [SerializeField] bool moveHorizontally = false;
+    [SerializeField] bool moveVertically = false;
 
     float horizontalForce;
     float verticalForce;
+
+    Coroutine checkPopUp;
 
     // Start is called before the first frame update
     void Awake()
     {
         objRect = GetComponent<RectTransform>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            Debug.Log("Hello");
-            StartCoroutine(CheckPopUp());
-        }
+        ResetPosition();
     }
 
+    public void RunPopUpCheck()
+    {
+        if(checkPopUp != null)
+        {
+            StopCoroutine(checkPopUp);
+        }
 
+        ResetPosition();
+        StartCoroutine(CheckPopUp());
+    }
+    void ResetPosition()
+    {
+        objRect.transform.localPosition = new Vector2(740, 0);
+    }
     IEnumerator CheckPopUp()
     {
+        // Needed for first call of coroutine
+        // Without it, the function runs while the image is upscaling (or smthng like that)
+        // And so the image does not move even if it is outside of canvas
+        // However, if waiting until end of frame, the function always runs correctly
+        yield return new WaitForEndOfFrame();
+
         GetCoordinates();
         CheckPosition();
 
@@ -73,16 +89,19 @@ public class InfoPopUp : MonoBehaviour
     {
         moveHorizontally = true;
 
-        if(objMaxX > Screen.width)
+        //Object is too right
+        if (objMaxX > Screen.width)
         {
-            //Object is too right
             horizontalForce = -movementSpeed;
         }
-        else if(objMinX < 0)
+
+        //Object is too left
+        else if (objMinX < 0)
         {
-            //Object is too left
             horizontalForce = movementSpeed;
         }
+        
+        //Else object is okay horizontally
         else
         {
             moveHorizontally = false;
@@ -91,24 +110,25 @@ public class InfoPopUp : MonoBehaviour
 
         moveVertically = true;
 
-        if(objMaxY > Screen.height)
+        //Object is too up
+        if (objMaxY > Screen.height)
         {
-            //Object is too up
             verticalForce = -movementSpeed;
         }
-        else if(objMinY < 0)
+
+        //Object is too down
+        else if (objMinY < 0)
         {
-            //Object is too down
             verticalForce = movementSpeed;
         }
+
+        //Else object is okay vertically
         else
         {
             moveVertically = false;
             verticalForce = 0;
         }
     }
-
-
     //This was original way to get canvas' corners and know if pop up went over those limits
     //However, there was the realization afterward that all minimum values are always 0
     //And that all maximum values can be accessed through Screen height and width directly

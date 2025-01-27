@@ -1,22 +1,29 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
-    [SerializeField] static Animator anim;
+    [SerializeField] static Animator transition;
 
     // Start is called before the first frame update
     void Awake()
     {
-        anim = GameObject.FindGameObjectWithTag("Transition").GetComponent<Animator>();
+        transition = GetComponent<Animator>();
         PlayIntroAnim();
     }
 
     public static void PlayIntroAnim()
     {
-        anim.SetTrigger("Intro");
+        transition.SetTrigger("Intro");
     }
     public static void PlayOutroAnim()
     {
-        anim.SetTrigger("Outro");
+        print("Hello");
+        transition.SetTrigger("Outro");
+    }
+
+    public void LoadScene()
+    {
+        SceneManager.LoadSceneAsync(GameManager.newSceneIndex);
     }
 }

@@ -13,27 +13,34 @@ namespace BodySystem
         [SerializeField] Text body;
 
         User userScript;
+        InfoPopUp popUp;
 
         private void Start()
         {
             userScript = FindObjectOfType<User>();
+            popUp = FindObjectOfType<InfoPopUp>();
 
             HideUI();
         }
         public void GetFunctionInfo()
         {
-            EnablePanel();
             body.text = GetComponent().GetFunction();
+
+            //Checks whether pop up is completely
+            //visible even after changing info
+            EnablePanel();
         }
         public void GetStructureInfo()
         {
-            EnablePanel();
             body.text = GetComponent().GetStructure();
+
+            EnablePanel();
         }
         public void GetComponentsInfo()
         {
-            EnablePanel();
             body.text = GetComponent().GetDerived();
+
+            EnablePanel();
         }
         public void GetName()
         {
@@ -66,6 +73,7 @@ namespace BodySystem
             {
                 image.gameObject.SetActive(true);
             }
+            popUp.RunPopUpCheck();
         }
     }
 }

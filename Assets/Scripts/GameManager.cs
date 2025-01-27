@@ -1,4 +1,5 @@
 using System.Data;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public static int imageIndex = 0;
+
+    public static int newSceneIndex;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +29,9 @@ public class GameManager : MonoBehaviour
 
     public static void LoadScene(int sceneIndex)
     {
+        newSceneIndex = sceneIndex;
+
         SceneTransition.PlayOutroAnim();
-        SceneManager.LoadSceneAsync(sceneIndex);
     }
     public static void Quit()
     {
