@@ -165,6 +165,9 @@ namespace BodySystem
         // Move camera vertically only
         void SlideA()
         {
+            //In order to feel like a true sliding movement and be more intuitive,
+            //the forces applied are negative, substracting each other and resulting
+            //into a lower, negative number that is then used to move camera
             transform.Translate
                 (Vector3.up * (-GetInput("Mouse Y", slideSpeed) - GetInput("Mouse X", slideSpeed)));
         }

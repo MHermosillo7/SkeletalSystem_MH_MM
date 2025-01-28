@@ -163,6 +163,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.DefaultCompany.SkeletalSystem_MH
+    Standalone: com.DefaultCompany.SkeletalSystem-MH
   buildNumber:
     Standalone: 0
     VisionOS: 0
