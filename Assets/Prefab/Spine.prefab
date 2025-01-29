@@ -5259,7 +5259,7 @@ Transform:
   m_GameObject: {fileID: 8443651301442902488}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5377,7 +5377,7 @@ MonoBehaviour:
   controlZoomOut: 1
   canZoomIn: 0
   canZoomOut: 0
-  zoomOutOnClick: 1
+  zoomOutOnClick: 0
   col: {fileID: 0}
   rend: {fileID: 0}
   highlight: {fileID: 0}
@@ -5388,7 +5388,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8675323801589764331}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -479233940399864944, guid: 053ce2ac6d4409342a87c3e70ec4703f, type: 3}
 --- !u!23 &6053723434637909990
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5471,13 +5471,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e095a1bc8415593449f2c119ee401245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partName: x
+  partName: Spine
   function:
-  - a
+  - Provides body with structure and support
+  - Allows free movement and bend with flexibility
+  - Protects spinal cord
   structure:
-  - b
+  - Long column of bones that extend from neck to lower back
+  - Three natural curves that make an S-shape
   components:
-  - c
+  - 33 stacked vertebrae
+  - Cartilage between vertebrae
+  - Intervertebral disks
   pivot: {fileID: 0}
   needsCenter: 0
 --- !u!1 &8822479373637732165
@@ -5529,7 +5534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.943584
+      value: 0.87514585
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2109c7397f6909a46952f34d717957ee, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5676,8 +5681,9 @@ MonoBehaviour:
   - Creates contact points for ribs and muscles to attach to
   structure:
   - Composed of heart shaped vertebrae
+  - Bends out slightly to make a backward C-shape (kyphotic curve)
   components:
-  - T1 - T12
+  - Twelve Vertebrae (T1 - T12)
   pivot: {fileID: 0}
   needsCenter: 0
 --- !u!64 &4309342327083802429
@@ -5734,7 +5740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3015618
+      value: -1.37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 183572db672700c4cbc84a56c4cea015, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5864,10 +5870,12 @@ MonoBehaviour:
   partName: Cervical Spine
   function:
   - "Holds the head\u2019s weight"
+  - Allows turn, tilt, and nod of head
   structure:
   - 'Composed of ring-like vertebrae '
+  - Makes an inward C-shape (lordotic curve)
   components:
-  - 'C1 - C7 '
+  - Seven Vertebrae (C1 - C7)
   pivot: {fileID: 0}
   needsCenter: 0
 --- !u!64 &4076375717539157586
@@ -5924,7 +5932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.34694755
+      value: 0.27850938
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a125402e7d0e1ab4ca47a52162fd9a10, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6048,9 +6056,10 @@ MonoBehaviour:
   function:
   - "Supports whole upper body\u2019s weight "
   structure:
-  - 'Among largest bones in spine '
+  - 'Houses some of the largest bones in spine '
+  - Bends inward to create a C-shaped lordotic curve
   components:
-  - L1 - L5
+  - Five Vertebrae (L1 - L5)
   pivot: {fileID: 0}
   needsCenter: 0
 --- !u!64 &1238095088046247515

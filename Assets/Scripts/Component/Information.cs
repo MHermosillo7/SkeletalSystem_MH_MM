@@ -18,7 +18,7 @@ namespace BodySystem
 
         Camp comp;
 
-        char[] charsToTrim = { ',', '&' };
+        char[] charsToTrim = { ';' };
 
         // Start is called before the first frame update
         void Awake()
@@ -81,14 +81,20 @@ namespace BodySystem
                 }
             }
         }
-        /*
+        
+        //Used to transcribe information from component (Camp) script through trimming
+        //the information of respective fields by using keywords
+        
         private void Start()
         {
             TryGetComponent<Camp>(out comp);
 
-            CheckIfNull(function, "f");
-            CheckIfNull(structure, "s");
-            CheckIfNull(components, "c");
+            if(comp != null)
+            {
+                CheckIfNull(function, "f");
+                CheckIfNull(structure, "s");
+                CheckIfNull(components, "c");
+            }
         }
         void CheckIfNull(List<string> list, string value)
         {
@@ -132,7 +138,7 @@ namespace BodySystem
 
             }
         }
-        */
+        
     }
 
 }
