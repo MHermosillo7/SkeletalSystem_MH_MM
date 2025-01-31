@@ -30,8 +30,6 @@ namespace BodySystem
                 Console.WriteLine("Field is empty");
             }
             GetPivot();
-
-            
         }
         public string GetName()
         {
@@ -59,7 +57,14 @@ namespace BodySystem
 
             foreach (string str in info)
             {
-                niceString += $"- {str} \n";
+                if(str == "")
+                {
+                    niceString += "\n \u2009";
+                }
+                else
+                {
+                    niceString += $"- {str} \n";
+                }
             }
 
             niceString = niceString.Substring(0, niceString.Length - 2);
@@ -84,7 +89,9 @@ namespace BodySystem
         
         //Used to transcribe information from component (Camp) script through trimming
         //the information of respective fields by using keywords
-        
+
+        //Very useful when introducing new information due to automatic format function
+        /*
         private void Start()
         {
             TryGetComponent<Camp>(out comp);
@@ -125,19 +132,19 @@ namespace BodySystem
                 string word = newList[i];
                 if (word != "")
                 {
-                    if (word.StartsWith(" "))
+                    while(word.StartsWith(" "))
                     {
                         word = word.TrimStart(' ');
-                        list.Add(word);
                     }
-                    else
+                    while(word.EndsWith(" "))
                     {
-                        list.Add(word);
+                        word = word.TrimEnd(' ');
                     }
+                    list.Add(word);
                 }
 
             }
-        }
+        }*/
         
     }
 

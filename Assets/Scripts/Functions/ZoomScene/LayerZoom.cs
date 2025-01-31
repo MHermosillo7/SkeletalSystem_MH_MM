@@ -15,15 +15,12 @@ namespace BodySystem
 
         ZoomControl mainControl;
 
-
         // Start is called before the first frame update
         void Awake()
         {
             trans = GetComponent<Transform>();
             mainControl = GetComponent<ZoomControl>();
             mainControl.layerIndex = layerIndex;
-
-            
         }
         private void Start()
         {

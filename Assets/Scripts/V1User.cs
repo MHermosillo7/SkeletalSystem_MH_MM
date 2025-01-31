@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
- /*
+ 
 namespace BodySystem
 {
-    public class User : MonoBehaviour
+    public class V1User : MonoBehaviour
     {
         Camera cam;
         CameraMovement camMov;
@@ -50,7 +50,7 @@ namespace BodySystem
             /*  Do not continue method if cursor is over a UI element
                 Or if previous camera mov hasn't finished
                 (If Center Camera is called again before previous processes are
-                finished, the two clash and result in unexpected camera transformations) 
+                finished, the two clash and result in unexpected camera transformations) */
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;
@@ -81,6 +81,10 @@ namespace BodySystem
                         infoUI.ShowUI();
                     }
 
+                    // If selected object is a derived bone
+                    // Don't try getting its Zoom component or its vector
+                    // since we will only be handling a a switch
+                    // between a parent and its children & not layers
                     else
                     {
                         if (selectedItemZoom)
@@ -122,8 +126,6 @@ namespace BodySystem
         {
             selectedItemZoom.ZoomIn();
 
-            camMov.CenterVector();
-
             infoUI.HideUI();
         }
         public void ZoomOut()
@@ -132,11 +134,9 @@ namespace BodySystem
             {
                 selectedItemZoom.ZoomOut();
 
-                camMov.CenterVector();
-
-
+                infoUI.HideUI();
             }
         }
 
     }
-} */
+}

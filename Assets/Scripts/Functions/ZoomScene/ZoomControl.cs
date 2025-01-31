@@ -9,6 +9,12 @@ namespace BodySystem
     {
         LayerZoom layerZoom;
         public ZoomControl parentControl;
+
+        //Note: DO NOT DELETE
+        // Used in User script to get a reference to a child bone
+        // and be able to repeatedly zoom in and still zoom out do to how
+        // the ability to zoom out lies in calling a child object's ZoomOut 
+        // function to reference a parent's ZoomIntoThis() function (...weird)
         public ZoomControl firstChildControl;
 
         ZoomControl childControl;
@@ -33,7 +39,6 @@ namespace BodySystem
         public Renderer rend;
         public Highlight highlight;
 
-        List<GameObject> derivedBones = new List<GameObject>();
         List<Renderer> derivedRends = new List<Renderer>();
         List<Collider> derivedCols = new List<Collider>();
         List<Highlight> derivedLight = new List<Highlight>();
@@ -143,13 +148,13 @@ namespace BodySystem
         }
         public void Enable(bool enable)
         {
-            col.enabled = enable;
-            rend.enabled = enable;
-
             if (!highlight.IsStartingColor())
             {
                 highlight.ResetColor();
             }
+
+            col.enabled = enable;
+            rend.enabled = enable;
         }
     }
 

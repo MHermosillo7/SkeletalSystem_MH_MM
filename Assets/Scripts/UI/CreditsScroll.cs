@@ -74,7 +74,7 @@ public class CreditsScroll : MonoBehaviour
     void ScrollTypeWheel()
     {
         //If scrolling up
-        if (Input.GetAxis("Scroll Wheel") > 0 && canMoveUp)
+        if (Input.GetAxis("Scroll Wheel") > 0 && canMoveDown)
         {
             //Don't ask, genuinely, I don't know how this works or makes sense, but it does.
             //Found out GetInput result always returns a negative value, so I multiplied it
@@ -82,7 +82,7 @@ public class CreditsScroll : MonoBehaviour
             objRect.Translate(Vector2.up * -GetInput("Scroll Wheel", scrollSpeed));
         }
         //Else scrolling down
-        if (Input.GetAxis("Scroll Wheel") < 0 && canMoveDown)
+        if (Input.GetAxis("Scroll Wheel") < 0 && canMoveUp)
         {
             objRect.Translate(Vector2.down * GetInput("Scroll Wheel", scrollSpeed));
         }
@@ -90,13 +90,13 @@ public class CreditsScroll : MonoBehaviour
     void ScrollTypeMouse(float inputForce)
     {
         //If scrolling up
-        if (inputForce > 0 && canMoveUp)
+        if (inputForce > 0 && canMoveDown)
         {
             objRect.Translate(Vector2.up * 
                 -inputForce * Time.deltaTime);
         }
         //Else scrolling down
-        if (inputForce < 0 && canMoveDown)
+        if (inputForce < 0 && canMoveUp)
         {
             objRect.Translate(Vector2.down * 
                 inputForce * Time.deltaTime);

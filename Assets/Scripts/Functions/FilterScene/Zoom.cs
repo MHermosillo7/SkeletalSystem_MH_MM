@@ -11,34 +11,34 @@ namespace BodySystem
     {
         Collider col;
         Renderer rend;
-        Highlight comp;
+        Highlight highlight;
 
-        List<GameObject> derivedBones = new List<GameObject>();
+        Zoom childControl;
+
         List<Renderer> derivedRends = new List<Renderer>();
         List<Collider> derivedCols = new List<Collider>();
-        List<Highlight> derivedComp = new List<Highlight>();
+        List<Highlight> derivedLight = new List<Highlight>();
 
         // Start is called before the first frame update
         void Awake()
         {
             col = this.GetComponent<Collider>();
             rend = GetComponent<Renderer>();
-            comp = GetComponent<Highlight>();
+            highlight = GetComponent<Highlight>();
 
             foreach (Transform child in transform)
             {
-                if (child.CompareTag("DerivedBone"))
+                if (child.CompareTag("Bone") || child.CompareTag("DerivedBone"))
                 {
-                    derivedBones.Add(child.gameObject);
-                }
-                if (child.CompareTag("Bone"))
-                {
-                    derivedBones.Add(child.gameObject);
+                    childControl = child.GetComponent<Zoom>();
+
+                    childControl.
                 }
             }
-            derivedRends = derivedBones.Select(b => b.GetComponent<Renderer>()).ToList();
-            derivedCols = derivedBones.Select(b => b.GetComponent<Collider>()).ToList();
-            derivedComp = derivedBones.Select(b => b.GetComponent<Highlight>()).ToList();
+            foreach(Transform child in transform)
+            {
+
+            }
 
         }
         private void Start()
@@ -48,9 +48,9 @@ namespace BodySystem
         //Zoom In/Out Functions
         public void ZoomIn()
         {
-            if (!comp.IsStartingColor())
+            if (!highlight.IsStartingColor())
             {
-                comp.ResetColor();
+                highlight.ResetColor();
             }
             EnableParent(false);
 
@@ -72,11 +72,11 @@ namespace BodySystem
 
         void EnableChildren(bool enable)
         {
-            foreach(Highlight c in derivedComp)
+            foreach(Highlight l in derivedLight)
             {
-                if (!c.IsStartingColor())
+                if (!l.IsStartingColor())
                 {
-                    c.ResetColor();
+                    l.ResetColor();
                 }
             }
 
@@ -89,6 +89,16 @@ namespace BodySystem
             {
                 r.enabled = enable;
             }
+        }
+        public void Enable(bool enable)
+        {
+            if (!highlight.IsStartingColor())
+            {
+                highlight.ResetColor();
+            }
+
+            col.enabled = enable;
+            rend.enabled = enable;
         }
     }
 }
