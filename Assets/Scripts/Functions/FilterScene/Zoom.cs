@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity;
 using UnityEngine;
 
 namespace BodySystem
@@ -12,8 +8,6 @@ namespace BodySystem
         Collider col;
         Renderer rend;
         Highlight highlight;
-
-        Zoom childControl;
 
         List<Renderer> derivedRends = new List<Renderer>();
         List<Collider> derivedCols = new List<Collider>();
@@ -26,18 +20,14 @@ namespace BodySystem
             rend = GetComponent<Renderer>();
             highlight = GetComponent<Highlight>();
 
-            foreach (Transform child in transform)
-            {
-                if (child.CompareTag("Bone") || child.CompareTag("DerivedBone"))
-                {
-                    childControl = child.GetComponent<Zoom>();
-/*
-                    childControl.*/
-                }
-            }
             foreach(Transform child in transform)
             {
-
+                if (child.CompareTag("DerivedBone"))
+                {
+                    derivedRends.Add(child.GetComponent<Renderer>());
+                    derivedCols.Add(child.GetComponent<Collider>());
+                    derivedLight.Add(child.GetComponent<Highlight>());
+                }
             }
 
         }

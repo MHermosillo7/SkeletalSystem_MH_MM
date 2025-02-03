@@ -59,7 +59,7 @@ namespace BodySystem
             {
                 if(str == "")
                 {
-                    niceString += "\n \u2009";
+                    niceString += "\n";
                 }
                 else
                 {

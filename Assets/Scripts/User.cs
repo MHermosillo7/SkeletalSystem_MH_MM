@@ -60,6 +60,10 @@ namespace BodySystem
                 Or if previous camera mov hasn't finished
                 (If Center Camera is called again before previous processes are
                 finished, the two clash and result in unexpected camera transformations) */
+
+            // Note to self: Sometimes this line causes a minor error where it detects a UI
+            // element even when there should be none. This rarely happens with the
+            // Distal Phalanges in the left arm when they are at a certain distance (far)
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;

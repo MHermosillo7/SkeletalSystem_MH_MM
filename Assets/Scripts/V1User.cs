@@ -1,3 +1,4 @@
+using BodySystem;
 using UnityEngine;
 using UnityEngine.EventSystems;
  
@@ -61,48 +62,41 @@ namespace BodySystem
 
             if (Physics.Raycast(ray, out objectHit, ignoreLayer))
             {
-                if (selectedItem == objectHit.transform.gameObject)
+                DeSelect();
+
+                selectedItem = objectHit.transform.gameObject;
+                selectedItemComp = objectHit.transform.GetComponent<Component>();
+
+                infoUI.ShowUI();
+                
+
+                // If selected object is a derived bone
+                // Don't try getting its Zoom component or its vector
+                // since we will only be handling a a switch
+                // between a parent and its children & not layers
+                if(!IsDerivedBone())
                 {
-                    DeSelect();
-
-                    infoUI.ShowUI();
-                }
-
-                //Else object hit is another object
-                else if (camStatus.cameraCanMove)
-                {
-                    DeSelect();
-
-                    selectedItem = objectHit.transform.gameObject;
-                    selectedItemComp = objectHit.transform.GetComponent<Component>();
-
-                    if (IsDerivedBone())
+                    if (selectedItemZoom)
                     {
-                        infoUI.ShowUI();
+                        selectedItemZoom.ZoomOut();
                     }
 
-                    // If selected object is a derived bone
-                    // Don't try getting its Zoom component or its vector
-                    // since we will only be handling a a switch
-                    // between a parent and its children & not layers
-                    else
+                    selectedItemZoom = objectHit.transform.GetComponent<Zoom>();
+
+
+                    //Forced camera auto center sometimes leads to unsatisfactory
+                    //user experience due to losing track of which bone
+                    //they originally wanted to click
+
+                    /*
+                    //Get child (vector) inside object hit
+                    Transform vectorHit = selectedItem.transform.GetChild(0);
+
+                    camMov.CenterCamera(vectorHit);*/
+
+                    if (!zoomUI.IsUIActive())
                     {
-                        if (selectedItemZoom)
-                        {
-                            selectedItemZoom.ZoomOut();
-                        }
-
-                        selectedItemZoom = objectHit.transform.GetComponent<Zoom>();
-
-                        //Get child (vector) inside object hit
-                        Transform vectorHit = selectedItem.transform.GetChild(0);
-
-                        camMov.CenterCamera(vectorHit);
-
-                        if (!zoomUI.IsUIActive())
-                        {
-                            zoomUI.ShowUI();
-                        }
+                        zoomUI.ShowUI();
                     }
                 }
             }
@@ -126,6 +120,8 @@ namespace BodySystem
         {
             selectedItemZoom.ZoomIn();
 
+
+
             infoUI.HideUI();
         }
         public void ZoomOut()
@@ -137,6 +133,54 @@ namespace BodySystem
                 infoUI.HideUI();
             }
         }
+
+        /*if (Physics.Raycast(ray, out objectHit, ignoreLayer))
+            {
+                if (selectedItem == objectHit.transform.gameObject)
+                {
+                    DeSelect();
+
+        infoUI.ShowUI();
+                }
+
+                //Else object hit is another object
+                else
+                {
+                    DeSelect();
+
+    selectedItem = objectHit.transform.gameObject;
+                    selectedItemComp = objectHit.transform.GetComponent<Component>();
+
+                    if (IsDerivedBone())
+                    {
+                        infoUI.ShowUI();
+                    }
+
+                    // If selected object is a derived bone
+                    // Don't try getting its Zoom component or its vector
+                    // since we will only be handling a a switch
+                    // between a parent and its children & not layers
+                    else
+{
+    if (selectedItemZoom)
+    {
+        selectedItemZoom.ZoomOut();
+    }
+
+    selectedItemZoom = objectHit.transform.GetComponent<Zoom>();
+
+    //Get child (vector) inside object hit
+    Transform vectorHit = selectedItem.transform.GetChild(0);
+
+    camMov.CenterCamera(vectorHit);
+
+    if (!zoomUI.IsUIActive())
+    {
+        zoomUI.ShowUI();
+    }
+}
+                }
+            }*/
 
     }
 }

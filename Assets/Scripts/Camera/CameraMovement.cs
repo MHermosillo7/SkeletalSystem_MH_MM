@@ -102,9 +102,7 @@ namespace BodySystem
             if (vectorTrans.rotation.eulerAngles.x > clampAngle 
                 && vectorTrans.rotation.eulerAngles.x !< 180)
             {
-                print(vectorTrans.rotation.eulerAngles);
                 Clamp(clampAngle);
-
                 
                 canRotateUp = false;
             }
