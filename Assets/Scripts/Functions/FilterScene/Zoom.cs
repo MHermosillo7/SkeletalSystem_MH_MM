@@ -31,8 +31,8 @@ namespace BodySystem
                 if (child.CompareTag("Bone") || child.CompareTag("DerivedBone"))
                 {
                     childControl = child.GetComponent<Zoom>();
-
-                    childControl.
+/*
+                    childControl.*/
                 }
             }
             foreach(Transform child in transform)
