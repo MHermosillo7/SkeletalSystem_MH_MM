@@ -23,7 +23,7 @@ namespace BodySystem
         {
             infoUI = FindObjectOfType<InfoUI>();
             helpUI = FindObjectOfType<HelpUI>();
-            TryGetComponent<ZoomUI>(out zoomUI);
+            zoomUI = FindObjectOfType<ZoomUI>();
             filter = FindObjectOfType<Filter>();
 
             if (panel)
@@ -46,10 +46,7 @@ namespace BodySystem
         {
             infoUI.HideUI();
             helpUI.HideUI();
-            if (zoomUI)
-            {
-                zoomUI.HideUI();
-            }
+            zoomUI.HideUI();
             panel.SetActive(true);
         }
 

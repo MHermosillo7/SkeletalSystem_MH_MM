@@ -10,18 +10,20 @@ namespace BodySystem
         CameraMovement camMov;
         CameraStatus camStatus;
 
-        InfoUI infoUI;
+        InfoUI_Filter infoUI;
         FilterUI filterUI;
-        ZoomUI zoomUI;
+        ZoomUI_Filter zoomUI;
         HelpUI helpUI;
 
         public GameObject selectedItem;
         [SerializeField] GameObject zoomedBone;
-        Component selectedItemComp;
+        public Information selectedItemComp;
 
-        Zoom selectedItemZoom;
+        public Zoom selectedItemZoom;
 
         [SerializeField] LayerMask ignoreLayer;
+
+        IsolateFilter isolate;
 
         // Start is called before the first frame update
         void Awake()
@@ -31,10 +33,13 @@ namespace BodySystem
             camMov = FindObjectOfType<CameraMovement>();
             camStatus = FindObjectOfType<CameraStatus>();
 
-            infoUI = FindObjectOfType<InfoUI>();
+            infoUI = FindObjectOfType<InfoUI_Filter>();
             filterUI = FindObjectOfType<FilterUI>();
-            zoomUI = FindObjectOfType<ZoomUI>();
+            zoomUI = FindObjectOfType<ZoomUI_Filter>();
             helpUI = FindObjectOfType<HelpUI>();
+
+            isolate = FindObjectOfType<IsolateFilter>();
+            zoomUI.EnableButton(false);
         }
 
         // Update is called once per frame
@@ -65,7 +70,7 @@ namespace BodySystem
                 DeSelect();
 
                 selectedItem = objectHit.transform.gameObject;
-                selectedItemComp = objectHit.transform.GetComponent<Component>();
+                selectedItemComp = objectHit.transform.GetComponent<Information>();
 
                 infoUI.ShowUI();
                 
@@ -81,8 +86,7 @@ namespace BodySystem
                         selectedItemZoom.ZoomOut();
                     }
 
-                    selectedItemZoom = objectHit.transform.GetComponent<Zoom>();
-
+                    objectHit.transform.TryGetComponent<Zoom>(out selectedItemZoom);
 
                     //Forced camera auto center sometimes leads to unsatisfactory
                     //user experience due to losing track of which bone
@@ -94,10 +98,11 @@ namespace BodySystem
 
                     camMov.CenterCamera(vectorHit);*/
 
-                    if (!zoomUI.IsUIActive())
+                    if (!zoomUI.IsUIActive() && selectedItemZoom)
                     {
-                        zoomUI.ShowUI();
+                        zoomUI.EnableButton(true);
                     }
+                    else zoomUI.EnableButton(false);
                 }
             }
             else
@@ -110,6 +115,7 @@ namespace BodySystem
             infoUI.HideUI();
             filterUI.HideUI();
             helpUI.HideUI();
+            zoomUI.HideUI();
         }
         bool IsDerivedBone()
         {
@@ -120,8 +126,9 @@ namespace BodySystem
         {
             selectedItemZoom.ZoomIn();
 
+            isolate.IsolateObjects(false);
 
-
+            camMov.CenterCamera(selectedItemComp.pivot);
             infoUI.HideUI();
         }
         public void ZoomOut()
@@ -129,7 +136,9 @@ namespace BodySystem
             if (selectedItemZoom)
             {
                 selectedItemZoom.ZoomOut();
+                isolate.IsolateObjects(true);
 
+                camMov.CenterCamera(camMov.originVector.transform);
                 infoUI.HideUI();
             }
         }

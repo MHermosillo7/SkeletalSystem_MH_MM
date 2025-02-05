@@ -39,10 +39,7 @@ namespace BodySystem
             zoomUI = FindObjectOfType<ZoomUI>();
             helpUI = FindObjectOfType<HelpUI>();
 
-            if (zoomUI)
-            {
-                zoomUI.EnableButton(false);
-            }
+            zoomUI.EnableButton(false);
         }
 
         // Update is called once per frame
@@ -86,6 +83,8 @@ namespace BodySystem
                     DeSelect();
 
                     ChangeSelected(objectHit.transform.gameObject);
+
+                    infoUI.ShowUI();
                     // Else it does not hit object tagged as derived bone
                     // It resets zoom and 
 
@@ -96,12 +95,9 @@ namespace BodySystem
                             ZoomIntoCurrentLayer();
                         }
 
-                        if (zoomUI) 
+                        if (!zoomUI.IsUIActive())
                         {
-                            if (!zoomUI.IsUIActive())
-                            {
-                                zoomUI.EnableButton(true);
-                            }
+                            zoomUI.EnableButton(true);
                         }
                     }
 
@@ -214,7 +210,7 @@ namespace BodySystem
             if(newItem != null)
             {
                 selectedItemComp = newItem.GetComponent<Information>();
-                newItem.TryGetComponent<ZoomControl>(out selectedItemZoom);
+                selectedItemZoom = newItem.GetComponent<ZoomControl>();
 
                 if (selectedItemZoom)
                 {

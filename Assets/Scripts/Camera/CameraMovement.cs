@@ -32,7 +32,7 @@ namespace BodySystem
         float endTime = 1;
         [Range(0, 1)] [SerializeField] float rate = .5f;
 
-        GameObject vector;
+        public GameObject originVector;
         [SerializeField] Transform vectorTrans;
         Transform prevVectorTrans;
 
@@ -42,8 +42,8 @@ namespace BodySystem
         // Start is called before the first frame update
         void Start()
         {
-            vector = GameObject.FindWithTag("Origin");
-            vectorTrans = vector.transform;
+            originVector = GameObject.FindWithTag("Origin");
+            vectorTrans = originVector.transform;
             prevVectorTrans = vectorTrans;
 
             camStatus = FindObjectOfType<CameraStatus>();

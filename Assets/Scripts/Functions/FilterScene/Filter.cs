@@ -17,10 +17,14 @@ namespace BodySystem
         [SerializeField] bool activateFlat = true;
         [SerializeField] bool activateIrr = true;
 
-        List<GameObject> longBones = new List<GameObject>();
-        List<GameObject> shortBones = new List<GameObject>();
-        List<GameObject> flatBones = new List<GameObject>();
-        List<GameObject> irrBones = new List<GameObject>();
+        //Changed Game object lists to Zoom types because of Zoom's Enable function which
+        //should be less expensive than deactivating the gameobject itselft and runs
+        //all the calculations for deactivating it natively
+
+        List<Zoom> longBones = new List<Zoom>();
+        List<Zoom> shortBones = new List<Zoom>();
+        List<Zoom> flatBones = new List<Zoom>();
+        List<Zoom> irrBones = new List<Zoom>();
         // Awake is called when loading scene
         void Awake()
         {
@@ -37,20 +41,20 @@ namespace BodySystem
 
         // Use LINQ querys to get to search through a list of all object's component script
         // Then select and return game objects list whose type of bone is same as input field
-        List<GameObject> GetBoneType(string type)
+        List<Zoom> GetBoneType(string type)
         {
             type = type.ToLower();
 
             var filteredBones = boneComponents
                                 .Where(b => b.boneType.ToString().ToLower() == type)
-                                .Select(b => b.gameObject);
+                                .Select(b => b.GetComponent<Zoom>());
 
             return filteredBones.ToList();
         }
 
         // Center Camera to main pivot in scene and 
         // Activate/Deactivate objects in input list
-        void FilterByType(List<GameObject> boneType, bool activate)
+        void FilterByType(List<Zoom> boneType, bool activate)
         {
             // Center camera around main scene pivot 
             // [Note] could probably implement so that it center first object in list of non-filtered bones
@@ -60,7 +64,7 @@ namespace BodySystem
 
             foreach (var bone in boneType)
             {
-                bone.SetActive(activate);
+                bone.Enable(activate);
             }
         }
 
