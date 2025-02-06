@@ -31,10 +31,6 @@ namespace BodySystem
             {
                 filterUI.HideUI();
             }
-            if (zoomUI)
-            {
-                zoomUI.HideUI();
-            }
         }
         public void HideUI()
         {

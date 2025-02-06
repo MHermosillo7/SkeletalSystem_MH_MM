@@ -8,10 +8,10 @@ namespace BodySystem
     {
         int layerIndex = 0;
         public Transform trans;
-        public List<Transform> children = new List<Transform>();
-        List<ZoomControl> childControls = new List<ZoomControl>();
+        List<Transform> children = new List<Transform>();
+        public List<ZoomControl> childControls = new List<ZoomControl>();
         Transform child;
-        ZoomControl zom;
+        public ZoomControl zom;
 
         ZoomControl mainControl;
 
@@ -55,6 +55,16 @@ namespace BodySystem
             foreach (ZoomControl c in controls)
             {
                 c.Enable(enable);
+            }
+        }
+        public void EnableLayerNumber(int layerIndex, bool enable)
+        {
+            foreach(ZoomControl control in childControls)
+            {
+                if(control.layerIndex == layerIndex)
+                {
+                    control.Enable(enable);
+                }
             }
         }
         void ResetLayers()

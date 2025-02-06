@@ -129,6 +129,7 @@ namespace BodySystem
             isolate.IsolateObjects(false);
 
             camMov.CenterCamera(selectedItemComp.pivot);
+
             infoUI.HideUI();
         }
         public void ZoomOut()

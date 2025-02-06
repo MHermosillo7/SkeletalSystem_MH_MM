@@ -10,7 +10,6 @@ namespace BodySystem
         CameraStatus camStatus;
 
         InfoUI infoUI;
-        FilterUI filterUI;
         ZoomUI zoomUI;
         HelpUI helpUI;
 
@@ -18,6 +17,7 @@ namespace BodySystem
         GameObject previousItem;
         [SerializeField] GameObject zoomedBone;
         public Information selectedItemComp;
+        public BasicComponent selectedBasicComp;
 
         ZoomControl selectedItemZoom;
         ZoomControl previousItemZoom;
@@ -25,6 +25,8 @@ namespace BodySystem
         int selectedItemIndex;
 
         [SerializeField] LayerMask ignoreLayer;
+
+        Isolate_Zoom isolate;
 
         // Start is called before the first frame update
         void Awake()
@@ -35,11 +37,11 @@ namespace BodySystem
             camStatus = FindObjectOfType<CameraStatus>();
 
             infoUI = FindObjectOfType<InfoUI>();
-            filterUI = FindObjectOfType<FilterUI>();
             zoomUI = FindObjectOfType<ZoomUI>();
             helpUI = FindObjectOfType<HelpUI>();
 
-            zoomUI.EnableButton(false);
+            isolate = FindObjectOfType<Isolate_Zoom>();
+
         }
 
         // Update is called once per frame
@@ -94,11 +96,6 @@ namespace BodySystem
                         {
                             ZoomIntoCurrentLayer();
                         }
-
-                        if (!zoomUI.IsUIActive())
-                        {
-                            zoomUI.EnableButton(true);
-                        }
                     }
 
                     //If the selected object is in the same layer as current,
@@ -110,7 +107,7 @@ namespace BodySystem
                         infoUI.ShowUI();
                     }
 
-                    if (selectedItemComp.needsCenter || selectedItem.CompareTag("Bone"))
+                    if (selectedItemComp.needsCenter)
                     {
                         //Get child (vector) inside object hit
                         camMov.CenterCamera(selectedItemComp.pivot);
@@ -126,14 +123,6 @@ namespace BodySystem
         {
             infoUI.HideUI();
             helpUI.HideUI();
-            if (filterUI)
-            {
-                filterUI.HideUI();
-            }
-            if (zoomUI)
-            {
-                zoomUI.HideUI();
-            }
         }
         bool IsDerivedBone()
         {
@@ -144,12 +133,23 @@ namespace BodySystem
         {
             if (selectedItemZoom.canZoomIn)
             {
+                //Center camera around the pivot of previous object's parent
+                camMov.CenterCamera(selectedItemComp.pivot);
+
+                if (selectedItemZoom.parentControl == null)
+                {
+                    isolate.EnableLayer(selectedItemZoom.layerIndex, false);
+                }
+                else
+                {
+                    selectedItemZoom.layerZoom.EnableLayerNumber(selectedItemZoom.layerIndex, false);
+                }
+
                 selectedItemZoom.Zoom("in");
 
                 infoUI.HideUI();
 
                 ChangeSelected(selectedItemZoom.firstChildControl.gameObject);
-                //zoomUI.EnableButton(false);
             }
         }
         public void ZoomOut()
@@ -162,7 +162,6 @@ namespace BodySystem
                 {
                     //Zoom out of current object
                     selectedItemZoom.Zoom("out");
-
                     //Get parent's zoom controls
 
                     //Override current selected item with parent,
@@ -173,8 +172,24 @@ namespace BodySystem
 
                     ChangeSelected(selectedItemZoom.parentControl.gameObject);
 
-                    //Center camera around the pivot of previous object's parent
-                    camMov.CenterCamera(selectedItemComp.pivot);
+                    //If new item is a root in control of layer zoom
+                    if(selectedItemZoom.parentControl == null)
+                    {
+                        //Enable the rest of roots
+                        isolate.EnableLayer(0, true);
+
+                        camMov.CenterCamera(camMov.originVector.transform);
+                    }
+
+                    //Else enable the items inside the same zone according to new layer index
+                    else
+                    {
+                        selectedItemZoom.layerZoom.EnableLayerNumber(selectedItemZoom.layerIndex, true);
+
+                        //Get main pivot of current section to center camera
+                        camMov.CenterCamera(
+                            selectedItemZoom.layerZoom.GetComponent<Information>().pivot);
+                    }
                 }
             }
         }
@@ -209,7 +224,8 @@ namespace BodySystem
 
             if(newItem != null)
             {
-                selectedItemComp = newItem.GetComponent<Information>();
+                newItem.TryGetComponent<Information>(out selectedItemComp);
+                newItem.TryGetComponent<BasicComponent>(out selectedBasicComp);
                 selectedItemZoom = newItem.GetComponent<ZoomControl>();
 
                 if (selectedItemZoom)
@@ -221,6 +237,25 @@ namespace BodySystem
             {
                 selectedItemComp = null;
                 selectedItemZoom = null;
+            }
+        }
+        public void IsolateSelected(bool enabled)
+        {
+            if (selectedItemZoom.layerIndex == 0)
+            {
+                isolate.EnableLayer(0, true);
+            }
+            else
+            {
+                selectedItemZoom.layerZoom.EnableLayerNumber(selectedItemZoom.layerIndex, enabled);
+            }
+            if(enabled == true)
+            {
+                camMov.CenterCamera(selectedItemComp.pivot);
+            }
+            else
+            {
+                camMov.CenterCamera(previousItem.GetComponent<Information>().pivot);
             }
         }
     }

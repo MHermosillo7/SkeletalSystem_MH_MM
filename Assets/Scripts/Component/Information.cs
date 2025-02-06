@@ -86,17 +86,17 @@ namespace BodySystem
                 }
             }
         }
-        
+/*
         //Used to transcribe information from component (Camp) script through trimming
         //the information of respective fields by using keywords
 
         //Very useful when introducing new information due to automatic format function
-        /*
+
         private void Start()
         {
             TryGetComponent<Camp>(out comp);
 
-            if(comp != null)
+            if (comp != null)
             {
                 CheckIfNull(function, "f");
                 CheckIfNull(structure, "s");
@@ -132,11 +132,11 @@ namespace BodySystem
                 string word = newList[i];
                 if (word != "")
                 {
-                    while(word.StartsWith(" "))
+                    while (word.StartsWith(" "))
                     {
                         word = word.TrimStart(' ');
                     }
-                    while(word.EndsWith(" "))
+                    while (word.EndsWith(" "))
                     {
                         word = word.TrimEnd(' ');
                     }
@@ -145,7 +145,7 @@ namespace BodySystem
 
             }
         }*/
-        
+
     }
 
 }

@@ -7,7 +7,7 @@ namespace BodySystem
     public class ZoomManagement : MonoBehaviour
     {
         //Zoom In/Out Functions
-        public static void ZoomIn(Collider col, Renderer rend, Highlight light,
+        public static void ZoomIn(List<Collider> cols, Renderer rend, Highlight light,
             List<Collider> derivedCols, List<Renderer> derivedRends, List<Highlight> derivedLight)
         {
             if (!light.IsStartingColor())
@@ -15,15 +15,15 @@ namespace BodySystem
                 light.ResetColor();
             }
 
-            EnableParent(false, col, rend);
+            EnableParent(false, cols, rend);
 
             EnableChildren(true, derivedLight, derivedCols, derivedRends);
         }
 
-        public static void ZoomOut(Collider col, Renderer rend,
+        public static void ZoomOut(List<Collider> cols, Renderer rend,
             List<Collider> derivedCols, List<Renderer> derivedRends, List<Highlight> derivedLight)
         {
-            EnableParent(true, col, rend);
+            EnableParent(true, cols, rend);
 
             EnableChildren(false, derivedLight, derivedCols, derivedRends);
         }
@@ -37,9 +37,12 @@ namespace BodySystem
             EnableChildren(false, derivedLights, derivedCols, derivedRends);
         }
 
-        public static void EnableParent(bool enable, Collider col, Renderer rend)
+        public static void EnableParent(bool enable, List<Collider> cols, Renderer rend)
         {
-            col.enabled = enable;
+            foreach (Collider col in cols)
+            {
+                col.enabled = enable;
+            }
             rend.enabled = enable;
         }
 

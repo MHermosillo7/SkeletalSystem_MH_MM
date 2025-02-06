@@ -11,28 +11,34 @@ public class Isolate_Zoom : MonoBehaviour
 
     Dictionary<ZoomControl, int> objects = new Dictionary<ZoomControl, int>(); 
 
+    List<ZoomControl> allControls = new List<ZoomControl>();
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-        //objects.AddRange<()>
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        objects.AddRange(GetObjects());
     }
     Dictionary<ZoomControl, int> GetObjects()
     {
         Dictionary<ZoomControl, int> objs = new Dictionary<ZoomControl, int>();
 
-        //Get layer controls and then access the objects inside
+        //Get all Zoom Controls in scene and add them to dictionary
+        allControls.AddRange(FindObjectsOfType<ZoomControl>());
 
-        //OR
-
-        //Iterate through all objects in scene
-
-        //ie. too late for me to chose which to use right now
+        foreach(ZoomControl control in allControls)
+        {
+            objs.Add(control, control.layerIndex);
+        }
         return objs;
+    }
+
+    public void EnableLayer(int deactivateLayer, bool enable)
+    {
+        foreach(var (key,value) in objects)
+        {
+            if(value == deactivateLayer)
+            {
+                key.Enable(enable);
+            }
+        }
     }
 }

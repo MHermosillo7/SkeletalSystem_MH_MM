@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace BodySystem
 {
     public class Zoom : MonoBehaviour
     {
-        Collider col;
+        List<Collider> cols = new List<Collider>();
         Renderer rend;
         Highlight highlight;
 
@@ -16,7 +17,7 @@ namespace BodySystem
         // Start is called before the first frame update
         void Awake()
         {
-            col = this.GetComponent<Collider>();
+            cols = GetComponents<Collider>().ToList();
             rend = GetComponent<Renderer>();
             highlight = GetComponent<Highlight>();
 
@@ -56,7 +57,10 @@ namespace BodySystem
 
         void EnableParent(bool enable)
         {
-            col.enabled = enable;
+            foreach(Collider col in cols)
+            {
+                col.enabled = enable;
+            }
             rend.enabled = enable;
         }
 
@@ -87,7 +91,11 @@ namespace BodySystem
                 highlight.ResetColor();
             }
 
-            col.enabled = enable;
+            foreach (Collider col in cols)
+            {
+                col.enabled = enable;
+            }
+ 
             rend.enabled = enable;
         }
     }

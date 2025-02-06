@@ -46,7 +46,6 @@ namespace BodySystem
         {
             infoUI.HideUI();
             helpUI.HideUI();
-            zoomUI.HideUI();
             panel.SetActive(true);
         }
 

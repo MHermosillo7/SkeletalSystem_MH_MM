@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,8 +8,8 @@ namespace BodySystem
 {
     public class ZoomControl : MonoBehaviour
     {
-        LayerZoom layerZoom;
-        public ZoomControl parentControl;
+        public LayerZoom layerZoom;
+        public ZoomControl parentControl = null;
 
         //Note: DO NOT DELETE
         // Used in User script to get a reference to a child bone
@@ -35,7 +36,7 @@ namespace BodySystem
         public bool canZoomOut;
         public bool zoomOutOnClick = true;
 
-        public Collider col;
+        public List<Collider> cols = new List<Collider>();
         public Renderer rend;
         public Highlight highlight;
 
@@ -49,7 +50,7 @@ namespace BodySystem
             CheckIfRoot();
 
             layerZoom = transform.root.GetComponent<LayerZoom>();
-            col = GetComponent<Collider>();
+            cols = GetComponents<Collider>().ToList();
             rend = GetComponent<Renderer>();
             highlight = GetComponent<Highlight>();
         }
@@ -79,7 +80,7 @@ namespace BodySystem
                 {
                     childControl = child.GetComponent<ZoomControl>();
 
-                    derivedCols.Add(childControl.col);
+                    derivedCols.AddRange(childControl.cols);
                     derivedRends.Add(childControl.rend);
                     derivedLight.Add(childControl.highlight);
 
@@ -117,11 +118,11 @@ namespace BodySystem
 
         void ZoomIntoChild()
         {
-            ZoomManagement.ZoomIn(col, rend, highlight, derivedCols, derivedRends, derivedLight);
+            ZoomManagement.ZoomIn(cols, rend, highlight, derivedCols, derivedRends, derivedLight);
         }
         void ZoomIntoThis()
         {
-            ZoomManagement.ZoomOut(col, rend, derivedCols, derivedRends, derivedLight);
+            ZoomManagement.ZoomOut(cols, rend, derivedCols, derivedRends, derivedLight);
         }
         void ZoomOut()
         {
@@ -153,7 +154,11 @@ namespace BodySystem
                 highlight.ResetColor();
             }
 
-            col.enabled = enable;
+            foreach (Collider col in cols)
+            {
+                col.enabled = enable;
+            }
+
             rend.enabled = enable;
         }
     }
