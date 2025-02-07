@@ -7,8 +7,8 @@ namespace BodySystem
         [SerializeField] GameObject panel;
 
         InfoUI infoUI;
+        InfoUI_Filter infoUI_Filter;
         FilterUI filterUI;
-        ZoomUI zoomUI;
 
         // Start is called before the first frame update
         void Awake()
@@ -18,15 +18,25 @@ namespace BodySystem
             else print("Panel not specified in inspector");
 
             infoUI = FindObjectOfType<InfoUI>();
+            if (infoUI == null )
+            {
+                infoUI_Filter = FindObjectOfType<InfoUI_Filter>();
+            }
             filterUI = FindObjectOfType<FilterUI>();
-            zoomUI = FindObjectOfType<ZoomUI>();
         }
 
         public void ShowUI()
         {
             panel.SetActive(true);
 
-            infoUI.HideUI();
+            if (infoUI)
+            {
+                infoUI.HideUI();
+            }
+            else
+            {
+                infoUI_Filter.HideUI();
+            }
             if (filterUI)
             {
                 filterUI.HideUI();

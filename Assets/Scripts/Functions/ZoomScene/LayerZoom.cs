@@ -57,11 +57,11 @@ namespace BodySystem
                 c.Enable(enable);
             }
         }
-        public void EnableLayerNumber(int layerIndex, bool enable)
+        public void EnableLayerNumber(int layerIndex, bool enable, ZoomControl exception = null)
         {
             foreach(ZoomControl control in childControls)
             {
-                if(control.layerIndex == layerIndex)
+                if(control.layerIndex == layerIndex && control != exception)
                 {
                     control.Enable(enable);
                 }

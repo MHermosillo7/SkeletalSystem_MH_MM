@@ -18,12 +18,14 @@ namespace BodySystem
         public GameObject selectedItem;
         [SerializeField] GameObject zoomedBone;
         public Information selectedItemComp;
+        public BasicComponent selectedBasicComp;
 
         public Zoom selectedItemZoom;
 
         [SerializeField] LayerMask ignoreLayer;
 
         IsolateFilter isolate;
+        bool isIsolated = false;
 
         // Start is called before the first frame update
         void Awake()
@@ -39,7 +41,6 @@ namespace BodySystem
             helpUI = FindObjectOfType<HelpUI>();
 
             isolate = FindObjectOfType<IsolateFilter>();
-            zoomUI.EnableButton(false);
         }
 
         // Update is called once per frame
@@ -67,42 +68,35 @@ namespace BodySystem
 
             if (Physics.Raycast(ray, out objectHit, ignoreLayer))
             {
-                DeSelect();
-
-                selectedItem = objectHit.transform.gameObject;
-                selectedItemComp = objectHit.transform.GetComponent<Information>();
-
-                infoUI.ShowUI();
-                
-
-                // If selected object is a derived bone
-                // Don't try getting its Zoom component or its vector
-                // since we will only be handling a a switch
-                // between a parent and its children & not layers
-                if(!IsDerivedBone())
+                if (selectedItem == objectHit.transform.gameObject)
                 {
-                    if (selectedItemZoom)
+                    DeSelect();
+
+                    infoUI.ShowUI();
+                }
+                else
+                {
+                    DeSelect();
+
+                    selectedItem = objectHit.transform.gameObject;
+                    selectedItemComp = objectHit.transform.GetComponent<Information>();
+
+                    infoUI.ShowUI();
+                    isIsolated = false;
+
+                    // If selected object is a derived bone
+                    // Don't try getting its Zoom component or its vector
+                    // since we will only be handling a a switch
+                    // between a parent and its children & not layers
+                    if (!IsDerivedBone())
                     {
-                        selectedItemZoom.ZoomOut();
+                        objectHit.transform.TryGetComponent<Zoom>(out selectedItemZoom);
+
+                        if (selectedItemZoom)
+                        {
+                            zoomUI.UpdateZoom(selectedItemZoom.canZoomIn, selectedItemZoom.canZoomOut);
+                        }
                     }
-
-                    objectHit.transform.TryGetComponent<Zoom>(out selectedItemZoom);
-
-                    //Forced camera auto center sometimes leads to unsatisfactory
-                    //user experience due to losing track of which bone
-                    //they originally wanted to click
-
-                    /*
-                    //Get child (vector) inside object hit
-                    Transform vectorHit = selectedItem.transform.GetChild(0);
-
-                    camMov.CenterCamera(vectorHit);*/
-
-                    if (!zoomUI.IsUIActive() && selectedItemZoom)
-                    {
-                        zoomUI.EnableButton(true);
-                    }
-                    else zoomUI.EnableButton(false);
                 }
             }
             else
@@ -115,7 +109,6 @@ namespace BodySystem
             infoUI.HideUI();
             filterUI.HideUI();
             helpUI.HideUI();
-            zoomUI.HideUI();
         }
         bool IsDerivedBone()
         {
@@ -130,7 +123,8 @@ namespace BodySystem
 
             camMov.CenterCamera(selectedItemComp.pivot);
 
-            infoUI.HideUI();
+            DeSelect();
+            isIsolated = false;
         }
         public void ZoomOut()
         {
@@ -140,8 +134,32 @@ namespace BodySystem
                 isolate.IsolateObjects(true);
 
                 camMov.CenterCamera(camMov.originVector.transform);
-                infoUI.HideUI();
+
+                DeSelect();
+                isIsolated = false;
             }
+        }
+
+        //This section of the code is here and not in Isolate script due to the need of using
+        //multiple references to the selected item's zoom control and the previous item
+        public void IsolateSelected()
+        {
+            if (selectedItem.CompareTag("Bone"))
+            {
+                isolate.IsolateObjects(isIsolated);
+            }
+            if (isIsolated == true)
+            {
+                print("Centered to origin");
+                camMov.CenterCamera(camMov.originVector.transform);
+            }
+            else
+            {
+                print("Centered to selected");
+                camMov.CenterCamera(selectedItemComp.pivot);
+            }
+            DeSelect();
+            isIsolated = !isIsolated;
         }
 
         /*if (Physics.Raycast(ray, out objectHit, ignoreLayer))

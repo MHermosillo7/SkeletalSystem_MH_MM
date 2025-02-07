@@ -8,7 +8,6 @@ namespace BodySystem
         [SerializeField] GameObject uiPivot;
         [SerializeField] Button nameButton;
         [SerializeField] Text nameText;
-        [SerializeField] GameObject ZoomUI;
         [SerializeField] GameObject buttons;
         [SerializeField] Image image;
         [SerializeField] Text body;

@@ -27,6 +27,7 @@ namespace BodySystem
         [SerializeField] LayerMask ignoreLayer;
 
         Isolate_Zoom isolate;
+        bool isIsolated = false;
 
         // Start is called before the first frame update
         void Awake()
@@ -190,6 +191,11 @@ namespace BodySystem
                         camMov.CenterCamera(
                             selectedItemZoom.layerZoom.GetComponent<Information>().pivot);
                     }
+
+                    DeSelect();
+                    //Control check for ensuring Isolation functions
+                    //properly next time it is called
+                    isIsolated = false;
                 }
             }
         }
@@ -214,7 +220,7 @@ namespace BodySystem
         }
         
         //Updates object references while keeping reference to previous item
-        //Gets Information and Zoom Control scripts if available
+        //Gets Information and Basic Component scripts depending on which is available
         private void ChangeSelected(GameObject newItem)
         {
             previousItem = selectedItem;
@@ -225,7 +231,12 @@ namespace BodySystem
             if(newItem != null)
             {
                 newItem.TryGetComponent<Information>(out selectedItemComp);
-                newItem.TryGetComponent<BasicComponent>(out selectedBasicComp);
+
+                if(selectedItemComp == null)
+                {
+                    selectedBasicComp = newItem.GetComponent<BasicComponent>();
+                }
+
                 selectedItemZoom = newItem.GetComponent<ZoomControl>();
 
                 if (selectedItemZoom)
@@ -239,24 +250,43 @@ namespace BodySystem
                 selectedItemZoom = null;
             }
         }
-        public void IsolateSelected(bool enabled)
+        //This section of the code is here and not in Isolate script due to the need of using
+        //multiple references to the selected item's zoom control and the previous item
+        public void IsolateSelected(bool enabled, ZoomControl exception = null)
         {
             if (selectedItemZoom.layerIndex == 0)
             {
-                isolate.EnableLayer(0, true);
+                isolate.EnableLayer(0, enabled, exception);
+            }
+            else if(exception != null)
+            {
+                selectedItemZoom.parentControl.EnableChildrenWithException(enabled, exception);
             }
             else
             {
                 selectedItemZoom.layerZoom.EnableLayerNumber(selectedItemZoom.layerIndex, enabled);
             }
-            if(enabled == true)
+            if(enabled == true && selectedItemZoom.layerIndex == 0)
             {
-                camMov.CenterCamera(selectedItemComp.pivot);
+                print("Centered to origin");
+                camMov.CenterCamera(camMov.originVector.transform);
+            }
+            else if (enabled == true && previousItem && selectedItemZoom.layerIndex > 0)
+            {
+                print("Centered to previous");
+                camMov.CenterCamera(previousItem.GetComponent<Information>().pivot);
             }
             else
             {
-                camMov.CenterCamera(previousItem.GetComponent<Information>().pivot);
+                print("Centered to selected");
+                camMov.CenterCamera(selectedItemComp.pivot);
             }
+            DeSelect();
+        }
+        public void IsolateObject()
+        {
+            IsolateSelected(isIsolated, selectedItemZoom);
+            isIsolated = !isIsolated;
         }
     }
 }

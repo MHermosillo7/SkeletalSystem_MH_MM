@@ -44,7 +44,14 @@ namespace BodySystem
         }
         public void GetName()
         {
-            nameText.text = GetComponent().GetName();
+            if (userScript.selectedItemComp != null)
+            {
+                nameText.text = GetComponent().GetName();
+            }
+            else if (userScript.selectedBasicComp != null)
+            {
+                nameText.text = userScript.selectedBasicComp.GetName();
+            }
         }
         public void HideUI()
         {
@@ -65,7 +72,10 @@ namespace BodySystem
         }
         public void EnableButtons()
         {
-            buttons.SetActive(true);
+            if (userScript.selectedItemComp != null)
+            {
+                buttons.SetActive(true);
+            }
         }
         void EnablePanel()
         {

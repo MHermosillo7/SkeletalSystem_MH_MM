@@ -14,14 +14,23 @@ namespace BodySystem
         List<Collider> derivedCols = new List<Collider>();
         List<Highlight> derivedLight = new List<Highlight>();
 
+        public bool canZoomIn;
+        public bool canZoomOut;
+
         // Start is called before the first frame update
         void Awake()
         {
             cols = GetComponents<Collider>().ToList();
             rend = GetComponent<Renderer>();
             highlight = GetComponent<Highlight>();
-
-            foreach(Transform child in transform)
+        }
+        private void Start()
+        {
+            EnableChildren(false);
+        }
+        void GetChildren()
+        {
+            foreach (Transform child in transform)
             {
                 if (child.CompareTag("DerivedBone"))
                 {
@@ -31,10 +40,16 @@ namespace BodySystem
                 }
             }
 
-        }
-        private void Start()
-        {
-            EnableChildren(false);
+            // Checks for null in derived rends because it stores a Renderer for each derived bone
+            // Thus, if there is at least one derived bone, derivedRend will have a value
+            if (derivedRends == null)
+            {
+                canZoomIn = false;
+            }
+            else
+            {
+                canZoomIn = true;
+            }
         }
         //Zoom In/Out Functions
         public void ZoomIn()

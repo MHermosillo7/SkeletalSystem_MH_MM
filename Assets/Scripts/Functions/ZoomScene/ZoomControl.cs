@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace BodySystem
@@ -160,6 +159,17 @@ namespace BodySystem
             }
 
             rend.enabled = enable;
+        }
+
+        public void EnableChildrenWithException(bool enable, ZoomControl exception)
+        {
+            foreach(ZoomControl child in derivedControls)
+            {
+                if(child != exception)
+                {
+                    child.Enable(enable);
+                }
+            }
         }
     }
 

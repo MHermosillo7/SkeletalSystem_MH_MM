@@ -10,7 +10,7 @@ namespace BodySystem
         List<Category> boneComponents = new List<Category>();
 
         CameraMovement camMov;
-        User user;
+        V1User user;
 
         [SerializeField] bool activateLong = true;
         [SerializeField] bool activateShort = true;
@@ -31,7 +31,7 @@ namespace BodySystem
             boneComponents.AddRange(FindObjectsOfType<Category>());
 
             camMov = FindObjectOfType<CameraMovement>();
-            user = FindObjectOfType<User>();
+            user = FindObjectOfType<V1User>();
 
             longBones.AddRange(GetBoneType("long"));
             shortBones.AddRange(GetBoneType("short"));
