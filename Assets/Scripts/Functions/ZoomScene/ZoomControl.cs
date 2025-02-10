@@ -68,6 +68,11 @@ namespace BodySystem
             {
                 canZoomOut = true;
                 parentControl = transform.parent.gameObject.GetComponent<ZoomControl>();
+
+                if(parentControl == null)
+                {
+                    canZoomOut = false;
+                }
             }
         }
 

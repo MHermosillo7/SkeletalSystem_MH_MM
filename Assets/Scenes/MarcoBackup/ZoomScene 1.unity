@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 43838661}
   m_Layer: 0
   m_Name: RibCage
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 193445855}
   m_Layer: 0
   m_Name: LTrapezium
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3028,7 +3028,7 @@ GameObject:
   - component: {fileID: 593067219}
   m_Layer: 0
   m_Name: RProximal Phalanges
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3364,7 +3364,7 @@ GameObject:
   - component: {fileID: 622079337}
   m_Layer: 0
   m_Name: LeftScaphoid
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3609,7 +3609,7 @@ GameObject:
   - component: {fileID: 648930263}
   m_Layer: 0
   m_Name: LCapitate
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3857,7 +3857,7 @@ GameObject:
   - component: {fileID: 699610629}
   m_Layer: 0
   m_Name: RightRadius
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4355,7 +4355,7 @@ GameObject:
   - component: {fileID: 760428500}
   m_Layer: 0
   m_Name: LHamate
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4526,7 +4526,7 @@ GameObject:
   - component: {fileID: 774111578}
   m_Layer: 0
   m_Name: LeftScapula
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5161,7 +5161,7 @@ GameObject:
   - component: {fileID: 832847784}
   m_Layer: 0
   m_Name: LDistal Phalanges
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5416,7 +5416,7 @@ GameObject:
   - component: {fileID: 839537912}
   m_Layer: 0
   m_Name: RDistal Phalanges
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5968,7 +5968,7 @@ GameObject:
   - component: {fileID: 996824740}
   m_Layer: 0
   m_Name: RightUlna
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6150,7 +6150,7 @@ GameObject:
   - component: {fileID: 1017412273}
   m_Layer: 0
   m_Name: LTriquetrum
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6320,7 +6320,7 @@ GameObject:
   - component: {fileID: 1074024690}
   m_Layer: 0
   m_Name: RightLunate
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6732,7 +6732,7 @@ GameObject:
   - component: {fileID: 1212035931}
   m_Layer: 0
   m_Name: LeftUlna
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6993,7 +6993,7 @@ GameObject:
   - component: {fileID: 1273378168}
   m_Layer: 0
   m_Name: Sternum
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7399,7 +7399,7 @@ GameObject:
   - component: {fileID: 1357632790}
   m_Layer: 0
   m_Name: RHamate
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7702,7 +7702,7 @@ GameObject:
   - component: {fileID: 1380174662}
   m_Layer: 0
   m_Name: LeftRadius
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7885,7 +7885,7 @@ GameObject:
   - component: {fileID: 1387908824}
   m_Layer: 0
   m_Name: RightScaphoid
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8129,7 +8129,7 @@ GameObject:
   - component: {fileID: 1404957223}
   m_Layer: 0
   m_Name: RightScapula
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9255,7 +9255,7 @@ GameObject:
   - component: {fileID: 1538216089}
   m_Layer: 0
   m_Name: Xiphoid Process
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9429,7 +9429,7 @@ GameObject:
   - component: {fileID: 1550392346}
   m_Layer: 0
   m_Name: LTrapezoid
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9864,7 +9864,7 @@ GameObject:
   - component: {fileID: 1615269955}
   m_Layer: 0
   m_Name: RightClavicle
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10047,7 +10047,7 @@ GameObject:
   - component: {fileID: 1627718376}
   m_Layer: 0
   m_Name: LeftClavicle
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10230,7 +10230,7 @@ GameObject:
   - component: {fileID: 1633426236}
   m_Layer: 0
   m_Name: RMiddle Phalanges
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11010,7 +11010,7 @@ GameObject:
   - component: {fileID: 1711164424}
   m_Layer: 0
   m_Name: LeftHumerus
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11350,7 +11350,7 @@ GameObject:
   - component: {fileID: 1724289441}
   m_Layer: 0
   m_Name: RTrapezium
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11566,7 +11566,7 @@ GameObject:
   - component: {fileID: 1769099375}
   m_Layer: 0
   m_Name: RMetacarpal Bones
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11739,7 +11739,7 @@ GameObject:
   - component: {fileID: 1785473774}
   m_Layer: 0
   m_Name: LMiddle Phalanges
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11917,7 +11917,7 @@ GameObject:
   - component: {fileID: 1794619854}
   m_Layer: 0
   m_Name: RCapitate
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12165,7 +12165,7 @@ GameObject:
   - component: {fileID: 1809774263}
   m_Layer: 0
   m_Name: LeftLunate
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13310,7 +13310,7 @@ GameObject:
   - component: {fileID: 1971482590}
   m_Layer: 0
   m_Name: LProximal Phalanges
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13487,7 +13487,7 @@ GameObject:
   - component: {fileID: 1994818605}
   m_Layer: 0
   m_Name: RTriquetrum
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14108,7 +14108,7 @@ GameObject:
   - component: {fileID: 2090108480}
   m_Layer: 0
   m_Name: RightHumerus
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14296,7 +14296,7 @@ GameObject:
   - component: {fileID: 2121345604}
   m_Layer: 0
   m_Name: LMetacarpal Bones
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14469,7 +14469,7 @@ GameObject:
   - component: {fileID: 2129582366}
   m_Layer: 0
   m_Name: RTrapezoid
-  m_TagString: Untagged
+  m_TagString: Bone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

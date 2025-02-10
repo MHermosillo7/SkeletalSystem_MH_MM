@@ -95,7 +95,17 @@ namespace BodySystem
                     {
                         if (selectedItemZoom && previousItemZoom)
                         {
-                            ZoomIntoCurrentLayer();
+                            //Previously, if after selecting a main bone, the user selected another
+                            // main bone, the ZoomIntoCurrentLayer got triggered since the selected
+                            // item is not a derived bone, and a previous item had been selected,
+                            // All the previous conditions to trigger the function were completed
+
+                            //With this, however, if the previous bone and the current bone are both
+                            // main bones in layer 0, the line is supposed to not be triggered
+                            if(previousItemZoom.layerIndex + selectedItemZoom.layerIndex != 0)
+                            {
+                                ZoomIntoCurrentLayer();
+                            }
                         }
                     }
 
@@ -151,6 +161,8 @@ namespace BodySystem
                 infoUI.HideUI();
 
                 ChangeSelected(selectedItemZoom.firstChildControl.gameObject);
+
+                isIsolated = false;
             }
         }
         public void ZoomOut()
@@ -279,7 +291,17 @@ namespace BodySystem
             else
             {
                 print("Centered to selected");
-                camMov.CenterCamera(selectedItemComp.pivot);
+
+                //Right now there are some items that have no vector because their rotation is messed up
+                //Thus, I just double check there is a pivot before centering the camera
+                if(selectedItemComp.pivot != null)
+                {
+                    camMov.CenterCamera(selectedItemComp.pivot);
+                }
+                else
+                {
+                    camMov.CenterCamera(camMov.originVector.transform);
+                }
             }
             DeSelect();
         }
