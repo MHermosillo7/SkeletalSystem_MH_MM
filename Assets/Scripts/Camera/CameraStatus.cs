@@ -1,17 +1,13 @@
+using System.Data;
 using UnityEngine;
 
 namespace BodySystem
 {
     public class CameraStatus : MonoBehaviour
     {
-        private bool canMove;
-        public bool cameraCanMove
-        {
-            get { return canMove; }
-            private set { canMove = value; }
-        }
+        public bool cameraCanMove;     //Whether camera can move
 
-        [SerializeField] Animator anim;
+        [SerializeField] Animator anim; //Camera status animator
 
         // Start is called before the first frame update
         void Start()
@@ -20,6 +16,8 @@ namespace BodySystem
             anim.SetBool("CameraCanMove", cameraCanMove);
         }
 
+        //Triggers & updates camera animation demonstrating whether 
+        // the camera can move according to input passed to function 
         public void UpdateCamStatus(bool status)
         {
             

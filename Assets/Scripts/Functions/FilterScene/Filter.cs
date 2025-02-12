@@ -57,7 +57,8 @@ namespace BodySystem
         void FilterByType(List<Zoom> boneType, bool activate)
         {
             // Center camera around main scene pivot 
-            // [Note] could probably implement so that it center first object in list of non-filtered bones
+            //  [Note] could probably implement so that it centers
+            //  to first object in list of non-filtered bones
             camMov.CenterCamera(GameObject.FindGameObjectWithTag("Origin").transform);
 
             user.ZoomOut();
@@ -95,6 +96,8 @@ namespace BodySystem
             activateIrr = !activateIrr;
             FilterByType(irrBones, activateIrr);
         }
+
+        // Used to check whether activating/deactivating function to filter bone types
         public int CheckListCount(string type)
         {
             type = type.ToLower();

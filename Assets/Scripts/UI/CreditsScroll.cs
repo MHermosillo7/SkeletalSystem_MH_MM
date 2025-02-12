@@ -10,6 +10,8 @@ namespace BodySystem
     {
         RectTransform objRect;
 
+        Vector3 startPosition;
+
         Vector3[] objectCorners = new Vector3[4];
 
         float objMaxY;
@@ -32,6 +34,10 @@ namespace BodySystem
         void Awake()
         {
             objRect = GetComponent<RectTransform>();
+
+            topPanel = GameObject.Find("TopPanel").GetComponent<RectTransform>();
+
+            startPosition = objRect.position;
         }
 
         // Update is called once per frame
@@ -201,6 +207,17 @@ namespace BodySystem
             else
             {
                 canMoveUp = true;
+            }
+        }
+
+        //Ensures the credits always start from the top every time they are re-activated
+        //ie. If the user moves the credits for programming, but then switch to research's,
+        //    when they switch back to programming sources, they will start from the top again
+        private void OnDisable()
+        {
+            if(objRect.position != startPosition)
+            {
+                objRect.position = startPosition;
             }
         }
     }
