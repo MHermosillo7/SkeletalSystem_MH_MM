@@ -10,4 +10,9 @@ public class BasicComponent : MonoBehaviour
     {
         return partName;
     }
+
+    private void Awake()
+    {
+        partName = gameObject.name;
+    }
 }

@@ -48,8 +48,9 @@ namespace BodySystem
             {
                 nameText.text = GetComponent().GetName();
             }
-            else if (userScript.selectedBasicComp != null)
+            else
             {
+                print("Other name");
                 nameText.text = userScript.selectedBasicComp.GetName();
             }
         }

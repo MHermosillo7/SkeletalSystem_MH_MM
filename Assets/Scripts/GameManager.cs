@@ -1,8 +1,4 @@
-using System.Data;
-using Unity.VisualScripting.Antlr3.Runtime.Tree;
-using UnityEditorInternal;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {

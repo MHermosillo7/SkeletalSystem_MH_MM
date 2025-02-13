@@ -10,12 +10,11 @@ namespace BodySystem
         Renderer rend;
         Highlight highlight;
 
-        List<Renderer> derivedRends = new List<Renderer>();
+        [SerializeField] List<Renderer> derivedRends = new List<Renderer>();
         List<Collider> derivedCols = new List<Collider>();
         List<Highlight> derivedLight = new List<Highlight>();
 
         public bool canZoomIn;
-        public bool canZoomOut;
 
         // Start is called before the first frame update
         void Awake()
@@ -23,6 +22,8 @@ namespace BodySystem
             cols = GetComponents<Collider>().ToList();
             rend = GetComponent<Renderer>();
             highlight = GetComponent<Highlight>();
+
+            GetChildren();
         }
         private void Start()
         {

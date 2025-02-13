@@ -27,6 +27,8 @@ namespace BodySystem
         IsolateFilter isolate;
         bool isIsolated = false;
 
+        public bool isZoomedIn = false;
+
         // Start is called before the first frame update
         void Awake()
         {
@@ -79,7 +81,13 @@ namespace BodySystem
                     DeSelect();
 
                     selectedItem = objectHit.transform.gameObject;
-                    selectedItemComp = objectHit.transform.GetComponent<Information>();
+
+                    objectHit.transform.TryGetComponent<Information>(out selectedItemComp);
+
+                    if (selectedItemComp == null)
+                    {
+                        objectHit.transform.TryGetComponent<BasicComponent>(out selectedBasicComp);
+                    }
 
                     infoUI.ShowUI();
                     isIsolated = false;
@@ -94,7 +102,7 @@ namespace BodySystem
 
                         if (selectedItemZoom)
                         {
-                            zoomUI.UpdateZoom(selectedItemZoom.canZoomIn, selectedItemZoom.canZoomOut);
+                            zoomUI.UpdateZoom(selectedItemZoom.canZoomIn, false);
                         }
                     }
                 }
@@ -123,20 +131,33 @@ namespace BodySystem
 
             camMov.CenterCamera(selectedItemComp.pivot);
 
+            //Cannot zoom in further, can exit zoom state
+            zoomUI.UpdateZoom(false,true);
+
             DeSelect();
             isIsolated = false;
+
+            isZoomedIn = true;
         }
+        //Added variable isZoomedIn as failsafe because of object isolation interference with filter
+        //it causes hidden objects by filter to be reactivated in an attempt to zoom out from current
+        //selected object
         public void ZoomOut()
         {
             if (selectedItemZoom)
             {
                 selectedItemZoom.ZoomOut();
+
                 isolate.IsolateObjects(true);
 
                 camMov.CenterCamera(camMov.originVector.transform);
+                
+                zoomUI.UpdateZoom(true, false);
 
                 DeSelect();
                 isIsolated = false;
+
+                isZoomedIn = false;
             }
         }
 
@@ -156,7 +177,14 @@ namespace BodySystem
             else
             {
                 print("Centered to selected");
-                camMov.CenterCamera(selectedItemComp.pivot);
+                if (selectedItemComp)
+                {
+                    camMov.CenterCamera(selectedItemComp.pivot);
+                }
+                else
+                {
+                    camMov.CenterCamera(selectedItem.transform.GetChild(0));
+                }
             }
             DeSelect();
             isIsolated = !isIsolated;

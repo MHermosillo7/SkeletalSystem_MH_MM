@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -21,10 +22,10 @@ namespace BodySystem
         //should be less expensive than deactivating the gameobject itselft and runs
         //all the calculations for deactivating it natively
 
-        List<Zoom> longBones = new List<Zoom>();
-        List<Zoom> shortBones = new List<Zoom>();
-        List<Zoom> flatBones = new List<Zoom>();
-        List<Zoom> irrBones = new List<Zoom>();
+        public List<Zoom> longBones = new List<Zoom>();
+        public List<Zoom> shortBones = new List<Zoom>();
+        public List<Zoom> flatBones = new List<Zoom>();
+        public List<Zoom> irrBones = new List<Zoom>();
         // Awake is called when loading scene
         void Awake()
         {
@@ -54,17 +55,23 @@ namespace BodySystem
 
         // Center Camera to main pivot in scene and 
         // Activate/Deactivate objects in input list
-        void FilterByType(List<Zoom> boneType, bool activate)
+        IEnumerator FilterByType(List<Zoom> boneType, bool activate)
         {
             // Center camera around main scene pivot 
             //  [Note] could probably implement so that it centers
             //  to first object in list of non-filtered bones
             camMov.CenterCamera(GameObject.FindGameObjectWithTag("Origin").transform);
 
-            user.ZoomOut();
+            if (user.isZoomedIn)
+            {
+                user.ZoomOut();
+            }
+
+            yield return new WaitForEndOfFrame();
 
             foreach (var bone in boneType)
             {
+                Debug.Log(bone.name);
                 bone.Enable(activate);
             }
         }
@@ -73,28 +80,28 @@ namespace BodySystem
         public void FilterLong()
         {
             activateLong = !activateLong; 
-            FilterByType(longBones, activateLong);
+            StartCoroutine(FilterByType(longBones, activateLong));
         }
 
         // Toggle between activating or deactivating short bones
         public void FilterShort()
         {
             activateShort = !activateShort;
-            FilterByType(shortBones, activateShort);
+            StartCoroutine(FilterByType(shortBones, activateShort));
         }
 
         // Toggle between activating or deactivating flat bones
         public void FilterFlat()
         {
             activateFlat = !activateFlat;
-            FilterByType(flatBones, activateFlat);
+            StartCoroutine(FilterByType(flatBones, activateFlat));
         }
 
         // Toggle between activating or deactivating irregular bones
         public void FilterIrregular()
         {
             activateIrr = !activateIrr;
-            FilterByType(irrBones, activateIrr);
+            StartCoroutine(FilterByType(irrBones, activateIrr));
         }
 
         // Used to check whether activating/deactivating function to filter bone types

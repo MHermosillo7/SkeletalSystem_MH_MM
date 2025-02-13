@@ -78,7 +78,10 @@ namespace BodySystem
 
                 Note to self: Sometimes this line causes a minor error where it detects a UI
                 element even when there should be none.This rarely happens with the
-                Distal Phalanges in the left arm when they are at a certain distance(far)*/
+                Distal Phalanges in the left arm when they are at a certain distance(far)
+            
+                2nd Note: Error occurs when camera is further than -35.5, could be because of UI
+                interference*/
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;
@@ -148,7 +151,7 @@ namespace BodySystem
                         selected objects in case by case basis
 
                         Note: Currently unused as far as I know*/
-                    if (selectedItemComp.needsCenter)
+                    if (selectedItemComp && selectedItemComp.needsCenter)
                     {
                         //Get child (vector) inside object hit
                         camMov.CenterCamera(selectedItemComp.pivot);
@@ -234,6 +237,7 @@ namespace BodySystem
                     //If new item is a root in control of layer zoom
                     if(selectedItemZoom.parentControl == null)
                     {
+                        print("No parent");
                         //Enable the rest of roots
                         isolate.EnableLayer(0, true);
 
@@ -373,7 +377,7 @@ namespace BodySystem
                 //Right now there are some items that have no vector because their rotation is messed up
                 //Thus, I just double check there is a pivot before centering the camera to selected
                 //Or, in case there is no pivot, I center to origin
-                if(selectedItemComp.pivot != null)
+                if(selectedItemComp != null)
                 {
                     camMov.CenterCamera(selectedItemComp.pivot);
                 }

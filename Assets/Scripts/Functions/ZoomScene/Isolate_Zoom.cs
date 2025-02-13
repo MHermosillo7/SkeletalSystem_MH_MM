@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,24 +16,30 @@ namespace BodySystem
         // Start is called before the first frame update
         void Start()
         {
-            objects.AddRange(GetObjects());
+            StartCoroutine(GetObjects());
         }
-        Dictionary<ZoomControl, int> GetObjects()
-        {
-            Dictionary<ZoomControl, int> objs = new Dictionary<ZoomControl, int>();
+        
+        /*  There is an operation error where this function retrieves objects faster than layer
+            zoom can assign the layer indexes.Thus, the dictionary ended up with a bunch of
+            objects all in layer zero because the indexes had not been assigned yet.
 
+            WaitForEndOfFrame() is a failsafe to ensure getting the correct reference values*/
+        IEnumerator GetObjects()
+        {
+            yield return new WaitForEndOfFrame();
             //Get all Zoom Controls in scene and add them to dictionary
             allControls.AddRange(FindObjectsOfType<ZoomControl>());
 
             foreach (ZoomControl control in allControls)
             {
-                objs.Add(control, control.layerIndex);
+                objects.Add(control, control.layerIndex);
             }
-            return objs;
         }
 
         public void EnableLayer(int deactivateLayer, bool enable)
         {
+
+            print(deactivateLayer);
             foreach (var (key, value) in objects)
             {
                 if (value == deactivateLayer)
