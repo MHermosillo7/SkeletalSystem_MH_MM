@@ -74,23 +74,18 @@ namespace BodySystem
             /*  Do not continue method if cursor is over a UI element
                 Or if previous camera mov hasn't finished
                 (If Center Camera is called again before previous processes are
-                finished, the two clash and result in unexpected camera transformations)
-
-                Note to self: Sometimes this line causes a minor error where it detects a UI
-                element even when there should be none.This rarely happens with the
-                Distal Phalanges in the left arm when they are at a certain distance(far)
-            
-                2nd Note: Error occurs when camera is further than -35.5, could be because of UI
-                interference*/
+                finished, the two clash and result in unexpected camera transformations)*/
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;
             }
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit objectHit;
 
-            if (Physics.Raycast(ray, out objectHit))
+            /*The LayerMask to ignore the UI elements was interfering with selection of distant objects
+            such as arm and column, causing errors when trying to select it from afar due to not
+            "detecting" those objects*/
+            if (Physics.Raycast(ray, out RaycastHit objectHit))
             {
                 /*  If the user selects same object, show the information UI and hide other UI types
                     Serves to avoid repeating unnecessary logic required for new selected objects*/

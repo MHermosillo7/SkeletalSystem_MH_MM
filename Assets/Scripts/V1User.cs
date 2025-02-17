@@ -22,8 +22,6 @@ namespace BodySystem
 
         public Zoom selectedItemZoom;
 
-        [SerializeField] LayerMask ignoreLayer;
-
         IsolateFilter isolate;
         bool isIsolated = false;
 
@@ -58,17 +56,19 @@ namespace BodySystem
         {
             /*  Do not continue method if cursor is over a UI element
                 Or if previous camera mov hasn't finished
-                (If Center Camera is called again before previous processes are
-                finished, the two clash and result in unexpected camera transformations) */
+                (If CenterCamera is called again before previous processes are
+                finished, the two clash and result in unexpected camera transformations)*/
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;
             }
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit objectHit;
 
-            if (Physics.Raycast(ray, out objectHit, ignoreLayer))
+            /*The LayerMask to ignore the UI elements was interfering with selection of distant objects
+            such as arm and column, causing errors when trying to select it from afar due to not
+            "detecting" those objects*/
+            if (Physics.Raycast(ray, out RaycastHit objectHit))
             {
                 if (selectedItem == objectHit.transform.gameObject)
                 {
@@ -109,6 +109,7 @@ namespace BodySystem
             }
             else
             {
+                print("No Hit");
                 DeSelect();
             }
         }
