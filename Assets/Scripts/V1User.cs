@@ -23,7 +23,7 @@ namespace BodySystem
         public Zoom selectedItemZoom;
 
         IsolateFilter isolate;
-        bool isIsolated = false;
+        public bool isIsolated = false;
 
         public bool isZoomedIn = false;
 

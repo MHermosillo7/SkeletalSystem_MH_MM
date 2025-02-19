@@ -67,11 +67,18 @@ namespace BodySystem
                 user.ZoomOut();
             }
 
+            //Errors happen when object is isolated and user tries to filter bones due to isolating
+            //modifying the bone's state, resulting in nothing happening. This line prevents that
+            //by returning everything to its original, unzoomed, unisolated state
+            if (user.isIsolated)
+            {
+                user.IsolateSelected();
+            }
+
             yield return new WaitForEndOfFrame();
 
             foreach (var bone in boneType)
             {
-                Debug.Log(bone.name);
                 bone.Enable(activate);
             }
         }
