@@ -47,7 +47,7 @@ namespace BodySystem
             {
                 canZoomIn = false;
             }
-            else
+            else if (derivedRends.Count > 0)
             {
                 canZoomIn = true;
             }
