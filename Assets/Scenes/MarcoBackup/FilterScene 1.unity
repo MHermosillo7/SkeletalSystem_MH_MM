@@ -16784,13 +16784,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79c034ab1cc82d48a94a52758005033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPath: C:/Users
   folder: 0
   projectFolder: Skeletal System Screenshots
   imageName: BoneImage
   type: 1
   index: 0
-  cleanDirectory: 0
+  cleanDirectory: 1
 --- !u!1 &1901907461
 GameObject:
   m_ObjectHideFlags: 0
