@@ -21,15 +21,6 @@ public class Health : ScriptableObject
 
     [SerializeField] Text healthUI;
 
-    enum ActionStatus
-    {
-        attacking,
-        spellcasting,
-        defending,
-        healing,
-        thinking
-    }
-
     void Start()
     {
         currentHealth = maxHealth;
@@ -52,6 +43,7 @@ public class Health : ScriptableObject
     {
         defense = 0;
     }
+
     //Way to add or substract defense
     public void ChangeDefense(int defenseChange)
     {

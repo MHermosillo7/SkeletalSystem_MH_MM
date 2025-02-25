@@ -16789,7 +16789,7 @@ MonoBehaviour:
   imageName: BoneImage
   type: 1
   index: 0
-  cleanDirectory: 1
+  cleanDirectory: 0
 --- !u!1 &1901907461
 GameObject:
   m_ObjectHideFlags: 0
