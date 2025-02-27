@@ -23,7 +23,7 @@ namespace BodySystem
         // Start is called before the first frame update
         void Awake()
         {
-                partName = name;
+            partName = name;
             
             if (function.Count == 0 || structure.Count == 0 || components.Count == 0)
             {

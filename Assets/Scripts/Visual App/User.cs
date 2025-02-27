@@ -185,7 +185,14 @@ namespace BodySystem
             if (selectedItemZoom.canZoomIn)
             {
                 //Center camera around the pivot of selected object's parent
-                camMov.CenterCamera(selectedItemComp.pivot);
+                if(selectedItemComp != null)
+                {
+                    camMov.CenterCamera(selectedItemComp.pivot);
+                }
+                else
+                {
+                    camMov.CenterCamera(selectedBasicComp.pivot);
+                }
 
                 //If object is a main bone
                 if (selectedItemZoom.parentControl == null)
@@ -244,11 +251,25 @@ namespace BodySystem
                     else
                     {
                         //Enable all objects in same layer as new object
-                        selectedItemZoom.layerZoom.EnableLayerNumber(selectedItemZoom.layerIndex, true);
+                        selectedItemZoom.layerZoom.
+                            EnableLayerNumber(selectedItemZoom.layerIndex, true);
 
                         //Get main pivot of current section to center camera
-                        camMov.CenterCamera(
-                            selectedItemZoom.layerZoom.GetComponent<Information>().pivot);
+                        selectedItemZoom.layerZoom.
+                            TryGetComponent<Information>(out Information hasInformation);
+
+                        if(hasInformation != null)
+                        {
+                            camMov.CenterCamera(hasInformation.pivot);
+                        }
+                        else
+                        {
+                            camMov.CenterCamera(
+                                selectedItemZoom.layerZoom.
+                                GetComponent<BasicComponent>().pivot);
+                        }
+
+                            
                     }
 
                     //Hide all UI pop ups

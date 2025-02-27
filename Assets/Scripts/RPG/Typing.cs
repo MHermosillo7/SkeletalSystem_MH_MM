@@ -79,8 +79,11 @@ public class Typing : MonoBehaviour
             typingUI.FadeLetter();
         }
         else if(nextCharacter == " " && pressedKey ==
-            (KeyCode)Enum.Parse(typeof(KeyCode),
-            nextCharacter.ToUpper()))
+            KeyCode.Space)
+        {
+            GetNextCharacter();
+            typingUI.FadeLetter();
+        }
         else
         {
             print("Try Again...");

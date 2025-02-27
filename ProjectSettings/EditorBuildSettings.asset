@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MarcoBackup/Testing/BetterTitle.unity
-    guid: 0a9ff047939921e4bac5a6f317b95a77
+    path: Assets/Scenes/MarcoBackup/BetterTitle.unity
+    guid: d20ac2b8432977642ba004197221fb6b
   - enabled: 1
     path: Assets/Scenes/MarcoBackup/FilterScene 1.unity
     guid: 3a7f449961bb1ca4ab741403107a993b

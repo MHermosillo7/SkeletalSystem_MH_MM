@@ -38,8 +38,6 @@ namespace BodySystem
 
         public void EnableLayer(int deactivateLayer, bool enable)
         {
-
-            print(deactivateLayer);
             foreach (var (key, value) in objects)
             {
                 if (value == deactivateLayer)
