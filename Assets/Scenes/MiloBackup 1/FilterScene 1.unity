@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  pivot: {fileID: 0}
 --- !u!65 &10618591
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1559,6 +1560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  pivot: {fileID: 0}
 --- !u!65 &88741342
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1694,6 +1696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  pivot: {fileID: 0}
 --- !u!65 &105490146
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4271,6 +4274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  pivot: {fileID: 0}
 --- !u!65 &476529021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10401,6 +10405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  pivot: {fileID: 0}
 --- !u!65 &1230397769
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12292,6 +12297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  pivot: {fileID: 0}
 --- !u!65 &1465086842
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16784,7 +16790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79c034ab1cc82d48a94a52758005033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPath: C:/Users
   folder: 0
   projectFolder: Skeletal System Screenshots
   imageName: BoneImage
