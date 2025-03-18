@@ -10,7 +10,7 @@ namespace BodySystem
         CameraMovement camMov;
         CameraStatus camStatus;
 
-        InfoUI_Filter infoUI;
+        InfoUI infoUI;
         FilterUI filterUI;
         ZoomUI_Filter zoomUI;
         HelpUI helpUI;
@@ -35,7 +35,7 @@ namespace BodySystem
             camMov = FindObjectOfType<CameraMovement>();
             camStatus = FindObjectOfType<CameraStatus>();
 
-            infoUI = FindObjectOfType<InfoUI_Filter>();
+            infoUI = FindObjectOfType<InfoUI>();
             filterUI = FindObjectOfType<FilterUI>();
             zoomUI = FindObjectOfType<ZoomUI_Filter>();
             helpUI = FindObjectOfType<HelpUI>();
@@ -109,7 +109,6 @@ namespace BodySystem
             }
             else
             {
-                print("No Hit");
                 DeSelect();
             }
         }

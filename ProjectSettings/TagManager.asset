@@ -13,6 +13,7 @@ TagManager:
   - ToggleFlat
   - ToggleIrregular
   - Transition
+  - Button
   layers:
   - Default
   - TransparentFX

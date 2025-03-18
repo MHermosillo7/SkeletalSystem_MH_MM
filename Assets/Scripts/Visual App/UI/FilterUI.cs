@@ -13,14 +13,14 @@ namespace BodySystem
         [SerializeField] Toggle toggleFlat; 
         [SerializeField] Toggle toggleIrregular;
 
-        InfoUI_Filter infoUI;
+        InfoUI infoUI;
         HelpUI helpUI;
 
         Filter filter;
         // Start is called before the first frame update
         void Start()
         {
-            infoUI = FindObjectOfType<InfoUI_Filter>();
+            infoUI = FindObjectOfType<InfoUI>();
             helpUI = FindObjectOfType<HelpUI>();
             filter = FindObjectOfType<Filter>();
 

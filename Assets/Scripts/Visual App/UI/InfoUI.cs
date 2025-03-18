@@ -1,5 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 namespace BodySystem
 {
@@ -8,23 +10,41 @@ namespace BodySystem
         [SerializeField] GameObject uiPivot;
         [SerializeField] Button nameButton;
         [SerializeField] Text nameText;
-        [SerializeField] GameObject buttons;
+        [SerializeField] GameObject buttonControl;
+        [SerializeField] List<Text> buttonText = new List<Text>();
         [SerializeField] Image image;
         [SerializeField] Text body;
 
-        User userScript;
+        User user;
+        V1User user1;
         InfoPopUp popUp;
 
         private void Start()
         {
-            userScript = FindObjectOfType<User>();
+            CheckLanguage();
+
+            user = FindObjectOfType<User>();
+
+            //Avoids having to duplicate the script
+            if(user == null)
+            {
+                user1 = FindObjectOfType<V1User>();
+            }
+
             popUp = FindObjectOfType<InfoPopUp>();
 
             HideUI();
         }
         public void GetFunctionInfo()
         {
-            body.text = GetComponent().GetFunction();
+            if(GameManager.language == "english")
+            {
+                body.text = GetComponent().GetFunction();
+            }
+            else
+            {
+                body.text = GetComponent().GetFunction_ES();
+            }
 
             //Checks whether pop up is completely
             //visible even after changing info
@@ -32,31 +52,96 @@ namespace BodySystem
         }
         public void GetStructureInfo()
         {
-            body.text = GetComponent().GetStructure();
-
+            if (GameManager.language == "english")
+            {
+                body.text = GetComponent().GetStructure();
+            }
+            else
+            {
+                body.text = GetComponent().GetStructure_ES();
+            }
+            
             EnablePanel();
         }
         public void GetComponentsInfo()
         {
-            body.text = GetComponent().GetDerived();
-
+            if (GameManager.language == "english")
+            {
+                body.text = GetComponent().GetComponents();
+            }
+            else
+            {
+                body.text = GetComponent().GetComponents_ES();
+            }
+            
             EnablePanel();
         }
+
         public void GetName()
         {
-            if(userScript.selectedItemComp != null)
+            if (user != null)
             {
-                nameText.text = GetComponent().GetName();
+                CheckForName_User();
             }
-            else if(userScript.selectedBasicComp != null)
+            else
             {
-                nameText.text = userScript.selectedBasicComp.GetName();
+                CheckForName_User1();
+            }
+        }
+        void CheckForName_User()
+        {
+            if(GameManager.language == "english")
+            {
+                if (user.selectedItemComp != null)
+                {
+                    nameText.text = GetComponent().GetName();
+                }
+                else if (user.selectedBasicComp != null)
+                {
+                    nameText.text = user.selectedBasicComp.GetName();
+                }
+            }
+            else
+            {
+                if (user.selectedItemComp != null)
+                {
+                    nameText.text = GetComponent().GetName_ES();
+                }
+                else if (user.selectedBasicComp != null)
+                {
+                    nameText.text = user.selectedBasicComp.GetName_ES();
+                }
+            }
+        }
+        void CheckForName_User1()
+        {
+            if(GameManager.language == "english")
+            {
+                if (user1.selectedItemComp != null)
+                {
+                    nameText.text = GetComponent().GetName();
+                }
+                else if (user1.selectedBasicComp != null)
+                {
+                    nameText.text = user.selectedBasicComp.GetName();
+                }
+            }
+            else
+            {
+                if (user1.selectedItemComp != null)
+                {
+                    nameText.text = GetComponent().GetName_ES();
+                }
+                else if (user1.selectedBasicComp != null)
+                {
+                    nameText.text = user.selectedBasicComp.GetName_ES();
+                }
             }
         }
         public void HideUI()
         {
             body.text = "";
-            buttons.SetActive(false);
+            buttonControl.SetActive(false);
             image.gameObject.SetActive(false);
             nameButton.gameObject.SetActive(false);
         }
@@ -68,13 +153,31 @@ namespace BodySystem
         }
         Information GetComponent()
         {
-            return userScript.selectedItemComp;
+            if(user != null)
+            {
+                return user.selectedItemComp;
+            }
+            else
+            {
+                return user1.selectedItemComp;
+            }
         }
         public void EnableButtons()
         {
-            if(userScript.selectedItemComp != null)
+            if (user != null)
             {
-                buttons.SetActive(true);
+                if (user.selectedItemComp != null)
+                {
+                    buttonControl.SetActive(true);
+                }
+            }
+            else
+            {
+                if (user1.selectedItemComp != null)
+                {
+                    buttonControl.SetActive(true);
+                    print("User 1");
+                }
             }
         }
         void EnablePanel()
@@ -84,6 +187,21 @@ namespace BodySystem
                 image.gameObject.SetActive(true);
             }
             popUp.RunPopUpCheck();
+        }
+        void CheckLanguage()
+        {
+            if (GameManager.language == "english")
+            {
+                buttonText[0].text = "Function";
+                buttonText[1].text = "Structure";
+                buttonText[2].text = "Components";
+            }
+            else
+            {
+                buttonText[0].text = "Función";
+                buttonText[1].text = "Estructura";
+                buttonText[2].text = "Componentes";
+            }
         }
     }
 }

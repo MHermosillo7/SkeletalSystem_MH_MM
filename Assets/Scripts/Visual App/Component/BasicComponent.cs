@@ -6,11 +6,17 @@ public class BasicComponent : MonoBehaviour
 {
     public string partName;
 
+    public string partName_ES;
+
     public Transform pivot;
 
     public string GetName()
     {
         return partName;
+    }
+    public string GetName_ES()
+    {
+        return partName_ES;
     }
 
     private void Awake()

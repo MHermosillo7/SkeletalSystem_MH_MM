@@ -7,7 +7,7 @@ namespace BodySystem
         [SerializeField] GameObject panel;
 
         InfoUI infoUI;
-        InfoUI_Filter infoUI_Filter;
+        InfoUI infoUI_Filter;
         FilterUI filterUI;
 
         // Start is called before the first frame update
@@ -20,7 +20,7 @@ namespace BodySystem
             infoUI = FindObjectOfType<InfoUI>();
             if (infoUI == null )
             {
-                infoUI_Filter = FindObjectOfType<InfoUI_Filter>();
+                infoUI_Filter = FindObjectOfType<InfoUI>();
             }
             filterUI = FindObjectOfType<FilterUI>();
         }

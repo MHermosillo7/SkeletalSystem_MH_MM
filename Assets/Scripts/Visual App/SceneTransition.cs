@@ -18,7 +18,6 @@ public class SceneTransition : MonoBehaviour
     }
     public static void PlayOutroAnim()
     {
-        print("Hello");
         transition.SetTrigger("Outro");
     }
 

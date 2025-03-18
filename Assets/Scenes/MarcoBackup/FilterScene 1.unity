@@ -3149,7 +3149,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1834485380}
-        m_TargetAssemblyTypeName: BodySystem.InfoUI_Filter, Assembly-CSharp
+        m_TargetAssemblyTypeName: BodySystem.InfoUI, Assembly-CSharp
         m_MethodName: EnableButtons
         m_Mode: 1
         m_Arguments:
@@ -3757,7 +3757,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1834485380}
-        m_TargetAssemblyTypeName: BodySystem.InfoUI_Filter, Assembly-CSharp
+        m_TargetAssemblyTypeName: BodySystem.InfoUI, Assembly-CSharp
         m_MethodName: GetStructureInfo
         m_Mode: 1
         m_Arguments:
@@ -4435,7 +4435,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1834485380}
-        m_TargetAssemblyTypeName: BodySystem.InfoUI_Filter, Assembly-CSharp
+        m_TargetAssemblyTypeName: BodySystem.InfoUI, Assembly-CSharp
         m_MethodName: GetComponentsInfo
         m_Mode: 1
         m_Arguments:
@@ -4932,7 +4932,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1834485380}
-        m_TargetAssemblyTypeName: BodySystem.InfoUI_Filter, Assembly-CSharp
+        m_TargetAssemblyTypeName: BodySystem.InfoUI, Assembly-CSharp
         m_MethodName: GetFunctionInfo
         m_Mode: 1
         m_Arguments:
@@ -8970,13 +8970,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1834485374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1650fd8135438964a81fe7ddc02a81f0, type: 3}
+  m_Script: {fileID: 11500000, guid: a5320d0b98ebd2645b78582c4cd1b49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uiPivot: {fileID: 2126552096}
   nameButton: {fileID: 669609244}
   nameText: {fileID: 1409038386}
-  buttons: {fileID: 1288693974}
+  buttonControl: {fileID: 1288693974}
+  buttonText:
+  - {fileID: 460899723}
+  - {fileID: 2026114295}
+  - {fileID: 1248853229}
   image: {fileID: 1719734810}
   body: {fileID: 2144963073}
 --- !u!1 &1845431772
@@ -11492,6 +11496,10 @@ MonoBehaviour:
   - Head
   - 'Base (Rounded Extremity) '
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!23 &323819187895715055
 MeshRenderer:
@@ -11575,6 +11583,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Accessory Foramen Transversarium '
   pivot: {fileID: 614686986954527105}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!23 &342471689279145076
 MeshRenderer:
@@ -11963,6 +11975,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Canal '
   pivot: {fileID: 7863094184339415051}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!33 &593652764105932079
 MeshFilter:
@@ -12311,6 +12327,10 @@ MonoBehaviour:
   components:
   - Mostly covered with cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &881455236294909160
 Transform:
@@ -12571,6 +12591,10 @@ MonoBehaviour:
   components:
   - Mostly covered with cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!23 &1034926183790790895
 MeshRenderer:
@@ -12667,6 +12691,10 @@ MonoBehaviour:
   - 'Vertebral Arch '
   - 'Vertebral Foramen '
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &1080117431762800958
 Transform:
@@ -12952,6 +12980,10 @@ MonoBehaviour:
   - 
   - Head (Expanded, rounded distal part)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &1313001900806382284
 Transform:
@@ -13166,6 +13198,10 @@ MonoBehaviour:
   - Pedicle of Vertebral Arch
   - 'Vertebral Foramen '
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &1449218602042844423
 GameObject:
@@ -13427,6 +13463,10 @@ MonoBehaviour:
   - Lamina of Vertebral Arch
   - 'Vertebral Foramen '
   pivot: {fileID: 4137386985230682343}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &1650102551096784795
 Transform:
@@ -13717,6 +13757,10 @@ MonoBehaviour:
   components:
   - Mostly covered with cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!64 &1872614894383902929
 MeshCollider:
@@ -13787,6 +13831,10 @@ MonoBehaviour:
   components:
   - Mostly covered with cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &1901516993909153548
 Transform:
@@ -14263,6 +14311,10 @@ MonoBehaviour:
   - Pedicle of Vertebral Arch
   - 'Vertebral Foramen '
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!33 &2189753926947617714
 MeshFilter:
@@ -14588,6 +14640,10 @@ MonoBehaviour:
   - 'Lamina of Vertebral Arch '
   - 'Spinal Nerve Groove '
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &2396707395506462594
 Transform:
@@ -14814,6 +14870,10 @@ MonoBehaviour:
   - (Styloid Process &
   - Ulnar Notch)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &2511203428371947863
 MonoBehaviour:
@@ -14852,6 +14912,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Canal '
   pivot: {fileID: 4617837315240772153}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &2523762081721187343
 GameObject:
@@ -14969,6 +15033,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Canal  '
   pivot: {fileID: 8168522098419679919}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &2528974477303207508
 GameObject:
@@ -15077,6 +15145,10 @@ MonoBehaviour:
   - Body
   - Ramus (wings / bony prominences)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &2645753491995568966
 MonoBehaviour:
@@ -15910,6 +15982,10 @@ MonoBehaviour:
   - Pedicle of Vertebral Arch
   - 'Vertebral Foramen '
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!64 &3178342041903996425
 MeshCollider:
@@ -16575,6 +16651,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Canal '
   pivot: {fileID: 6980377465256739885}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &3673560535439565758
 MonoBehaviour:
@@ -16969,6 +17049,10 @@ MonoBehaviour:
   - Cartilage
   - Anterior & Posterior Surface
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &3840527537039472577
 GameObject:
@@ -17023,6 +17107,10 @@ MonoBehaviour:
   - 
   - Head (Expanded, rounded distal part)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &3901869262846625209
 MonoBehaviour:
@@ -17136,6 +17224,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Canal '
   pivot: {fileID: 2745775167427804104}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &3987667176818649437
 GameObject:
@@ -17205,6 +17297,10 @@ MonoBehaviour:
   - (Conoid Tubercle &
   - Trapezoid Line)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &4028782991598797598
 GameObject:
@@ -17520,6 +17616,10 @@ MonoBehaviour:
   - (Styloid Process &
   - Ulnar Notch)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!33 &4180370011853231069
 MeshFilter:
@@ -17657,6 +17757,10 @@ MonoBehaviour:
   components:
   - Almost entirely covered in cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!33 &4265443079633457850
 MeshFilter:
@@ -18059,6 +18163,10 @@ MonoBehaviour:
   - 
   - Ulna Distal Aspect
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &4595077362547356736
 GameObject:
@@ -18308,6 +18416,10 @@ MonoBehaviour:
   - Dental Fovea
   - Vertebral Foramen
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &4768161085726006907
 MonoBehaviour:
@@ -18339,6 +18451,10 @@ MonoBehaviour:
   - 
   - Head (Expanded, rounded distal part)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &4768161085726006908
 MonoBehaviour:
@@ -18459,6 +18575,10 @@ MonoBehaviour:
   components:
   - Mostly covered with cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &4841703780261823273
 MonoBehaviour:
@@ -18542,6 +18662,10 @@ MonoBehaviour:
   - Shaft
   - Head
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!64 &4927757196467795193
 MeshCollider:
@@ -18720,6 +18844,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Canal '
   pivot: {fileID: 9013799246403769252}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &4962307821033183790
 Transform:
@@ -18776,6 +18904,10 @@ MonoBehaviour:
   - Shaft
   - Head
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &4999869927091812614
 Transform:
@@ -18869,6 +19001,10 @@ MonoBehaviour:
   components:
   - Mostly covered with cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &5090520338933601096
 Transform:
@@ -19069,6 +19205,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Cana '
   pivot: {fileID: 3046557692026156473}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &5252126964073962903
 MonoBehaviour:
@@ -19357,6 +19497,10 @@ MonoBehaviour:
   - Lamina of Vertebral Arch
   - 'Vertebral Foramen '
   pivot: {fileID: 3334645001276824546}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!23 &5551942972132538824
 MeshRenderer:
@@ -19524,6 +19668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &5695091131493295130
 MeshCollider:
@@ -19590,6 +19735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &5704781268790696988
 MeshCollider:
@@ -19828,6 +19974,10 @@ MonoBehaviour:
   - Pedicle of Vertebral Arch
   - 'Vertebral Foramen '
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!23 &5877354531164417240
 MeshRenderer:
@@ -19912,6 +20062,10 @@ MonoBehaviour:
   - Body
   - Xiphoid Process
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &5956562515498063430
 Transform:
@@ -20037,6 +20191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &5998575770386190376
 MeshCollider:
@@ -20218,6 +20373,10 @@ MonoBehaviour:
   components:
   - Mostly covered with cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &6097023907013386504
 GameObject:
@@ -20313,6 +20472,10 @@ MonoBehaviour:
   - Two Extremities
   - Two Borders
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!33 &6145087829590702056
 MeshFilter:
@@ -20349,6 +20512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &6145087829590702059
 MeshCollider:
@@ -20591,6 +20755,10 @@ MonoBehaviour:
   - Pedicle of Vertebral Arch
   - 'Vertebral Foramen '
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &6277134797396088134
 GameObject:
@@ -20863,6 +21031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &6370196139675005345
 MeshCollider:
@@ -20917,6 +21086,10 @@ MonoBehaviour:
   - 
   - Head (Expanded, rounded distal part)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &6418720630845356168
 Transform:
@@ -21069,6 +21242,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Canal '
   pivot: {fileID: 4567768457734620076}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &6479387123787007167
 Transform:
@@ -21112,6 +21289,10 @@ MonoBehaviour:
   - Head
   - 'Base (Rounded Extremity) '
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!33 &6526969086263169722
 MeshFilter:
@@ -21358,6 +21539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &6605304012057882917
 MeshCollider:
@@ -21420,6 +21602,10 @@ MonoBehaviour:
   components:
   - Mostly covered with cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &6620822689635056690
 MonoBehaviour:
@@ -21761,6 +21947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &6809704998504231352
 MeshCollider:
@@ -21835,6 +22022,10 @@ MonoBehaviour:
   - Body
   - Head
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!33 &6833822995455400331
 MeshFilter:
@@ -21885,6 +22076,10 @@ MonoBehaviour:
   - Supraspinous fossa &
   - Infraspinous fossa)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &6903223538088498284
 MonoBehaviour:
@@ -21940,6 +22135,10 @@ MonoBehaviour:
   components:
   - Almost entirely covered in cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &6911510466698210376
 MonoBehaviour:
@@ -22267,6 +22466,10 @@ MonoBehaviour:
   - Body
   - Head
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &7059564907711300451
 MonoBehaviour:
@@ -22396,6 +22599,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Canal '
   pivot: {fileID: 4305124824907315488}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &7077509867818202550
 MonoBehaviour:
@@ -22485,6 +22692,10 @@ MonoBehaviour:
   - (Head with two articular facets)
   - (Tubercle)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &7151960407648414761
 GameObject:
@@ -22715,6 +22926,10 @@ MonoBehaviour:
   - Capitulum, &
   - Coronoid, radial, and olecranon fossae)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!33 &7276927084614786102
 MeshFilter:
@@ -22844,6 +23059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &7379385046635049170
 MeshCollider:
@@ -22888,6 +23104,10 @@ MonoBehaviour:
   components:
   - Mostly covered with cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &7391157202228516636
 GameObject:
@@ -22937,6 +23157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &7391157202228516639
 MeshCollider:
@@ -23286,6 +23507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &7501881715588082090
 MeshCollider:
@@ -23544,6 +23766,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Canal '
   pivot: {fileID: 8470165037649828549}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!33 &7642179075765355075
 MeshFilter:
@@ -23713,6 +23939,10 @@ MonoBehaviour:
   - (Conoid Tubercle &
   - Trapezoid Line)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &7786840401268940560
 Transform:
@@ -23963,6 +24193,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Canal '
   pivot: {fileID: 7030894083375618653}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &7886463856411287901
 MonoBehaviour:
@@ -24035,6 +24269,10 @@ MonoBehaviour:
   - Supraspinous fossa &
   - Infraspinous fossa)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &7919122083981661921
 MonoBehaviour:
@@ -24099,6 +24337,10 @@ MonoBehaviour:
   components:
   - Mostly covered with cartilage
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!23 &7950515272424606637
 MeshRenderer:
@@ -24183,6 +24425,10 @@ MonoBehaviour:
   - Capitulum, &
   - Coronoid, radial, and olecranon fossae)
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!23 &7999137156463520696
 MeshRenderer:
@@ -24413,6 +24659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &8030336385861734739
 MeshCollider:
@@ -24862,6 +25109,10 @@ MonoBehaviour:
   - 
   - Ulna Distal Aspect
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &8253133698491474737
 MonoBehaviour:
@@ -24938,6 +25189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &8253778096404898782
 MeshCollider:
@@ -25053,6 +25305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &8287477108004806460
 MeshCollider:
@@ -25270,6 +25523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &8416607587054285743
 MeshCollider:
@@ -25341,6 +25595,10 @@ MonoBehaviour:
   - Vertebral Foramen
   - 'Vertebral Canal '
   pivot: {fileID: 1527201618103387642}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!114 &8430581566307767080
 MonoBehaviour:
@@ -25671,6 +25929,10 @@ MonoBehaviour:
   - Parietal Bones
   - Temporal Bones
   pivot: {fileID: 0}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!4 &8604028058169807765
 Transform:
@@ -26224,6 +26486,10 @@ MonoBehaviour:
   - Lamina of Vertebral Arch
   - 'Vertebral Foramen '
   pivot: {fileID: 663984953805497899}
+  partName_ES: 
+  function_ES: []
+  structure_ES: []
+  components_ES: []
   needsCenter: 0
 --- !u!1 &8919488966782910595
 GameObject:
@@ -26347,6 +26613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &9000672609943229466
 MeshCollider:

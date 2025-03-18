@@ -7,12 +7,19 @@ namespace BodySystem
 {
     public class Information : MonoBehaviour
     {
+        [Header("English")]
         public string partName;
         public List<string> function = new List<string>();
         public List<string> structure = new List<string>();
         public List<string> components = new List<string>();
 
         public Transform pivot;
+
+        [Header("Spanish")]
+        public string partName_ES = null;
+        public List<string> function_ES = new List<string>();
+        public List<string> structure_ES = new List<string>();
+        public List<string> components_ES = new List<string>();
 
         public bool needsCenter = false;
 
@@ -30,7 +37,44 @@ namespace BodySystem
                 Console.WriteLine("Field is empty");
             }
             GetPivot();
+
+            //Temporal fixes while translation is done
+            if(partName_ES == null || partName_ES == "")
+            {
+                partName_ES = name;
+            }
+            if(function_ES.Count == 0)
+            {
+                function_ES.Add("Traduccion en Progreso");
+                function_ES.Add("");
+
+                foreach(string sentence in function)
+                {
+                    function_ES.Add(sentence);
+                }
+            }
+            if (structure_ES.Count == 0)
+            {
+                structure_ES.Add("    Traduccion en Progreso");
+                structure_ES.Add("");
+
+                foreach (string sentence in structure)
+                {
+                    structure_ES.Add(sentence);
+                }
+            }
+            if (components_ES.Count == 0)
+            {
+                components_ES.Add("    Traduccion en Progreso");
+                components_ES.Add("");
+
+                foreach (string sentence in components)
+                {
+                    components_ES.Add(sentence);
+                }
+            }
         }
+        //English Information Getters
         public string GetName()
         {
             return partName;
@@ -43,9 +87,27 @@ namespace BodySystem
         {
             return NiceString(structure);
         }
-        public string GetDerived()
+        public string GetComponents()
         {
             return NiceString(components);
+        }
+
+        //Spanish Information Getters
+        public string GetName_ES()
+        {
+            return partName_ES;
+        }
+        public string GetFunction_ES()
+        {
+            return NiceString(function_ES);
+        }
+        public string GetStructure_ES()
+        {
+            return NiceString(structure_ES);
+        }
+        public string GetComponents_ES()
+        {
+            return NiceString(components_ES);
         }
 
         //Iterates through given list, formatting them in a bullet point style
@@ -71,7 +133,6 @@ namespace BodySystem
 
             return niceString;
         }
-
         void GetPivot()
         {
             for (int i = 0; i < transform.childCount; i++)
@@ -98,9 +159,9 @@ namespace BodySystem
 
             if (comp != null)
             {
-                CheckIfNull(function, "f");
-                CheckIfNull(structure, "s");
-                CheckIfNull(components, "c");
+                CheckIfNull(functionES, "f");
+                CheckIfNull(structureES, "s");
+                CheckIfNull(componentsES, "c");
             }
         }
         void CheckIfNull(List<string> list, string value)

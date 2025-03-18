@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BodySystem
+/*namespace BodySystem
 {
     public class InfoUI_Filter : MonoBehaviour
     {
@@ -87,4 +87,4 @@ namespace BodySystem
             popUp.RunPopUpCheck();
         }
     }
-}
+}*/

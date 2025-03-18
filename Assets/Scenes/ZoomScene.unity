@@ -2521,7 +2521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79c034ab1cc82d48a94a52758005033, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPath: C:/Users
   folder: 0
   projectFolder: Skeletal System Screenshots
   imageName: BoneImage
@@ -3888,10 +3887,8 @@ MonoBehaviour:
   slideSpeed: 20
   zoomSpeed: 1.5
   rate: 0.9
+  originVector: {fileID: 0}
   vectorTrans: {fileID: 0}
-  ignoreLayer:
-    serializedVersion: 2
-    m_Bits: 32
 --- !u!1 &1111380208
 GameObject:
   m_ObjectHideFlags: 0
@@ -4847,10 +4844,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3ab2180f08994a4cbcd49f467473ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 793187901}
   plusButton: {fileID: 795719349}
   minusButton: {fileID: 398397579}
-  panel: {fileID: 198267666}
 --- !u!1 &1506658666
 GameObject:
   m_ObjectHideFlags: 0
@@ -6489,6 +6484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 430692f8954be244da0eb98d3ee90250, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraCanMove: 0
   anim: {fileID: 1864035847}
 --- !u!95 &1864035847
 Animator:
@@ -6557,6 +6553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomedBone: {fileID: 0}
   selectedItemComp: {fileID: 0}
+  selectedBasicComp: {fileID: 0}
   ignoreLayer:
     serializedVersion: 2
     m_Bits: 32

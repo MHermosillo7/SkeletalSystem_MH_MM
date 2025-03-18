@@ -14,9 +14,7 @@ public class Parallax : MonoBehaviour
     Vector3 outOfScreen = new Vector3 (1866.7f, 0, 0);
     Vector3 resetPosition;
 
-    //The movement speed is far too fast even at 5,
-    //so set limit and implemented decimals to further control speed
-    [SerializeField, Range(0, 5)] float moveSpeed;
+    [SerializeField] float moveSpeed;
 
     // Start is called before the first frame update
     void Awake()
@@ -41,7 +39,7 @@ public class Parallax : MonoBehaviour
 
     void ParallaxControl()
     {
-        Vector2 moveForce = Vector2.right * moveSpeed;
+        Vector2 moveForce = Vector2.right * moveSpeed * Time.deltaTime;
         /*for(int i = 0; i < images.Count; i++)
         {
             images[i].Translate(moveForce);

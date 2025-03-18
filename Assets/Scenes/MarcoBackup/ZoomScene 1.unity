@@ -157,7 +157,11 @@ MonoBehaviour:
   uiPivot: {fileID: 1568226657}
   nameButton: {fileID: 223974084}
   nameText: {fileID: 99302475}
-  buttons: {fileID: 28072032}
+  buttonControl: {fileID: 28072032}
+  buttonText:
+  - {fileID: 1942107449}
+  - {fileID: 378460315}
+  - {fileID: 458426790}
   image: {fileID: 1875932630}
   body: {fileID: 1155526701}
 --- !u!114 &22034318
@@ -9766,6 +9770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!23 &4312801773189664478
 MeshRenderer:
@@ -10154,6 +10159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &6102693051656989166
 MeshCollider:
@@ -10611,6 +10617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!4 &7342567157437182495
 Transform:
@@ -10700,6 +10707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!33 &7563736273726633411
 MeshFilter:
@@ -10791,6 +10799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &7706033540389318962
 MeshCollider:
@@ -10910,6 +10919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!23 &8164160194186465653
 MeshRenderer:
@@ -11003,6 +11013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &8164160194186465657
 MeshCollider:
@@ -11114,6 +11125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!4 &8232417641388468649
 Transform:
@@ -11181,6 +11193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &8232417641388468653
 MeshCollider:
@@ -11354,6 +11367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &8517300047626468887
 MeshCollider:
@@ -11493,6 +11507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!33 &8919078481680557108
 MeshFilter:
@@ -11574,6 +11589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!4 &8932858424258498765
 Transform:
@@ -11641,6 +11657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &8932858424258498769
 MeshCollider:
@@ -11722,6 +11739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &8950343090004632564
 MeshCollider:
@@ -11837,6 +11855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &8985746778812077373
 MeshCollider:
@@ -11932,6 +11951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!64 &9108199254627554069
 MeshCollider:
@@ -12049,6 +12069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   partName: 
+  partName_ES: 
   pivot: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -12061,9 +12082,9 @@ SceneRoots:
   - {fileID: 78095156}
   - {fileID: 6612518314947299560}
   - {fileID: 1292567512864985216}
-  - {fileID: 295339552}
-  - {fileID: 297841611}
-  - {fileID: 1754343570}
   - {fileID: 158727996847416697}
   - {fileID: 1544571383166659810}
   - {fileID: 5473663564869741219}
+  - {fileID: 295339552}
+  - {fileID: 297841611}
+  - {fileID: 1754343570}
