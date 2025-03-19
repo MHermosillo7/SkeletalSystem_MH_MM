@@ -67,7 +67,7 @@ public class Difficulty : MonoBehaviour
 
     
     void GetActionEffectiveness()
-    {
+    {/*
         switch (difficultySettings)
         {
             case DifficultySettings.Hard:
@@ -178,7 +178,7 @@ public class Difficulty : MonoBehaviour
                     actionEffectiveness = 1;
                 }
                 break;
-        }
+        }*/
     }
 
     //Old ActionEffectiveness Variable version

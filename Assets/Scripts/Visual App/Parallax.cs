@@ -11,7 +11,7 @@ public class Parallax : MonoBehaviour
     //An approximate of how far the object can go.
     /*  I am unsure how reliable screen.width is,
         so I hard coded the limits just in case*/
-    Vector3 outOfScreen = new Vector3 (1866.7f, 0, 0);
+    public Vector3 outOfScreen = new Vector3 (1866.7f, 0, 0);
     Vector3 resetPosition;
 
     [SerializeField] float moveSpeed;

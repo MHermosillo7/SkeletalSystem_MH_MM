@@ -25,6 +25,9 @@ public class InfoPopUp : MonoBehaviour
 
     Coroutine checkPopUp;
 
+    [SerializeField] Vector2 resetPosition = new Vector2(740, 0);
+    [SerializeField] bool reset = true;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -43,11 +46,15 @@ public class InfoPopUp : MonoBehaviour
         }
 
         ResetPosition();
+
         StartCoroutine(CheckPopUp());
     }
     void ResetPosition()
     {
-        objRect.transform.localPosition = new Vector2(740, 0);
+        if (reset)
+        {
+            objRect.transform.localPosition = resetPosition;
+        }
     }
     IEnumerator CheckPopUp()
     {

@@ -29,11 +29,7 @@ namespace BodySystem
             //Avoids having to duplicate the script
             if(user == null)
             {
-                var userScript = FindObjectOfType<V1User>();
-            }
-            else
-            {
-                var userScript = user;
+                user1 = FindObjectOfType<V1User>();
             }
 
             popUp = FindObjectOfType<InfoPopUp>();
