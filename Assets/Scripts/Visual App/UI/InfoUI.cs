@@ -19,6 +19,7 @@ namespace BodySystem
         V1User user1;
         InfoPopUp popUp;
 
+
         private void Start()
         {
             CheckLanguage();
@@ -28,7 +29,11 @@ namespace BodySystem
             //Avoids having to duplicate the script
             if(user == null)
             {
-                user1 = FindObjectOfType<V1User>();
+                var userScript = FindObjectOfType<V1User>();
+            }
+            else
+            {
+                var userScript = user;
             }
 
             popUp = FindObjectOfType<InfoPopUp>();

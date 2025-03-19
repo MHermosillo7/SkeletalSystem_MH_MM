@@ -11,7 +11,7 @@ public class Difficulty : MonoBehaviour
         Easy
     }
     [SerializeField] DifficultySettings difficultySettings = DifficultySettings.Hard;
-
+    
     // Adult Typing Speed / 17+ years old
     [SerializeField]
     enum HardDifficulty
@@ -68,7 +68,7 @@ public class Difficulty : MonoBehaviour
     
     void GetActionEffectiveness()
     {
-        /*switch (difficultySettings)
+        switch (difficultySettings)
         {
             case DifficultySettings.Hard:
                 //Master / Bot
@@ -178,7 +178,7 @@ public class Difficulty : MonoBehaviour
                     actionEffectiveness = 1;
                 }
                 break;
-        }*/
+        }
     }
 
     //Old ActionEffectiveness Variable version
