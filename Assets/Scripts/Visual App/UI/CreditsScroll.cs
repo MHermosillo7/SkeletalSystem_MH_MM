@@ -5,7 +5,6 @@ using UnityEngine;
 
 namespace BodySystem
 {
-
     public class CreditsScroll : MonoBehaviour
     {
         RectTransform objRect;
@@ -29,6 +28,14 @@ namespace BodySystem
         bool canMoveUp = false;
         bool canMoveDown = false;
 
+        public enum Platform
+        {
+            Computer,
+            Android,
+            IOS
+        }
+
+        public Platform platform = Platform.Computer;
 
         // Start is called before the first frame update
         void Awake()
@@ -38,18 +45,41 @@ namespace BodySystem
             topPanel = GameObject.Find("TopPanel").GetComponent<RectTransform>();
 
             startPosition = objRect.position;
+
+            GetPlatform(platform);
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetAxis("Scroll Wheel") != 0)
+            switch (platform)
             {
-                TryScroll();
-            }
-            if (Input.GetMouseButton(2))
-            {
-                StartCoroutine(AutoScroll());
+                case Platform.Computer:
+
+                    if (Input.GetAxis("Scroll Wheel") != 0)
+                    {
+                        TryScroll();
+                    }
+                    if (Input.GetMouseButton(2))
+                    {
+                        StartCoroutine(AutoScroll());
+                    }
+                    break;
+                case Platform.Android:
+                    if (Input.touchCount == 0)
+                    {
+                        return;
+                    }
+
+                    if (Input.GetTouch(0).phase == TouchPhase.Moved)
+                    {
+                        StartCoroutine(AutoScroll_Phone());
+                    }
+                    else if(Input.GetTouch(0).phase == TouchPhase.Ended)
+                    {
+                        StopCoroutine(AutoScroll_Phone());
+                    }
+                    break;
             }
         }
         IEnumerator AutoScroll()
@@ -66,10 +96,21 @@ namespace BodySystem
 
                 ScrollTypeMouse(inputForce);
 
-                if (inputForce != 0)
-                {
-                    print(inputForce);
-                }
+                yield return null;
+            }
+        }
+        IEnumerator AutoScroll_Phone()
+        {
+            float inputForce = Input.acceleration.y * mouseSpeed;
+
+            while (Input.GetTouch(0).phase != TouchPhase.Ended 
+                || Input.GetTouch(0).phase != TouchPhase.Canceled)
+            {
+                GetCoordinates();
+                CheckPosition();
+
+                ScrollTypeTouch(inputForce);
+
                 yield return null;
             }
         }
@@ -110,6 +151,10 @@ namespace BodySystem
                 objRect.Translate(Vector2.down *
                     inputForce * Time.deltaTime);
             }
+        }
+        void ScrollTypeTouch(float inputForce)
+        {
+
         }
         void UpdateMouseInput(float inputForce, float newInputForce)
         {
@@ -213,11 +258,36 @@ namespace BodySystem
         //Ensures the credits always start from the top every time they are re-activated
         //ie. If the user moves the credits for programming, but then switch to research's,
         //    when they switch back to programming sources, they will start from the top again
-        private void OnDisable()
+        void OnDisable()
         {
             if(objRect.position != startPosition)
             {
                 objRect.position = startPosition;
+            }
+        }
+
+        void GetPlatform(Platform platform)
+        {
+            switch (Application.platform)
+            {
+                case RuntimePlatform.WindowsPlayer:
+                    platform = Platform.Computer;
+                    break;
+                case RuntimePlatform.WindowsEditor:
+                    platform = Platform.Computer;
+                    break;
+                case RuntimePlatform.OSXPlayer:
+                    platform = Platform.Computer;
+                    break;
+                case RuntimePlatform.OSXEditor:
+                    platform = Platform.Computer;
+                    break;
+                case RuntimePlatform.IPhonePlayer:
+                    platform = Platform.IOS;
+                    break;
+                case RuntimePlatform.Android:
+                    platform = Platform.Android;
+                    break;
             }
         }
     }

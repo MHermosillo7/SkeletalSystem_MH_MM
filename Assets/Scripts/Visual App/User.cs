@@ -62,7 +62,7 @@ namespace BodySystem
         {
             //When clicking left mouse button
             //Call for Select object logic
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.touchCount == 1)
             {
                 Select();
             }
@@ -80,7 +80,18 @@ namespace BodySystem
                 return;
             }
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //Platform check to get proper Mouse/Touch position
+            Ray ray = new Ray();
+
+            if (camMov.platform == CameraMovement.Platform.Computer)
+            {
+                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            }
+
+            else if(camMov.platform == CameraMovement.Platform.Android)
+            {
+                ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
+            }
 
             /*The LayerMask to ignore the UI elements was interfering with selection of distant objects
             such as arm and column, causing errors when trying to select it from afar due to not

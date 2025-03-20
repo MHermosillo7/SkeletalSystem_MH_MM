@@ -51,6 +51,22 @@ namespace BodySystem
 
         CameraStatus camStatus;
 
+        public enum Platform
+        {
+            Computer,
+            Android,
+            IOS
+        }
+        enum MovementType
+        {
+            Rotate,
+            Slide,
+            Zoom
+        }
+
+        public Platform platform = Platform.Computer;
+        MovementType movementType = MovementType.Rotate;
+
         // Awake is called at assembly
         void Awake()
         {
@@ -59,39 +75,71 @@ namespace BodySystem
             prevVectorTrans = vectorTrans;
 
             camStatus = FindObjectOfType<CameraStatus>();
+
+            GetPlatform(platform);
         }
 
         // Update is called once per frame
         void Update()
         {
-            /*  Checks if the camera can move, and if so, allows user to move camera
-                Avoids interferences with camera centering and other processes*/
-            if (camStatus.cameraCanMove)
+            switch(platform)
             {
-                /*  While holding middle mouse
-                    Get horizontal and vertical input
-                    To rotate in all directions(spherical shape)*/
-                if (Input.GetMouseButton(2))
-                {
-                    horizontalInput = GetInput("Mouse X", rotateSpeed);
-                    verticalInput = GetInput("Mouse Y", rotateSpeed);
+                case Platform.Computer:
+                    /*  Checks if the camera can move, and if so, allows user to move camera
+                    Avoids interferences with camera centering and other processes*/
+                    if (camStatus.cameraCanMove)
+                    {
+                        /*  While holding middle mouse
+                            Get horizontal and vertical input
+                            To rotate in all directions(spherical shape)*/
+                        if (Input.GetMouseButton(2))
+                        {
+                            horizontalInput = GetInput("Mouse X", rotateSpeed);
+                            verticalInput = GetInput("Mouse Y", rotateSpeed);
 
-                    RotateB();
-                }
+                            RotateB();
+                        }
 
-                // Zooms forward or backward using scroll wheel input
-                Zoom();
+                        // Zooms forward or backward using scroll wheel input
+                        Zoom();
 
-                // While holding right click
-                // Slides vertically and horizontally using mouse movement
-                if (Input.GetMouseButton(1))
-                {
-                    SlideB();
-                }
-            }
-            else if(camRotProgress == 0 && posProgress == 0 && vecRotProgress == 0)
-            {
-                camStatus.UpdateCamStatus(true);
+                        // While holding right click
+                        // Slides vertically and horizontally using mouse movement
+                        if (Input.GetMouseButton(1))
+                        {
+                            SlideB();
+                        }
+                    }
+                    else if (camRotProgress == 0 && 
+                        posProgress == 0 && 
+                        vecRotProgress == 0)
+                    {
+                        camStatus.UpdateCamStatus(true);
+                    }
+                break;
+                
+                case Platform.Android:
+                    if (camStatus.cameraCanMove)
+                    {
+                        if(Input.touchCount == 0)
+                        {
+                            return;
+                        }
+
+                        GetMovementType();
+                        
+                        if (Input.GetTouch(0).phase != TouchPhase.Ended)
+                        {
+                            ManageMovement_Android();
+                        }
+                    }
+                    else if(camRotProgress == 0 &&
+                        posProgress == 0 &&
+                        vecRotProgress == 0)
+                    {
+                        camStatus.UpdateCamStatus(true);
+                    }
+                break;
             }
         }
 
@@ -103,7 +151,7 @@ namespace BodySystem
             SlideA only with RotationA */
 
         //Rotate camera around object horizontally in a cylindrical shape
-        void RotateA()
+        void Rotate_Phone()
         {
             //Rotate horizontally by using vertical and horizontal mouse input
             vectorTrans.Rotate(Vector3.up, horizontalInput + verticalInput, Space.World);
@@ -197,13 +245,41 @@ namespace BodySystem
 
                 else
                 {
-                    transform.Translate(Vector3.forward * zoomSpeed);
+                    transform.Translate(Vector3.forward * zoomSpeed * Time.deltaTime);
                 }
             }
             //Or if scroll wheel is moved down, scroll backward/away from object
             else if (Input.GetAxis("Scroll Wheel") < 0)
             {
-                transform.Translate(Vector3.forward * -zoomSpeed);
+                transform.Translate(Vector3.forward * -zoomSpeed * Time.deltaTime);
+            }
+        }
+
+        void Zoom_Phone()
+        {
+            float acceleration = Input.acceleration.y;
+
+            //If scroll wheel is moved up, move object forward
+            if (acceleration > 0)
+            {
+                //Direction to move camera in (forward)
+                Ray ray = new Ray(transform.position, transform.forward);
+
+                //Avoids moving camera through and object
+                if (Physics.Raycast(ray, 2f))
+                {
+                    return;
+                }
+
+                else
+                {
+                    transform.Translate(Vector3.forward * zoomSpeed * Time.deltaTime);
+                }
+            }
+            //Or if scroll wheel is moved down, scroll backward/away from object
+            else if (acceleration < 0)
+            {
+                transform.Translate(Vector3.forward * -zoomSpeed * Time.deltaTime);
             }
         }
 
@@ -218,10 +294,12 @@ namespace BodySystem
             into a lower, negative number that is then used to move camera
 
             Note: Currently unused but could serve for android/tablet support*/
-        void SlideA()
+        void Slide_Phone()
         {
             transform.Translate
-                (Vector3.up * (-GetInput("Mouse Y", slideSpeed) - GetInput("Mouse X", slideSpeed)));
+                (Vector3.up * 
+                (-Input.acceleration.x - Input.acceleration.y) *
+                Time.deltaTime);
         }
 
         // Move Camera horizontally & vertically
@@ -371,6 +449,61 @@ namespace BodySystem
             prevVectorTrans.rotation = Quaternion.identity;
 
             prevVectorTrans = vectorTrans;
+        }
+
+        void GetPlatform(Platform platform)
+        {
+            switch (Application.platform)
+            {
+                case RuntimePlatform.WindowsPlayer:
+                    platform = Platform.Computer;
+                    break;
+                case RuntimePlatform.WindowsEditor:
+                    platform = Platform.Computer;
+                    break;
+                case RuntimePlatform.OSXPlayer:
+                    platform = Platform.Computer;
+                    break;
+                case RuntimePlatform.OSXEditor:
+                    platform = Platform.Computer;
+                    break;
+                case RuntimePlatform.IPhonePlayer:
+                    platform = Platform.IOS;
+                    break;
+                case RuntimePlatform.Android:
+                    platform = Platform.Android;
+                    break;
+            }
+        }
+        void GetMovementType()
+        {
+            switch (Input.touchCount)
+            {
+                case 1:
+                    movementType = MovementType.Slide;
+                    break;
+                case 2:
+                    movementType = MovementType.Zoom;
+                    break;
+                case 3:
+                    movementType = MovementType.Rotate;
+                    break;
+            }
+        }
+        void ManageMovement_Android()
+        {
+            switch (movementType)
+            {
+                case MovementType.Slide:
+                    Slide_Phone();
+                    break;
+                case MovementType.Zoom:
+                    Zoom_Phone();
+                    break;
+                case MovementType.Rotate:
+                    Rotate_Phone();
+                    break;
+            }
         }
     }
 }
