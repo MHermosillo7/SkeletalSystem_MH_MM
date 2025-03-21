@@ -147,7 +147,7 @@ namespace BodySystem
                 }
             }
         }
-/*
+
         //Used to transcribe information from component (Camp) script through trimming
         //the information of respective fields by using keywords
 
@@ -159,9 +159,9 @@ namespace BodySystem
 
             if (comp != null)
             {
-                CheckIfNull(functionES, "f");
-                CheckIfNull(structureES, "s");
-                CheckIfNull(componentsES, "c");
+                CheckIfNull(function_ES, "f");
+                CheckIfNull(structure_ES, "s");
+                CheckIfNull(components_ES, "c");
             }
         }
         void CheckIfNull(List<string> list, string value)
@@ -205,7 +205,7 @@ namespace BodySystem
                 }
 
             }
-        }*/
+        }
 
     }
 
