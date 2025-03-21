@@ -4446,10 +4446,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 250
   slideSpeed: 20
-  zoomSpeed: 1.5
+  zoomSpeed: 120
   rate: 0.9
   originVector: {fileID: 0}
   vectorTrans: {fileID: 0}
+  platform: 0
 --- !u!1 &1111380208
 GameObject:
   m_ObjectHideFlags: 0
@@ -7856,6 +7857,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveHorizontally: 0
   moveVertically: 0
+  resetPosition: {x: 740, y: 0}
+  reset: 1
 --- !u!1 &1885277361
 GameObject:
   m_ObjectHideFlags: 0
@@ -10204,8 +10207,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 899521847177847361, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 899521847177847361, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
       propertyPath: function.Array.data[1]
       value: Attachment point for facial muscles
+      objectReference: {fileID: 0}
+    - target: {fileID: 899521847177847361, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.data[0]
+      value: Mandible
+      objectReference: {fileID: 0}
+    - target: {fileID: 899521847177847361, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
+      propertyPath: components.Array.data[1]
+      value: Cranium
       objectReference: {fileID: 0}
     - target: {fileID: 1059742551420652957, guid: 356fc80c53727cd4aa37a6922c8786ab, type: 3}
       propertyPath: m_Enabled
