@@ -22,6 +22,7 @@ public class BasicComponent : MonoBehaviour
     private void Awake()
     {
         partName = gameObject.name;
+        partName_ES = gameObject.name;
 
         GetPivot();
     }
