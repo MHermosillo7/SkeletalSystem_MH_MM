@@ -1264,7 +1264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 250
   slideSpeed: 20
-  zoomSpeed: 1.5
+  zoomSpeed: 120
   rate: 0.9
   originVector: {fileID: 0}
   vectorTrans: {fileID: 0}

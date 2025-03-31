@@ -124,7 +124,7 @@ namespace BodySystem
                 }
                 else if (user1.selectedBasicComp != null)
                 {
-                    nameText.text = user.selectedBasicComp.GetName();
+                    nameText.text = user1.selectedBasicComp.GetName();
                 }
             }
             else
@@ -135,7 +135,7 @@ namespace BodySystem
                 }
                 else if (user1.selectedBasicComp != null)
                 {
-                    nameText.text = user.selectedBasicComp.GetName_ES();
+                    nameText.text = user1.selectedBasicComp.GetName_ES();
                 }
             }
         }
