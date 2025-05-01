@@ -99,6 +99,13 @@ namespace BodySystem
 
                             RotateB();
                         }
+                        else if(Input.GetMouseButton(0) && Input.GetKey(KeyCode.LeftShift))
+                        {
+                            horizontalInput = GetInput("Mouse X", rotateSpeed);
+                            verticalInput = GetInput("Mouse Y", rotateSpeed);
+
+                            RotateB();
+                        }
 
                         // Zooms forward or backward using scroll wheel input
                         Zoom();
@@ -106,6 +113,10 @@ namespace BodySystem
                         // While holding right click
                         // Slides vertically and horizontally using mouse movement
                         if (Input.GetMouseButton(1))
+                        {
+                            SlideB();
+                        }
+                        else if (Input.GetMouseButton(0) && Input.GetKey(KeyCode.LeftControl))
                         {
                             SlideB();
                         }
@@ -232,7 +243,7 @@ namespace BodySystem
         void Zoom()
         {
             //If scroll wheel is moved up, move object forward
-            if (Input.GetAxis("Scroll Wheel") > 0)
+            if (Input.GetAxis("Scroll Wheel") > 0 || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 //Direction to move camera in (forward)
                 Ray ray = new Ray(transform.position, transform.forward);
@@ -240,6 +251,7 @@ namespace BodySystem
                 //Avoids moving camera through and object
                 if (Physics.Raycast(ray, 2f))
                 {
+                    print("No");
                     return;
                 }
 
@@ -249,7 +261,7 @@ namespace BodySystem
                 }
             }
             //Or if scroll wheel is moved down, scroll backward/away from object
-            else if (Input.GetAxis("Scroll Wheel") < 0)
+            else if (Input.GetAxis("Scroll Wheel") < 0 || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 transform.Translate(Vector3.forward * -zoomSpeed * Time.deltaTime);
             }

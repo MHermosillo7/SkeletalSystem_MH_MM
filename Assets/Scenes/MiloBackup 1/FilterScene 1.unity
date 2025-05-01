@@ -6111,7 +6111,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1834485380}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BodySystem.InfoUI_Filter, Assembly-CSharp
         m_MethodName: EnableButtons
         m_Mode: 1
@@ -6967,7 +6967,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1834485380}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BodySystem.InfoUI_Filter, Assembly-CSharp
         m_MethodName: GetStructureInfo
         m_Mode: 1
@@ -7869,7 +7869,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1834485380}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BodySystem.InfoUI_Filter, Assembly-CSharp
         m_MethodName: GetComponentsInfo
         m_Mode: 1
@@ -8366,7 +8366,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1834485380}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BodySystem.InfoUI_Filter, Assembly-CSharp
         m_MethodName: GetFunctionInfo
         m_Mode: 1
@@ -16119,13 +16119,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1834485374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1650fd8135438964a81fe7ddc02a81f0, type: 3}
+  m_Script: {fileID: 11500000, guid: a5320d0b98ebd2645b78582c4cd1b49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPivot: {fileID: 2126552096}
+  uiPivot: {fileID: 1039669504}
   nameButton: {fileID: 669609244}
   nameText: {fileID: 1409038386}
-  buttons: {fileID: 1288693974}
+  buttonControl: {fileID: 1288693974}
+  buttonText:
+  - {fileID: 460899723}
+  - {fileID: 2026114295}
+  - {fileID: 1248853229}
   image: {fileID: 1719734810}
   body: {fileID: 2144963073}
 --- !u!1 &1844608278
